@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace CEMSStudyApp
 {
-    public partial class PageMenu : Form
+    public partial class Part75 : Form
     {
-        public PageMenu()
+        public Part75()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Part75 part75 = new Part75();
-            part75.Show();
-
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

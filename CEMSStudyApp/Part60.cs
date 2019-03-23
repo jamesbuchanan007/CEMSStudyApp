@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CEMSStudyApp
 {
-    public partial class Part75 : Form
+    public partial class Part60 : Form
     {
-        public Part75()
+        public Part60()
         {
             InitializeComponent();
             comboBoxSiteNavigation.SelectedIndex = 0;
@@ -29,11 +22,6 @@ namespace CEMSStudyApp
             }
         }
 
-        private void textBoxAnswer_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void comboBoxSiteNavigation_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (comboBoxSiteNavigation.SelectedIndex)
@@ -45,15 +33,17 @@ namespace CEMSStudyApp
                     break;
                 case 2:
                     this.Hide();
-                    Part60 part60 = new Part60();
-                    part60.Show();
+                    Part75 part75 = new Part75();
+                    part75.Show();
                     break;
                 default:
                     this.Hide();
                     PageMenu pm = new PageMenu();
                     pm.Show();
                     break;
+
             }
+            
         }
     }
 }

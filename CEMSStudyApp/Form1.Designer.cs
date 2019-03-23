@@ -44,7 +44,7 @@
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(24, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(86, 30);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(562, 183);
@@ -58,7 +58,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(208, 260);
+            this.button1.Location = new System.Drawing.Point(155, 252);
             this.button1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 55);
@@ -73,13 +73,14 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(208, 329);
+            this.button2.Location = new System.Drawing.Point(155, 321);
             this.button2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(200, 55);
             this.button2.TabIndex = 2;
             this.button2.Text = "Part 60";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -87,7 +88,7 @@
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.Transparent;
-            this.button3.Location = new System.Drawing.Point(208, 398);
+            this.button3.Location = new System.Drawing.Point(371, 252);
             this.button3.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(200, 55);
@@ -101,7 +102,7 @@
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.Transparent;
-            this.button4.Location = new System.Drawing.Point(208, 467);
+            this.button4.Location = new System.Drawing.Point(371, 321);
             this.button4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(200, 55);
@@ -115,7 +116,7 @@
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.Transparent;
-            this.button5.Location = new System.Drawing.Point(208, 537);
+            this.button5.Location = new System.Drawing.Point(267, 390);
             this.button5.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(200, 55);
@@ -128,7 +129,7 @@
             this.buttonExit.BackColor = System.Drawing.Color.Red;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.ForeColor = System.Drawing.Color.White;
-            this.buttonExit.Location = new System.Drawing.Point(208, 684);
+            this.buttonExit.Location = new System.Drawing.Point(267, 459);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(200, 55);
@@ -141,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 768);
+            this.ClientSize = new System.Drawing.Size(721, 556);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -149,6 +150,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "PageMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

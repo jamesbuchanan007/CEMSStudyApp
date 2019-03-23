@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Part60.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Part60.Designer.cs">
+      <DependentUpon>Part60.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Part60.resx">
+      <DependentUpon>Part60.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\SpectrumLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Copied Pages\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,6 @@
 ﻿namespace CEMSStudyApp
 {
-    partial class Part75
+    partial class Part60
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Part75));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Part60));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxSectionNumber = new System.Windows.Forms.TextBox();
@@ -50,9 +50,9 @@
             this.label1.Location = new System.Drawing.Point(32, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(764, 63);
+            this.label1.Size = new System.Drawing.Size(399, 63);
             this.label1.TabIndex = 0;
-            this.label1.Text = "40 CFR Part 75 (Plain English)";
+            this.label1.Text = "40 CFR Part 60";
             // 
             // label2
             // 
@@ -91,7 +91,7 @@
             this.comboBoxSiteNavigation.Items.AddRange(new object[] {
             "-- Site Navigation --",
             "Main Menu",
-            "Part 60",
+            "Part 75",
             "Formulas",
             "Acronyms",
             "How To\'s"});
@@ -133,7 +133,6 @@
             this.textBoxAnswer.TabIndex = 6;
             this.textBoxAnswer.Text = "\r\n\r\n\r\n\r\n\r\nAnswer";
             this.textBoxAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxAnswer.TextChanged += new System.EventHandler(this.textBoxAnswer_TextChanged);
             // 
             // buttonBack
             // 
@@ -210,7 +209,7 @@
             this.comboBoxSectionNumber.Size = new System.Drawing.Size(316, 39);
             this.comboBoxSectionNumber.TabIndex = 12;
             // 
-            // Part75
+            // Part60
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -231,7 +230,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.Name = "Part75";
+            this.Name = "Part60";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";
             this.ResumeLayout(false);

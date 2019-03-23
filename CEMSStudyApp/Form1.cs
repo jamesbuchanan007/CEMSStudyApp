@@ -34,5 +34,12 @@ namespace CEMSStudyApp
                 Application.Exit();
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Part60 part60 = new Part60();
+            part60.Show();
+        }
     }
 }

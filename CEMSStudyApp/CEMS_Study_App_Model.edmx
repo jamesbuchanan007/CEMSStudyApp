@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CEMS_Study_App_DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Acronyms">
+          <Key>
+            <PropertyRef Name="AcronymsId" />
+          </Key>
+          <Property Name="AcronymsId" Type="int" Nullable="false" />
+          <Property Name="Acronym" Type="nvarchar" MaxLength="50" />
+          <Property Name="AcronymFullName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AcronymsLog">
+          <Key>
+            <PropertyRef Name="AcronymsLogId" />
+          </Key>
+          <Property Name="AcronymsLogId" Type="int" Nullable="false" />
+          <Property Name="OriginalData" Type="nvarchar" MaxLength="50" />
+          <Property Name="NewData" Type="nvarchar" MaxLength="50" />
+          <Property Name="EditName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EditDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Formulas">
+          <Key>
+            <PropertyRef Name="FormulasId" />
+          </Key>
+          <Property Name="FormulasId" Type="int" Nullable="false" />
+          <Property Name="FormulaName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FormulaParameters" Type="nvarchar(max)" />
+          <Property Name="FormulaDescription" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="FormulasLog">
+          <Key>
+            <PropertyRef Name="FormulasLogId" />
+          </Key>
+          <Property Name="FormulasLogId" Type="int" Nullable="false" />
+          <Property Name="OriginalData" Type="nvarchar(max)" />
+          <Property Name="NewData" Type="nvarchar(max)" />
+          <Property Name="EditName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EditDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="HowTos">
+          <Key>
+            <PropertyRef Name="HowTosId" />
+          </Key>
+          <Property Name="HowTosId" Type="int" Nullable="false" />
+          <Property Name="HowToName" Type="nvarchar" MaxLength="50" />
+          <Property Name="HowToDescription" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="HowTosLog">
+          <Key>
+            <PropertyRef Name="HowTosLogId" />
+          </Key>
+          <Property Name="HowTosLogId" Type="int" Nullable="false" />
+          <Property Name="OriginalData" Type="nvarchar(max)" />
+          <Property Name="NewData" Type="nvarchar(max)" />
+          <Property Name="EditName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EditDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Part60">
+          <Key>
+            <PropertyRef Name="Part60Id" />
+          </Key>
+          <Property Name="Part60Id" Type="int" Nullable="false" />
+          <Property Name="SectionNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="SectionName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SectionQuestion" Type="nvarchar(max)" />
+          <Property Name="SectionAnswer" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Part60Log">
+          <Key>
+            <PropertyRef Name="Part60LogId" />
+          </Key>
+          <Property Name="Part60LogId" Type="int" Nullable="false" />
+          <Property Name="OriginalData" Type="nvarchar(max)" />
+          <Property Name="NewData" Type="nvarchar(max)" />
+          <Property Name="EditName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EditDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Part75">
+          <Key>
+            <PropertyRef Name="Part75Id" />
+          </Key>
+          <Property Name="Part75Id" Type="int" Nullable="false" />
+          <Property Name="SectionNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="SectionName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SectionQuestion" Type="nvarchar(max)" />
+          <Property Name="SectionAnswer" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Part75Log">
+          <Key>
+            <PropertyRef Name="Part75LogId" />
+          </Key>
+          <Property Name="Part75LogId" Type="int" Nullable="false" />
+          <Property Name="OriginalData" Type="nvarchar(max)" />
+          <Property Name="NewData" Type="nvarchar(max)" />
+          <Property Name="EditName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EditDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Passwords">
+          <Key>
+            <PropertyRef Name="PasswordsId" />
+          </Key>
+          <Property Name="PasswordsId" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PasswordsLog">
+          <Key>
+            <PropertyRef Name="PasswordsLogId" />
+          </Key>
+          <Property Name="PasswordsLogId" Type="int" Nullable="false" />
+          <Property Name="OriginalData" Type="nvarchar" MaxLength="50" />
+          <Property Name="NewData" Type="nvarchar" MaxLength="50" />
+          <Property Name="EditName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EditDate" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="CEMS_Study_App_DbModelStoreContainer">
+          <EntitySet Name="Acronyms" EntityType="Self.Acronyms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AcronymsLog" EntityType="Self.AcronymsLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Formulas" EntityType="Self.Formulas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormulasLog" EntityType="Self.FormulasLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HowTos" EntityType="Self.HowTos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HowTosLog" EntityType="Self.HowTosLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Part60" EntityType="Self.Part60" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Part60Log" EntityType="Self.Part60Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Part75" EntityType="Self.Part75" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Part75Log" EntityType="Self.Part75Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Passwords" EntityType="Self.Passwords" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PasswordsLog" EntityType="Self.PasswordsLog" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CEMS_Study_App_DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Acronym">
+          <Key>
+            <PropertyRef Name="AcronymsId" />
+          </Key>
+          <Property Name="AcronymsId" Type="Int32" Nullable="false" />
+          <Property Name="Acronym1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AcronymFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AcronymsLog">
+          <Key>
+            <PropertyRef Name="AcronymsLogId" />
+          </Key>
+          <Property Name="AcronymsLogId" Type="Int32" Nullable="false" />
+          <Property Name="OriginalData" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NewData" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EditName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EditDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Formula">
+          <Key>
+            <PropertyRef Name="FormulasId" />
+          </Key>
+          <Property Name="FormulasId" Type="Int32" Nullable="false" />
+          <Property Name="FormulaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FormulaParameters" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FormulaDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FormulasLog">
+          <Key>
+            <PropertyRef Name="FormulasLogId" />
+          </Key>
+          <Property Name="FormulasLogId" Type="Int32" Nullable="false" />
+          <Property Name="OriginalData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NewData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EditName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EditDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="HowTo">
+          <Key>
+            <PropertyRef Name="HowTosId" />
+          </Key>
+          <Property Name="HowTosId" Type="Int32" Nullable="false" />
+          <Property Name="HowToName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HowToDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="HowTosLog">
+          <Key>
+            <PropertyRef Name="HowTosLogId" />
+          </Key>
+          <Property Name="HowTosLogId" Type="Int32" Nullable="false" />
+          <Property Name="OriginalData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NewData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EditName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EditDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Part60">
+          <Key>
+            <PropertyRef Name="Part60Id" />
+          </Key>
+          <Property Name="Part60Id" Type="Int32" Nullable="false" />
+          <Property Name="SectionNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SectionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SectionQuestion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SectionAnswer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Part60Log">
+          <Key>
+            <PropertyRef Name="Part60LogId" />
+          </Key>
+          <Property Name="Part60LogId" Type="Int32" Nullable="false" />
+          <Property Name="OriginalData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NewData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EditName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EditDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Part75">
+          <Key>
+            <PropertyRef Name="Part75Id" />
+          </Key>
+          <Property Name="Part75Id" Type="Int32" Nullable="false" />
+          <Property Name="SectionNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SectionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SectionQuestion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SectionAnswer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Part75Log">
+          <Key>
+            <PropertyRef Name="Part75LogId" />
+          </Key>
+          <Property Name="Part75LogId" Type="Int32" Nullable="false" />
+          <Property Name="OriginalData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NewData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EditName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EditDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Password">
+          <Key>
+            <PropertyRef Name="PasswordsId" />
+          </Key>
+          <Property Name="PasswordsId" Type="Int32" Nullable="false" />
+          <Property Name="Password1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PasswordsLog">
+          <Key>
+            <PropertyRef Name="PasswordsLogId" />
+          </Key>
+          <Property Name="PasswordsLogId" Type="Int32" Nullable="false" />
+          <Property Name="OriginalData" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NewData" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EditName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EditDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="CEMS_Study_App_DbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Acronyms" EntityType="Self.Acronym" />
+          <EntitySet Name="AcronymsLogs" EntityType="Self.AcronymsLog" />
+          <EntitySet Name="Formulas" EntityType="Self.Formula" />
+          <EntitySet Name="FormulasLogs" EntityType="Self.FormulasLog" />
+          <EntitySet Name="HowTos" EntityType="Self.HowTo" />
+          <EntitySet Name="HowTosLogs" EntityType="Self.HowTosLog" />
+          <EntitySet Name="Part60" EntityType="Self.Part60" />
+          <EntitySet Name="Part60Log" EntityType="Self.Part60Log" />
+          <EntitySet Name="Part75" EntityType="Self.Part75" />
+          <EntitySet Name="Part75Log" EntityType="Self.Part75Log" />
+          <EntitySet Name="Passwords" EntityType="Self.Password" />
+          <EntitySet Name="PasswordsLogs" EntityType="Self.PasswordsLog" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CEMS_Study_App_DbModelStoreContainer" CdmEntityContainer="CEMS_Study_App_DbEntities">
+          <EntitySetMapping Name="Acronyms">
+            <EntityTypeMapping TypeName="CEMS_Study_App_DbModel.Acronym">
+              <MappingFragment StoreEntitySet="Acronyms">
+                <ScalarProperty Name="AcronymsId" ColumnName="AcronymsId" />
+                <ScalarProperty Name="Acronym1" ColumnName="Acronym" />
+                <ScalarProperty Name="AcronymFullName" ColumnName="AcronymFullName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AcronymsLogs">
+            <EntityTypeMapping TypeName="CEMS_Study_App_DbModel.AcronymsLog">
+              <MappingFragment StoreEntitySet="AcronymsLog">
+                <ScalarProperty Name="AcronymsLogId" ColumnName="AcronymsLogId" />
+                <ScalarProperty Name="OriginalData" ColumnName="OriginalData" />
+                <ScalarProperty Name="NewData" ColumnName="NewData" />
+                <ScalarProperty Name="EditName" ColumnName="EditName" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Formulas">
+            <EntityTypeMapping TypeName="CEMS_Study_App_DbModel.Formula">
+              <MappingFragment StoreEntitySet="Formulas">
+                <ScalarProperty Name="FormulasId" ColumnName="FormulasId" />
+                <ScalarProperty Name="FormulaName" ColumnName="FormulaName" />
+                <ScalarProperty Name="FormulaParameters" ColumnName="FormulaParameters" />
+                <ScalarProperty Name="FormulaDescription" ColumnName="FormulaDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormulasLogs">
+            <EntityTypeMapping TypeName="CEMS_Study_App_DbModel.FormulasLog">
+              <MappingFragment StoreEntitySet="FormulasLog">
+                <ScalarProperty Name="FormulasLogId" ColumnName="FormulasLogId" />
+                <ScalarProperty Name="OriginalData" ColumnName="OriginalData" />
+                <ScalarProperty Name="NewData" ColumnName="NewData" />
+                <ScalarProperty Name="EditName" ColumnName="EditName" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HowTos">
+            <EntityTypeMapping TypeName="CEMS_Study_App_DbModel.HowTo">
+              <MappingFragment StoreEntitySet="HowTos">
+                <ScalarProperty Name="HowTosId" ColumnName="HowTosId" />
+                <ScalarProperty Name="HowToName" ColumnName="HowToName" />
+                <ScalarProperty Name="HowToDescription" ColumnName="HowToDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HowTosLogs">
+            <EntityTypeMapping TypeName="CEMS_Study_App_DbModel.HowTosLog">
+              <MappingFragment StoreEntitySet="HowTosLog">
+                <ScalarProperty Name="HowTosLogId" ColumnName="HowTosLogId" />
+                <ScalarProperty Name="OriginalData" ColumnName="OriginalData" />
+                <ScalarProperty Name="NewData" ColumnName="NewData" />
+                <ScalarProperty Name="EditName" ColumnName="EditName" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Part60">
+            <EntityTypeMapping TypeName="CEMS_Study_App_DbModel.Part60">
+              <MappingFragment StoreEntitySet="Part60">
+                <ScalarProperty Name="Part60Id" ColumnName="Part60Id" />
+                <ScalarProperty Name="SectionNumber" ColumnName="SectionNumber" />
+                <ScalarProperty Name="SectionName" ColumnName="SectionName" />
+                <ScalarProperty Name="SectionQuestion" ColumnName="SectionQuestion" />
+                <ScalarProperty Name="SectionAnswer" ColumnName="SectionAnswer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Part60Log">
+            <EntityTypeMapping TypeName="CEMS_Study_App_DbModel.Part60Log">
+              <MappingFragment StoreEntitySet="Part60Log">
+                <ScalarProperty Name="Part60LogId" ColumnName="Part60LogId" />
+                <ScalarProperty Name="OriginalData" ColumnName="OriginalData" />
+                <ScalarProperty Name="NewData" ColumnName="NewData" />
+                <ScalarProperty Name="EditName" ColumnName="EditName" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Part75">
+            <EntityTypeMapping TypeName="CEMS_Study_App_DbModel.Part75">
+              <MappingFragment StoreEntitySet="Part75">
+                <ScalarProperty Name="Part75Id" ColumnName="Part75Id" />
+                <ScalarProperty Name="SectionNumber" ColumnName="SectionNumber" />
+                <ScalarProperty Name="SectionName" ColumnName="SectionName" />
+                <ScalarProperty Name="SectionQuestion" ColumnName="SectionQuestion" />
+                <ScalarProperty Name="SectionAnswer" ColumnName="SectionAnswer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Part75Log">
+            <EntityTypeMapping TypeName="CEMS_Study_App_DbModel.Part75Log">
+              <MappingFragment StoreEntitySet="Part75Log">
+                <ScalarProperty Name="Part75LogId" ColumnName="Part75LogId" />
+                <ScalarProperty Name="OriginalData" ColumnName="OriginalData" />
+                <ScalarProperty Name="NewData" ColumnName="NewData" />
+                <ScalarProperty Name="EditName" ColumnName="EditName" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Passwords">
+            <EntityTypeMapping TypeName="CEMS_Study_App_DbModel.Password">
+              <MappingFragment StoreEntitySet="Passwords">
+                <ScalarProperty Name="PasswordsId" ColumnName="PasswordsId" />
+                <ScalarProperty Name="Password1" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PasswordsLogs">
+            <EntityTypeMapping TypeName="CEMS_Study_App_DbModel.PasswordsLog">
+              <MappingFragment StoreEntitySet="PasswordsLog">
+                <ScalarProperty Name="PasswordsLogId" ColumnName="PasswordsLogId" />
+                <ScalarProperty Name="OriginalData" ColumnName="OriginalData" />
+                <ScalarProperty Name="NewData" ColumnName="NewData" />
+                <ScalarProperty Name="EditName" ColumnName="EditName" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

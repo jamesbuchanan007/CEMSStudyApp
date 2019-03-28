@@ -61,6 +61,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Copied Pages\Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Copied Pages\Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SectionEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SectionEditor.Designer.cs">
+      <DependentUpon>SectionEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Part60.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +93,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Copied Pages\Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SectionEditor.resx">
+      <DependentUpon>SectionEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Part60.resx">
       <DependentUpon>Part60.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,7 +117,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="CEMS_db.db" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -116,9 +133,7 @@
   <ItemGroup>
     <Content Include="Images\SpectrumLogo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Copied Pages\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>

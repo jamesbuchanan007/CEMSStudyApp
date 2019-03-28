@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\PasswordLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\PasswordLogin.Designer.cs">
+      <DependentUpon>PasswordLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\HowTos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pages\PasswordLogin.resx">
+      <DependentUpon>PasswordLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\HowTos.resx">
       <DependentUpon>HowTos.cs</DependentUpon>
     </EmbeddedResource>

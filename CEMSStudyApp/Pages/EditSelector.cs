@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace CEMSStudyApp
+namespace CEMSStudyApp.Pages
 {
     public partial class EditSelector : Form
     {

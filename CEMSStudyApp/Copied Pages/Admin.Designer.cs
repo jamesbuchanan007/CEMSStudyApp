@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,8 +78,8 @@
             this.comboBoxEditor.Items.AddRange(new object[] {
             "-- Choose Editor --",
             "Section",
-            "Formula",
-            "Acronym",
+            "Formulas",
+            "Acronyms",
             "How To\'s",
             "Password"});
             this.comboBoxEditor.Location = new System.Drawing.Point(79, 137);
@@ -99,7 +99,7 @@
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = false;
             // 
-            // PageAdmin
+            // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -110,7 +110,7 @@
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "PageAdmin";
+            this.Name = "Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

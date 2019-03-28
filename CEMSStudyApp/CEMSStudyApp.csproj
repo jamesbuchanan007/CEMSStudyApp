@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\HowTos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\HowTos.Designer.cs">
+      <DependentUpon>HowTos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Acronyms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pages\HowTos.resx">
+      <DependentUpon>HowTos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Acronyms.resx">
       <DependentUpon>Acronyms.cs</DependentUpon>
     </EmbeddedResource>

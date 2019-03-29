@@ -10,14 +10,6 @@ namespace CEMSStudyApp.Pages
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Part75 part75 = new Part75();
-            part75.Show();
-
-        }
-
         private void buttonExit_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Are You Sure?", "Exit Application", MessageBoxButtons.YesNo);
@@ -26,13 +18,6 @@ namespace CEMSStudyApp.Pages
             {
                 Application.Exit();
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Part60 part60 = new Part60();
-            part60.Show();
         }
     }
 }

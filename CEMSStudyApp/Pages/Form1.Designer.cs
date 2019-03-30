@@ -30,13 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageMenu));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonPart75 = new System.Windows.Forms.Button();
+            this.buttonPart60 = new System.Windows.Forms.Button();
+            this.buttonFormulas = new System.Windows.Forms.Button();
+            this.buttonAcronyms = new System.Windows.Forms.Button();
+            this.buttonHowTos = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.buttonEditor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,84 +52,84 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // buttonPart75
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(155, 253);
-            this.button1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 55);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Part 75";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonPart75.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.buttonPart75.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPart75.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPart75.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonPart75.Location = new System.Drawing.Point(155, 253);
+            this.buttonPart75.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonPart75.Name = "buttonPart75";
+            this.buttonPart75.Size = new System.Drawing.Size(200, 55);
+            this.buttonPart75.TabIndex = 1;
+            this.buttonPart75.Text = "Part 75";
+            this.buttonPart75.UseVisualStyleBackColor = false;
+            this.buttonPart75.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // buttonPart60
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(155, 322);
-            this.button2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 55);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Part 60";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonPart60.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.buttonPart60.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPart60.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPart60.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonPart60.Location = new System.Drawing.Point(155, 322);
+            this.buttonPart60.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonPart60.Name = "buttonPart60";
+            this.buttonPart60.Size = new System.Drawing.Size(200, 55);
+            this.buttonPart60.TabIndex = 2;
+            this.buttonPart60.Text = "Part 60";
+            this.buttonPart60.UseVisualStyleBackColor = false;
+            this.buttonPart60.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // buttonFormulas
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.Transparent;
-            this.button3.Location = new System.Drawing.Point(371, 253);
-            this.button3.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 55);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Formulas";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonFormulas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.buttonFormulas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFormulas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFormulas.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonFormulas.Location = new System.Drawing.Point(371, 253);
+            this.buttonFormulas.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonFormulas.Name = "buttonFormulas";
+            this.buttonFormulas.Size = new System.Drawing.Size(200, 55);
+            this.buttonFormulas.TabIndex = 3;
+            this.buttonFormulas.Text = "Formulas";
+            this.buttonFormulas.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // buttonAcronyms
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.Transparent;
-            this.button4.Location = new System.Drawing.Point(371, 322);
-            this.button4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(200, 55);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Acronyms";
-            this.button4.UseVisualStyleBackColor = false;
+            this.buttonAcronyms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.buttonAcronyms.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAcronyms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAcronyms.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonAcronyms.Location = new System.Drawing.Point(371, 322);
+            this.buttonAcronyms.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonAcronyms.Name = "buttonAcronyms";
+            this.buttonAcronyms.Size = new System.Drawing.Size(200, 55);
+            this.buttonAcronyms.TabIndex = 4;
+            this.buttonAcronyms.Text = "Acronyms";
+            this.buttonAcronyms.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // buttonHowTos
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.Transparent;
-            this.button5.Location = new System.Drawing.Point(267, 391);
-            this.button5.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(200, 55);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "How To\'s";
-            this.button5.UseVisualStyleBackColor = false;
+            this.buttonHowTos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.buttonHowTos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonHowTos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHowTos.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonHowTos.Location = new System.Drawing.Point(267, 391);
+            this.buttonHowTos.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonHowTos.Name = "buttonHowTos";
+            this.buttonHowTos.Size = new System.Drawing.Size(200, 55);
+            this.buttonHowTos.TabIndex = 5;
+            this.buttonHowTos.Text = "How To\'s";
+            this.buttonHowTos.UseVisualStyleBackColor = false;
             // 
             // buttonExit
             // 
             this.buttonExit.BackColor = System.Drawing.Color.Red;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.ForeColor = System.Drawing.Color.White;
-            this.buttonExit.Location = new System.Drawing.Point(488, 472);
+            this.buttonExit.Location = new System.Drawing.Point(267, 485);
             this.buttonExit.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(200, 55);
@@ -139,31 +138,17 @@
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // buttonEditor
-            // 
-            this.buttonEditor.BackColor = System.Drawing.Color.Green;
-            this.buttonEditor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEditor.ForeColor = System.Drawing.Color.White;
-            this.buttonEditor.Location = new System.Drawing.Point(32, 472);
-            this.buttonEditor.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.buttonEditor.Name = "buttonEditor";
-            this.buttonEditor.Size = new System.Drawing.Size(200, 55);
-            this.buttonEditor.TabIndex = 7;
-            this.buttonEditor.Text = "Editor";
-            this.buttonEditor.UseVisualStyleBackColor = false;
-            // 
             // PageMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(719, 556);
-            this.Controls.Add(this.buttonEditor);
             this.Controls.Add(this.buttonExit);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonHowTos);
+            this.Controls.Add(this.buttonAcronyms);
+            this.Controls.Add(this.buttonFormulas);
+            this.Controls.Add(this.buttonPart60);
+            this.Controls.Add(this.buttonPart75);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
@@ -178,13 +163,12 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonPart75;
+        private System.Windows.Forms.Button buttonPart60;
+        private System.Windows.Forms.Button buttonFormulas;
+        private System.Windows.Forms.Button buttonAcronyms;
+        private System.Windows.Forms.Button buttonHowTos;
         private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.Button buttonEditor;
     }
 }
 

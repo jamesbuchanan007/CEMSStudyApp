@@ -43,6 +43,7 @@
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -200,6 +201,7 @@
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.Black;
             this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.buttonDelete.Enabled = false;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
             this.buttonDelete.Location = new System.Drawing.Point(691, 911);
@@ -207,7 +209,7 @@
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(200, 55);
             this.buttonDelete.TabIndex = 22;
-            this.buttonDelete.Tag = "Next Question";
+            this.buttonDelete.Tag = "";
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
             // 
@@ -222,7 +224,7 @@
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(200, 55);
             this.buttonEdit.TabIndex = 21;
-            this.buttonEdit.Tag = "Next Question";
+            this.buttonEdit.Tag = "";
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = false;
             // 
@@ -252,9 +254,24 @@
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(200, 55);
             this.buttonSave.TabIndex = 19;
-            this.buttonSave.Tag = "Next Question";
+            this.buttonSave.Tag = "";
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.BackColor = System.Drawing.Color.Black;
+            this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancel.ForeColor = System.Drawing.Color.White;
+            this.buttonCancel.Location = new System.Drawing.Point(907, 911);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(200, 55);
+            this.buttonCancel.TabIndex = 23;
+            this.buttonCancel.Tag = "";
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = false;
             // 
             // Part75
             // 
@@ -264,6 +281,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(2133, 999);
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonNew);
@@ -305,5 +323,6 @@
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonNew;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }

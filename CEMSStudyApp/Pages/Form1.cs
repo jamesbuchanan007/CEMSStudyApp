@@ -20,7 +20,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Are You Sure?", "Exit Application", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Are You Sure?", "Exit Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (dr == DialogResult.Yes)
             {

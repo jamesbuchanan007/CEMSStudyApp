@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -91,11 +91,11 @@
     <Compile Include="Pages\Part60.Designer.cs">
       <DependentUpon>Part60.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Form1.cs">
+    <Compile Include="Pages\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Pages\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Part75.cs">
       <SubType>Form</SubType>
@@ -120,8 +120,8 @@
     <EmbeddedResource Include="Pages\Part60.resx">
       <DependentUpon>Part60.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Part75.resx">
       <DependentUpon>Part75.cs</DependentUpon>
@@ -149,6 +149,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CEMS_Study_App_db.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CEMS_Study_App_db_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>CEMS_Study_App_db.mdf</DependentUpon>
+    </Content>
     <Content Include="Images\SpectrumLogo.png" />
   </ItemGroup>
   <ItemGroup>

@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace CEMSStudyApp.Pages
 {
-    public partial class PageMenu : Form
+    public partial class MainMenu : Form
     {
-        public PageMenu()
+        public MainMenu()
         {
             InitializeComponent();
         }

@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Part60));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.textBoxSectionNumber = new System.Windows.Forms.TextBox();
             this.comboBoxSiteNavigation = new System.Windows.Forms.ComboBox();
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
@@ -40,6 +39,10 @@
             this.buttonToggle = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.comboBoxSectionNumber = new System.Windows.Forms.ComboBox();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonNew = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -48,22 +51,12 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(86, 18);
+            this.label1.Location = new System.Drawing.Point(229, 43);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 26);
+            this.label1.Size = new System.Drawing.Size(399, 63);
             this.label1.TabIndex = 0;
             this.label1.Text = "40 CFR Part 60";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(126, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Question";
             // 
             // textBoxSectionNumber
             // 
@@ -71,10 +64,11 @@
             this.textBoxSectionNumber.Enabled = false;
             this.textBoxSectionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSectionNumber.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBoxSectionNumber.Location = new System.Drawing.Point(17, 149);
+            this.textBoxSectionNumber.Location = new System.Drawing.Point(45, 355);
+            this.textBoxSectionNumber.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBoxSectionNumber.Name = "textBoxSectionNumber";
             this.textBoxSectionNumber.ReadOnly = true;
-            this.textBoxSectionNumber.Size = new System.Drawing.Size(305, 26);
+            this.textBoxSectionNumber.Size = new System.Drawing.Size(848, 53);
             this.textBoxSectionNumber.TabIndex = 2;
             this.textBoxSectionNumber.Text = "Section";
             this.textBoxSectionNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -87,15 +81,11 @@
             this.comboBoxSiteNavigation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSiteNavigation.FormattingEnabled = true;
             this.comboBoxSiteNavigation.Items.AddRange(new object[] {
-            "-- Site Navigation --",
-            "Main Menu",
-            "Part 75",
-            "Formulas",
-            "Acronyms",
-            "How To\'s"});
-            this.comboBoxSiteNavigation.Location = new System.Drawing.Point(201, 67);
+            "-- Site Navigation --"});
+            this.comboBoxSiteNavigation.Location = new System.Drawing.Point(577, 160);
+            this.comboBoxSiteNavigation.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.comboBoxSiteNavigation.Name = "comboBoxSiteNavigation";
-            this.comboBoxSiteNavigation.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSiteNavigation.Size = new System.Drawing.Size(316, 39);
             this.comboBoxSiteNavigation.TabIndex = 4;
             this.comboBoxSiteNavigation.SelectedIndexChanged += new System.EventHandler(this.comboBoxSiteNavigation_SelectedIndexChanged);
             // 
@@ -105,11 +95,12 @@
             this.textBoxQuestion.Enabled = false;
             this.textBoxQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxQuestion.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBoxQuestion.Location = new System.Drawing.Point(17, 181);
+            this.textBoxQuestion.Location = new System.Drawing.Point(45, 432);
+            this.textBoxQuestion.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBoxQuestion.Multiline = true;
             this.textBoxQuestion.Name = "textBoxQuestion";
             this.textBoxQuestion.ReadOnly = true;
-            this.textBoxQuestion.Size = new System.Drawing.Size(305, 195);
+            this.textBoxQuestion.Size = new System.Drawing.Size(848, 459);
             this.textBoxQuestion.TabIndex = 5;
             this.textBoxQuestion.Text = "\r\n\r\nQuestion";
             this.textBoxQuestion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -120,11 +111,12 @@
             this.textBoxAnswer.Enabled = false;
             this.textBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAnswer.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBoxAnswer.Location = new System.Drawing.Point(328, 18);
+            this.textBoxAnswer.Location = new System.Drawing.Point(909, 112);
+            this.textBoxAnswer.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBoxAnswer.Multiline = true;
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.ReadOnly = true;
-            this.textBoxAnswer.Size = new System.Drawing.Size(460, 358);
+            this.textBoxAnswer.Size = new System.Drawing.Size(1186, 779);
             this.textBoxAnswer.TabIndex = 6;
             this.textBoxAnswer.Text = "\r\n\r\n\r\n\r\n\r\nAnswer";
             this.textBoxAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -135,9 +127,10 @@
             this.buttonBack.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBack.ForeColor = System.Drawing.Color.White;
-            this.buttonBack.Location = new System.Drawing.Point(17, 382);
+            this.buttonBack.Location = new System.Drawing.Point(45, 286);
+            this.buttonBack.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(75, 23);
+            this.buttonBack.Size = new System.Drawing.Size(200, 55);
             this.buttonBack.TabIndex = 7;
             this.buttonBack.Tag = "Previous Question";
             this.buttonBack.Text = "<<";
@@ -149,9 +142,10 @@
             this.buttonNext.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNext.ForeColor = System.Drawing.Color.White;
-            this.buttonNext.Location = new System.Drawing.Point(247, 382);
+            this.buttonNext.Location = new System.Drawing.Point(261, 286);
+            this.buttonNext.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(75, 23);
+            this.buttonNext.Size = new System.Drawing.Size(200, 55);
             this.buttonNext.TabIndex = 8;
             this.buttonNext.Tag = "Next Question";
             this.buttonNext.Text = ">>";
@@ -163,9 +157,10 @@
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(328, 382);
+            this.buttonToggle.Location = new System.Drawing.Point(1895, 43);
+            this.buttonToggle.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.buttonToggle.Name = "buttonToggle";
-            this.buttonToggle.Size = new System.Drawing.Size(75, 23);
+            this.buttonToggle.Size = new System.Drawing.Size(200, 55);
             this.buttonToggle.TabIndex = 9;
             this.buttonToggle.Tag = "Click to toggle Answer";
             this.buttonToggle.Text = "Toggle";
@@ -177,9 +172,10 @@
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.ForeColor = System.Drawing.Color.White;
-            this.buttonExit.Location = new System.Drawing.Point(713, 382);
+            this.buttonExit.Location = new System.Drawing.Point(1901, 911);
+            this.buttonExit.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonExit.Size = new System.Drawing.Size(200, 55);
             this.buttonExit.TabIndex = 10;
             this.buttonExit.Tag = "Exit Application";
             this.buttonExit.Text = "Exit";
@@ -194,19 +190,84 @@
             this.comboBoxSectionNumber.FormattingEnabled = true;
             this.comboBoxSectionNumber.Items.AddRange(new object[] {
             "-- Section Name --"});
-            this.comboBoxSectionNumber.Location = new System.Drawing.Point(17, 67);
+            this.comboBoxSectionNumber.Location = new System.Drawing.Point(45, 160);
+            this.comboBoxSectionNumber.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.comboBoxSectionNumber.Name = "comboBoxSectionNumber";
-            this.comboBoxSectionNumber.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSectionNumber.Size = new System.Drawing.Size(316, 39);
             this.comboBoxSectionNumber.TabIndex = 12;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.BackColor = System.Drawing.Color.Black;
+            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.ForeColor = System.Drawing.Color.White;
+            this.buttonDelete.Location = new System.Drawing.Point(693, 911);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(200, 55);
+            this.buttonDelete.TabIndex = 22;
+            this.buttonDelete.Tag = "Next Question";
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = false;
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.BackColor = System.Drawing.Color.Black;
+            this.buttonEdit.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEdit.ForeColor = System.Drawing.Color.White;
+            this.buttonEdit.Location = new System.Drawing.Point(45, 911);
+            this.buttonEdit.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(200, 55);
+            this.buttonEdit.TabIndex = 21;
+            this.buttonEdit.Tag = "Next Question";
+            this.buttonEdit.Text = "Edit";
+            this.buttonEdit.UseVisualStyleBackColor = false;
+            // 
+            // buttonNew
+            // 
+            this.buttonNew.BackColor = System.Drawing.Color.Black;
+            this.buttonNew.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.buttonNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNew.ForeColor = System.Drawing.Color.White;
+            this.buttonNew.Location = new System.Drawing.Point(261, 911);
+            this.buttonNew.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonNew.Name = "buttonNew";
+            this.buttonNew.Size = new System.Drawing.Size(200, 55);
+            this.buttonNew.TabIndex = 20;
+            this.buttonNew.Tag = "Next Question";
+            this.buttonNew.Text = "New";
+            this.buttonNew.UseVisualStyleBackColor = false;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.Color.Black;
+            this.buttonSave.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.ForeColor = System.Drawing.Color.White;
+            this.buttonSave.Location = new System.Drawing.Point(477, 911);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(200, 55);
+            this.buttonSave.TabIndex = 19;
+            this.buttonSave.Tag = "Next Question";
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = false;
             // 
             // Part60
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(800, 419);
+            this.ClientSize = new System.Drawing.Size(2133, 999);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonEdit);
+            this.Controls.Add(this.buttonNew);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.comboBoxSectionNumber);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonToggle);
@@ -216,10 +277,10 @@
             this.Controls.Add(this.textBoxQuestion);
             this.Controls.Add(this.comboBoxSiteNavigation);
             this.Controls.Add(this.textBoxSectionNumber);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "Part60";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";
@@ -231,7 +292,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxSectionNumber;
         private System.Windows.Forms.ComboBox comboBoxSiteNavigation;
         private System.Windows.Forms.TextBox textBoxQuestion;
@@ -241,5 +301,9 @@
         private System.Windows.Forms.Button buttonToggle;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.ComboBox comboBoxSectionNumber;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Button buttonNew;
+        private System.Windows.Forms.Button buttonSave;
     }
 }

@@ -79,23 +79,11 @@
     <Compile Include="Pages\Acronyms.Designer.cs">
       <DependentUpon>Acronyms.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\EditSelector.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pages\EditSelector.Designer.cs">
-      <DependentUpon>EditSelector.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Formulas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pages\Formulas.Designer.cs">
       <DependentUpon>Formulas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SectionEditor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pages\SectionEditor.Designer.cs">
-      <DependentUpon>SectionEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Part60.cs">
       <SubType>Form</SubType>
@@ -126,14 +114,8 @@
     <EmbeddedResource Include="Pages\Acronyms.resx">
       <DependentUpon>Acronyms.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\EditSelector.resx">
-      <DependentUpon>EditSelector.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Formulas.resx">
       <DependentUpon>Formulas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\SectionEditor.resx">
-      <DependentUpon>SectionEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Part60.resx">
       <DependentUpon>Part60.cs</DependentUpon>

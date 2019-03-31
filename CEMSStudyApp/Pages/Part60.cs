@@ -31,43 +31,6 @@ namespace CEMSStudyApp.Pages
 
         }
 
-        private void buttonGo_Click(object sender, EventArgs e)
-        {
-            switch (comboBoxSiteNavigation.SelectedText)
-            {
-                case "Acronyms":
-                    this.Hide();
-                    Acronyms acronyms = new Acronyms();
-                    acronyms.Show();
-                    break;
-                case "Formulas":
-                    this.Hide();
-                    Formulas formulas = new Formulas();
-                    formulas.Show();
-                    break;
-                case "How To's":
-                    this.Hide();
-                    HowTos howTos = new HowTos();
-                    howTos.Show();
-                    break;
-                case "Main Menu":
-                    this.Hide();
-                    MainMenu mainMenu = new MainMenu();
-                    mainMenu.Show();
-                    break;
-                //case "Part 60":
-                //    this.Hide();
-                //    Part60 part60 = new Part60();
-                //    part60.Show();
-                //    break;
-                case "Part 75":
-                    this.Hide();
-                    Part75 part75 = new Part75();
-                    part75.Show();
-                    break;
-            }
-        }
-
         private void comboBoxSiteNavigation_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (comboBoxSiteNavigation.Text)
@@ -117,6 +80,8 @@ namespace CEMSStudyApp.Pages
             textBoxQuestion.Enabled = true;
             buttonNew.Hide();
             buttonDelete.Hide();
+            buttonBack.Hide();
+            buttonNext.Hide();
         }
 
         private void buttonNew_Click(object sender, EventArgs e)
@@ -135,12 +100,17 @@ namespace CEMSStudyApp.Pages
             textBoxQuestion.Text = "";
             textBoxSectionName.Text = "";
             textBoxSectionNumber.Text = "";
+            buttonBack.Hide();
+            buttonNext.Hide();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             textBoxAnswer.Undo();
             textBoxQuestion.Undo();
+
+            textBoxQuestion.ReadOnly = true;
+            textBoxQuestion.Enabled = false;
             textBoxSectionName.Undo();
             textBoxSectionNumber.Undo();
             textBoxAnswer.ReadOnly = true;
@@ -152,6 +122,8 @@ namespace CEMSStudyApp.Pages
             buttonEdit.Show();
             buttonDelete.Show();
             buttonNew.Show();
+            buttonBack.Show();
+            buttonNext.Show();
         }
     }
 }

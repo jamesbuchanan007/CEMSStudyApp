@@ -111,12 +111,14 @@ namespace CEMSStudyApp.Pages
             textBoxAnswer.Enabled = true;
             textBoxSectionName.ReadOnly = false;
             textBoxSectionName.Enabled = true;
-            textBoxSectionName.ReadOnly = false;
-            textBoxSectionName.Enabled = true;
+            textBoxSectionNumber.ReadOnly = false;
+            textBoxSectionNumber.Enabled = true;
             textBoxQuestion.ReadOnly = false;
             textBoxQuestion.Enabled = true;
             buttonNew.Hide();
             buttonDelete.Hide();
+            buttonBack.Hide();
+            buttonNext.Hide();
         }
 
         private void buttonNew_Click(object sender, EventArgs e)
@@ -135,6 +137,8 @@ namespace CEMSStudyApp.Pages
             textBoxQuestion.Text = "";
             textBoxSectionName.Text = "";
             textBoxSectionNumber.Text = "";
+            buttonBack.Hide();
+            buttonNext.Hide();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -149,9 +153,13 @@ namespace CEMSStudyApp.Pages
             textBoxSectionNumber.Enabled = false;
             textBoxSectionName.ReadOnly = true;
             textBoxSectionName.Enabled = false;
+            textBoxQuestion.ReadOnly = true;
+            textBoxQuestion.Enabled = false;
             buttonEdit.Show();
             buttonDelete.Show();
             buttonNew.Show();
+            buttonBack.Show();
+            buttonNext.Show();
         }
     }
 }

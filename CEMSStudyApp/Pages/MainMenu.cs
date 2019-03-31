@@ -34,5 +34,26 @@ namespace CEMSStudyApp.Pages
             Part60 part60 = new Part60();
             part60.Show();
         }
+
+        private void buttonFormulas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Formulas formulas = new Formulas();
+            formulas.Show();
+        }
+
+        private void buttonAcronyms_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Acronyms acronyms = new Acronyms();
+            acronyms.Show();
+        }
+
+        private void buttonHowTos_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HowTos howTos = new HowTos();
+            howTos.Show();
+        }
     }
 }

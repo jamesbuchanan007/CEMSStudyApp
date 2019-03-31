@@ -61,6 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CEMS_Study_App_dbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CEMS_Study_App_dbDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PasswordLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +140,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="CEMS_Study_App_dbDataSet1.xsc">
+      <DependentUpon>CEMS_Study_App_dbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CEMS_Study_App_dbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CEMS_Study_App_dbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CEMS_Study_App_dbDataSet1.xss">
+      <DependentUpon>CEMS_Study_App_dbDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -150,10 +166,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CEMS_Study_App_db.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="CEMS_Study_App_db_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>CEMS_Study_App_db.mdf</DependentUpon>
     </Content>
     <Content Include="Images\SpectrumLogo.png" />

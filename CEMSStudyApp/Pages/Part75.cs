@@ -8,8 +8,8 @@ namespace CEMSStudyApp.Pages
         public Part75()
         {
             InitializeComponent();
-            comboBoxSiteNavigation.SelectedIndex = 0;
-            comboBoxSectionNumber.SelectedIndex = 0;
+            comboBoxSiteNavigation.SelectedIndex = -1;
+            comboBoxSectionNumber.SelectedIndex = -1;
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -22,30 +22,86 @@ namespace CEMSStudyApp.Pages
             }
         }
 
-        private void textBoxAnswer_TextChanged(object sender, EventArgs e)
+        private void Part75_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'cEMS_Study_App_dbDataSet.Pages' table. You can move, or remove it, as needed.
+            this.pagesTableAdapter.Fill(this.cEMS_Study_App_dbDataSet.Pages);
+            // TODO: This line of code loads data into the 'cEMS_Study_App_dbDataSet.Part_75' table. You can move, or remove it, as needed.
+            this.part_75TableAdapter.Fill(this.cEMS_Study_App_dbDataSet.Part_75);
 
         }
 
-        private void comboBoxSiteNavigation_SelectedIndexChanged(object sender, EventArgs e)
+        private void buttonGo_Click(object sender, EventArgs e)
         {
-            switch (comboBoxSiteNavigation.SelectedIndex)
+            switch (comboBoxSiteNavigation.SelectedText)
             {
-                case 1:
+                case "Acronyms":
                     this.Hide();
-                    PageMenu pageMenu = new PageMenu();
-                    pageMenu.Show();
+                    Acronyms acronyms = new Acronyms();
+                    acronyms.Show();
                     break;
-                case 2:
+                case "Formulas":
+                    this.Hide();
+                    Formulas formulas = new Formulas();
+                    formulas.Show();
+                    break;
+                case "How To's":
+                    this.Hide();
+                    HowTos howTos = new HowTos();
+                    howTos.Show();
+                    break;
+                case "Main Menu":
+                    this.Hide();
+                    MainMenu mainMenu = new MainMenu();
+                    mainMenu.Show();
+                    break;
+                case "Part 60":
                     this.Hide();
                     Part60 part60 = new Part60();
                     part60.Show();
                     break;
-                default:
+                case "Part 75":
                     this.Hide();
-                    PageMenu pm = new PageMenu();
-                    pm.Show();
+                    Part75 part75 = new Part75();
+                    part75.Show();
                     break;
+            }
+        }
+
+        private void comboBoxSiteNavigation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBoxSiteNavigation.Text)
+            {
+                case "Acronyms":
+                    this.Hide();
+                    Acronyms acronyms = new Acronyms();
+                    acronyms.Show();
+                    break;
+                case "Formulas":
+                    this.Hide();
+                    Formulas formulas = new Formulas();
+                    formulas.Show();
+                    break;
+                case "How To's":
+                    this.Hide();
+                    HowTos howTos = new HowTos();
+                    howTos.Show();
+                    break;
+                case "Main Menu":
+                    this.Hide();
+                    MainMenu mainMenu = new MainMenu();
+                    mainMenu.Show();
+                    break;
+                case "Part 60":
+                    this.Hide();
+                    Part60 part60 = new Part60();
+                    part60.Show();
+                    break;
+                //case "Part 75":
+                //    this.Hide();
+                //    Part75 part75 = new Part75();
+                //    part75.Show();
+                //    break;
             }
         }
     }

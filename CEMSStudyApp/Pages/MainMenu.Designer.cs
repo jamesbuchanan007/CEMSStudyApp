@@ -95,6 +95,7 @@
             this.buttonFormulas.TabIndex = 3;
             this.buttonFormulas.Text = "Formulas";
             this.buttonFormulas.UseVisualStyleBackColor = false;
+            this.buttonFormulas.Click += new System.EventHandler(this.buttonFormulas_Click);
             // 
             // buttonAcronyms
             // 
@@ -109,6 +110,7 @@
             this.buttonAcronyms.TabIndex = 4;
             this.buttonAcronyms.Text = "Acronyms";
             this.buttonAcronyms.UseVisualStyleBackColor = false;
+            this.buttonAcronyms.Click += new System.EventHandler(this.buttonAcronyms_Click);
             // 
             // buttonHowTos
             // 
@@ -123,6 +125,7 @@
             this.buttonHowTos.TabIndex = 5;
             this.buttonHowTos.Text = "How To\'s";
             this.buttonHowTos.UseVisualStyleBackColor = false;
+            this.buttonHowTos.Click += new System.EventHandler(this.buttonHowTos_Click);
             // 
             // buttonExit
             // 

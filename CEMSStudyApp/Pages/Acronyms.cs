@@ -11,6 +11,42 @@ namespace CEMSStudyApp.Pages
             comboBoxAcronym.SelectedIndex = -1;
         }
 
+        private void EnableTextBoxes()
+        {
+            textBoxAnswer.ReadOnly = false;
+            textBoxAnswer.Enabled = true;
+            textBoxAcronym.ReadOnly = false;
+            textBoxAcronym.Enabled = true;
+        }
+
+        private void DisableTextBoxes()
+        {
+            textBoxAnswer.ReadOnly = true;
+            textBoxAnswer.Enabled = false;
+            textBoxAcronym.ReadOnly = true;
+            textBoxAcronym.Enabled = false;
+        }
+
+        private void HideAllButtons()
+        {
+            buttonEdit.Hide();
+            buttonNew.Hide();
+            buttonDelete.Hide();
+            buttonBack.Hide();
+            buttonNext.Hide();
+            buttonBack.Hide();
+            buttonNext.Hide();
+        }
+
+        private void ShowAllButtons()
+        {
+            buttonEdit.Show();
+            buttonDelete.Show();
+            buttonNew.Show();
+            buttonBack.Show();
+            buttonNext.Show();
+        }
+
         private void buttonExit_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Are You Sure?", "Exit Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -69,27 +105,19 @@ namespace CEMSStudyApp.Pages
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            textBoxAnswer.ReadOnly = false;
-            textBoxAnswer.Enabled = true;
-            textBoxAcronym.ReadOnly = false;
-            textBoxAcronym.Enabled = true;
-            buttonNew.Hide();
-            buttonDelete.Hide();
-            buttonBack.Hide();
-            buttonNext.Hide();
+            EnableTextBoxes();
+            HideAllButtons();
+            buttonEdit.Show();
             buttonToggle.Enabled = false;
         }
 
         private void buttonNew_Click(object sender, EventArgs e)
         {
-            textBoxAnswer.ReadOnly = false;
-            textBoxAnswer.Enabled = true;
-            buttonEdit.Hide();
-            buttonDelete.Hide();
+            EnableTextBoxes();
             textBoxAnswer.Text = "";
             textBoxAcronym.Text = "";
-            buttonBack.Hide();
-            buttonNext.Hide();
+            HideAllButtons();
+            buttonNew.Show();
             buttonToggle.Enabled = false;
 
         }
@@ -98,13 +126,8 @@ namespace CEMSStudyApp.Pages
         {
             textBoxAnswer.Undo();
             textBoxAcronym.Undo();
-            textBoxAnswer.ReadOnly = true;
-            textBoxAnswer.Enabled = false;
-            buttonEdit.Show();
-            buttonDelete.Show();
-            buttonNew.Show();
-            buttonBack.Show();
-            buttonNext.Show();
+            DisableTextBoxes();
+            ShowAllButtons();
             buttonToggle.Enabled = true;
 
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using static CEMSStudyApp.CEMS_Study_App_dbDataSet;
 
 namespace CEMSStudyApp.Pages
 {
@@ -161,29 +162,44 @@ namespace CEMSStudyApp.Pages
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            if (buttonEdit.Enabled)
+            if (buttonEdit.Visible)
             {
-                var id = (int)((DataRowView)acronymsBindingSource.Current).Row["Acronyms_Id"];
-                var name = ((DataRowView)acronymsBindingSource.Current).Row["Acronyms_Name"];
-                var description = ((DataRowView)acronymsBindingSource.Current).Row["Acronyms_Description"];
-                var dateEdited = ((DataRowView)acronymsBindingSource.Current).Row["Date_Edited"];
-
-                name = textBoxAcronym.Text;
-                description = textBoxAnswer.Text;
-                dateEdited = DateTime.Now;
+               
+                try
+                {
+                    Validate();
+                    acronymsBindingSource.EndEdit();
+                    acronymsTableAdapter.Update(cEMS_Study_App_dbDataSet.Acronyms);
+                    MessageBox.Show("Update successful","CEMS Study App", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                  
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Update failed");
+                }
             }
 
-            if (buttonNew.Enabled)
+            if (buttonNew.Visible)
             {
-                var id = (int)((DataRowView)acronymsBindingSource.Current).Row["Acronyms_Id"];
-                var name = ((DataRowView)acronymsBindingSource.Current).Row["Acronyms_Name"];
-                var description = ((DataRowView)acronymsBindingSource.Current).Row["Acronyms_Description"];
-                var dateEdited = ((DataRowView)acronymsBindingSource.Current).Row["Date_Edited"];
+                var newRow = new AcronymsDataTable().NewAcronymsRow();
+                newRow.Acronyms_Name = textBoxAcronym.Text;
+                newRow.Acronyms_Description = textBoxAnswer.Text;
+                newRow.Date_Deleted = new DateTime();
+                newRow.Pages_Id = 4;
+                newRow.Date_Edited = new DateTime();
+                newRow.Date_Added = DateTime.Now;
+                newRow.EndEdit();
 
-                name = textBoxAcronym.Text;
-                description = textBoxAnswer.Text;
-                dateEdited = DateTime.Now;
+                // Add the row to the Region table
+                cEMS_Study_App_dbDataSet.Acronyms.ImportRow(newRow);
+
+                // Save the new row to the database
+                acronymsTableAdapter.Update(cEMS_Study_App_dbDataSet.Acronyms);
+               comboBoxAcronym.Refresh();
             }
+
+            DisableTextBoxes();
+            ShowAllButtons();
         }
 
     }

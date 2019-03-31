@@ -31,43 +31,6 @@ namespace CEMSStudyApp.Pages
 
         }
 
-        private void buttonGo_Click(object sender, EventArgs e)
-        {
-            switch (comboBoxSiteNavigation.SelectedText)
-            {
-                case "Acronyms":
-                    this.Hide();
-                    Acronyms acronyms = new Acronyms();
-                    acronyms.Show();
-                    break;
-                case "Formulas":
-                    this.Hide();
-                    Formulas formulas = new Formulas();
-                    formulas.Show();
-                    break;
-                case "How To's":
-                    this.Hide();
-                    HowTos howTos = new HowTos();
-                    howTos.Show();
-                    break;
-                case "Main Menu":
-                    this.Hide();
-                    MainMenu mainMenu = new MainMenu();
-                    mainMenu.Show();
-                    break;
-                case "Part 60":
-                    this.Hide();
-                    Part60 part60 = new Part60();
-                    part60.Show();
-                    break;
-                case "Part 75":
-                    this.Hide();
-                    Part75 part75 = new Part75();
-                    part75.Show();
-                    break;
-            }
-        }
-
         private void comboBoxSiteNavigation_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (comboBoxSiteNavigation.Text)
@@ -180,6 +143,16 @@ namespace CEMSStudyApp.Pages
                     break;
 
             }
+        }
+
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            part75BindingSource.MoveNext();
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            part75BindingSource.MovePrevious();
         }
     }
 }

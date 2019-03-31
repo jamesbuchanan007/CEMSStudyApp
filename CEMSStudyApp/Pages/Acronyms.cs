@@ -124,5 +124,15 @@ namespace CEMSStudyApp.Pages
 
             }
         }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            acronymsBindingSource.MovePrevious();
+        }
+
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            acronymsBindingSource.MoveNext();
+        }
     }
 }

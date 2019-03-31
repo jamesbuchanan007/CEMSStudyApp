@@ -107,6 +107,7 @@
             this.buttonBack.Tag = "Previous Question";
             this.buttonBack.Text = "<<";
             this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // buttonNext
             // 
@@ -122,6 +123,7 @@
             this.buttonNext.Tag = "Next Question";
             this.buttonNext.Text = ">>";
             this.buttonNext.UseVisualStyleBackColor = false;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // buttonToggle
             // 

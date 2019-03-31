@@ -78,6 +78,8 @@ namespace CEMSStudyApp.Pages
             buttonDelete.Hide();
             buttonBack.Hide();
             buttonNext.Hide();
+            buttonToggle.Enabled = false;
+
         }
 
         private void buttonNew_Click(object sender, EventArgs e)
@@ -90,6 +92,8 @@ namespace CEMSStudyApp.Pages
             textBoxFormula.Text = "";
             buttonBack.Hide();
             buttonNext.Hide();
+            buttonToggle.Enabled = false;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -103,6 +107,8 @@ namespace CEMSStudyApp.Pages
             buttonNew.Show();
             buttonBack.Show();
             buttonNext.Show();
+            buttonToggle.Enabled = true;
+
         }
     }
 }

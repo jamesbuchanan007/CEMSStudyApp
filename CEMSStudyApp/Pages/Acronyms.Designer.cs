@@ -136,7 +136,7 @@
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(1179, 123);
+            this.buttonToggle.Location = new System.Drawing.Point(1179, 194);
             this.buttonToggle.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(200, 55);
@@ -169,7 +169,7 @@
             this.comboBoxAcronym.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAcronym.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxAcronym.FormattingEnabled = true;
-            this.comboBoxAcronym.Location = new System.Drawing.Point(540, 132);
+            this.comboBoxAcronym.Location = new System.Drawing.Point(756, 128);
             this.comboBoxAcronym.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.comboBoxAcronym.Name = "comboBoxAcronym";
             this.comboBoxAcronym.Size = new System.Drawing.Size(623, 39);
@@ -280,11 +280,10 @@
             // textBoxAcronym
             // 
             this.textBoxAcronym.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.acronymsBindingSource, "Acronyms_Name", true));
-            this.textBoxAcronym.Enabled = false;
             this.textBoxAcronym.Location = new System.Drawing.Point(540, 203);
             this.textBoxAcronym.Name = "textBoxAcronym";
             this.textBoxAcronym.ReadOnly = true;
-            this.textBoxAcronym.Size = new System.Drawing.Size(839, 38);
+            this.textBoxAcronym.Size = new System.Drawing.Size(623, 38);
             this.textBoxAcronym.TabIndex = 20;
             this.textBoxAcronym.Text = "Acronym";
             this.textBoxAcronym.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

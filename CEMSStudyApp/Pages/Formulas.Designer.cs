@@ -138,7 +138,7 @@
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(1894, 84);
+            this.buttonToggle.Location = new System.Drawing.Point(1894, 145);
             this.buttonToggle.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(200, 55);
@@ -171,7 +171,7 @@
             this.comboBoxFormula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFormula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxFormula.FormattingEnabled = true;
-            this.comboBoxFormula.Location = new System.Drawing.Point(557, 92);
+            this.comboBoxFormula.Location = new System.Drawing.Point(773, 92);
             this.comboBoxFormula.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.comboBoxFormula.Name = "comboBoxFormula";
             this.comboBoxFormula.Size = new System.Drawing.Size(1321, 39);
@@ -292,7 +292,7 @@
             this.textBoxFormula.Location = new System.Drawing.Point(557, 154);
             this.textBoxFormula.Name = "textBoxFormula";
             this.textBoxFormula.ReadOnly = true;
-            this.textBoxFormula.Size = new System.Drawing.Size(1537, 38);
+            this.textBoxFormula.Size = new System.Drawing.Size(1321, 38);
             this.textBoxFormula.TabIndex = 24;
             this.textBoxFormula.Text = "Formula";
             this.textBoxFormula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

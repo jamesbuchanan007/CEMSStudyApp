@@ -129,7 +129,7 @@
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(1894, 106);
+            this.buttonToggle.Location = new System.Drawing.Point(1894, 168);
             this.buttonToggle.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(200, 55);
@@ -162,7 +162,7 @@
             this.comboBoxHowTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxHowTo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxHowTo.FormattingEnabled = true;
-            this.comboBoxHowTo.Location = new System.Drawing.Point(533, 115);
+            this.comboBoxHowTo.Location = new System.Drawing.Point(749, 115);
             this.comboBoxHowTo.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.comboBoxHowTo.Name = "comboBoxHowTo";
             this.comboBoxHowTo.Size = new System.Drawing.Size(1345, 39);
@@ -278,7 +278,7 @@
             this.textBoxHowTos.Location = new System.Drawing.Point(533, 177);
             this.textBoxHowTos.Name = "textBoxHowTos";
             this.textBoxHowTos.ReadOnly = true;
-            this.textBoxHowTos.Size = new System.Drawing.Size(1561, 38);
+            this.textBoxHowTos.Size = new System.Drawing.Size(1321, 38);
             this.textBoxHowTos.TabIndex = 24;
             this.textBoxHowTos.Text = "How To";
             this.textBoxHowTos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

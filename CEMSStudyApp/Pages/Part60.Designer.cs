@@ -31,10 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Part60));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxSectionNumber = new System.Windows.Forms.TextBox();
+            this.textBoxSectionName = new System.Windows.Forms.TextBox();
+            this.part60BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cEMS_Study_App_dbDataSet = new CEMSStudyApp.CEMS_Study_App_dbDataSet();
             this.comboBoxSiteNavigation = new System.Windows.Forms.ComboBox();
             this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cEMS_Study_App_dbDataSet = new CEMSStudyApp.CEMS_Study_App_dbDataSet();
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
             this.buttonBack = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.buttonToggle = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.comboBoxSectionNumber = new System.Windows.Forms.ComboBox();
-            this.part60BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
@@ -50,10 +50,10 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.pagesTableAdapter = new CEMSStudyApp.CEMS_Study_App_dbDataSetTableAdapters.PagesTableAdapter();
             this.part_60TableAdapter = new CEMSStudyApp.CEMS_Study_App_dbDataSetTableAdapters.Part_60TableAdapter();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cEMS_Study_App_dbDataSet)).BeginInit();
+            this.textBoxSectionNumber = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.part60BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cEMS_Study_App_dbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,21 +69,31 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "40 CFR Part 60";
             // 
-            // textBoxSectionNumber
+            // textBoxSectionName
             // 
-            this.textBoxSectionNumber.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxSectionNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.part60BindingSource, "Part_60_Name", true));
-            this.textBoxSectionNumber.Enabled = false;
-            this.textBoxSectionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSectionNumber.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBoxSectionNumber.Location = new System.Drawing.Point(45, 465);
-            this.textBoxSectionNumber.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBoxSectionNumber.Name = "textBoxSectionNumber";
-            this.textBoxSectionNumber.ReadOnly = true;
-            this.textBoxSectionNumber.Size = new System.Drawing.Size(848, 53);
-            this.textBoxSectionNumber.TabIndex = 2;
-            this.textBoxSectionNumber.Text = "Section Name";
-            this.textBoxSectionNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxSectionName.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBoxSectionName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.part60BindingSource, "Part_60_Name", true));
+            this.textBoxSectionName.Enabled = false;
+            this.textBoxSectionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSectionName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxSectionName.Location = new System.Drawing.Point(45, 465);
+            this.textBoxSectionName.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBoxSectionName.Name = "textBoxSectionName";
+            this.textBoxSectionName.ReadOnly = true;
+            this.textBoxSectionName.Size = new System.Drawing.Size(848, 53);
+            this.textBoxSectionName.TabIndex = 2;
+            this.textBoxSectionName.Text = "Section Name";
+            this.textBoxSectionName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // part60BindingSource
+            // 
+            this.part60BindingSource.DataMember = "Part_60";
+            this.part60BindingSource.DataSource = this.cEMS_Study_App_dbDataSet;
+            // 
+            // cEMS_Study_App_dbDataSet
+            // 
+            this.cEMS_Study_App_dbDataSet.DataSetName = "CEMS_Study_App_dbDataSet";
+            this.cEMS_Study_App_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBoxSiteNavigation
             // 
@@ -105,11 +115,6 @@
             // 
             this.pagesBindingSource.DataMember = "Pages";
             this.pagesBindingSource.DataSource = this.cEMS_Study_App_dbDataSet;
-            // 
-            // cEMS_Study_App_dbDataSet
-            // 
-            this.cEMS_Study_App_dbDataSet.DataSetName = "CEMS_Study_App_dbDataSet";
-            this.cEMS_Study_App_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBoxQuestion
             // 
@@ -220,11 +225,6 @@
             this.comboBoxSectionNumber.Size = new System.Drawing.Size(316, 39);
             this.comboBoxSectionNumber.TabIndex = 12;
             // 
-            // part60BindingSource
-            // 
-            this.part60BindingSource.DataMember = "Part_60";
-            this.part60BindingSource.DataSource = this.cEMS_Study_App_dbDataSet;
-            // 
             // buttonDelete
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.Black;
@@ -254,6 +254,7 @@
             this.buttonEdit.Tag = "Next Question";
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = false;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonNew
             // 
@@ -269,6 +270,7 @@
             this.buttonNew.Tag = "Next Question";
             this.buttonNew.Text = "New";
             this.buttonNew.UseVisualStyleBackColor = false;
+            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
             // 
             // buttonSave
             // 
@@ -299,6 +301,7 @@
             this.buttonCancel.Tag = "";
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // pagesTableAdapter
             // 
@@ -308,21 +311,21 @@
             // 
             this.part_60TableAdapter.ClearBeforeFill = true;
             // 
-            // textBox1
+            // textBoxSectionNumber
             // 
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.part60BindingSource, "Part_60_Number", true));
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(45, 398);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(848, 53);
-            this.textBox1.TabIndex = 24;
-            this.textBox1.Text = "Section Number";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxSectionNumber.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBoxSectionNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.part60BindingSource, "Part_60_Number", true));
+            this.textBoxSectionNumber.Enabled = false;
+            this.textBoxSectionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSectionNumber.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxSectionNumber.Location = new System.Drawing.Point(45, 398);
+            this.textBoxSectionNumber.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBoxSectionNumber.Name = "textBoxSectionNumber";
+            this.textBoxSectionNumber.ReadOnly = true;
+            this.textBoxSectionNumber.Size = new System.Drawing.Size(848, 53);
+            this.textBoxSectionNumber.TabIndex = 24;
+            this.textBoxSectionNumber.Text = "Section Number";
+            this.textBoxSectionNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Part60
             // 
@@ -332,7 +335,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(2133, 999);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxSectionNumber);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonEdit);
@@ -346,7 +349,7 @@
             this.Controls.Add(this.textBoxAnswer);
             this.Controls.Add(this.textBoxQuestion);
             this.Controls.Add(this.comboBoxSiteNavigation);
-            this.Controls.Add(this.textBoxSectionNumber);
+            this.Controls.Add(this.textBoxSectionName);
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -355,9 +358,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";
             this.Load += new System.EventHandler(this.Part60_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cEMS_Study_App_dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.part60BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cEMS_Study_App_dbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,7 +369,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxSectionNumber;
+        private System.Windows.Forms.TextBox textBoxSectionName;
         private System.Windows.Forms.ComboBox comboBoxSiteNavigation;
         private System.Windows.Forms.TextBox textBoxQuestion;
         private System.Windows.Forms.TextBox textBoxAnswer;
@@ -385,6 +388,6 @@
         private CEMS_Study_App_dbDataSetTableAdapters.PagesTableAdapter pagesTableAdapter;
         private System.Windows.Forms.BindingSource part60BindingSource;
         private CEMS_Study_App_dbDataSetTableAdapters.Part_60TableAdapter part_60TableAdapter;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxSectionNumber;
     }
 }

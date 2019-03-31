@@ -50,6 +50,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.formulasTableAdapter = new CEMSStudyApp.CEMS_Study_App_dbDataSetTableAdapters.FormulasTableAdapter();
             this.pagesTableAdapter = new CEMSStudyApp.CEMS_Study_App_dbDataSetTableAdapters.PagesTableAdapter();
+            this.textBoxFormula = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.formulasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cEMSStudyAppdbDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cEMS_Study_App_dbDataSet)).BeginInit();
@@ -82,7 +83,7 @@
             this.textBoxAnswer.Multiline = true;
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.ReadOnly = true;
-            this.textBoxAnswer.Size = new System.Drawing.Size(2049, 880);
+            this.textBoxAnswer.Size = new System.Drawing.Size(2049, 870);
             this.textBoxAnswer.TabIndex = 6;
             this.textBoxAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -243,6 +244,7 @@
             this.buttonNew.Tag = "Next Question";
             this.buttonNew.Text = "New";
             this.buttonNew.UseVisualStyleBackColor = false;
+            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
             // 
             // buttonSave
             // 
@@ -273,6 +275,7 @@
             this.button1.Tag = "";
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // formulasTableAdapter
             // 
@@ -282,6 +285,18 @@
             // 
             this.pagesTableAdapter.ClearBeforeFill = true;
             // 
+            // textBoxFormula
+            // 
+            this.textBoxFormula.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.formulasBindingSource1, "Formulas_Name", true));
+            this.textBoxFormula.Enabled = false;
+            this.textBoxFormula.Location = new System.Drawing.Point(557, 154);
+            this.textBoxFormula.Name = "textBoxFormula";
+            this.textBoxFormula.ReadOnly = true;
+            this.textBoxFormula.Size = new System.Drawing.Size(1537, 38);
+            this.textBoxFormula.TabIndex = 24;
+            this.textBoxFormula.Text = "Formula";
+            this.textBoxFormula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Formulas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -290,6 +305,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(2133, 1195);
+            this.Controls.Add(this.textBoxFormula);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonEdit);
@@ -342,5 +358,6 @@
         private System.Windows.Forms.BindingSource formulasBindingSource1;
         private System.Windows.Forms.BindingSource pagesBindingSource;
         private CEMS_Study_App_dbDataSetTableAdapters.PagesTableAdapter pagesTableAdapter;
+        private System.Windows.Forms.TextBox textBoxFormula;
     }
 }

@@ -48,6 +48,7 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.pagesTableAdapter = new CEMSStudyApp.CEMS_Study_App_dbDataSetTableAdapters.PagesTableAdapter();
             this.howTosTableAdapter = new CEMSStudyApp.CEMS_Study_App_dbDataSetTableAdapters.HowTosTableAdapter();
+            this.textBoxHowTos = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.howTosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cEMS_Study_App_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
@@ -73,12 +74,12 @@
             this.textBoxAnswer.Enabled = false;
             this.textBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAnswer.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBoxAnswer.Location = new System.Drawing.Point(45, 175);
+            this.textBoxAnswer.Location = new System.Drawing.Point(45, 237);
             this.textBoxAnswer.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBoxAnswer.Multiline = true;
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.ReadOnly = true;
-            this.textBoxAnswer.Size = new System.Drawing.Size(2049, 910);
+            this.textBoxAnswer.Size = new System.Drawing.Size(2049, 848);
             this.textBoxAnswer.TabIndex = 6;
             this.textBoxAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -188,7 +189,6 @@
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.Black;
             this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.buttonDelete.Enabled = false;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
             this.buttonDelete.Location = new System.Drawing.Point(705, 1099);
@@ -214,6 +214,7 @@
             this.buttonEdit.Tag = "Next Question";
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = false;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonNew
             // 
@@ -229,12 +230,12 @@
             this.buttonNew.Tag = "Next Question";
             this.buttonNew.Text = "New";
             this.buttonNew.UseVisualStyleBackColor = false;
+            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
             // 
             // buttonSave
             // 
             this.buttonSave.BackColor = System.Drawing.Color.Black;
             this.buttonSave.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.buttonSave.Enabled = false;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.ForeColor = System.Drawing.Color.White;
             this.buttonSave.Location = new System.Drawing.Point(489, 1099);
@@ -250,7 +251,6 @@
             // 
             this.buttonCancel.BackColor = System.Drawing.Color.Black;
             this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.buttonCancel.Enabled = false;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.ForeColor = System.Drawing.Color.White;
             this.buttonCancel.Location = new System.Drawing.Point(921, 1099);
@@ -261,6 +261,7 @@
             this.buttonCancel.Tag = "";
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // pagesTableAdapter
             // 
@@ -270,6 +271,18 @@
             // 
             this.howTosTableAdapter.ClearBeforeFill = true;
             // 
+            // textBoxHowTos
+            // 
+            this.textBoxHowTos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.howTosBindingSource, "Name", true));
+            this.textBoxHowTos.Enabled = false;
+            this.textBoxHowTos.Location = new System.Drawing.Point(533, 177);
+            this.textBoxHowTos.Name = "textBoxHowTos";
+            this.textBoxHowTos.ReadOnly = true;
+            this.textBoxHowTos.Size = new System.Drawing.Size(1561, 38);
+            this.textBoxHowTos.TabIndex = 24;
+            this.textBoxHowTos.Text = "How To";
+            this.textBoxHowTos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // HowTos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -278,6 +291,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(2152, 1195);
+            this.Controls.Add(this.textBoxHowTos);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonEdit);
@@ -326,5 +340,6 @@
         private CEMS_Study_App_dbDataSetTableAdapters.PagesTableAdapter pagesTableAdapter;
         private System.Windows.Forms.BindingSource howTosBindingSource;
         private CEMS_Study_App_dbDataSetTableAdapters.HowTosTableAdapter howTosTableAdapter;
+        private System.Windows.Forms.TextBox textBoxHowTos;
     }
 }

@@ -104,5 +104,54 @@ namespace CEMSStudyApp.Pages
                 //    break;
             }
         }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            textBoxAnswer.ReadOnly = false;
+            textBoxAnswer.Enabled = true;
+            textBoxSectionName.ReadOnly = false;
+            textBoxSectionName.Enabled = true;
+            textBoxSectionName.ReadOnly = false;
+            textBoxSectionName.Enabled = true;
+            textBoxQuestion.ReadOnly = false;
+            textBoxQuestion.Enabled = true;
+            buttonNew.Hide();
+            buttonDelete.Hide();
+        }
+
+        private void buttonNew_Click(object sender, EventArgs e)
+        {
+            textBoxAnswer.ReadOnly = false;
+            textBoxAnswer.Enabled = true;
+            textBoxSectionNumber.ReadOnly = false;
+            textBoxSectionNumber.Enabled = true;
+            textBoxSectionName.ReadOnly = false;
+            textBoxSectionName.Enabled = true;
+            textBoxQuestion.ReadOnly = false;
+            textBoxQuestion.Enabled = true;
+            buttonEdit.Hide();
+            buttonDelete.Hide();
+            textBoxAnswer.Text = "";
+            textBoxQuestion.Text = "";
+            textBoxSectionName.Text = "";
+            textBoxSectionNumber.Text = "";
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            textBoxAnswer.Undo();
+            textBoxQuestion.Undo();
+            textBoxSectionName.Undo();
+            textBoxSectionNumber.Undo();
+            textBoxAnswer.ReadOnly = true;
+            textBoxAnswer.Enabled = false;
+            textBoxSectionNumber.ReadOnly = true;
+            textBoxSectionNumber.Enabled = false;
+            textBoxSectionName.ReadOnly = true;
+            textBoxSectionName.Enabled = false;
+            buttonEdit.Show();
+            buttonDelete.Show();
+            buttonNew.Show();
+        }
     }
 }

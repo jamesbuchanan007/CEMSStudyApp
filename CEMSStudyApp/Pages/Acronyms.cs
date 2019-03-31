@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace CEMSStudyApp.Pages
@@ -157,5 +158,33 @@ namespace CEMSStudyApp.Pages
         {
             acronymsBindingSource.MoveNext();
         }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            if (buttonEdit.Enabled)
+            {
+                var id = (int)((DataRowView)acronymsBindingSource.Current).Row["Acronyms_Id"];
+                var name = ((DataRowView)acronymsBindingSource.Current).Row["Acronyms_Name"];
+                var description = ((DataRowView)acronymsBindingSource.Current).Row["Acronyms_Description"];
+                var dateEdited = ((DataRowView)acronymsBindingSource.Current).Row["Date_Edited"];
+
+                name = textBoxAcronym.Text;
+                description = textBoxAnswer.Text;
+                dateEdited = DateTime.Now;
+            }
+
+            if (buttonNew.Enabled)
+            {
+                var id = (int)((DataRowView)acronymsBindingSource.Current).Row["Acronyms_Id"];
+                var name = ((DataRowView)acronymsBindingSource.Current).Row["Acronyms_Name"];
+                var description = ((DataRowView)acronymsBindingSource.Current).Row["Acronyms_Description"];
+                var dateEdited = ((DataRowView)acronymsBindingSource.Current).Row["Date_Edited"];
+
+                name = textBoxAcronym.Text;
+                description = textBoxAnswer.Text;
+                dateEdited = DateTime.Now;
+            }
+        }
+
     }
 }

@@ -92,6 +92,7 @@
             // 
             // cEMSStudyAppdbDataSetBindingSource
             // 
+            this.cEMSStudyAppdbDataSetBindingSource.AllowNew = true;
             this.cEMSStudyAppdbDataSetBindingSource.DataSource = this.cEMS_Study_App_dbDataSet;
             this.cEMSStudyAppdbDataSetBindingSource.Position = 0;
             // 
@@ -208,6 +209,7 @@
             this.buttonSave.Tag = "";
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonNew
             // 

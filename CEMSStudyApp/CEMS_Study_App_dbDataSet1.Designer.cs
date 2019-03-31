@@ -567,6 +567,12 @@ namespace CEMSStudyApp {
             
             private global::System.Data.DataColumn columnPages_Id;
             
+            private global::System.Data.DataColumn columnDate_Added;
+            
+            private global::System.Data.DataColumn columnDate_Edited;
+            
+            private global::System.Data.DataColumn columnDate_Deleted;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public AcronymsDataTable() {
@@ -634,6 +640,30 @@ namespace CEMSStudyApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Date_AddedColumn {
+                get {
+                    return this.columnDate_Added;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Date_EditedColumn {
+                get {
+                    return this.columnDate_Edited;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Date_DeletedColumn {
+                get {
+                    return this.columnDate_Deleted;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -669,13 +699,16 @@ namespace CEMSStudyApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AcronymsRow AddAcronymsRow(string Acronyms_Name, string Acronyms_Description, PagesRow parentPagesRowByFK_Acronyms_Pages) {
+            public AcronymsRow AddAcronymsRow(string Acronyms_Name, string Acronyms_Description, PagesRow parentPagesRowByFK_Acronyms_Pages, System.DateTime Date_Added, System.DateTime Date_Edited, System.DateTime Date_Deleted) {
                 AcronymsRow rowAcronymsRow = ((AcronymsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Acronyms_Name,
                         Acronyms_Description,
-                        null};
+                        null,
+                        Date_Added,
+                        Date_Edited,
+                        Date_Deleted};
                 if ((parentPagesRowByFK_Acronyms_Pages != null)) {
                     columnValuesArray[3] = parentPagesRowByFK_Acronyms_Pages[0];
                 }
@@ -712,6 +745,9 @@ namespace CEMSStudyApp {
                 this.columnAcronyms_Name = base.Columns["Acronyms_Name"];
                 this.columnAcronyms_Description = base.Columns["Acronyms_Description"];
                 this.columnPages_Id = base.Columns["Pages_Id"];
+                this.columnDate_Added = base.Columns["Date_Added"];
+                this.columnDate_Edited = base.Columns["Date_Edited"];
+                this.columnDate_Deleted = base.Columns["Date_Deleted"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -725,6 +761,12 @@ namespace CEMSStudyApp {
                 base.Columns.Add(this.columnAcronyms_Description);
                 this.columnPages_Id = new global::System.Data.DataColumn("Pages_Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPages_Id);
+                this.columnDate_Added = new global::System.Data.DataColumn("Date_Added", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate_Added);
+                this.columnDate_Edited = new global::System.Data.DataColumn("Date_Edited", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate_Edited);
+                this.columnDate_Deleted = new global::System.Data.DataColumn("Date_Deleted", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate_Deleted);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnAcronyms_Id}, true));
                 this.columnAcronyms_Id.AutoIncrement = true;
@@ -3117,6 +3159,54 @@ namespace CEMSStudyApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Date_Added {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableAcronyms.Date_AddedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date_Added\' in table \'Acronyms\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcronyms.Date_AddedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Date_Edited {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableAcronyms.Date_EditedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date_Edited\' in table \'Acronyms\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcronyms.Date_EditedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Date_Deleted {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableAcronyms.Date_DeletedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date_Deleted\' in table \'Acronyms\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAcronyms.Date_DeletedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public PagesRow PagesRow {
                 get {
                     return ((PagesRow)(this.GetParentRow(this.Table.ParentRelations["FK_Acronyms_Pages"])));
@@ -3160,6 +3250,42 @@ namespace CEMSStudyApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetPages_IdNull() {
                 this[this.tableAcronyms.Pages_IdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDate_AddedNull() {
+                return this.IsNull(this.tableAcronyms.Date_AddedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDate_AddedNull() {
+                this[this.tableAcronyms.Date_AddedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDate_EditedNull() {
+                return this.IsNull(this.tableAcronyms.Date_EditedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDate_EditedNull() {
+                this[this.tableAcronyms.Date_EditedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDate_DeletedNull() {
+                return this.IsNull(this.tableAcronyms.Date_DeletedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDate_DeletedNull() {
+                this[this.tableAcronyms.Date_DeletedColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4489,10 +4615,13 @@ namespace CEMSStudyApp.CEMS_Study_App_dbDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Acronyms_Name", "Acronyms_Name");
             tableMapping.ColumnMappings.Add("Acronyms_Description", "Acronyms_Description");
             tableMapping.ColumnMappings.Add("Pages_Id", "Pages_Id");
+            tableMapping.ColumnMappings.Add("Date_Added", "Date_Added");
+            tableMapping.ColumnMappings.Add("Date_Edited", "Date_Edited");
+            tableMapping.ColumnMappings.Add("Date_Deleted", "Date_Deleted");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Acronyms] WHERE (([Acronyms_Id] = @Original_Acronyms_Id) AND ((@IsNull_Acronyms_Name = 1 AND [Acronyms_Name] IS NULL) OR ([Acronyms_Name] = @Original_Acronyms_Name)) AND ((@IsNull_Acronyms_Description = 1 AND [Acronyms_Description] IS NULL) OR ([Acronyms_Description] = @Original_Acronyms_Description)) AND ((@IsNull_Pages_Id = 1 AND [Pages_Id] IS NULL) OR ([Pages_Id] = @Original_Pages_Id)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Acronyms] WHERE (([Acronyms_Id] = @Original_Acronyms_Id) AND ((@IsNull_Acronyms_Name = 1 AND [Acronyms_Name] IS NULL) OR ([Acronyms_Name] = @Original_Acronyms_Name)) AND ((@IsNull_Acronyms_Description = 1 AND [Acronyms_Description] IS NULL) OR ([Acronyms_Description] = @Original_Acronyms_Description)) AND ((@IsNull_Pages_Id = 1 AND [Pages_Id] IS NULL) OR ([Pages_Id] = @Original_Pages_Id)) AND ((@IsNull_Date_Added = 1 AND [Date_Added] IS NULL) OR ([Date_Added] = @Original_Date_Added)) AND ((@IsNull_Date_Edited = 1 AND [Date_Edited] IS NULL) OR ([Date_Edited] = @Original_Date_Edited)) AND ((@IsNull_Date_Deleted = 1 AND [Date_Deleted] IS NULL) OR ([Date_Deleted] = @Original_Date_Deleted)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Acronyms_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Acronyms_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Acronyms_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Acronyms_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -4501,22 +4630,34 @@ namespace CEMSStudyApp.CEMS_Study_App_dbDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Acronyms_Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Acronyms_Description", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pages_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pages_Id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pages_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pages_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date_Added", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Added", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date_Added", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Added", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date_Edited", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Edited", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date_Edited", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Edited", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date_Deleted", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Deleted", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date_Deleted", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Deleted", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Acronyms] ([Acronyms_Name], [Acronyms_Description], [Pages_Id]) VALUES (@Acronyms_Name, @Acronyms_Description, @Pages_Id);
-SELECT Acronyms_Id, Acronyms_Name, Acronyms_Description, Pages_Id FROM Acronyms WHERE (Acronyms_Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Acronyms] ([Acronyms_Name], [Acronyms_Description], [Pages_Id], [Date_Added], [Date_Edited], [Date_Deleted]) VALUES (@Acronyms_Name, @Acronyms_Description, @Pages_Id, @Date_Added, @Date_Edited, @Date_Deleted);
+SELECT Acronyms_Id, Acronyms_Name, Acronyms_Description, Pages_Id, Date_Added, Date_Edited, Date_Deleted FROM Acronyms WHERE (Acronyms_Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Acronyms_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Acronyms_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Acronyms_Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Acronyms_Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pages_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pages_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_Added", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Added", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_Edited", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Edited", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_Deleted", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Deleted", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Acronyms] SET [Acronyms_Name] = @Acronyms_Name, [Acronyms_Description] = @Acronyms_Description, [Pages_Id] = @Pages_Id WHERE (([Acronyms_Id] = @Original_Acronyms_Id) AND ((@IsNull_Acronyms_Name = 1 AND [Acronyms_Name] IS NULL) OR ([Acronyms_Name] = @Original_Acronyms_Name)) AND ((@IsNull_Acronyms_Description = 1 AND [Acronyms_Description] IS NULL) OR ([Acronyms_Description] = @Original_Acronyms_Description)) AND ((@IsNull_Pages_Id = 1 AND [Pages_Id] IS NULL) OR ([Pages_Id] = @Original_Pages_Id)));
-SELECT Acronyms_Id, Acronyms_Name, Acronyms_Description, Pages_Id FROM Acronyms WHERE (Acronyms_Id = @Acronyms_Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Acronyms] SET [Acronyms_Name] = @Acronyms_Name, [Acronyms_Description] = @Acronyms_Description, [Pages_Id] = @Pages_Id, [Date_Added] = @Date_Added, [Date_Edited] = @Date_Edited, [Date_Deleted] = @Date_Deleted WHERE (([Acronyms_Id] = @Original_Acronyms_Id) AND ((@IsNull_Acronyms_Name = 1 AND [Acronyms_Name] IS NULL) OR ([Acronyms_Name] = @Original_Acronyms_Name)) AND ((@IsNull_Acronyms_Description = 1 AND [Acronyms_Description] IS NULL) OR ([Acronyms_Description] = @Original_Acronyms_Description)) AND ((@IsNull_Pages_Id = 1 AND [Pages_Id] IS NULL) OR ([Pages_Id] = @Original_Pages_Id)) AND ((@IsNull_Date_Added = 1 AND [Date_Added] IS NULL) OR ([Date_Added] = @Original_Date_Added)) AND ((@IsNull_Date_Edited = 1 AND [Date_Edited] IS NULL) OR ([Date_Edited] = @Original_Date_Edited)) AND ((@IsNull_Date_Deleted = 1 AND [Date_Deleted] IS NULL) OR ([Date_Deleted] = @Original_Date_Deleted)));
+SELECT Acronyms_Id, Acronyms_Name, Acronyms_Description, Pages_Id, Date_Added, Date_Edited, Date_Deleted FROM Acronyms WHERE (Acronyms_Id = @Acronyms_Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Acronyms_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Acronyms_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Acronyms_Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Acronyms_Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pages_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pages_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_Added", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Added", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_Edited", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Edited", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_Deleted", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Deleted", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Acronyms_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Acronyms_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Acronyms_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Acronyms_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Acronyms_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Acronyms_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4524,6 +4665,12 @@ SELECT Acronyms_Id, Acronyms_Name, Acronyms_Description, Pages_Id FROM Acronyms 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Acronyms_Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Acronyms_Description", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pages_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pages_Id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pages_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pages_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date_Added", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Added", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date_Added", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Added", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date_Edited", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Edited", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date_Edited", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Edited", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date_Deleted", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Deleted", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date_Deleted", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_Deleted", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Acronyms_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Acronyms_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -4540,8 +4687,7 @@ SELECT Acronyms_Id, Acronyms_Name, Acronyms_Description, Pages_Id FROM Acronyms 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Acronyms_Id, Acronyms_Name, Acronyms_Description, Pages_Id FROM dbo.Acrony" +
-                "ms";
+            this._commandCollection[0].CommandText = "SELECT * FROM dbo.Acronyms";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4602,7 +4748,7 @@ SELECT Acronyms_Id, Acronyms_Name, Acronyms_Description, Pages_Id FROM Acronyms 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Acronyms_Id, string Original_Acronyms_Name, string Original_Acronyms_Description, global::System.Nullable<int> Original_Pages_Id) {
+        public virtual int Delete(int Original_Acronyms_Id, string Original_Acronyms_Name, string Original_Acronyms_Description, global::System.Nullable<int> Original_Pages_Id, global::System.Nullable<global::System.DateTime> Original_Date_Added, global::System.Nullable<global::System.DateTime> Original_Date_Edited, global::System.Nullable<global::System.DateTime> Original_Date_Deleted) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Acronyms_Id));
             if ((Original_Acronyms_Name == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -4628,6 +4774,30 @@ SELECT Acronyms_Id, Acronyms_Name, Acronyms_Description, Pages_Id FROM Acronyms 
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
+            if ((Original_Date_Added.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_Date_Added.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Date_Edited.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_Date_Edited.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Date_Deleted.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_Date_Deleted.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4648,7 +4818,7 @@ SELECT Acronyms_Id, Acronyms_Name, Acronyms_Description, Pages_Id FROM Acronyms 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Acronyms_Name, string Acronyms_Description, global::System.Nullable<int> Pages_Id) {
+        public virtual int Insert(string Acronyms_Name, string Acronyms_Description, global::System.Nullable<int> Pages_Id, global::System.Nullable<global::System.DateTime> Date_Added, global::System.Nullable<global::System.DateTime> Date_Edited, global::System.Nullable<global::System.DateTime> Date_Deleted) {
             if ((Acronyms_Name == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4666,6 +4836,24 @@ SELECT Acronyms_Id, Acronyms_Name, Acronyms_Description, Pages_Id FROM Acronyms 
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Date_Added.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Date_Added.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Date_Edited.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(Date_Edited.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Date_Deleted.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(Date_Deleted.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4687,7 +4875,7 @@ SELECT Acronyms_Id, Acronyms_Name, Acronyms_Description, Pages_Id FROM Acronyms 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Acronyms_Name, string Acronyms_Description, global::System.Nullable<int> Pages_Id, int Original_Acronyms_Id, string Original_Acronyms_Name, string Original_Acronyms_Description, global::System.Nullable<int> Original_Pages_Id, int Acronyms_Id) {
+        public virtual int Update(string Acronyms_Name, string Acronyms_Description, global::System.Nullable<int> Pages_Id, global::System.Nullable<global::System.DateTime> Date_Added, global::System.Nullable<global::System.DateTime> Date_Edited, global::System.Nullable<global::System.DateTime> Date_Deleted, int Original_Acronyms_Id, string Original_Acronyms_Name, string Original_Acronyms_Description, global::System.Nullable<int> Original_Pages_Id, global::System.Nullable<global::System.DateTime> Original_Date_Added, global::System.Nullable<global::System.DateTime> Original_Date_Edited, global::System.Nullable<global::System.DateTime> Original_Date_Deleted, int Acronyms_Id) {
             if ((Acronyms_Name == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4706,32 +4894,74 @@ SELECT Acronyms_Id, Acronyms_Name, Acronyms_Description, Pages_Id FROM Acronyms 
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Acronyms_Id));
-            if ((Original_Acronyms_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+            if ((Date_Added.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Date_Added.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Date_Edited.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Date_Edited.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Date_Deleted.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Date_Deleted.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Acronyms_Id));
+            if ((Original_Acronyms_Name == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Acronyms_Name));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Acronyms_Name));
             }
             if ((Original_Acronyms_Description == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Acronyms_Description));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Acronyms_Description));
             }
             if ((Original_Pages_Id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Pages_Id.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Pages_Id.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Acronyms_Id));
+            if ((Original_Date_Added.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_Date_Added.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Date_Edited.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_Date_Edited.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Date_Deleted.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_Date_Deleted.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Acronyms_Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4752,8 +4982,8 @@ SELECT Acronyms_Id, Acronyms_Name, Acronyms_Description, Pages_Id FROM Acronyms 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Acronyms_Name, string Acronyms_Description, global::System.Nullable<int> Pages_Id, int Original_Acronyms_Id, string Original_Acronyms_Name, string Original_Acronyms_Description, global::System.Nullable<int> Original_Pages_Id) {
-            return this.Update(Acronyms_Name, Acronyms_Description, Pages_Id, Original_Acronyms_Id, Original_Acronyms_Name, Original_Acronyms_Description, Original_Pages_Id, Original_Acronyms_Id);
+        public virtual int Update(string Acronyms_Name, string Acronyms_Description, global::System.Nullable<int> Pages_Id, global::System.Nullable<global::System.DateTime> Date_Added, global::System.Nullable<global::System.DateTime> Date_Edited, global::System.Nullable<global::System.DateTime> Date_Deleted, int Original_Acronyms_Id, string Original_Acronyms_Name, string Original_Acronyms_Description, global::System.Nullable<int> Original_Pages_Id, global::System.Nullable<global::System.DateTime> Original_Date_Added, global::System.Nullable<global::System.DateTime> Original_Date_Edited, global::System.Nullable<global::System.DateTime> Original_Date_Deleted) {
+            return this.Update(Acronyms_Name, Acronyms_Description, Pages_Id, Date_Added, Date_Edited, Date_Deleted, Original_Acronyms_Id, Original_Acronyms_Name, Original_Acronyms_Description, Original_Pages_Id, Original_Date_Added, Original_Date_Edited, Original_Date_Deleted, Original_Acronyms_Id);
         }
     }
     

@@ -165,5 +165,21 @@ namespace CEMSStudyApp.Pages
             buttonToggle.Enabled = true;
             buttonNext.Show();
         }
+
+        private void buttonToggle_Click(object sender, EventArgs e)
+        {
+            switch (buttonToggle.Text)
+            {
+                case "Hide":
+                    textBoxAnswer.Hide();
+                    buttonToggle.Text = @"Show";
+                    break;
+                case "Show":
+                    textBoxAnswer.Show();
+                    buttonToggle.Text = @"Hide";
+                    break;
+
+            }
+        }
     }
 }

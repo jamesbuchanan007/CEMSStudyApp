@@ -135,8 +135,9 @@
             this.buttonToggle.Size = new System.Drawing.Size(200, 55);
             this.buttonToggle.TabIndex = 9;
             this.buttonToggle.Tag = "Click to toggle Answer";
-            this.buttonToggle.Text = "Toggle";
+            this.buttonToggle.Text = "Hide";
             this.buttonToggle.UseVisualStyleBackColor = false;
+            this.buttonToggle.Click += new System.EventHandler(this.buttonToggle_Click);
             // 
             // buttonExit
             // 

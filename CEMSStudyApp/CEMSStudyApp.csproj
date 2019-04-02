@@ -61,16 +61,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CEMS_Study_App_dbDataSet1.cs">
-      <DependentUpon>CEMS_Study_App_dbDataSet1.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="CEMS_Study_App_dbDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CEMS_Study_App_dbDataSet1.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
+    <Compile Include="Models\AcronymsViewModel.cs" />
+    <Compile Include="Models\FormulasViewModel.cs" />
+    <Compile Include="Models\HowTosViewModel.cs" />
+    <Compile Include="Models\MainLogViewModel.cs" />
+    <Compile Include="Models\PagesViewModel.cs" />
+    <Compile Include="Models\Part60ViewModel.cs" />
+    <Compile Include="Models\Part75ViewModel.cs" />
+    <Compile Include="Models\Passwords.cs" />
     <Compile Include="Pages\PasswordLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,20 +143,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="CEMS_Study_App_dbDataSet1.xsc">
-      <DependentUpon>CEMS_Study_App_dbDataSet1.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="CEMS_Study_App_dbDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CEMS_Study_App_dbDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="CEMS_Study_App_dbDataSet1.xss">
-      <DependentUpon>CEMS_Study_App_dbDataSet1.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

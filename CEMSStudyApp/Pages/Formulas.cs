@@ -21,15 +21,6 @@ namespace CEMSStudyApp.Pages
             }
         }
 
-        private void Formulas_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'cEMS_Study_App_dbDataSet.Pages' table. You can move, or remove it, as needed.
-            this.pagesTableAdapter.Fill(this.cEMS_Study_App_dbDataSet.Pages);
-            // TODO: This line of code loads data into the 'cEMS_Study_App_dbDataSet.Formulas' table. You can move, or remove it, as needed.
-            this.formulasTableAdapter.Fill(this.cEMS_Study_App_dbDataSet.Formulas);
-
-        }
-
         private void comboBoxSiteNavigation_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (comboBoxSiteNavigation.Text)
@@ -129,12 +120,10 @@ namespace CEMSStudyApp.Pages
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            formulasBindingSource1.MovePrevious();
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            formulasBindingSource1.MoveNext();
         }
     }
 }

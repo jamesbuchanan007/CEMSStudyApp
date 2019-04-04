@@ -22,15 +22,6 @@ namespace CEMSStudyApp.Pages
             }
         }
 
-        private void Part60_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'cEMS_Study_App_dbDataSet.Part_60' table. You can move, or remove it, as needed.
-            this.part_60TableAdapter.Fill(this.cEMS_Study_App_dbDataSet.Part_60);
-            // TODO: This line of code loads data into the 'cEMS_Study_App_dbDataSet.Pages' table. You can move, or remove it, as needed.
-            this.pagesTableAdapter.Fill(this.cEMS_Study_App_dbDataSet.Pages);
-
-        }
-
         private void comboBoxSiteNavigation_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (comboBoxSiteNavigation.Text)
@@ -150,12 +141,10 @@ namespace CEMSStudyApp.Pages
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            part60BindingSource.MovePrevious();
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            part60BindingSource.MoveNext();
         }
     }
 }

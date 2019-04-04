@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Data;
 using System.Windows.Forms;
-using static CEMSStudyApp.CEMS_Study_App_dbDataSet;
 
 namespace CEMSStudyApp.Pages
 {
@@ -57,15 +55,6 @@ namespace CEMSStudyApp.Pages
             {
                 Application.Exit();
             }
-        }
-
-        private void Acronyms_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'cEMS_Study_App_dbDataSet.Acronyms' table. You can move, or remove it, as needed.
-            this.acronymsTableAdapter.Fill(this.cEMS_Study_App_dbDataSet.Acronyms);
-            // TODO: This line of code loads data into the 'cEMS_Study_App_dbDataSet.Pages' table. You can move, or remove it, as needed.
-            this.pagesTableAdapter.Fill(this.cEMS_Study_App_dbDataSet.Pages);
-
         }
 
         private void comboBoxSiteNavigation_SelectedIndexChanged(object sender, EventArgs e)
@@ -150,14 +139,8 @@ namespace CEMSStudyApp.Pages
             }
         }
 
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-            acronymsBindingSource.MovePrevious();
-        }
-
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            acronymsBindingSource.MoveNext();
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -168,8 +151,7 @@ namespace CEMSStudyApp.Pages
                 try
                 {
                     Validate();
-                    acronymsBindingSource.EndEdit();
-                    acronymsTableAdapter.Update(cEMS_Study_App_dbDataSet.Acronyms);
+                  
                     MessageBox.Show("Update successful","CEMS Study App", MessageBoxButtons.OK,MessageBoxIcon.Information);
                   
                 }
@@ -181,26 +163,21 @@ namespace CEMSStudyApp.Pages
 
             if (buttonNew.Visible)
             {
-                var newRow = new AcronymsDataTable().NewAcronymsRow();
-                newRow.Acronyms_Name = textBoxAcronym.Text;
-                newRow.Acronyms_Description = textBoxAnswer.Text;
-                newRow.Date_Deleted = new DateTime();
-                newRow.Pages_Id = 4;
-                newRow.Date_Edited = new DateTime();
-                newRow.Date_Added = DateTime.Now;
-                newRow.EndEdit();
-
-                // Add the row to the Region table
-                cEMS_Study_App_dbDataSet.Acronyms.ImportRow(newRow);
-
-                // Save the new row to the database
-                acronymsTableAdapter.Update(cEMS_Study_App_dbDataSet.Acronyms);
-               comboBoxAcronym.Refresh();
+                
             }
 
             DisableTextBoxes();
             ShowAllButtons();
         }
 
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Acronyms_Load(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -32,30 +32,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formulas));
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
-            this.formulasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cEMSStudyAppdbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cEMS_Study_App_dbDataSet = new CEMSStudyApp.CEMS_Study_App_dbDataSet();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonToggle = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.comboBoxFormula = new System.Windows.Forms.ComboBox();
-            this.formulasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxSiteNavigation = new System.Windows.Forms.ComboBox();
-            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.formulasTableAdapter = new CEMSStudyApp.CEMS_Study_App_dbDataSetTableAdapters.FormulasTableAdapter();
-            this.pagesTableAdapter = new CEMSStudyApp.CEMS_Study_App_dbDataSetTableAdapters.PagesTableAdapter();
             this.textBoxFormula = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.formulasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cEMSStudyAppdbDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cEMS_Study_App_dbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formulasBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -74,7 +62,7 @@
             // textBoxAnswer
             // 
             this.textBoxAnswer.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxAnswer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.formulasBindingSource, "Formulas_Description", true));
+            
             this.textBoxAnswer.Enabled = false;
             this.textBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAnswer.ForeColor = System.Drawing.SystemColors.InactiveCaption;
@@ -86,21 +74,6 @@
             this.textBoxAnswer.Size = new System.Drawing.Size(2049, 870);
             this.textBoxAnswer.TabIndex = 6;
             this.textBoxAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // formulasBindingSource
-            // 
-            this.formulasBindingSource.DataMember = "Formulas";
-            this.formulasBindingSource.DataSource = this.cEMSStudyAppdbDataSetBindingSource;
-            // 
-            // cEMSStudyAppdbDataSetBindingSource
-            // 
-            this.cEMSStudyAppdbDataSetBindingSource.DataSource = this.cEMS_Study_App_dbDataSet;
-            this.cEMSStudyAppdbDataSetBindingSource.Position = 0;
-            // 
-            // cEMS_Study_App_dbDataSet
-            // 
-            this.cEMS_Study_App_dbDataSet.DataSetName = "CEMS_Study_App_dbDataSet";
-            this.cEMS_Study_App_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // buttonBack
             // 
@@ -169,7 +142,6 @@
             // comboBoxFormula
             // 
             this.comboBoxFormula.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.comboBoxFormula.DataSource = this.formulasBindingSource1;
             this.comboBoxFormula.DisplayMember = "Formulas_Name";
             this.comboBoxFormula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFormula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -180,14 +152,8 @@
             this.comboBoxFormula.Size = new System.Drawing.Size(1321, 39);
             this.comboBoxFormula.TabIndex = 12;
             // 
-            // formulasBindingSource1
-            // 
-            this.formulasBindingSource1.DataMember = "Formulas";
-            this.formulasBindingSource1.DataSource = this.cEMSStudyAppdbDataSetBindingSource;
-            // 
             // comboBoxSiteNavigation
             // 
-            this.comboBoxSiteNavigation.DataSource = this.pagesBindingSource;
             this.comboBoxSiteNavigation.DisplayMember = "Pages_Name";
             this.comboBoxSiteNavigation.FormattingEnabled = true;
             this.comboBoxSiteNavigation.Location = new System.Drawing.Point(1653, 31);
@@ -196,11 +162,6 @@
             this.comboBoxSiteNavigation.Size = new System.Drawing.Size(441, 39);
             this.comboBoxSiteNavigation.TabIndex = 13;
             this.comboBoxSiteNavigation.SelectedIndexChanged += new System.EventHandler(this.comboBoxSiteNavigation_SelectedIndexChanged);
-            // 
-            // pagesBindingSource
-            // 
-            this.pagesBindingSource.DataMember = "Pages";
-            this.pagesBindingSource.DataSource = this.cEMSStudyAppdbDataSetBindingSource;
             // 
             // buttonDelete
             // 
@@ -280,17 +241,8 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // formulasTableAdapter
-            // 
-            this.formulasTableAdapter.ClearBeforeFill = true;
-            // 
-            // pagesTableAdapter
-            // 
-            this.pagesTableAdapter.ClearBeforeFill = true;
-            // 
             // textBoxFormula
             // 
-            this.textBoxFormula.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.formulasBindingSource1, "Formulas_Name", true));
             this.textBoxFormula.Enabled = false;
             this.textBoxFormula.Location = new System.Drawing.Point(557, 154);
             this.textBoxFormula.Name = "textBoxFormula";
@@ -328,12 +280,6 @@
             this.Name = "Formulas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";
-            this.Load += new System.EventHandler(this.Formulas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.formulasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cEMSStudyAppdbDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cEMS_Study_App_dbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formulasBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,13 +300,6 @@
         private System.Windows.Forms.Button buttonNew;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.BindingSource cEMSStudyAppdbDataSetBindingSource;
-        private CEMS_Study_App_dbDataSet cEMS_Study_App_dbDataSet;
-        private System.Windows.Forms.BindingSource formulasBindingSource;
-        private CEMS_Study_App_dbDataSetTableAdapters.FormulasTableAdapter formulasTableAdapter;
-        private System.Windows.Forms.BindingSource formulasBindingSource1;
-        private System.Windows.Forms.BindingSource pagesBindingSource;
-        private CEMS_Study_App_dbDataSetTableAdapters.PagesTableAdapter pagesTableAdapter;
         private System.Windows.Forms.TextBox textBoxFormula;
     }
 }

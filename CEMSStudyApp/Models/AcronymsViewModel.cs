@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
+using CEMSStudyApp.Pages;
 
 namespace CEMSStudyApp.Models
 {
@@ -17,5 +14,9 @@ namespace CEMSStudyApp.Models
         public DateTime Date_Added { get; set; }
         public DateTime Date_Edited { get; set; }
         public DateTime Date_Deleted { get; set; }
+        public bool IsActive { get; set; }
+        public List<string> PagesList { get; set; }
+        public List<string> AcronymsList { get; set; }
     }
+    
 }

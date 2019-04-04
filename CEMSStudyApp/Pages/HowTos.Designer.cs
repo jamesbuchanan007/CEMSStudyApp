@@ -32,26 +32,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HowTos));
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
-            this.howTosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cEMS_Study_App_dbDataSet = new CEMSStudyApp.CEMS_Study_App_dbDataSet();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonToggle = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.comboBoxHowTo = new System.Windows.Forms.ComboBox();
             this.comboBoxSiteNavigation = new System.Windows.Forms.ComboBox();
-            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.pagesTableAdapter = new CEMSStudyApp.CEMS_Study_App_dbDataSetTableAdapters.PagesTableAdapter();
-            this.howTosTableAdapter = new CEMSStudyApp.CEMS_Study_App_dbDataSetTableAdapters.HowTosTableAdapter();
             this.textBoxHowTos = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.howTosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cEMS_Study_App_dbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -70,7 +62,6 @@
             // textBoxAnswer
             // 
             this.textBoxAnswer.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxAnswer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.howTosBindingSource, "Description", true));
             this.textBoxAnswer.Enabled = false;
             this.textBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAnswer.ForeColor = System.Drawing.SystemColors.InactiveCaption;
@@ -82,16 +73,6 @@
             this.textBoxAnswer.Size = new System.Drawing.Size(2049, 848);
             this.textBoxAnswer.TabIndex = 6;
             this.textBoxAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // howTosBindingSource
-            // 
-            this.howTosBindingSource.DataMember = "HowTos";
-            this.howTosBindingSource.DataSource = this.cEMS_Study_App_dbDataSet;
-            // 
-            // cEMS_Study_App_dbDataSet
-            // 
-            this.cEMS_Study_App_dbDataSet.DataSetName = "CEMS_Study_App_dbDataSet";
-            this.cEMS_Study_App_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // buttonBack
             // 
@@ -160,7 +141,6 @@
             // comboBoxHowTo
             // 
             this.comboBoxHowTo.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.comboBoxHowTo.DataSource = this.howTosBindingSource;
             this.comboBoxHowTo.DisplayMember = "Name";
             this.comboBoxHowTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxHowTo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -173,7 +153,6 @@
             // 
             // comboBoxSiteNavigation
             // 
-            this.comboBoxSiteNavigation.DataSource = this.pagesBindingSource;
             this.comboBoxSiteNavigation.DisplayMember = "Pages_Name";
             this.comboBoxSiteNavigation.FormattingEnabled = true;
             this.comboBoxSiteNavigation.Location = new System.Drawing.Point(1653, 52);
@@ -182,11 +161,6 @@
             this.comboBoxSiteNavigation.Size = new System.Drawing.Size(441, 39);
             this.comboBoxSiteNavigation.TabIndex = 13;
             this.comboBoxSiteNavigation.SelectedIndexChanged += new System.EventHandler(this.comboBoxSiteNavigation_SelectedIndexChanged);
-            // 
-            // pagesBindingSource
-            // 
-            this.pagesBindingSource.DataMember = "Pages";
-            this.pagesBindingSource.DataSource = this.cEMS_Study_App_dbDataSet;
             // 
             // buttonDelete
             // 
@@ -266,17 +240,8 @@
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // pagesTableAdapter
-            // 
-            this.pagesTableAdapter.ClearBeforeFill = true;
-            // 
-            // howTosTableAdapter
-            // 
-            this.howTosTableAdapter.ClearBeforeFill = true;
-            // 
             // textBoxHowTos
             // 
-            this.textBoxHowTos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.howTosBindingSource, "Name", true));
             this.textBoxHowTos.Enabled = false;
             this.textBoxHowTos.Location = new System.Drawing.Point(533, 177);
             this.textBoxHowTos.Name = "textBoxHowTos";
@@ -314,10 +279,6 @@
             this.Name = "HowTos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";
-            this.Load += new System.EventHandler(this.HowTos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.howTosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cEMS_Study_App_dbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,11 +299,6 @@
         private System.Windows.Forms.Button buttonNew;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
-        private CEMS_Study_App_dbDataSet cEMS_Study_App_dbDataSet;
-        private System.Windows.Forms.BindingSource pagesBindingSource;
-        private CEMS_Study_App_dbDataSetTableAdapters.PagesTableAdapter pagesTableAdapter;
-        private System.Windows.Forms.BindingSource howTosBindingSource;
-        private CEMS_Study_App_dbDataSetTableAdapters.HowTosTableAdapter howTosTableAdapter;
         private System.Windows.Forms.TextBox textBoxHowTos;
     }
 }

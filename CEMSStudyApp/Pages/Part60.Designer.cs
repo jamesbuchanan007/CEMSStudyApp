@@ -32,10 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Part60));
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxSectionName = new System.Windows.Forms.TextBox();
-            this.part60BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cEMS_Study_App_dbDataSet = new CEMSStudyApp.CEMS_Study_App_dbDataSet();
             this.comboBoxSiteNavigation = new System.Windows.Forms.ComboBox();
-            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
             this.buttonBack = new System.Windows.Forms.Button();
@@ -48,12 +45,7 @@
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.pagesTableAdapter = new CEMSStudyApp.CEMS_Study_App_dbDataSetTableAdapters.PagesTableAdapter();
-            this.part_60TableAdapter = new CEMSStudyApp.CEMS_Study_App_dbDataSetTableAdapters.Part_60TableAdapter();
             this.textBoxSectionNumber = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.part60BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cEMS_Study_App_dbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,7 +64,6 @@
             // textBoxSectionName
             // 
             this.textBoxSectionName.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxSectionName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.part60BindingSource, "Part_60_Name", true));
             this.textBoxSectionName.Enabled = false;
             this.textBoxSectionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSectionName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
@@ -85,21 +76,10 @@
             this.textBoxSectionName.Text = "Section Name";
             this.textBoxSectionName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // part60BindingSource
-            // 
-            this.part60BindingSource.DataMember = "Part_60";
-            this.part60BindingSource.DataSource = this.cEMS_Study_App_dbDataSet;
-            // 
-            // cEMS_Study_App_dbDataSet
-            // 
-            this.cEMS_Study_App_dbDataSet.DataSetName = "CEMS_Study_App_dbDataSet";
-            this.cEMS_Study_App_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // comboBoxSiteNavigation
             // 
             this.comboBoxSiteNavigation.AllowDrop = true;
             this.comboBoxSiteNavigation.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.comboBoxSiteNavigation.DataSource = this.pagesBindingSource;
             this.comboBoxSiteNavigation.DisplayMember = "Pages_Name";
             this.comboBoxSiteNavigation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSiteNavigation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -111,15 +91,9 @@
             this.comboBoxSiteNavigation.TabIndex = 4;
             this.comboBoxSiteNavigation.SelectedIndexChanged += new System.EventHandler(this.comboBoxSiteNavigation_SelectedIndexChanged);
             // 
-            // pagesBindingSource
-            // 
-            this.pagesBindingSource.DataMember = "Pages";
-            this.pagesBindingSource.DataSource = this.cEMS_Study_App_dbDataSet;
-            // 
             // textBoxQuestion
             // 
             this.textBoxQuestion.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxQuestion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.part60BindingSource, "Part_60_Question", true));
             this.textBoxQuestion.Enabled = false;
             this.textBoxQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxQuestion.ForeColor = System.Drawing.SystemColors.InactiveCaption;
@@ -136,7 +110,6 @@
             // textBoxAnswer
             // 
             this.textBoxAnswer.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxAnswer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.part60BindingSource, "Part_60_Answer", true));
             this.textBoxAnswer.Enabled = false;
             this.textBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAnswer.ForeColor = System.Drawing.SystemColors.InactiveCaption;
@@ -217,7 +190,6 @@
             // comboBoxSectionNumber
             // 
             this.comboBoxSectionNumber.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.comboBoxSectionNumber.DataSource = this.part60BindingSource;
             this.comboBoxSectionNumber.DisplayMember = "Part_60_Number";
             this.comboBoxSectionNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSectionNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -306,18 +278,9 @@
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // pagesTableAdapter
-            // 
-            this.pagesTableAdapter.ClearBeforeFill = true;
-            // 
-            // part_60TableAdapter
-            // 
-            this.part_60TableAdapter.ClearBeforeFill = true;
-            // 
             // textBoxSectionNumber
             // 
             this.textBoxSectionNumber.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxSectionNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.part60BindingSource, "Part_60_Number", true));
             this.textBoxSectionNumber.Enabled = false;
             this.textBoxSectionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSectionNumber.ForeColor = System.Drawing.SystemColors.InactiveCaption;
@@ -360,10 +323,6 @@
             this.Name = "Part60";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";
-            this.Load += new System.EventHandler(this.Part60_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.part60BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cEMS_Study_App_dbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,11 +345,6 @@
         private System.Windows.Forms.Button buttonNew;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
-        private CEMS_Study_App_dbDataSet cEMS_Study_App_dbDataSet;
-        private System.Windows.Forms.BindingSource pagesBindingSource;
-        private CEMS_Study_App_dbDataSetTableAdapters.PagesTableAdapter pagesTableAdapter;
-        private System.Windows.Forms.BindingSource part60BindingSource;
-        private CEMS_Study_App_dbDataSetTableAdapters.Part_60TableAdapter part_60TableAdapter;
         private System.Windows.Forms.TextBox textBoxSectionNumber;
     }
 }

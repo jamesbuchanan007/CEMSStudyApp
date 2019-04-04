@@ -32,28 +32,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Acronyms));
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
-            this.acronymsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cEMSStudyAppdbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cEMS_Study_App_dbDataSet = new CEMSStudyApp.CEMS_Study_App_dbDataSet();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonToggle = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.comboBoxAcronym = new System.Windows.Forms.ComboBox();
             this.comboBoxSiteNavigation = new System.Windows.Forms.ComboBox();
-            this.pagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.pagesTableAdapter = new CEMSStudyApp.CEMS_Study_App_dbDataSetTableAdapters.PagesTableAdapter();
-            this.acronymsTableAdapter = new CEMSStudyApp.CEMS_Study_App_dbDataSetTableAdapters.AcronymsTableAdapter();
             this.textBoxAcronym = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.acronymsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cEMSStudyAppdbDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cEMS_Study_App_dbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,7 +62,6 @@
             // textBoxAnswer
             // 
             this.textBoxAnswer.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxAnswer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.acronymsBindingSource, "Acronyms_Description", true));
             this.textBoxAnswer.Enabled = false;
             this.textBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAnswer.ForeColor = System.Drawing.SystemColors.InactiveCaption;
@@ -84,22 +73,6 @@
             this.textBoxAnswer.Size = new System.Drawing.Size(1334, 628);
             this.textBoxAnswer.TabIndex = 6;
             this.textBoxAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // acronymsBindingSource
-            // 
-            this.acronymsBindingSource.DataMember = "Acronyms";
-            this.acronymsBindingSource.DataSource = this.cEMSStudyAppdbDataSetBindingSource;
-            // 
-            // cEMSStudyAppdbDataSetBindingSource
-            // 
-            this.cEMSStudyAppdbDataSetBindingSource.AllowNew = true;
-            this.cEMSStudyAppdbDataSetBindingSource.DataSource = this.cEMS_Study_App_dbDataSet;
-            this.cEMSStudyAppdbDataSetBindingSource.Position = 0;
-            // 
-            // cEMS_Study_App_dbDataSet
-            // 
-            this.cEMS_Study_App_dbDataSet.DataSetName = "CEMS_Study_App_dbDataSet";
-            this.cEMS_Study_App_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // buttonBack
             // 
@@ -168,7 +141,6 @@
             // comboBoxAcronym
             // 
             this.comboBoxAcronym.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.comboBoxAcronym.DataSource = this.acronymsBindingSource;
             this.comboBoxAcronym.DisplayMember = "Acronyms_Name";
             this.comboBoxAcronym.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAcronym.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -181,7 +153,6 @@
             // 
             // comboBoxSiteNavigation
             // 
-            this.comboBoxSiteNavigation.DataSource = this.pagesBindingSource;
             this.comboBoxSiteNavigation.DisplayMember = "Pages_Name";
             this.comboBoxSiteNavigation.FormattingEnabled = true;
             this.comboBoxSiteNavigation.Location = new System.Drawing.Point(938, 53);
@@ -189,11 +160,6 @@
             this.comboBoxSiteNavigation.Size = new System.Drawing.Size(441, 39);
             this.comboBoxSiteNavigation.TabIndex = 13;
             this.comboBoxSiteNavigation.SelectedIndexChanged += new System.EventHandler(this.comboBoxSiteNavigation_SelectedIndexChanged);
-            // 
-            // pagesBindingSource
-            // 
-            this.pagesBindingSource.DataMember = "Pages";
-            this.pagesBindingSource.DataSource = this.cEMSStudyAppdbDataSetBindingSource;
             // 
             // buttonSave
             // 
@@ -274,17 +240,8 @@
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // pagesTableAdapter
-            // 
-            this.pagesTableAdapter.ClearBeforeFill = true;
-            // 
-            // acronymsTableAdapter
-            // 
-            this.acronymsTableAdapter.ClearBeforeFill = true;
-            // 
             // textBoxAcronym
             // 
-            this.textBoxAcronym.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.acronymsBindingSource, "Acronyms_Name", true));
             this.textBoxAcronym.Location = new System.Drawing.Point(540, 203);
             this.textBoxAcronym.Name = "textBoxAcronym";
             this.textBoxAcronym.ReadOnly = true;
@@ -322,10 +279,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";
             this.Load += new System.EventHandler(this.Acronyms_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.acronymsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cEMSStudyAppdbDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cEMS_Study_App_dbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pagesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,12 +299,6 @@
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.BindingSource cEMSStudyAppdbDataSetBindingSource;
-        private CEMS_Study_App_dbDataSet cEMS_Study_App_dbDataSet;
-        private System.Windows.Forms.BindingSource pagesBindingSource;
-        private CEMS_Study_App_dbDataSetTableAdapters.PagesTableAdapter pagesTableAdapter;
-        private System.Windows.Forms.BindingSource acronymsBindingSource;
-        private CEMS_Study_App_dbDataSetTableAdapters.AcronymsTableAdapter acronymsTableAdapter;
         private System.Windows.Forms.TextBox textBoxAcronym;
     }
 }

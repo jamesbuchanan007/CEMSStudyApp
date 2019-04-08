@@ -278,7 +278,6 @@
             this.Name = "Acronyms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";
-            this.Load += new System.EventHandler(this.Acronyms_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

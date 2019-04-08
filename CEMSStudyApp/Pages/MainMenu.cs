@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace CEMSStudyApp.Pages
@@ -8,6 +10,55 @@ namespace CEMSStudyApp.Pages
         public MainMenu()
         {
             InitializeComponent();
+
+            string connectionString = null;
+            SqlConnection connection;
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            DataTable dtPages = new DataTable("Pages");
+            DataTable dtAcronyms = new DataTable("Acronyms");
+            int i;
+            string sql = null;
+
+            //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+            connectionString = Properties.Settings.Default.LocalDb;
+           
+            connection = new SqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+
+                sql = "Select * from Pages";
+                command = new SqlCommand(sql, connection);
+                adapter.SelectCommand = command;
+                adapter.Fill(ds, dtPages.ToString());
+
+                sql = "Select * from Acronyms";
+                adapter.SelectCommand.CommandText = sql;
+                adapter.Fill(ds, dtAcronyms.ToString());
+
+                adapter.Dispose();
+                command.Dispose();
+                connection.Close();
+
+                //for (i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
+                //{
+                //    MessageBox.Show(ds.Tables[0].Rows[i].ItemArray[0] + " -- " + ds.Tables[0].Rows[i].ItemArray[1]);
+
+                //}
+
+                //for (i = 0; i <= ds.Tables[1].Rows.Count - 1; i++)
+                //{
+                //    MessageBox.Show(ds.Tables[1].Rows[i].ItemArray[0] + " -- " + ds.Tables[1].Rows[i].ItemArray[1]);
+
+                //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Can not open connection ! ");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

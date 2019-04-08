@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace CEMSStudyApp.Pages
 {
@@ -8,7 +10,60 @@ namespace CEMSStudyApp.Pages
         public Acronyms()
         {
             InitializeComponent();
-            comboBoxAcronym.SelectedIndex = -1;
+
+            string connectionString = null;
+            SqlConnection connection;
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            DataTable dtPages = new DataTable("Pages");
+            DataTable dtAcronyms = new DataTable("Acronyms");
+            int i;
+            string sql = null;
+
+            //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+            connectionString = Properties.Settings.Default.LocalDb;
+
+            connection = new SqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+
+                sql = "Select * from Pages";
+                command = new SqlCommand(sql, connection);
+                adapter.SelectCommand = command;
+                adapter.Fill(ds, dtPages.ToString());
+
+                sql = "Select * from Acronyms";
+                adapter.SelectCommand.CommandText = sql;
+                adapter.Fill(ds, dtAcronyms.ToString());
+
+                adapter.Dispose();
+                command.Dispose();
+                connection.Close();
+
+                for (i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
+                {
+                    MessageBox.Show(ds.Tables[0].Rows[i].ItemArray[0] + " -- " + ds.Tables[0].Rows[i].ItemArray[1]);
+
+                }
+
+                for (i = 0; i <= ds.Tables[1].Rows.Count - 1; i++)
+                {
+                    MessageBox.Show(ds.Tables[1].Rows[i].ItemArray[0] + " -- " + ds.Tables[1].Rows[i].ItemArray[1]);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Can not open connection ! ");
+            }
+
+            comboBoxSiteNavigation.DataSource = ds.Tables[0];
+            comboBoxSiteNavigation.ValueMember = "Pages_Id";
+            comboBoxSiteNavigation.DisplayMember = "Pages_Name";
+
         }
 
         private void EnableTextBoxes()
@@ -171,11 +226,6 @@ namespace CEMSStudyApp.Pages
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void Acronyms_Load(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }

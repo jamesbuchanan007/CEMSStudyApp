@@ -18,11 +18,11 @@ namespace CEMSStudyApp.Pages
             var pagesDataSet = LoadTable("Pages");
 
             //LOAD INTO DICTIONARY TO REMOVE ACTIVE PAGE
-            Dictionary<int,string> comboDictionary = new Dictionary<int, string>();
+            Dictionary<int, string> comboDictionary = new Dictionary<int, string>();
 
             for (int i = 0; i < pagesDataSet.Tables[0].Rows.Count; i++)
             {
-                comboDictionary.Add((int)pagesDataSet.Tables[0].Rows[i]["Pages_Id"],pagesDataSet.Tables[0].Rows[i]["Pages_Name"].ToString());
+                comboDictionary.Add((int)pagesDataSet.Tables[0].Rows[i]["Pages_Id"], pagesDataSet.Tables[0].Rows[i]["Pages_Name"].ToString());
             }
 
             comboDictionary.Remove(5);
@@ -187,6 +187,20 @@ namespace CEMSStudyApp.Pages
             comboBoxAcronym.SelectedIndex = comboBoxAcronym.FindString(textBoxAcronym.Text);
         }
 
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            var aDataTable = LoadTable("Acronyms");
+            var index = comboBoxAcronym.SelectedIndex;
+
+            if (index == 0 || aDataTable.Tables[0].Rows.Count == 0) return;
+
+            var newIndex = index - 1;
+
+            textBoxAcronym.Text = aDataTable.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
+            textBoxAnswer.Text = aDataTable.Tables[0].Rows[newIndex]["Acronyms_Description"].ToString();
+            comboBoxAcronym.SelectedIndex = comboBoxAcronym.FindString(textBoxAcronym.Text);
+        }
+
         private void buttonSave_Click(object sender, EventArgs e)
         {
             if (buttonEdit.Visible)
@@ -208,6 +222,48 @@ namespace CEMSStudyApp.Pages
 
             if (buttonNew.Visible)
             {
+                SqlConnection connection;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                string sql;
+
+                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+                var connectionString = Settings.Default.LocalDb;
+
+                connection = new SqlConnection(connectionString);
+
+                var aName = textBoxAcronym.Text;
+                var aDescription = textBoxAnswer.Text;
+                var pagesId = 1;
+                var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
+                var dateAdded = DateTime.Now;
+                var isActive = 1;
+
+                sql = "INSERT into Acronyms (Acronyms_Name,Acronyms_Description,Pages_Id,Date_Added,Is_Active) values('"+ 
+                      aName + "'" + "," + "'"+
+                      aDescription+"'" + "," + 
+                      pagesId + "," + "'"+
+                      dateAdded.ToString(format)+"'" + ","  + 
+                      isActive + ")";
+                try
+                {
+                    connection.Open();
+                    adapter.InsertCommand = new SqlCommand(sql, connection);
+                    adapter.InsertCommand.ExecuteNonQuery();
+                    MessageBox.Show("Row inserted !! ","Database Update",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+                var aDataSet = LoadTable("Acronyms");
+                var newIndex = comboBoxAcronym.Items.Count;
+                comboBoxAcronym.DataSource = aDataSet.Tables[0];
+                comboBoxAcronym.ValueMember = "Acronyms_Id";
+                comboBoxAcronym.DisplayMember = "Acronyms_Name";
+                comboBoxAcronym.SelectedIndex = newIndex;
+                textBoxAcronym.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
+                textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Description"].ToString();
 
             }
 
@@ -215,19 +271,7 @@ namespace CEMSStudyApp.Pages
             ShowAllButtons();
         }
 
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-            var aDataTable = LoadTable("Acronyms");
-            var index = comboBoxAcronym.SelectedIndex;
 
-            if (index == 0 || aDataTable.Tables[0].Rows.Count == 0) return;
-
-            var newIndex = index - 1;
-
-            textBoxAcronym.Text = aDataTable.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
-            textBoxAnswer.Text = aDataTable.Tables[0].Rows[newIndex]["Acronyms_Description"].ToString();
-            comboBoxAcronym.SelectedIndex = comboBoxAcronym.FindString(textBoxAcronym.Text);
-        }
 
         private void comboBoxAcronym_SelectedIndexChanged(object sender, EventArgs e)
         {

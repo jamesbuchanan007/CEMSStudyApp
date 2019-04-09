@@ -1,7 +1,10 @@
 ﻿using System;
-using System.Windows.Forms;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using CEMSStudyApp.Properties;
 
 namespace CEMSStudyApp.Pages
 {
@@ -13,9 +16,20 @@ namespace CEMSStudyApp.Pages
 
             //LOAD COMBOBOX PAGES
             var pagesDataSet = LoadTable("Pages");
-            comboBoxSiteNavigation.DataSource = pagesDataSet.Tables["Pages"];
-            comboBoxSiteNavigation.ValueMember = "Pages_Id";
-            comboBoxSiteNavigation.DisplayMember = "Pages_Name";
+
+            //LOAD INTO DICTIONARY TO REMOVE ACTIVE PAGE
+            Dictionary<int,string> comboDictionary = new Dictionary<int, string>();
+
+            for (int i = 0; i < pagesDataSet.Tables[0].Rows.Count; i++)
+            {
+                comboDictionary.Add((int)pagesDataSet.Tables[0].Rows[i]["Pages_Id"],pagesDataSet.Tables[0].Rows[i]["Pages_Name"].ToString());
+            }
+
+            comboDictionary.Remove(5);
+
+            comboBoxSiteNavigation.DataSource = new BindingSource(comboDictionary, null);
+            comboBoxSiteNavigation.ValueMember = "Key";
+            comboBoxSiteNavigation.DisplayMember = "Value";
 
             //LOAD COMBOBOX ACRONYMS
             var aDataSet = LoadTable("Acronyms");
@@ -24,15 +38,9 @@ namespace CEMSStudyApp.Pages
             comboBoxAcronym.DisplayMember = "Acronyms_Name";
 
             //LOAD TEXTBOXES
+            if (aDataSet.Tables[0].Rows.Count == 0) return;
             textBoxAcronym.Text = aDataSet.Tables[0].Rows[0]["Acronyms_Name"].ToString();
             textBoxAnswer.Text = aDataSet.Tables[0].Rows[0]["Acronyms_Description"].ToString();
-
-            var index = comboBoxAcronym.SelectedIndex;
-
-            var newIndex = (int)aDataSet.Tables[0].Rows[index]["Acronyms_Id"] - 1;
-
-            MessageBox.Show("Combobox Index: " + index);
-            MessageBox.Show("Row Index: " + newIndex);
         }
 
         //CONNECTS TO DB AND LOADS DATA SET
@@ -46,7 +54,7 @@ namespace CEMSStudyApp.Pages
             string sql;
 
             //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
-            var connectionString = Properties.Settings.Default.LocalDb;
+            var connectionString = Settings.Default.LocalDb;
 
             connection = new SqlConnection(connectionString);
 
@@ -166,6 +174,17 @@ namespace CEMSStudyApp.Pages
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
+            var aDataTable = LoadTable("Acronyms");
+            var index = comboBoxAcronym.SelectedIndex;
+            var count = comboBoxAcronym.Items.Count - 1;    //Count is NOT zero-indexed
+
+            if (index == count || aDataTable.Tables[0].Rows.Count == 0) return;
+
+            var newIndex = index + 1;
+
+            textBoxAcronym.Text = aDataTable.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
+            textBoxAnswer.Text = aDataTable.Tables[0].Rows[newIndex]["Acronyms_Description"].ToString();
+            comboBoxAcronym.SelectedIndex = comboBoxAcronym.FindString(textBoxAcronym.Text);
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -198,7 +217,16 @@ namespace CEMSStudyApp.Pages
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var aDataTable = LoadTable("Acronyms");
+            var index = comboBoxAcronym.SelectedIndex;
+
+            if (index == 0 || aDataTable.Tables[0].Rows.Count == 0) return;
+
+            var newIndex = index - 1;
+
+            textBoxAcronym.Text = aDataTable.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
+            textBoxAnswer.Text = aDataTable.Tables[0].Rows[newIndex]["Acronyms_Description"].ToString();
+            comboBoxAcronym.SelectedIndex = comboBoxAcronym.FindString(textBoxAcronym.Text);
         }
 
         private void comboBoxAcronym_SelectedIndexChanged(object sender, EventArgs e)
@@ -206,6 +234,7 @@ namespace CEMSStudyApp.Pages
             var aDataSet = LoadTable("Acronyms");
             var index = comboBoxAcronym.SelectedIndex;
 
+            if (aDataSet.Tables[0].Rows.Count == 0) return;
             textBoxAcronym.Text = aDataSet.Tables[0].Rows[index]["Acronyms_Name"].ToString();
             textBoxAnswer.Text = aDataSet.Tables[0].Rows[index]["Acronyms_Description"].ToString();
         }
@@ -213,39 +242,34 @@ namespace CEMSStudyApp.Pages
         //NAVIGATE TO DIFFERENT FORM
         private void comboBoxSiteNavigation_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            var formName = comboBoxSiteNavigation.SelectedText;
+            var formIndex = comboBoxSiteNavigation.SelectedIndex;
 
             Hide();
 
-            switch (formName)
+            switch (formIndex)
             {
-                //case "Acronyms":
-                //    this.Hide();
-                //    Acronyms acronyms = new Acronyms();
-                //    acronyms.Show();
-                //    break;
-                case "Formulas":
-                    this.Hide();
+                case 3:
+                    Hide();
                     Formulas formulas = new Formulas();
                     formulas.Show();
                     break;
-                case "How To's":
-                    this.Hide();
+                case 4:
+                    Hide();
                     HowTos howTos = new HowTos();
                     howTos.Show();
                     break;
-                case "Main Menu":
-                    this.Hide();
+                case 0:
+                    Hide();
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
                     break;
-                case "Part 60":
-                    this.Hide();
+                case 1:
+                    Hide();
                     Part60 part60 = new Part60();
                     part60.Show();
                     break;
-                case "Part 75":
-                    this.Hide();
+                case 2:
+                    Hide();
                     Part75 part75 = new Part75();
                     part75.Show();
                     break;

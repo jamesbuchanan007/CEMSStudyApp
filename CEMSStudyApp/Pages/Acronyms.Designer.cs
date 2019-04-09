@@ -1,11 +1,14 @@
-﻿namespace CEMSStudyApp.Pages
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace CEMSStudyApp.Pages
 {
     partial class Acronyms
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -274,19 +277,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxAnswer;
-        private System.Windows.Forms.Button buttonBack;
-        private System.Windows.Forms.Button buttonNext;
-        private System.Windows.Forms.Button buttonToggle;
-        private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.ComboBox comboBoxAcronym;
-        private System.Windows.Forms.ComboBox comboBoxSiteNavigation;
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button buttonNew;
-        private System.Windows.Forms.Button buttonEdit;
-        private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.TextBox textBoxAcronym;
+        private Label label1;
+        private TextBox textBoxAnswer;
+        private Button buttonBack;
+        private Button buttonNext;
+        private Button buttonToggle;
+        private Button buttonExit;
+        private ComboBox comboBoxAcronym;
+        private ComboBox comboBoxSiteNavigation;
+        private Button buttonSave;
+        private Button buttonNew;
+        private Button buttonEdit;
+        private Button buttonDelete;
+        private Button buttonCancel;
+        private TextBox textBoxAcronym;
     }
 }

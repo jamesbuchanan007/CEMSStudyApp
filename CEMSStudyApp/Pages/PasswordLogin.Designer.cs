@@ -1,11 +1,14 @@
-﻿namespace CEMSStudyApp.Pages
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace CEMSStudyApp.Pages
 {
     partial class PasswordLogin
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -140,13 +143,13 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxUserName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxPassword;
-        private System.Windows.Forms.Button buttonSubmit;
+        private PictureBox pictureBox1;
+        private Button buttonCancel;
+        private Label label1;
+        private TextBox textBoxUserName;
+        private Label label2;
+        private TextBox textBoxPassword;
+        private Button buttonSubmit;
     }
 }
 

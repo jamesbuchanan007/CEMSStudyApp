@@ -1,11 +1,14 @@
-﻿namespace CEMSStudyApp.Pages
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace CEMSStudyApp.Pages
 {
     partial class Formulas
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -28,7 +31,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formulas));
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxAnswer = new System.Windows.Forms.TextBox();
@@ -52,26 +54,23 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(142, 41);
-            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label1.Location = new System.Drawing.Point(53, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 63);
+            this.label1.Size = new System.Drawing.Size(103, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Formulas";
             // 
             // textBoxAnswer
             // 
             this.textBoxAnswer.Cursor = System.Windows.Forms.Cursors.Arrow;
-            
             this.textBoxAnswer.Enabled = false;
             this.textBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAnswer.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBoxAnswer.Location = new System.Drawing.Point(45, 214);
-            this.textBoxAnswer.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBoxAnswer.Location = new System.Drawing.Point(17, 90);
             this.textBoxAnswer.Multiline = true;
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.ReadOnly = true;
-            this.textBoxAnswer.Size = new System.Drawing.Size(2049, 870);
+            this.textBoxAnswer.Size = new System.Drawing.Size(771, 367);
             this.textBoxAnswer.TabIndex = 6;
             this.textBoxAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -81,10 +80,9 @@
             this.buttonBack.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBack.ForeColor = System.Drawing.Color.White;
-            this.buttonBack.Location = new System.Drawing.Point(45, 145);
-            this.buttonBack.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonBack.Location = new System.Drawing.Point(17, 61);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(200, 55);
+            this.buttonBack.Size = new System.Drawing.Size(75, 23);
             this.buttonBack.TabIndex = 7;
             this.buttonBack.Tag = "Previous Question";
             this.buttonBack.Text = "<<";
@@ -97,10 +95,9 @@
             this.buttonNext.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNext.ForeColor = System.Drawing.Color.White;
-            this.buttonNext.Location = new System.Drawing.Point(261, 145);
-            this.buttonNext.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonNext.Location = new System.Drawing.Point(98, 61);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(200, 55);
+            this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 8;
             this.buttonNext.Tag = "Next Question";
             this.buttonNext.Text = ">>";
@@ -113,10 +110,9 @@
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(1894, 145);
-            this.buttonToggle.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonToggle.Location = new System.Drawing.Point(710, 61);
             this.buttonToggle.Name = "buttonToggle";
-            this.buttonToggle.Size = new System.Drawing.Size(200, 55);
+            this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;
             this.buttonToggle.Tag = "Click to toggle Answer";
             this.buttonToggle.Text = "Hide";
@@ -129,10 +125,9 @@
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.ForeColor = System.Drawing.Color.White;
-            this.buttonExit.Location = new System.Drawing.Point(1894, 1108);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonExit.Location = new System.Drawing.Point(710, 465);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(200, 55);
+            this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 10;
             this.buttonExit.Tag = "Exit Application";
             this.buttonExit.Text = "Exit";
@@ -146,20 +141,19 @@
             this.comboBoxFormula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFormula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxFormula.FormattingEnabled = true;
-            this.comboBoxFormula.Location = new System.Drawing.Point(773, 92);
-            this.comboBoxFormula.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.comboBoxFormula.Location = new System.Drawing.Point(290, 39);
             this.comboBoxFormula.Name = "comboBoxFormula";
-            this.comboBoxFormula.Size = new System.Drawing.Size(1321, 39);
+            this.comboBoxFormula.Size = new System.Drawing.Size(498, 21);
             this.comboBoxFormula.TabIndex = 12;
+            this.comboBoxFormula.SelectedIndexChanged += new System.EventHandler(this.comboBoxFormula_SelectedIndexChanged);
             // 
             // comboBoxSiteNavigation
             // 
             this.comboBoxSiteNavigation.DisplayMember = "Pages_Name";
             this.comboBoxSiteNavigation.FormattingEnabled = true;
-            this.comboBoxSiteNavigation.Location = new System.Drawing.Point(1653, 31);
-            this.comboBoxSiteNavigation.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.comboBoxSiteNavigation.Location = new System.Drawing.Point(620, 13);
             this.comboBoxSiteNavigation.Name = "comboBoxSiteNavigation";
-            this.comboBoxSiteNavigation.Size = new System.Drawing.Size(441, 39);
+            this.comboBoxSiteNavigation.Size = new System.Drawing.Size(168, 21);
             this.comboBoxSiteNavigation.TabIndex = 13;
             this.comboBoxSiteNavigation.SelectedIndexChanged += new System.EventHandler(this.comboBoxSiteNavigation_SelectedIndexChanged);
             // 
@@ -169,10 +163,9 @@
             this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(693, 1108);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonDelete.Location = new System.Drawing.Point(260, 465);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(200, 55);
+            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
             this.buttonDelete.TabIndex = 22;
             this.buttonDelete.Tag = "";
             this.buttonDelete.Text = "Delete";
@@ -184,10 +177,9 @@
             this.buttonEdit.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEdit.ForeColor = System.Drawing.Color.White;
-            this.buttonEdit.Location = new System.Drawing.Point(45, 1108);
-            this.buttonEdit.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonEdit.Location = new System.Drawing.Point(17, 465);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(200, 55);
+            this.buttonEdit.Size = new System.Drawing.Size(75, 23);
             this.buttonEdit.TabIndex = 21;
             this.buttonEdit.Tag = "Next Question";
             this.buttonEdit.Text = "Edit";
@@ -200,10 +192,9 @@
             this.buttonNew.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNew.ForeColor = System.Drawing.Color.White;
-            this.buttonNew.Location = new System.Drawing.Point(261, 1108);
-            this.buttonNew.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonNew.Location = new System.Drawing.Point(98, 465);
             this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(200, 55);
+            this.buttonNew.Size = new System.Drawing.Size(75, 23);
             this.buttonNew.TabIndex = 20;
             this.buttonNew.Tag = "Next Question";
             this.buttonNew.Text = "New";
@@ -216,10 +207,9 @@
             this.buttonSave.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.ForeColor = System.Drawing.Color.White;
-            this.buttonSave.Location = new System.Drawing.Point(477, 1108);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonSave.Location = new System.Drawing.Point(179, 465);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(200, 55);
+            this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 19;
             this.buttonSave.Tag = "";
             this.buttonSave.Text = "Save";
@@ -231,10 +221,9 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(909, 1108);
-            this.button1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.button1.Location = new System.Drawing.Point(341, 465);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 55);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 23;
             this.button1.Tag = "";
             this.button1.Text = "Cancel";
@@ -244,22 +233,23 @@
             // textBoxFormula
             // 
             this.textBoxFormula.Enabled = false;
-            this.textBoxFormula.Location = new System.Drawing.Point(557, 154);
+            this.textBoxFormula.Location = new System.Drawing.Point(209, 65);
+            this.textBoxFormula.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.textBoxFormula.Name = "textBoxFormula";
             this.textBoxFormula.ReadOnly = true;
-            this.textBoxFormula.Size = new System.Drawing.Size(1321, 38);
+            this.textBoxFormula.Size = new System.Drawing.Size(498, 20);
             this.textBoxFormula.TabIndex = 24;
             this.textBoxFormula.Text = "Formula";
             this.textBoxFormula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Formulas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(2133, 1195);
+            this.ClientSize = new System.Drawing.Size(800, 501);
             this.Controls.Add(this.textBoxFormula);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonDelete);
@@ -276,7 +266,6 @@
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "Formulas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";
@@ -287,19 +276,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxAnswer;
-        private System.Windows.Forms.Button buttonBack;
-        private System.Windows.Forms.Button buttonNext;
-        private System.Windows.Forms.Button buttonToggle;
-        private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.ComboBox comboBoxFormula;
-        private System.Windows.Forms.ComboBox comboBoxSiteNavigation;
-        private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Button buttonEdit;
-        private System.Windows.Forms.Button buttonNew;
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBoxFormula;
+        private Label label1;
+        private TextBox textBoxAnswer;
+        private Button buttonBack;
+        private Button buttonNext;
+        private Button buttonToggle;
+        private Button buttonExit;
+        private ComboBox comboBoxFormula;
+        private ComboBox comboBoxSiteNavigation;
+        private Button buttonDelete;
+        private Button buttonEdit;
+        private Button buttonNew;
+        private Button buttonSave;
+        private Button button1;
+        private TextBox textBoxFormula;
     }
 }

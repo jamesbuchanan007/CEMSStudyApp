@@ -1,11 +1,14 @@
-﻿namespace CEMSStudyApp.Pages
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace CEMSStudyApp.Pages
 {
     partial class MainMenu
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -165,13 +168,13 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button buttonPart75;
-        private System.Windows.Forms.Button buttonPart60;
-        private System.Windows.Forms.Button buttonFormulas;
-        private System.Windows.Forms.Button buttonAcronyms;
-        private System.Windows.Forms.Button buttonHowTos;
-        private System.Windows.Forms.Button buttonExit;
+        private PictureBox pictureBox1;
+        private Button buttonPart75;
+        private Button buttonPart60;
+        private Button buttonFormulas;
+        private Button buttonAcronyms;
+        private Button buttonHowTos;
+        private Button buttonExit;
     }
 }
 

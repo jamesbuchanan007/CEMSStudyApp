@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using CEMSStudyApp.Models;
 using CEMSStudyApp.Properties;
 
 namespace CEMSStudyApp.Pages
@@ -89,29 +90,33 @@ namespace CEMSStudyApp.Pages
 
         private void comboBoxSiteNavigation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (comboBoxSiteNavigation.Text)
+            var formIndex = comboBoxSiteNavigation.SelectedIndex;
+
+            Hide();
+
+            switch (formIndex)
             {
-                case "Acronyms":
-                    Hide();
-                    Acronyms acronyms = new Acronyms();
-                    acronyms.Show();
-                    break;
-                case "Formulas":
+                case 3:
                     Hide();
                     Formulas formulas = new Formulas();
                     formulas.Show();
                     break;
-                case "Main Menu":
+                case 4:
+                    Hide();
+                    Acronyms acronyms = new Acronyms();
+                    acronyms.Show();
+                    break;
+                case 0:
                     Hide();
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
                     break;
-                case "Part 60":
+                case 1:
                     Hide();
                     Part60 part60 = new Part60();
                     part60.Show();
                     break;
-                case "Part 75":
+                case 2:
                     Hide();
                     Part75 part75 = new Part75();
                     part75.Show();
@@ -136,14 +141,11 @@ namespace CEMSStudyApp.Pages
 
         private void buttonNew_Click(object sender, EventArgs e)
         {
-            textBoxAnswer.ReadOnly = false;
-            textBoxAnswer.Enabled = true;
-            buttonEdit.Hide();
-            buttonDelete.Hide();
+            EnableTextBoxes();
             textBoxAnswer.Text = "";
             textBoxHowTos.Text = "";
-            buttonBack.Hide();
-            buttonNext.Hide();
+            HideAllButtons();
+            buttonNew.Show();
             buttonToggle.Enabled = false;
 
         }
@@ -181,15 +183,15 @@ namespace CEMSStudyApp.Pages
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            var hDataSet = LoadTable("Formulas");
+            var hDataSet = LoadTable("HowTos");
             var index = comboBoxHowTo.SelectedIndex;
 
             if (index == 0 || hDataSet.Tables[0].Rows.Count == 0) return;   //CHECK IF TABLE IS EMPTY
 
             var newIndex = index - 1;
 
-            textBoxHowTos.Text = hDataSet.Tables[0].Rows[newIndex]["Formulas_Name"].ToString();
-            textBoxAnswer.Text = hDataSet.Tables[0].Rows[newIndex]["Formulas_Description"].ToString();
+            textBoxHowTos.Text = hDataSet.Tables[0].Rows[newIndex]["HowTos_Name"].ToString();
+            textBoxAnswer.Text = hDataSet.Tables[0].Rows[newIndex]["HowTos_Description"].ToString();
             comboBoxHowTo.SelectedIndex = comboBoxHowTo.FindString(textBoxHowTos.Text);
         }
 
@@ -217,5 +219,142 @@ namespace CEMSStudyApp.Pages
             textBoxHowTos.Text = hDataSet.Tables[0].Rows[index]["HowTos_Name"].ToString();
             textBoxAnswer.Text = hDataSet.Tables[0].Rows[index]["HowTos_Description"].ToString();
         }
+        private void EnableTextBoxes()
+        {
+            textBoxAnswer.ReadOnly = false;
+            textBoxAnswer.Enabled = true;
+            textBoxHowTos.ReadOnly = false;
+            textBoxHowTos.Enabled = true;
+        }
+        private void HideAllButtons()
+        {
+            buttonEdit.Hide();
+            buttonNew.Hide();
+            buttonDelete.Hide();
+            buttonBack.Hide();
+            buttonNext.Hide();
+            buttonBack.Hide();
+            buttonNext.Hide();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            if (buttonEdit.Visible)
+            {
+                SqlConnection connection;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                string sql;
+
+                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+                var connectionString = Settings.Default.LocalDb;
+
+                connection = new SqlConnection(connectionString);
+
+                HowTosViewModel vm = new HowTosViewModel
+
+                {
+                    Name = textBoxHowTos.Text,
+                    Description = textBoxAnswer.Text,
+                    PagesId = 1,
+                    DateEdited = DateTime.Now,
+                    IsActive = 1
+                };
+
+                var index = comboBoxHowTo.SelectedIndex;
+
+                var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
+
+                sql = "UPDATE HowTos " +
+                      "SET HowTos_Name = " + "'" + vm.Name + "'," +
+                      "HowTos_Description = " + "'" + vm.Description + "'," +
+                      "Pages_Id = " + vm.PagesId + "," +
+                      "Date_Edited = " + "'" + vm.DateEdited.ToString(format) + "'," +
+                      "Is_Active = " + vm.IsActive + " " +
+                      "WHERE HowTos_Id = " + index;
+
+                try
+                {
+                    connection.Open();
+                    adapter.UpdateCommand = connection.CreateCommand();
+                    adapter.UpdateCommand.CommandText = sql;
+                    adapter.UpdateCommand.ExecuteNonQuery();
+
+                    MessageBox.Show("Update Successful !!", "CEMS Study App", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+
+            if (buttonNew.Visible)
+            {
+                SqlConnection connection;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                string sql;
+
+                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+                var connectionString = Settings.Default.LocalDb;
+
+                connection = new SqlConnection(connectionString);
+
+                var aName = textBoxHowTos.Text;
+                var aDescription = textBoxAnswer.Text;
+                var pagesId = 1;
+                var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
+                var dateAdded = DateTime.Now;
+                var isActive = 1;
+
+                sql = "INSERT into HowTos (HowTos_Name,HowTos_Description,Pages_Id,Date_Added,Is_Active) values('" +
+                      aName + "'" + "," + "'" +
+                      aDescription + "'" + "," +
+                      pagesId + "," + "'" +
+                      dateAdded.ToString(format) + "'" + "," +
+                      isActive + ")";
+                try
+                {
+                    connection.Open();
+                    adapter.InsertCommand = new SqlCommand(sql, connection);
+                    adapter.InsertCommand.ExecuteNonQuery();
+                    MessageBox.Show("Row inserted !! ", "Database Update", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+                var aDataSet = LoadTable("HowTos");
+                var newIndex = comboBoxHowTo.Items.Count;
+                comboBoxHowTo.DataSource = aDataSet.Tables[0];
+                comboBoxHowTo.ValueMember = "HowTos_Id";
+                comboBoxHowTo.DisplayMember = "HowTos_Name";
+                comboBoxHowTo.SelectedIndex = newIndex;
+                textBoxHowTos.Text = aDataSet.Tables[0].Rows[newIndex]["HowTos_Name"].ToString();
+                textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["HowTos_Description"].ToString();
+
+            }
+
+            DisableTextBoxes();
+            ShowAllButtons();
+        }
+        private void DisableTextBoxes()
+        {
+            textBoxAnswer.ReadOnly = true;
+            textBoxAnswer.Enabled = false;
+            textBoxHowTos.ReadOnly = true;
+            textBoxHowTos.Enabled = false;
+        }
+        private void ShowAllButtons()
+        {
+            buttonEdit.Show();
+            buttonDelete.Show();
+            buttonNew.Show();
+            buttonBack.Show();
+            buttonNext.Show();
+        }
+
+
     }
 }

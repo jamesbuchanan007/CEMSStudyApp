@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using CEMSStudyApp.Models;
 using CEMSStudyApp.Properties;
 
 namespace CEMSStudyApp.Pages
@@ -205,19 +206,61 @@ namespace CEMSStudyApp.Pages
         {
             if (buttonEdit.Visible)
             {
+                SqlConnection connection;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                string sql;
+
+                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+                var connectionString = Settings.Default.LocalDb;
+
+                connection = new SqlConnection(connectionString);
+
+                AcronymsViewModel vm = new AcronymsViewModel
+                {
+                    Acronyms_Name = textBoxAcronym.Text,
+                    Acronyms_Description = textBoxAnswer.Text,
+                    Pages_Id = 1,
+                    Date_Edited = DateTime.Now,
+                    IsActive = 1
+                };
+
+                var index = comboBoxAcronym.SelectedIndex;
+
+               
+                var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
+              
+                sql = "UPDATE Acronyms " + 
+                      "SET Acronyms_Name = " + "'" + vm.Acronyms_Name + "'," + 
+                      "Acronyms_Description = " + "'" + vm.Acronyms_Description + "'," +
+                      "Pages_Id = " + vm.Pages_Id + "," +
+                      "Date_Edited = " + "'" + vm.Date_Edited.ToString(format) + "'," +
+                      "Is_Active = " + vm.IsActive + " " +
+                      "WHERE Acronyms_Id = " + index;
 
                 try
                 {
-                    Validate();
 
-                    MessageBox.Show("Update successful", "CEMS Study App", MessageBoxButtons.OK,
+                    connection.Open();
+                    adapter.UpdateCommand = connection.CreateCommand();
+                    adapter.UpdateCommand.CommandText = sql;
+                    adapter.UpdateCommand.ExecuteNonQuery();
+                    MessageBox.Show("Update Successful !!", "CEMS Study App", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Update failed");
+                    MessageBox.Show(ex.ToString());
                 }
+
+                var aDataSet = LoadTable("Acronyms");
+                var newIndex = comboBoxAcronym.SelectedIndex;
+                comboBoxAcronym.DataSource = aDataSet.Tables[0];
+                comboBoxAcronym.ValueMember = "Acronyms_Id";
+                comboBoxAcronym.DisplayMember = "Acronyms_Name";
+                comboBoxAcronym.SelectedIndex = newIndex;
+                textBoxAcronym.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
+                textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Description"].ToString();
             }
 
             if (buttonNew.Visible)
@@ -231,25 +274,29 @@ namespace CEMSStudyApp.Pages
 
                 connection = new SqlConnection(connectionString);
 
-                var aName = textBoxAcronym.Text;
-                var aDescription = textBoxAnswer.Text;
-                var pagesId = 1;
-                var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
-                var dateAdded = DateTime.Now;
-                var isActive = 1;
+                AcronymsViewModel vm = new AcronymsViewModel
+                {
+                    Acronyms_Name =  textBoxAcronym.Text,
+                    Acronyms_Description = textBoxAnswer.Text,
+                    Pages_Id = 1,
+                    Date_Added = DateTime.Now,
+                    IsActive = 1
+                };
+
+                var format = "yyyy-MM-dd HH:mm:ss";
 
                 sql = "INSERT into Acronyms (Acronyms_Name,Acronyms_Description,Pages_Id,Date_Added,Is_Active) values('"+ 
-                      aName + "'" + "," + "'"+
-                      aDescription+"'" + "," + 
-                      pagesId + "," + "'"+
-                      dateAdded.ToString(format)+"'" + ","  + 
-                      isActive + ")";
+                      vm.Acronyms_Name + "'" + "," + "'"+
+                      vm.Acronyms_Description+"'" + "," + 
+                      vm.Pages_Id + "," + "'"+
+                      vm.Date_Added.ToString(format)+"'" + ","  + 
+                      vm.IsActive + ")";
                 try
                 {
                     connection.Open();
                     adapter.InsertCommand = new SqlCommand(sql, connection);
                     adapter.InsertCommand.ExecuteNonQuery();
-                    MessageBox.Show("Row inserted !! ","Database Update",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Row inserted !! ","CEMS Study App",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
                 }
                 catch (Exception ex)
                 {

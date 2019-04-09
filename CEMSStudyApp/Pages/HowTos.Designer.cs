@@ -214,6 +214,7 @@ namespace CEMSStudyApp.Pages
             this.buttonSave.Tag = "";
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonCancel
             // 
@@ -234,7 +235,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.textBoxHowTos.Enabled = false;
             this.textBoxHowTos.Location = new System.Drawing.Point(200, 74);
-            this.textBoxHowTos.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxHowTos.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxHowTos.Name = "textBoxHowTos";
             this.textBoxHowTos.ReadOnly = true;
             this.textBoxHowTos.Size = new System.Drawing.Size(498, 20);

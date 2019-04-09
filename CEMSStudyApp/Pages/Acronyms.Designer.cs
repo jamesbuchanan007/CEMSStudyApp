@@ -62,10 +62,11 @@ namespace CEMSStudyApp.Pages
             // 
             // textBoxAnswer
             // 
+            this.textBoxAnswer.BackColor = System.Drawing.Color.White;
             this.textBoxAnswer.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBoxAnswer.Enabled = false;
             this.textBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAnswer.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxAnswer.ForeColor = System.Drawing.Color.Black;
             this.textBoxAnswer.Location = new System.Drawing.Point(17, 110);
             this.textBoxAnswer.Multiline = true;
             this.textBoxAnswer.Name = "textBoxAnswer";
@@ -234,6 +235,7 @@ namespace CEMSStudyApp.Pages
             // 
             // textBoxAcronym
             // 
+            this.textBoxAcronym.BackColor = System.Drawing.Color.White;
             this.textBoxAcronym.Location = new System.Drawing.Point(202, 85);
             this.textBoxAcronym.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxAcronym.Name = "textBoxAcronym";

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using CEMSStudyApp.Models;
 using CEMSStudyApp.Properties;
 
 namespace CEMSStudyApp.Pages
@@ -90,29 +91,33 @@ namespace CEMSStudyApp.Pages
 
         private void comboBoxSiteNavigation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (comboBoxSiteNavigation.Text)
+            var formIndex = comboBoxSiteNavigation.SelectedIndex;
+
+            Hide();
+
+            switch (formIndex)
             {
-                case "Acronyms":
+                case 4:
                     Hide();
                     Acronyms acronyms = new Acronyms();
                     acronyms.Show();
                     break;
-                case "How To's":
+                case 5:
                     Hide();
                     HowTos howTos = new HowTos();
                     howTos.Show();
                     break;
-                case "Main Menu":
+                case 0:
                     Hide();
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
                     break;
-                case "Part 60":
+                case 1:
                     Hide();
                     Part60 part60 = new Part60();
                     part60.Show();
                     break;
-                case "Part 75":
+                case 2:
                     Hide();
                     Part75 part75 = new Part75();
                     part75.Show();
@@ -137,14 +142,11 @@ namespace CEMSStudyApp.Pages
 
         private void buttonNew_Click(object sender, EventArgs e)
         {
-            textBoxAnswer.ReadOnly = false;
-            textBoxAnswer.Enabled = true;
-            buttonEdit.Hide();
-            buttonDelete.Hide();
+            EnableTextBoxes();
             textBoxAnswer.Text = "";
             textBoxFormula.Text = "";
-            buttonBack.Hide();
-            buttonNext.Hide();
+            HideAllButtons();
+            buttonNew.Show();
             buttonToggle.Enabled = false;
 
         }
@@ -204,8 +206,8 @@ namespace CEMSStudyApp.Pages
 
             var newIndex = index + 1;
 
-            textBoxFormula.Text = fDataSet.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
-            textBoxAnswer.Text = fDataSet.Tables[0].Rows[newIndex]["Acronyms_Description"].ToString();
+            textBoxFormula.Text = fDataSet.Tables[0].Rows[newIndex]["Formulas_Name"].ToString();
+            textBoxAnswer.Text = fDataSet.Tables[0].Rows[newIndex]["Formulas_Description"].ToString();
             comboBoxFormula.SelectedIndex = comboBoxFormula.FindString(textBoxFormula.Text);
         }
 
@@ -220,5 +222,153 @@ namespace CEMSStudyApp.Pages
             textBoxAnswer.Text = fDataSet.Tables[0].Rows[index]["Formula_Description"].ToString();
 
         }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            if (buttonEdit.Visible)
+            {
+                SqlConnection connection;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                string sql;
+
+                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+                var connectionString = Settings.Default.LocalDb;
+
+                connection = new SqlConnection(connectionString);
+
+                FormulasViewModel vm = new FormulasViewModel
+                {
+                    FormulasName = textBoxFormula.Text,
+                    FormulasDescription = textBoxAnswer.Text,
+                    PagesId = 1,
+                    DateEdited = DateTime.Now,
+                    IsActive = 1
+                };
+
+                var index = comboBoxFormula.SelectedIndex;
+
+
+                var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
+
+                sql = "UPDATE Acronyms " +
+                      "SET Acronyms_Name = " + "'" + vm.FormulasName + "'," +
+                      "Acronyms_Description = " + "'" + vm.FormulasDescription + "'," +
+                      "Pages_Id = " + vm.PagesId + "," +
+                      "Date_Edited = " + "'" + vm.DateEdited.ToString(format) + "'," +
+                      "Is_Active = " + vm.IsActive + " " +
+                      "WHERE Acronyms_Id = " + index;
+
+                try
+                {
+
+                    connection.Open();
+                    adapter.UpdateCommand = connection.CreateCommand();
+                    adapter.UpdateCommand.CommandText = sql;
+                    adapter.UpdateCommand.ExecuteNonQuery();
+                    MessageBox.Show("Update Successful !!", "CEMS Study App", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+                var aDataSet = LoadTable("Formulas");
+                var newIndex = comboBoxFormula.SelectedIndex;
+                comboBoxFormula.DataSource = aDataSet.Tables[0];
+                comboBoxFormula.ValueMember = "Formulas_Id";
+                comboBoxFormula.DisplayMember = "Formulas_Name";
+                comboBoxFormula.SelectedIndex = newIndex;
+                comboBoxFormula.Text = aDataSet.Tables[0].Rows[newIndex]["Formulas_Name"].ToString();
+                textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Formulas_Description"].ToString();
+            }
+
+            if (buttonNew.Visible)
+            {
+                SqlConnection connection;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                string sql;
+
+                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+                var connectionString = Settings.Default.LocalDb;
+
+                connection = new SqlConnection(connectionString);
+
+                var aName = textBoxFormula.Text;
+                var aDescription = textBoxAnswer.Text;
+                var pagesId = 1;
+                var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
+                var dateAdded = DateTime.Now;
+                var isActive = 1;
+
+                sql = "INSERT into Formulas (Formulas_Name,Formulas_Description,Pages_Id,Date_Added,Is_Active) values('" +
+                      aName + "'" + "," + "'" +
+                      aDescription + "'" + "," +
+                      pagesId + "," + "'" +
+                      dateAdded.ToString(format) + "'" + "," +
+                      isActive + ")";
+                try
+                {
+                    connection.Open();
+                    adapter.InsertCommand = new SqlCommand(sql, connection);
+                    adapter.InsertCommand.ExecuteNonQuery();
+                    MessageBox.Show("Row inserted !! ", "Database Update", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+                var aDataSet = LoadTable("Formulas");
+                var newIndex = comboBoxFormula.Items.Count;
+                comboBoxFormula.DataSource = aDataSet.Tables[0];
+                comboBoxFormula.ValueMember = "Formulas_Id";
+                comboBoxFormula.DisplayMember = "Formulas_Name";
+                comboBoxFormula.SelectedIndex = newIndex;
+                comboBoxFormula.Text = aDataSet.Tables[0].Rows[newIndex]["Formulas_Name"].ToString();
+                textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Formulas_Description"].ToString();
+
+            }
+
+            DisableTextBoxes();
+            ShowAllButtons();
+        }
+        private void DisableTextBoxes()
+        {
+            textBoxAnswer.ReadOnly = true;
+            textBoxAnswer.Enabled = false;
+            textBoxFormula.ReadOnly = true;
+            textBoxFormula.Enabled = false;
+        }
+        private void ShowAllButtons()
+        {
+            buttonEdit.Show();
+            buttonDelete.Show();
+            buttonNew.Show();
+            buttonBack.Show();
+            buttonNext.Show();
+        }
+        private void EnableTextBoxes()
+        {
+            textBoxAnswer.ReadOnly = false;
+            textBoxAnswer.Enabled = true;
+            textBoxFormula.ReadOnly = false;
+            textBoxFormula.Enabled = true;
+        }
+        private void HideAllButtons()
+        {
+            buttonEdit.Hide();
+            buttonNew.Hide();
+            buttonDelete.Hide();
+            buttonBack.Hide();
+            buttonNext.Hide();
+            buttonBack.Hide();
+            buttonNext.Hide();
+        }
+
+
+
+
     }
 }

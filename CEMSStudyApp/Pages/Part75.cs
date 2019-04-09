@@ -90,74 +90,59 @@ namespace CEMSStudyApp.Pages
 
         private void comboBoxSiteNavigation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (comboBoxSiteNavigation.Text)
+            var formIndex = comboBoxSiteNavigation.SelectedIndex;
+
+            Hide();
+
+            switch (formIndex)
             {
-                case "Acronyms":
-                    Hide();
-                    Acronyms acronyms = new Acronyms();
-                    acronyms.Show();
-                    break;
-                case "Formulas":
+                case 3:
                     Hide();
                     Formulas formulas = new Formulas();
                     formulas.Show();
                     break;
-                case "How To's":
+                case 4:
                     Hide();
-                    HowTos howTos = new HowTos();
-                    howTos.Show();
+                    Acronyms acronyms = new Acronyms();
+                    acronyms.Show();
                     break;
-                case "Main Menu":
+                case 0:
                     Hide();
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
                     break;
-                case "Part 60":
+                case 1:
                     Hide();
                     Part60 part60 = new Part60();
                     part60.Show();
                     break;
-               
+                case 5:
+                    Hide();
+                    HowTos howTos = new HowTos();
+                    howTos.Show();
+                    break;
             }
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            textBoxAnswer.ReadOnly = false;
-            textBoxAnswer.Enabled = true;
-            textBoxSectionName.ReadOnly = false;
-            textBoxSectionName.Enabled = true;
-            textBoxSectionNumber.ReadOnly = false;
-            textBoxSectionNumber.Enabled = true;
-            textBoxQuestion.ReadOnly = false;
-            textBoxQuestion.Enabled = true;
-            buttonNew.Hide();
-            buttonDelete.Hide();
-            buttonBack.Hide();
-            buttonNext.Hide();
+            EnableTextBoxes();
+            HideAllButtons();
+            buttonEdit.Show();
             buttonToggle.Enabled = false;
 
         }
 
         private void buttonNew_Click(object sender, EventArgs e)
         {
-            textBoxAnswer.ReadOnly = false;
-            textBoxAnswer.Enabled = true;
-            textBoxSectionNumber.ReadOnly = false;
-            textBoxSectionNumber.Enabled = true;
-            textBoxSectionName.ReadOnly = false;
-            textBoxSectionName.Enabled = true;
-            textBoxQuestion.ReadOnly = false;
-            textBoxQuestion.Enabled = true;
-            buttonEdit.Hide();
-            buttonDelete.Hide();
+            EnableTextBoxes();
             textBoxAnswer.Text = "";
             textBoxQuestion.Text = "";
             textBoxSectionName.Text = "";
             textBoxSectionNumber.Text = "";
-            buttonBack.Hide();
+            HideAllButtons();
+            buttonNew.Show();
             buttonToggle.Enabled = false;
-            buttonNext.Hide();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -166,20 +151,9 @@ namespace CEMSStudyApp.Pages
             textBoxQuestion.Undo();
             textBoxSectionName.Undo();
             textBoxSectionNumber.Undo();
-            textBoxAnswer.ReadOnly = true;
-            textBoxAnswer.Enabled = false;
-            textBoxSectionNumber.ReadOnly = true;
-            textBoxSectionNumber.Enabled = false;
-            textBoxSectionName.ReadOnly = true;
-            textBoxSectionName.Enabled = false;
-            textBoxQuestion.ReadOnly = true;
-            textBoxQuestion.Enabled = false;
-            buttonEdit.Show();
-            buttonDelete.Show();
-            buttonNew.Show();
-            buttonBack.Show();
+            DisableTextBoxes();
+            ShowAllButtons();
             buttonToggle.Enabled = true;
-            buttonNext.Show();
         }
 
         private void buttonToggle_Click(object sender, EventArgs e)
@@ -243,6 +217,51 @@ namespace CEMSStudyApp.Pages
             textBoxSectionName.Text = part75DataSet.Tables[0].Rows[index]["Part75_Name"].ToString();
             textBoxSectionNumber.Text = part75DataSet.Tables[0].Rows[index]["Part75_Number"].ToString();
             textBoxAnswer.Text = part75DataSet.Tables[0].Rows[index]["Part75_Answer"].ToString();
+        }
+        private void EnableTextBoxes()
+        {
+            textBoxAnswer.Enabled = true;
+            textBoxQuestion.Enabled = true;
+            textBoxSectionName.Enabled = true;
+            textBoxSectionNumber.Enabled = true;
+
+            textBoxAnswer.ReadOnly = false;
+            textBoxQuestion.ReadOnly = false;
+            textBoxSectionName.ReadOnly = false;
+            textBoxSectionNumber.ReadOnly = false;
+        }
+
+        private void DisableTextBoxes()
+        {
+            textBoxAnswer.Enabled = false;
+            textBoxQuestion.Enabled = false;
+            textBoxSectionName.Enabled = false;
+            textBoxSectionNumber.Enabled = false;
+
+            textBoxAnswer.ReadOnly = true;
+            textBoxQuestion.ReadOnly = true;
+            textBoxSectionName.ReadOnly = true;
+            textBoxSectionNumber.ReadOnly = true;
+        }
+
+        private void HideAllButtons()
+        {
+            buttonEdit.Hide();
+            buttonNew.Hide();
+            buttonDelete.Hide();
+            buttonBack.Hide();
+            buttonNext.Hide();
+            buttonBack.Hide();
+            buttonNext.Hide();
+        }
+
+        private void ShowAllButtons()
+        {
+            buttonEdit.Show();
+            buttonDelete.Show();
+            buttonNew.Show();
+            buttonBack.Show();
+            buttonNext.Show();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using CEMSStudyApp.Models;
 using CEMSStudyApp.Properties;
 
 namespace CEMSStudyApp.Pages
@@ -91,29 +92,33 @@ namespace CEMSStudyApp.Pages
 
         private void comboBoxSiteNavigation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (comboBoxSiteNavigation.Text)
+            var formIndex = comboBoxSiteNavigation.SelectedIndex;
+
+            Hide();
+
+            switch (formIndex)
             {
-                case "Acronyms":
-                    Hide();
-                    Acronyms acronyms = new Acronyms();
-                    acronyms.Show();
-                    break;
-                case "Formulas":
+                case 3:
                     Hide();
                     Formulas formulas = new Formulas();
                     formulas.Show();
                     break;
-                case "How To's":
+                case 4:
                     Hide();
-                    HowTos howTos = new HowTos();
-                    howTos.Show();
+                    Acronyms acronyms = new Acronyms();
+                    acronyms.Show();
                     break;
-                case "Main Menu":
+                case 0:
                     Hide();
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
                     break;
-                case "Part 75":
+                case 5:
+                    Hide();
+                    HowTos howTos = new HowTos();
+                    howTos.Show();
+                    break;
+                case 2:
                     Hide();
                     Part75 part75 = new Part75();
                     part75.Show();
@@ -123,40 +128,22 @@ namespace CEMSStudyApp.Pages
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            textBoxAnswer.ReadOnly = false;
-            textBoxAnswer.Enabled = true;
-            textBoxSectionNumber.ReadOnly = false;
-            textBoxSectionNumber.Enabled = true;
-            textBoxSectionName.ReadOnly = false;
-            textBoxSectionName.Enabled = true;
-            textBoxQuestion.ReadOnly = false;
-            textBoxQuestion.Enabled = true;
-            buttonNew.Hide();
-            buttonDelete.Hide();
-            buttonBack.Hide();
-            buttonNext.Hide();
+            EnableTextBoxes();
+            HideAllButtons();
+            buttonEdit.Show();
             buttonToggle.Enabled = false;
 
         }
 
         private void buttonNew_Click(object sender, EventArgs e)
         {
-            textBoxAnswer.ReadOnly = false;
-            textBoxAnswer.Enabled = true;
-            textBoxSectionNumber.ReadOnly = false;
-            textBoxSectionNumber.Enabled = true;
-            textBoxSectionName.ReadOnly = false;
-            textBoxSectionName.Enabled = true;
-            textBoxQuestion.ReadOnly = false;
-            textBoxQuestion.Enabled = true;
-            buttonEdit.Hide();
-            buttonDelete.Hide();
+            EnableTextBoxes();
             textBoxAnswer.Text = "";
             textBoxQuestion.Text = "";
             textBoxSectionName.Text = "";
             textBoxSectionNumber.Text = "";
-            buttonBack.Hide();
-            buttonNext.Hide();
+            HideAllButtons();
+            buttonNew.Show();
             buttonToggle.Enabled = false;
 
         }
@@ -165,22 +152,10 @@ namespace CEMSStudyApp.Pages
         {
             textBoxAnswer.Undo();
             textBoxQuestion.Undo();
-
-            textBoxQuestion.ReadOnly = true;
-            textBoxQuestion.Enabled = false;
             textBoxSectionName.Undo();
             textBoxSectionNumber.Undo();
-            textBoxAnswer.ReadOnly = true;
-            textBoxAnswer.Enabled = false;
-            textBoxSectionNumber.ReadOnly = true;
-            textBoxSectionNumber.Enabled = false;
-            textBoxSectionName.ReadOnly = true;
-            textBoxSectionName.Enabled = false;
-            buttonEdit.Show();
-            buttonDelete.Show();
-            buttonNew.Show();
-            buttonBack.Show();
-            buttonNext.Show();
+            DisableTextBoxes();
+            ShowAllButtons();
             buttonToggle.Enabled = true;
 
         }
@@ -247,6 +222,181 @@ namespace CEMSStudyApp.Pages
             textBoxSectionName.Text = part60DataSet.Tables[0].Rows[index]["Part60_Name"].ToString();
             textBoxSectionNumber.Text = part60DataSet.Tables[0].Rows[index]["Part60_Number"].ToString();
             textBoxAnswer.Text = part60DataSet.Tables[0].Rows[index]["Part60_Answer"].ToString();
+        }
+
+        private void EnableTextBoxes()
+        {
+            textBoxAnswer.Enabled = true;
+            textBoxQuestion.Enabled = true;
+            textBoxSectionName.Enabled = true;
+            textBoxSectionNumber.Enabled = true;
+
+            textBoxAnswer.ReadOnly = false;
+            textBoxQuestion.ReadOnly = false;
+            textBoxSectionName.ReadOnly = false;
+            textBoxSectionNumber.ReadOnly = false;
+        }
+
+        private void DisableTextBoxes()
+        {
+            textBoxAnswer.Enabled = false;
+            textBoxQuestion.Enabled = false;
+            textBoxSectionName.Enabled = false;
+            textBoxSectionNumber.Enabled = false;
+
+            textBoxAnswer.ReadOnly = true;
+            textBoxQuestion.ReadOnly = true;
+            textBoxSectionName.ReadOnly = true;
+            textBoxSectionNumber.ReadOnly = true;
+        }
+
+        private void HideAllButtons()
+        {
+            buttonEdit.Hide();
+            buttonNew.Hide();
+            buttonDelete.Hide();
+            buttonBack.Hide();
+            buttonNext.Hide();
+            buttonBack.Hide();
+            buttonNext.Hide();
+        }
+
+        private void ShowAllButtons()
+        {
+            buttonEdit.Show();
+            buttonDelete.Show();
+            buttonNew.Show();
+            buttonBack.Show();
+            buttonNext.Show();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            if (buttonEdit.Visible)
+            {
+                SqlConnection connection;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                string sql;
+
+                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+                var connectionString = Settings.Default.LocalDb;
+
+                connection = new SqlConnection(connectionString);
+
+                Part60ViewModel vm = new Part60ViewModel
+
+                {
+                    Part60Answer = textBoxAnswer.Text,
+                    Part60Name = textBoxSectionName.Text,
+                    Part60Number = textBoxSectionNumber.Text,
+                    Part60Question = textBoxQuestion.Text,
+                    PagesId = 1,
+                    DateEdited = DateTime.Now,
+                    IsActive = 1
+                };
+
+                var index = comboBoxSectionNumber.SelectedIndex;
+
+                var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
+
+                sql = "UPDATE Part60 " +
+                      "SET Part60_Answer = " + "'" + vm.Part60Answer + "'," +
+                      "Part60_Name = " + "'" + vm.Part60Name + "'," +
+                      "Part60_Number = " + "'" + vm.Part60Number + "'," +
+                      "Part60_Question = " + "'" + vm.Part60Question + "'," +
+                      "Pages_Id = " + vm.PagesId + "," +
+                      "Date_Edited = " + "'" + vm.DateEdited.ToString(format) + "'," +
+                      "Is_Active = " + vm.IsActive + " " +
+                      "WHERE Part60_Id = " + index;
+
+                try
+                {
+                    connection.Open();
+                    adapter.UpdateCommand = connection.CreateCommand();
+                    adapter.UpdateCommand.CommandText = sql;
+                    adapter.UpdateCommand.ExecuteNonQuery();
+
+                    MessageBox.Show("Update Successful !!", "CEMS Study App", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+                var aDataSet = LoadTable("Part60");
+                var newIndex = comboBoxSectionNumber.SelectedIndex;
+                comboBoxSectionNumber.DataSource = aDataSet.Tables[0];
+                comboBoxSectionNumber.ValueMember = "Part60_Id";
+                comboBoxSectionNumber.DisplayMember = "Part60_Name";
+                comboBoxSectionNumber.SelectedIndex = newIndex;
+                textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Part60_Answer"].ToString();
+                textBoxSectionNumber.Text = aDataSet.Tables[0].Rows[newIndex]["Part60_Number"].ToString();
+                textBoxQuestion.Text = aDataSet.Tables[0].Rows[newIndex]["Part60_Question"].ToString();
+                textBoxSectionName.Text = aDataSet.Tables[0].Rows[newIndex]["Part60_Name"].ToString();
+
+            }
+
+            if (buttonNew.Visible)
+            {
+                SqlConnection connection;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                string sql;
+
+                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+                var connectionString = Settings.Default.LocalDb;
+
+                connection = new SqlConnection(connectionString);
+
+                Part60ViewModel vm = new Part60ViewModel
+                {
+                    Part60Name = textBoxSectionName.Text,
+                    Part60Number = textBoxSectionNumber.Text,
+                    Part60Question = textBoxQuestion.Text,
+                    Part60Answer = textBoxAnswer.Text,
+                    PagesId = 1,
+                    DateAdded = DateTime.Now,
+                    IsActive = 1
+                };
+
+                var format = "yyyy-MM-dd HH:mm:ss";
+
+                sql = "INSERT into Acronyms (Acronyms_Name,Acronyms_Description,Pages_Id,Date_Added,Is_Active) values('" +
+                      vm.Part60Name + "'" + "," + "'" +
+                      vm.Part60Number + "'" + "," + 
+                      vm.Part60Question + "'" + "," + "'" + 
+                      vm.Part60Answer + "'" + "," + "'" +
+                      vm.PagesId + "," + "'" +
+                      vm.DateAdded.ToString(format) + "'" + "," +
+                      vm.IsActive + ")";
+                try
+                {
+                    connection.Open();
+                    adapter.InsertCommand = new SqlCommand(sql, connection);
+                    adapter.InsertCommand.ExecuteNonQuery();
+                    MessageBox.Show("Row inserted !! ", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+                var aDataSet = LoadTable("Part60");
+                var newIndex = comboBoxSectionNumber.Items.Count;
+                comboBoxSectionNumber.DataSource = aDataSet.Tables[0];
+                comboBoxSectionNumber.ValueMember = "Acronyms_Id";
+                comboBoxSectionNumber.DisplayMember = "Acronyms_Name";
+                comboBoxSectionNumber.SelectedIndex = newIndex;
+                textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Part60_Answer"].ToString();
+                textBoxQuestion.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Question"].ToString();
+                textBoxSectionName.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
+                textBoxSectionNumber.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Number"].ToString();
+
+            }
+
+            DisableTextBoxes();
+            ShowAllButtons();
         }
     }
 }

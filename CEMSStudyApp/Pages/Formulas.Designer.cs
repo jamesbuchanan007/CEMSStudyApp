@@ -214,6 +214,7 @@ namespace CEMSStudyApp.Pages
             this.buttonSave.Tag = "";
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // button1
             // 
@@ -234,7 +235,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.textBoxFormula.Enabled = false;
             this.textBoxFormula.Location = new System.Drawing.Point(209, 65);
-            this.textBoxFormula.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxFormula.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxFormula.Name = "textBoxFormula";
             this.textBoxFormula.ReadOnly = true;
             this.textBoxFormula.Size = new System.Drawing.Size(498, 20);

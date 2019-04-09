@@ -13,5 +13,6 @@ namespace CEMSStudyApp.Models
         public DateTime DateAdded { get; set; }
         public DateTime DateEdited { get; set; }
         public DateTime DateDeleted { get; set; }
+        public int IsActive { get; set; }
     }
 }

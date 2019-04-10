@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using CEMSStudyApp.Models;
 using CEMSStudyApp.Properties;
 
 namespace CEMSStudyApp.Pages
@@ -262,6 +263,156 @@ namespace CEMSStudyApp.Pages
             buttonNew.Show();
             buttonBack.Show();
             buttonNext.Show();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            if (buttonEdit.Visible)
+            {
+                //IF NOTHING TO EDIT
+                if (comboBoxSectionNumber.Items.Count == 0) { RefreshDisableShow(); return; }
+
+                //CHECK WHETHER USER MEANT TO HIT SAVE BUTTON
+                if (SaveQuestion() == DialogResult.No) { RefreshDisableShow(); return; }
+
+                Part75ViewModel vm = new Part75ViewModel
+
+                {
+                    Part75Answer = textBoxAnswer.Text,
+                    Part75Name = textBoxSectionName.Text,
+                    Part75Number = textBoxSectionNumber.Text,
+                    Part75Question = textBoxQuestion.Text,
+                    PagesId = 1,
+                    DateEdited = DateTime.Now,
+                    IsActive = 1
+                };
+
+                var index = comboBoxSectionNumber.SelectedIndex;
+
+                var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE FOR DB
+
+                string sql = "UPDATE Part75 " +
+                      "SET Part75_Answer = " + "'" + vm.Part75Answer + "'," +
+                      "Part75_Name = " + "'" + vm.Part75Name + "'," +
+                      "Part75_Number = " + "'" + vm.Part75Number + "'," +
+                      "Part75_Question = " + "'" + vm.Part75Question + "'," +
+                      "Pages_Id = " + vm.PagesId + "," +
+                      "Date_Edited = " + "'" + vm.DateEdited.ToString(format) + "'," +
+                      "Is_Active = " + vm.IsActive + " " +
+                      "WHERE Part75_Id = " + index;
+
+                UpdateDatabase(sql);
+            }
+
+            if (buttonNew.Visible)
+            {
+                //CHECK WHETHER USER MEANT TO HIT SAVE BUTTON
+                if (SaveQuestion() == DialogResult.No) { RefreshDisableShow(); return; }
+
+                Part75ViewModel vm = new Part75ViewModel
+                {
+                    Part75Name = textBoxSectionName.Text,
+                    Part75Number = textBoxSectionNumber.Text,
+                    Part75Question = textBoxQuestion.Text,
+                    Part75Answer = textBoxAnswer.Text,
+                    PagesId = 1,
+                    DateAdded = DateTime.Now,
+                    IsActive = 1
+                };
+
+                var format = "yyyy-MM-dd HH:mm:ss";
+
+                string sql = "INSERT into Part75 (Part75_Name,Part75_Description,Pages_Id,Date_Added,Is_Active) values('" +
+                      vm.Part75Name + "'" + "," + "'" +
+                      vm.Part75Number + "'" + "," +
+                      vm.Part75Question + "'" + "," + "'" +
+                      vm.Part75Answer + "'" + "," + "'" +
+                      vm.PagesId + "," + "'" +
+                      vm.DateAdded.ToString(format) + "'" + "," +
+                      vm.IsActive + ")";
+
+                AddToDatabase(sql);
+                RefreshDisableShow();
+            }
+        }
+
+        private void RefreshDisableShow()
+        {
+            RefreshComboboxTextboxes();
+            DisableTextBoxes();
+            ShowAllButtons();
+        }
+
+
+        private void AddToDatabase(string sqlCommandString)
+        {
+            SqlConnection connection;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            string sql = sqlCommandString;
+
+            //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+            var connectionString = Settings.Default.LocalDb;
+            connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                adapter.InsertCommand = new SqlCommand(sql, connection);
+                adapter.InsertCommand.ExecuteNonQuery();
+                MessageBox.Show("Row inserted !! ", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void UpdateDatabase(string sqlCommandString)
+        {
+            SqlConnection connection;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            string sql = sqlCommandString;
+
+            //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+            var connectionString = Settings.Default.LocalDb;
+            connection = new SqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+                adapter.UpdateCommand = connection.CreateCommand();
+                adapter.UpdateCommand.CommandText = sql;
+                adapter.UpdateCommand.ExecuteNonQuery();
+
+                MessageBox.Show("Update Successful !!", "CEMS Study App", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+        }
+
+        private void RefreshComboboxTextboxes()
+        {
+            var aDataSet = LoadTable("Part75");
+            var newIndex = comboBoxSectionNumber.Items.Count;
+            comboBoxSectionNumber.DataSource = aDataSet.Tables[0];
+            comboBoxSectionNumber.ValueMember = "Part75_Id";
+            comboBoxSectionNumber.DisplayMember = "Part75_Name";
+            comboBoxSectionNumber.SelectedIndex = newIndex;
+            textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Part75_Answer"].ToString();
+            textBoxQuestion.Text = aDataSet.Tables[0].Rows[newIndex]["Part75_Question"].ToString();
+            textBoxSectionName.Text = aDataSet.Tables[0].Rows[newIndex]["Part75_Name"].ToString();
+            textBoxSectionNumber.Text = aDataSet.Tables[0].Rows[newIndex]["Part75_Number"].ToString();
+        }
+
+        private DialogResult SaveQuestion()
+        {
+            var answer = MessageBox.Show("Save ??", "CEMS Study App", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return answer;
         }
     }
 }

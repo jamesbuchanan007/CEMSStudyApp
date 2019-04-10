@@ -241,14 +241,11 @@ namespace CEMSStudyApp.Pages
         {
             if (buttonEdit.Visible)
             {
-                SqlConnection connection;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                string sql;
+                //IF NOTHING TO EDIT
+                if (comboBoxHowTo.Items.Count == 0) { RefreshDisableShow(); return; }
 
-                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
-                var connectionString = Settings.Default.LocalDb;
-
-                connection = new SqlConnection(connectionString);
+                //CHECK WHETHER USER MEANT TO HIT SAVE BUTTON
+                if (SaveQuestion() == DialogResult.No) { RefreshDisableShow(); return; }
 
                 HowTosViewModel vm = new HowTosViewModel
 
@@ -264,7 +261,7 @@ namespace CEMSStudyApp.Pages
 
                 var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
 
-                sql = "UPDATE HowTos " +
+                var sql = "UPDATE HowTos " +
                       "SET HowTos_Name = " + "'" + vm.Name + "'," +
                       "HowTos_Description = " + "'" + vm.Description + "'," +
                       "Pages_Id = " + vm.PagesId + "," +
@@ -272,72 +269,116 @@ namespace CEMSStudyApp.Pages
                       "Is_Active = " + vm.IsActive + " " +
                       "WHERE HowTos_Id = " + index;
 
-                try
-                {
-                    connection.Open();
-                    adapter.UpdateCommand = connection.CreateCommand();
-                    adapter.UpdateCommand.CommandText = sql;
-                    adapter.UpdateCommand.ExecuteNonQuery();
-
-                    MessageBox.Show("Update Successful !!", "CEMS Study App", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
+                UpdateDatabase(sql);
             }
 
             if (buttonNew.Visible)
             {
-                SqlConnection connection;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                string sql;
+                //CHECK WHETHER USER MEANT TO HIT SAVE BUTTON
+                if (SaveQuestion() == DialogResult.No) { RefreshDisableShow(); return; }
 
-                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
-                var connectionString = Settings.Default.LocalDb;
+                HowTosViewModel vm = new HowTosViewModel
+                {
+                    Name = textBoxHowTos.Text,
+                    Description = textBoxAnswer.Text,
+                    PagesId = 1,
+                    DateAdded = DateTime.Now,
+                    IsActive = 1
+                };
 
-                connection = new SqlConnection(connectionString);
-
-                var aName = textBoxHowTos.Text;
-                var aDescription = textBoxAnswer.Text;
-                var pagesId = 1;
                 var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
-                var dateAdded = DateTime.Now;
-                var isActive = 1;
 
-                sql = "INSERT into HowTos (HowTos_Name,HowTos_Description,Pages_Id,Date_Added,Is_Active) values('" +
-                      aName + "'" + "," + "'" +
-                      aDescription + "'" + "," +
-                      pagesId + "," + "'" +
-                      dateAdded.ToString(format) + "'" + "," +
-                      isActive + ")";
-                try
-                {
-                    connection.Open();
-                    adapter.InsertCommand = new SqlCommand(sql, connection);
-                    adapter.InsertCommand.ExecuteNonQuery();
-                    MessageBox.Show("Row inserted !! ", "Database Update", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
 
-                var aDataSet = LoadTable("HowTos");
-                var newIndex = comboBoxHowTo.Items.Count;
-                comboBoxHowTo.DataSource = aDataSet.Tables[0];
-                comboBoxHowTo.ValueMember = "HowTos_Id";
-                comboBoxHowTo.DisplayMember = "HowTos_Name";
-                comboBoxHowTo.SelectedIndex = newIndex;
-                textBoxHowTos.Text = aDataSet.Tables[0].Rows[newIndex]["HowTos_Name"].ToString();
-                textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["HowTos_Description"].ToString();
+                var sql = "INSERT into HowTos (HowTos_Name,HowTos_Description,Pages_Id,Date_Added,Is_Active) values('" +
+                      vm.Name + "'" + "," + "'" +
+                      vm.Description + "'" + "," +
+                      vm.PagesId + "," + "'" +
+                      vm.DateAdded.ToString(format) + "'" + "," +
+                      vm.IsActive + ")";
 
+                AddToDatabase(sql);
+                RefreshDisableShow();
             }
+        }
 
+        private void RefreshDisableShow()
+        {
+            RefreshComboboxTextboxes();
             DisableTextBoxes();
             ShowAllButtons();
+        }
+
+        private void AddToDatabase(string sqlCommandString)
+        {
+            SqlConnection connection;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            var sql = sqlCommandString;
+
+            //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+            var connectionString = Settings.Default.LocalDb;
+
+            connection = new SqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+                adapter.InsertCommand = new SqlCommand(sql, connection);
+                adapter.InsertCommand.ExecuteNonQuery();
+                MessageBox.Show("Row inserted !! ", "Database Update", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+        }
+
+        private void UpdateDatabase(string sqlCommandString)
+        {
+            SqlConnection connection;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            var sql = sqlCommandString;
+
+            //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+            var connectionString = Settings.Default.LocalDb;
+
+            connection = new SqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+                adapter.UpdateCommand = connection.CreateCommand();
+                adapter.UpdateCommand.CommandText = sql;
+                adapter.UpdateCommand.ExecuteNonQuery();
+
+                MessageBox.Show("Update Successful !!", "CEMS Study App", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private DialogResult SaveQuestion()
+        {
+            var answer = MessageBox.Show("Save ??", "CEMS Study App", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return answer;
+        }
+
+        private void RefreshComboboxTextboxes()
+        {
+            var aDataSet = LoadTable("HowTos");
+            var newIndex = comboBoxHowTo.Items.Count;
+            comboBoxHowTo.DataSource = aDataSet.Tables[0];
+            comboBoxHowTo.ValueMember = "HowTos_Id";
+            comboBoxHowTo.DisplayMember = "HowTos_Name";
+            comboBoxHowTo.SelectedIndex = newIndex;
+            textBoxHowTos.Text = aDataSet.Tables[0].Rows[newIndex]["HowTos_Name"].ToString();
+            textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["HowTos_Description"].ToString();
         }
         private void DisableTextBoxes()
         {

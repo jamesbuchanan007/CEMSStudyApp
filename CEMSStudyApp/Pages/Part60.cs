@@ -274,14 +274,11 @@ namespace CEMSStudyApp.Pages
         {
             if (buttonEdit.Visible)
             {
-                SqlConnection connection;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                string sql;
+                //IF NOTHING TO EDIT
+                if (comboBoxSectionNumber.Items.Count == 0) { RefreshDisableShow(); return; }
 
-                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
-                var connectionString = Settings.Default.LocalDb;
-
-                connection = new SqlConnection(connectionString);
+                //CHECK WHETHER USER MEANT TO HIT SAVE BUTTON
+                if (SaveQuestion() == DialogResult.No) { RefreshDisableShow(); return; }
 
                 Part60ViewModel vm = new Part60ViewModel
 
@@ -299,55 +296,23 @@ namespace CEMSStudyApp.Pages
 
                 var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
 
-                sql = "UPDATE Part60 " +
-                      "SET Part60_Answer = " + "'" + vm.Part60Answer + "'," +
-                      "Part60_Name = " + "'" + vm.Part60Name + "'," +
-                      "Part60_Number = " + "'" + vm.Part60Number + "'," +
-                      "Part60_Question = " + "'" + vm.Part60Question + "'," +
-                      "Pages_Id = " + vm.PagesId + "," +
-                      "Date_Edited = " + "'" + vm.DateEdited.ToString(format) + "'," +
-                      "Is_Active = " + vm.IsActive + " " +
-                      "WHERE Part60_Id = " + index;
+                var sql = "UPDATE Part60 " +
+                       "SET Part60_Answer = " + "'" + vm.Part60Answer + "'," +
+                       "Part60_Name = " + "'" + vm.Part60Name + "'," +
+                       "Part60_Number = " + "'" + vm.Part60Number + "'," +
+                       "Part60_Question = " + "'" + vm.Part60Question + "'," +
+                       "Pages_Id = " + vm.PagesId + "," +
+                       "Date_Edited = " + "'" + vm.DateEdited.ToString(format) + "'," +
+                       "Is_Active = " + vm.IsActive + " " +
+                       "WHERE Part60_Id = " + index;
 
-                try
-                {
-                    connection.Open();
-                    adapter.UpdateCommand = connection.CreateCommand();
-                    adapter.UpdateCommand.CommandText = sql;
-                    adapter.UpdateCommand.ExecuteNonQuery();
-
-                    MessageBox.Show("Update Successful !!", "CEMS Study App", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-
-                var aDataSet = LoadTable("Part60");
-                var newIndex = comboBoxSectionNumber.SelectedIndex;
-                comboBoxSectionNumber.DataSource = aDataSet.Tables[0];
-                comboBoxSectionNumber.ValueMember = "Part60_Id";
-                comboBoxSectionNumber.DisplayMember = "Part60_Name";
-                comboBoxSectionNumber.SelectedIndex = newIndex;
-                textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Part60_Answer"].ToString();
-                textBoxSectionNumber.Text = aDataSet.Tables[0].Rows[newIndex]["Part60_Number"].ToString();
-                textBoxQuestion.Text = aDataSet.Tables[0].Rows[newIndex]["Part60_Question"].ToString();
-                textBoxSectionName.Text = aDataSet.Tables[0].Rows[newIndex]["Part60_Name"].ToString();
-
+                UpdateDatabase(sql);
             }
 
             if (buttonNew.Visible)
             {
-                SqlConnection connection;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                string sql;
-
-                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
-                var connectionString = Settings.Default.LocalDb;
-
-                connection = new SqlConnection(connectionString);
+                //CHECK WHETHER USER MEANT TO HIT SAVE BUTTON
+                if (SaveQuestion() == DialogResult.No) { RefreshDisableShow(); return; }
 
                 Part60ViewModel vm = new Part60ViewModel
                 {
@@ -362,41 +327,97 @@ namespace CEMSStudyApp.Pages
 
                 var format = "yyyy-MM-dd HH:mm:ss";
 
-                sql = "INSERT into Acronyms (Acronyms_Name,Acronyms_Description,Pages_Id,Date_Added,Is_Active) values('" +
+                var sql = "INSERT into Acronyms (Acronyms_Name,Acronyms_Description,Pages_Id,Date_Added,Is_Active) values('" +
                       vm.Part60Name + "'" + "," + "'" +
-                      vm.Part60Number + "'" + "," + 
-                      vm.Part60Question + "'" + "," + "'" + 
+                      vm.Part60Number + "'" + "," +
+                      vm.Part60Question + "'" + "," + "'" +
                       vm.Part60Answer + "'" + "," + "'" +
                       vm.PagesId + "," + "'" +
                       vm.DateAdded.ToString(format) + "'" + "," +
                       vm.IsActive + ")";
-                try
-                {
-                    connection.Open();
-                    adapter.InsertCommand = new SqlCommand(sql, connection);
-                    adapter.InsertCommand.ExecuteNonQuery();
-                    MessageBox.Show("Row inserted !! ", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-
-                var aDataSet = LoadTable("Part60");
-                var newIndex = comboBoxSectionNumber.Items.Count;
-                comboBoxSectionNumber.DataSource = aDataSet.Tables[0];
-                comboBoxSectionNumber.ValueMember = "Acronyms_Id";
-                comboBoxSectionNumber.DisplayMember = "Acronyms_Name";
-                comboBoxSectionNumber.SelectedIndex = newIndex;
-                textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Part60_Answer"].ToString();
-                textBoxQuestion.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Question"].ToString();
-                textBoxSectionName.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
-                textBoxSectionNumber.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Number"].ToString();
-
+                AddToDatabase(sql);
+                RefreshDisableShow();
             }
-
+        }
+        //REFRESH COMBOBOXTEXTBOXES METHOD, DISABLE TEXTBOXES, SHOW ALL BUTTONS
+        private void RefreshDisableShow()
+        {
+            RefreshComboboxTextboxes();
             DisableTextBoxes();
             ShowAllButtons();
+
+        }
+
+        private void UpdateDatabase(string sqlCommandString)
+        {
+            SqlConnection connection;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            var sql = sqlCommandString;
+
+            //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+            var connectionString = Settings.Default.LocalDb;
+
+            connection = new SqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+                adapter.UpdateCommand = connection.CreateCommand();
+                adapter.UpdateCommand.CommandText = sql;
+                adapter.UpdateCommand.ExecuteNonQuery();
+
+                MessageBox.Show("Update Successful !!", "CEMS Study App", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private void AddToDatabase(string sqlCommandString)
+        {
+            SqlConnection connection;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            var sql = sqlCommandString;
+
+            //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+            var connectionString = Settings.Default.LocalDb;
+
+            connection = new SqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+                adapter.InsertCommand = new SqlCommand(sql, connection);
+                adapter.InsertCommand.ExecuteNonQuery();
+                MessageBox.Show("Row inserted !! ", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void RefreshComboboxTextboxes()
+        {
+            var aDataSet = LoadTable("Part60");
+            var newIndex = comboBoxSectionNumber.SelectedIndex;
+            comboBoxSectionNumber.DataSource = aDataSet.Tables[0];
+            comboBoxSectionNumber.ValueMember = "Part60_Id";
+            comboBoxSectionNumber.DisplayMember = "Part60_Name";
+            comboBoxSectionNumber.SelectedIndex = newIndex;
+            textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Part60_Answer"].ToString();
+            textBoxSectionNumber.Text = aDataSet.Tables[0].Rows[newIndex]["Part60_Number"].ToString();
+            textBoxQuestion.Text = aDataSet.Tables[0].Rows[newIndex]["Part60_Question"].ToString();
+            textBoxSectionName.Text = aDataSet.Tables[0].Rows[newIndex]["Part60_Name"].ToString();
+        }
+        private DialogResult SaveQuestion()
+        {
+            var answer = MessageBox.Show("Save ??", "CEMS Study App", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return answer;
         }
     }
 }

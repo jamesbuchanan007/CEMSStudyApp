@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace CEMSStudyApp.Pages
 {
-    partial class PasswordLogin
+    partial class PasswordsLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace CEMSStudyApp.Pages
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordsLogin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,6 +39,10 @@ namespace CEMSStudyApp.Pages
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.buttonSubmit = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,10 +50,9 @@ namespace CEMSStudyApp.Pages
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(85, 29);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(32, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(559, 183);
+            this.pictureBox1.Size = new System.Drawing.Size(210, 77);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -59,10 +62,9 @@ namespace CEMSStudyApp.Pages
             this.buttonCancel.BackColor = System.Drawing.Color.Red;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.ForeColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(488, 415);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonCancel.Location = new System.Drawing.Point(183, 234);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(200, 55);
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 6;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
@@ -71,37 +73,33 @@ namespace CEMSStudyApp.Pages
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 270);
-            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label1.Location = new System.Drawing.Point(29, 113);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 32);
+            this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "User Name";
             // 
             // textBoxUserName
             // 
-            this.textBoxUserName.Location = new System.Drawing.Point(253, 260);
-            this.textBoxUserName.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBoxUserName.Location = new System.Drawing.Point(95, 109);
             this.textBoxUserName.Name = "textBoxUserName";
-            this.textBoxUserName.Size = new System.Drawing.Size(391, 38);
+            this.textBoxUserName.Size = new System.Drawing.Size(149, 20);
             this.textBoxUserName.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(96, 344);
-            this.label2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label2.Location = new System.Drawing.Point(17, 138);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 32);
+            this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Password";
+            this.label2.Text = "Old Password";
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(253, 334);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBoxPassword.Location = new System.Drawing.Point(95, 135);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(391, 38);
+            this.textBoxPassword.Size = new System.Drawing.Size(149, 20);
             this.textBoxPassword.TabIndex = 10;
             this.textBoxPassword.UseSystemPasswordChar = true;
             // 
@@ -110,19 +108,56 @@ namespace CEMSStudyApp.Pages
             this.buttonSubmit.BackColor = System.Drawing.Color.Green;
             this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubmit.ForeColor = System.Drawing.Color.White;
-            this.buttonSubmit.Location = new System.Drawing.Point(32, 415);
-            this.buttonSubmit.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonSubmit.Location = new System.Drawing.Point(12, 234);
             this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(200, 55);
+            this.buttonSubmit.Size = new System.Drawing.Size(75, 23);
             this.buttonSubmit.TabIndex = 11;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(95, 161);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(149, 20);
+            this.textBox1.TabIndex = 12;
+            this.textBox1.UseSystemPasswordChar = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(95, 187);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(149, 20);
+            this.textBox2.TabIndex = 13;
+            this.textBox2.UseSystemPasswordChar = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 164);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "New Password";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 190);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "New Password";
+            // 
             // PasswordLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 500);
+            this.ClientSize = new System.Drawing.Size(270, 269);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.label2);
@@ -131,7 +166,6 @@ namespace CEMSStudyApp.Pages
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "PasswordLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";
@@ -150,6 +184,10 @@ namespace CEMSStudyApp.Pages
         private Label label2;
         private TextBox textBoxPassword;
         private Button buttonSubmit;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private Label label3;
+        private Label label4;
     }
 }
 

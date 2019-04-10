@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace CEMSStudyApp.Pages
 {
-    public partial class PasswordLogin : Form
+    public partial class PasswordsLogin : Form
     {
-        public PasswordLogin()
+        public PasswordsLogin()
         {
             InitializeComponent();
         }

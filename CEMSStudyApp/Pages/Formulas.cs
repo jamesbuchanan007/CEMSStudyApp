@@ -15,8 +15,8 @@ namespace CEMSStudyApp.Pages
             InitializeComponent();
 
             //LOAD COMBOBOX PAGES
-            var pagesDataSet = LoadTable("Pages");  
-            
+            var pagesDataSet = LoadTable("Pages");
+
             //LOAD INTO DICTIONARY TO REMOVE ACTIVE PAGE
             Dictionary<int, string> comboDictionary = new Dictionary<int, string>();
 
@@ -227,14 +227,11 @@ namespace CEMSStudyApp.Pages
         {
             if (buttonEdit.Visible)
             {
-                SqlConnection connection;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                string sql;
+                //IF NOTHING TO EDIT
+                if (comboBoxFormula.Items.Count == 0) { RefreshDisableShow(); return; }
 
-                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
-                var connectionString = Settings.Default.LocalDb;
-
-                connection = new SqlConnection(connectionString);
+                //CHECK WHETHER USER MEANT TO HIT SAVE BUTTON
+                if (SaveQuestion() == DialogResult.No) { RefreshDisableShow(); return; }
 
                 FormulasViewModel vm = new FormulasViewModel
                 {
@@ -247,10 +244,9 @@ namespace CEMSStudyApp.Pages
 
                 var index = comboBoxFormula.SelectedIndex;
 
-
                 var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
 
-                sql = "UPDATE Acronyms " +
+                var sql = "UPDATE Acronyms " +
                       "SET Acronyms_Name = " + "'" + vm.FormulasName + "'," +
                       "Acronyms_Description = " + "'" + vm.FormulasDescription + "'," +
                       "Pages_Id = " + vm.PagesId + "," +
@@ -258,81 +254,113 @@ namespace CEMSStudyApp.Pages
                       "Is_Active = " + vm.IsActive + " " +
                       "WHERE Acronyms_Id = " + index;
 
-                try
-                {
-
-                    connection.Open();
-                    adapter.UpdateCommand = connection.CreateCommand();
-                    adapter.UpdateCommand.CommandText = sql;
-                    adapter.UpdateCommand.ExecuteNonQuery();
-                    MessageBox.Show("Update Successful !!", "CEMS Study App", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-
-                var aDataSet = LoadTable("Formulas");
-                var newIndex = comboBoxFormula.SelectedIndex;
-                comboBoxFormula.DataSource = aDataSet.Tables[0];
-                comboBoxFormula.ValueMember = "Formulas_Id";
-                comboBoxFormula.DisplayMember = "Formulas_Name";
-                comboBoxFormula.SelectedIndex = newIndex;
-                comboBoxFormula.Text = aDataSet.Tables[0].Rows[newIndex]["Formulas_Name"].ToString();
-                textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Formulas_Description"].ToString();
+                UpdateDatabase(sql);
             }
 
             if (buttonNew.Visible)
             {
-                SqlConnection connection;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                string sql;
+                //CHECK WHETHER USER MEANT TO HIT SAVE BUTTON
+                if (SaveQuestion() == DialogResult.No) { RefreshDisableShow(); return; }
 
-                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
-                var connectionString = Settings.Default.LocalDb;
+                FormulasViewModel vm = new FormulasViewModel
+                {
+                    FormulasName = textBoxFormula.Text,
+                    FormulasDescription = textBoxAnswer.Text,
+                    PagesId = 1,
+                    DateAdded = DateTime.Now,
+                    IsActive = 1
+                };
 
-                connection = new SqlConnection(connectionString);
-
-                var aName = textBoxFormula.Text;
-                var aDescription = textBoxAnswer.Text;
-                var pagesId = 1;
                 var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
-                var dateAdded = DateTime.Now;
-                var isActive = 1;
 
-                sql = "INSERT into Formulas (Formulas_Name,Formulas_Description,Pages_Id,Date_Added,Is_Active) values('" +
-                      aName + "'" + "," + "'" +
-                      aDescription + "'" + "," +
-                      pagesId + "," + "'" +
-                      dateAdded.ToString(format) + "'" + "," +
-                      isActive + ")";
-                try
-                {
-                    connection.Open();
-                    adapter.InsertCommand = new SqlCommand(sql, connection);
-                    adapter.InsertCommand.ExecuteNonQuery();
-                    MessageBox.Show("Row inserted !! ", "Database Update", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-
-                var aDataSet = LoadTable("Formulas");
-                var newIndex = comboBoxFormula.Items.Count;
-                comboBoxFormula.DataSource = aDataSet.Tables[0];
-                comboBoxFormula.ValueMember = "Formulas_Id";
-                comboBoxFormula.DisplayMember = "Formulas_Name";
-                comboBoxFormula.SelectedIndex = newIndex;
-                comboBoxFormula.Text = aDataSet.Tables[0].Rows[newIndex]["Formulas_Name"].ToString();
-                textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Formulas_Description"].ToString();
-
+                var sql = "INSERT into Formulas (Formulas_Name,Formulas_Description,Pages_Id,Date_Added,Is_Active) values('" +
+                      vm.FormulasName + "'" + "," + "'" +
+                      vm.FormulasDescription + "'" + "," +
+                      vm.PagesId + "," + "'" +
+                      vm.DateAdded.ToString(format) + "'" + "," +
+                      vm.IsActive + ")";
+                AddToDatabase(sql);
+                RefreshDisableShow();
             }
+        }
 
+        private void RefreshDisableShow()
+        {
+            RefreshComboboxTextboxes();
             DisableTextBoxes();
             ShowAllButtons();
+        }
+
+        private void AddToDatabase(string sqlCommandString)
+        {
+            SqlConnection connection;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            var sql = sqlCommandString;
+
+            //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+            var connectionString = Settings.Default.LocalDb;
+
+            connection = new SqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+                adapter.InsertCommand = new SqlCommand(sql, connection);
+                adapter.InsertCommand.ExecuteNonQuery();
+                MessageBox.Show("Row inserted !! ", "Database Update", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private void UpdateDatabase(string sqlCommandString)
+        {
+            SqlConnection connection;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            var sql = sqlCommandString;
+
+            //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+            var connectionString = Settings.Default.LocalDb;
+
+            connection = new SqlConnection(connectionString);
+
+            try
+            {
+
+                connection.Open();
+                adapter.UpdateCommand = connection.CreateCommand();
+                adapter.UpdateCommand.CommandText = sql;
+                adapter.UpdateCommand.ExecuteNonQuery();
+                MessageBox.Show("Update Successful !!", "CEMS Study App", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private void RefreshComboboxTextboxes()
+        {
+            var aDataSet = LoadTable("Formulas");
+            var newIndex = comboBoxFormula.Items.Count;
+            comboBoxFormula.DataSource = aDataSet.Tables[0];
+            comboBoxFormula.ValueMember = "Formulas_Id";
+            comboBoxFormula.DisplayMember = "Formulas_Name";
+            comboBoxFormula.SelectedIndex = newIndex;
+            comboBoxFormula.Text = aDataSet.Tables[0].Rows[newIndex]["Formulas_Name"].ToString();
+            textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Formulas_Description"].ToString();
+        }
+
+        private DialogResult SaveQuestion()
+        {
+            var answer = MessageBox.Show("Save ??", "CEMS Study App", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return answer;
         }
         private void DisableTextBoxes()
         {

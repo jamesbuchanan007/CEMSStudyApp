@@ -206,14 +206,11 @@ namespace CEMSStudyApp.Pages
         {
             if (buttonEdit.Visible)
             {
-                SqlConnection connection;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                string sql;
+                //IF NOTHING TO EDIT
+                if (comboBoxAcronym.Items.Count == 0) { RefreshDisableShow(); return; }
 
-                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
-                var connectionString = Settings.Default.LocalDb;
-
-                connection = new SqlConnection(connectionString);
+                //CHECK WHETHER USER MEANT TO HIT SAVE BUTTON
+                if (SaveQuestion() == DialogResult.No) { RefreshDisableShow(); return; }
 
                 AcronymsViewModel vm = new AcronymsViewModel
                 {
@@ -226,57 +223,27 @@ namespace CEMSStudyApp.Pages
 
                 var index = comboBoxAcronym.SelectedIndex;
 
-               
                 var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
-              
-                sql = "UPDATE Acronyms " + 
-                      "SET Acronyms_Name = " + "'" + vm.Acronyms_Name + "'," + 
+
+                var sql = "UPDATE Acronyms " +
+                      "SET Acronyms_Name = " + "'" + vm.Acronyms_Name + "'," +
                       "Acronyms_Description = " + "'" + vm.Acronyms_Description + "'," +
                       "Pages_Id = " + vm.Pages_Id + "," +
                       "Date_Edited = " + "'" + vm.Date_Edited.ToString(format) + "'," +
                       "Is_Active = " + vm.IsActive + " " +
                       "WHERE Acronyms_Id = " + index;
 
-                try
-                {
-
-                    connection.Open();
-                    adapter.UpdateCommand = connection.CreateCommand();
-                    adapter.UpdateCommand.CommandText = sql;
-                    adapter.UpdateCommand.ExecuteNonQuery();
-                    MessageBox.Show("Update Successful !!", "CEMS Study App", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-
-                var aDataSet = LoadTable("Acronyms");
-                var newIndex = comboBoxAcronym.SelectedIndex;
-                comboBoxAcronym.DataSource = aDataSet.Tables[0];
-                comboBoxAcronym.ValueMember = "Acronyms_Id";
-                comboBoxAcronym.DisplayMember = "Acronyms_Name";
-                comboBoxAcronym.SelectedIndex = newIndex;
-                textBoxAcronym.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
-                textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Description"].ToString();
+                UpdateDataBase(sql);
             }
 
             if (buttonNew.Visible)
             {
-                SqlConnection connection;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                string sql;
-
-                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
-                var connectionString = Settings.Default.LocalDb;
-
-                connection = new SqlConnection(connectionString);
+                //CHECK WHETHER USER MEANT TO HIT SAVE BUTTON
+                if (SaveQuestion() == DialogResult.No) { RefreshDisableShow(); return; }
 
                 AcronymsViewModel vm = new AcronymsViewModel
                 {
-                    Acronyms_Name =  textBoxAcronym.Text,
+                    Acronyms_Name = textBoxAcronym.Text,
                     Acronyms_Description = textBoxAnswer.Text,
                     Pages_Id = 1,
                     Date_Added = DateTime.Now,
@@ -285,40 +252,89 @@ namespace CEMSStudyApp.Pages
 
                 var format = "yyyy-MM-dd HH:mm:ss";
 
-                sql = "INSERT into Acronyms (Acronyms_Name,Acronyms_Description,Pages_Id,Date_Added,Is_Active) values('"+ 
-                      vm.Acronyms_Name + "'" + "," + "'"+
-                      vm.Acronyms_Description+"'" + "," + 
-                      vm.Pages_Id + "," + "'"+
-                      vm.Date_Added.ToString(format)+"'" + ","  + 
+                var sql = "INSERT into Acronyms (Acronyms_Name,Acronyms_Description,Pages_Id,Date_Added,Is_Active) values('" +
+                      vm.Acronyms_Name + "'" + "," + "'" +
+                      vm.Acronyms_Description + "'" + "," +
+                      vm.Pages_Id + "," + "'" +
+                      vm.Date_Added.ToString(format) + "'" + "," +
                       vm.IsActive + ")";
-                try
-                {
-                    connection.Open();
-                    adapter.InsertCommand = new SqlCommand(sql, connection);
-                    adapter.InsertCommand.ExecuteNonQuery();
-                    MessageBox.Show("Row inserted !! ","CEMS Study App",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-
-                var aDataSet = LoadTable("Acronyms");
-                var newIndex = comboBoxAcronym.Items.Count;
-                comboBoxAcronym.DataSource = aDataSet.Tables[0];
-                comboBoxAcronym.ValueMember = "Acronyms_Id";
-                comboBoxAcronym.DisplayMember = "Acronyms_Name";
-                comboBoxAcronym.SelectedIndex = newIndex;
-                textBoxAcronym.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
-                textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Description"].ToString();
-
+                AddToDatabase(sql);
+                RefreshDisableShow();
             }
+        }
 
+        private void RefreshDisableShow()
+        {
+            RefreshComboboxTextboxes();
             DisableTextBoxes();
             ShowAllButtons();
         }
 
+        private void AddToDatabase(string sqlCommandString)
+        {
+            SqlConnection connection;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            var sql = sqlCommandString;
 
+            //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+            var connectionString = Settings.Default.LocalDb;
+
+            connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                adapter.InsertCommand = new SqlCommand(sql, connection);
+                adapter.InsertCommand.ExecuteNonQuery();
+                MessageBox.Show("Row inserted !! ", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private void UpdateDataBase(string sqlCommandString)
+        {
+            //CHECK WHETHER USER MEANT TO HIT SAVE BUTTON
+            if (SaveQuestion() == DialogResult.No) return;
+
+            SqlConnection connection;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            var sql = sqlCommandString;
+
+            //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+            var connectionString = Settings.Default.LocalDb;
+
+            connection = new SqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+                adapter.UpdateCommand = connection.CreateCommand();
+                adapter.UpdateCommand.CommandText = sql;
+                adapter.UpdateCommand.ExecuteNonQuery();
+                MessageBox.Show("Update Successful !!", "CEMS Study App", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        //REFRESH COMBOBOX AND TEXTBOXES
+        public void RefreshComboboxTextboxes()
+        {
+            var aDataSet = LoadTable("Acronyms");
+            var newIndex = comboBoxAcronym.SelectedIndex;
+            comboBoxAcronym.DataSource = aDataSet.Tables[0];
+            comboBoxAcronym.ValueMember = "Acronyms_Id";
+            comboBoxAcronym.DisplayMember = "Acronyms_Name";
+            comboBoxAcronym.SelectedIndex = newIndex;
+            textBoxAcronym.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
+            textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Description"].ToString();
+        }
 
         private void comboBoxAcronym_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -328,6 +344,12 @@ namespace CEMSStudyApp.Pages
             if (aDataSet.Tables[0].Rows.Count == 0) return;
             textBoxAcronym.Text = aDataSet.Tables[0].Rows[index]["Acronyms_Name"].ToString();
             textBoxAnswer.Text = aDataSet.Tables[0].Rows[index]["Acronyms_Description"].ToString();
+        }
+
+        private DialogResult SaveQuestion()
+        {
+            var answer = MessageBox.Show("Save ??", "CEMS Study App", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return answer;
         }
 
         //NAVIGATE TO DIFFERENT FORM

@@ -2,12 +2,12 @@
 
 namespace CEMSStudyApp.Models
 {
-    class Passwords
+    class PasswordsLogin
     {
-        public int PasswordsId { get; set; }
+        public int PasswordsLoginId { get; set; }
+        public string UserName { get; set; }
         public string Password { get; set; }
         public DateTime DateAdded { get; set; }
-        public DateTime DateUpdated { get; set; }
         public bool IsActive { get; set; }
     }
 }

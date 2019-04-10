@@ -8,6 +8,14 @@ namespace CEMSStudyApp.Pages
         public MainMenu()
         {
             InitializeComponent();
+            if (PasswordsLogin.appIsLocked)
+            {
+                buttonUnlock.Text = "Unlock";
+            }
+            else
+            {
+                buttonUnlock.Text = "Lock";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,6 +62,12 @@ namespace CEMSStudyApp.Pages
             Hide();
             HowTos howTos = new HowTos();
             howTos.Show();
+        }
+
+        private void buttonUnlock_Click(object sender, EventArgs e)
+        {
+            PasswordsLogin pw = new PasswordsLogin();
+            pw.Show();
         }
     }
 }

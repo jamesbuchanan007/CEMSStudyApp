@@ -11,8 +11,12 @@ namespace CEMSStudyApp.Pages
 {
     public partial class Acronyms : Form
     {
+
         public Acronyms()
         {
+            var isLocked = PasswordsLogin.appIsLocked;
+
+            MessageBox.Show("App is " + isLocked);
             InitializeComponent();
 
             //LOAD COMBOBOX PAGES

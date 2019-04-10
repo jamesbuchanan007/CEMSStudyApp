@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace CEMSStudyApp.Copied_Pages
+namespace CEMSStudyApp.Pages
 {
     public partial class PasswordsUpdate : Form
     {

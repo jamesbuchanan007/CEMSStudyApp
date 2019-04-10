@@ -8,7 +8,7 @@ namespace CEMSStudyApp
 {
     static class Program
     {
-        public static bool appIsLocked = false;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -19,5 +19,7 @@ namespace CEMSStudyApp
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Pages.MainMenu());
         }
+
+        
     }
 }

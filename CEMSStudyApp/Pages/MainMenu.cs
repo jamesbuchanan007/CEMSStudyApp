@@ -4,17 +4,16 @@ using System.Windows.Forms;
 namespace CEMSStudyApp.Pages
 {
     public partial class MainMenu : Form
-    {
+    { public static bool isLocked { get; set; }
         public MainMenu()
         {
+            PasswordsLogin.appIsLocked = true;
+            isLocked = PasswordsLogin.appIsLocked;
             InitializeComponent();
-            if (PasswordsLogin.appIsLocked)
+
+            if (isLocked)
             {
-                buttonUnlock.Text = "Unlock";
-            }
-            else
-            {
-                buttonUnlock.Text = "Lock";
+                buttonUnlock.Show();
             }
         }
 

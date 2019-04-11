@@ -147,7 +147,7 @@ namespace CEMSStudyApp.Pages
             this.buttonUnlock.Name = "buttonUnlock";
             this.buttonUnlock.Size = new System.Drawing.Size(75, 23);
             this.buttonUnlock.TabIndex = 7;
-            this.buttonUnlock.Text = "Unlock";
+            this.buttonUnlock.Text = "Admin";
             this.buttonUnlock.UseVisualStyleBackColor = false;
             this.buttonUnlock.Click += new System.EventHandler(this.buttonUnlock_Click);
             // 

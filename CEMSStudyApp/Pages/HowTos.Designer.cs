@@ -170,6 +170,7 @@ namespace CEMSStudyApp.Pages
             this.buttonDelete.Tag = "";
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonEdit
             // 

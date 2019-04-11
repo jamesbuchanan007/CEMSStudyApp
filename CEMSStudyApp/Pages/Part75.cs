@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing.Text;
+using System.Linq;
 using System.Windows.Forms;
 using CEMSStudyApp.Models;
 using CEMSStudyApp.Properties;
@@ -10,9 +12,23 @@ namespace CEMSStudyApp.Pages
 {
     public partial class Part75 : Form
     {
+        public static bool isLocked { get; set; }
         public Part75()
         {
+            isLocked = PasswordsLogin.appIsLocked;
             InitializeComponent();  //LOAD COMBOBOX PAGES
+
+            //SETS SAVE BUTTON TO WHEN USER PRESSES ENTER
+            AcceptButton = buttonSave;
+
+            if (isLocked)
+            {
+                buttonEdit.Hide();
+                buttonNew.Hide();
+                buttonSave.Hide();
+                buttonDelete.Hide();
+                buttonCancel.Hide();
+            }
             var pagesDataSet = LoadTable("Pages");
 
             //LOAD INTO DICTIONARY TO REMOVE ACTIVE PAGE
@@ -23,24 +39,15 @@ namespace CEMSStudyApp.Pages
                 comboDictionary.Add((int)pagesDataSet.Tables[0].Rows[i]["Pages_Id"], pagesDataSet.Tables[0].Rows[i]["Pages_Name"].ToString());
             }
 
-            comboDictionary.Remove(3);  //REMOVE FORMULA SELECTION
+            var pageName = "Part 75";
+            var item = comboDictionary.First(q => q.Value == pageName);
+            comboDictionary.Remove(item.Key);  //REMOVE FORMULA SELECTION
 
             comboBoxSiteNavigation.DataSource = new BindingSource(comboDictionary, null);
             comboBoxSiteNavigation.ValueMember = "Key";
             comboBoxSiteNavigation.DisplayMember = "Value";
 
-            //LOAD COMBOBOX
-            var aDataSet = LoadTable("Part75");
-            comboBoxSectionNumber.DataSource = aDataSet.Tables[0];
-            comboBoxSectionNumber.ValueMember = "Part75_Id";
-            comboBoxSectionNumber.DisplayMember = "Part75_Number";
-
-            //LOAD TEXTBOXES
-            if (aDataSet.Tables[0].Rows.Count == 0) return;
-            textBoxQuestion.Text = aDataSet.Tables[0].Rows[0]["Part75_Question"].ToString();
-            textBoxSectionName.Text = aDataSet.Tables[0].Rows[0]["Part75_Name"].ToString();
-            textBoxSectionNumber.Text = aDataSet.Tables[0].Rows[0]["Part75_Number"].ToString();
-            textBoxAnswer.Text = aDataSet.Tables[0].Rows[0]["Part75_Answer"].ToString();
+            LoadComboBoxTextBox();
         }
 
         //CONNECTS TO DB AND LOADS DATA SET
@@ -89,35 +96,33 @@ namespace CEMSStudyApp.Pages
             }
         }
 
-        private void comboBoxSiteNavigation_SelectedIndexChanged(object sender, EventArgs e)
+        public void comboBoxSiteNavigation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var formIndex = comboBoxSiteNavigation.SelectedIndex;
-
-            Hide();
+            var formIndex = comboBoxSiteNavigation.GetItemText(comboBoxSiteNavigation.SelectedItem);
 
             switch (formIndex)
             {
-                case 3:
+                case "Formulas":
                     Hide();
                     Formulas formulas = new Formulas();
                     formulas.Show();
                     break;
-                case 4:
+                case "Acronyms":
                     Hide();
                     Acronyms acronyms = new Acronyms();
                     acronyms.Show();
                     break;
-                case 0:
+                case "Main Menu":
                     Hide();
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
                     break;
-                case 1:
+                case "Part 60":
                     Hide();
                     Part60 part60 = new Part60();
                     part60.Show();
                     break;
-                case 5:
+                case "How To":
                     Hide();
                     HowTos howTos = new HowTos();
                     howTos.Show();
@@ -127,6 +132,9 @@ namespace CEMSStudyApp.Pages
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
+            //IF NOTHING TO EDIT
+            if (comboBoxSectionNumber.Items.Count == 0) return;
+
             EnableTextBoxes();
             HideAllButtons();
             buttonEdit.Show();
@@ -183,6 +191,11 @@ namespace CEMSStudyApp.Pages
 
             var newIndex = index + 1;
 
+            ChangeRecord(newIndex, p75DataSet);
+        }
+
+        private void ChangeRecord(int newIndex, DataSet p75DataSet)
+        {
             textBoxSectionNumber.Text = p75DataSet.Tables[0].Rows[newIndex]["Part75_Number"].ToString();
             textBoxSectionName.Text = p75DataSet.Tables[0].Rows[newIndex]["Part75_Name"].ToString();
             textBoxQuestion.Text = p75DataSet.Tables[0].Rows[newIndex]["Part75_Question"].ToString();
@@ -200,12 +213,7 @@ namespace CEMSStudyApp.Pages
 
             var newIndex = index - 1;
 
-            textBoxSectionNumber.Text = p75DataSet.Tables[0].Rows[newIndex]["Part75_Number"].ToString();
-            textBoxSectionName.Text = p75DataSet.Tables[0].Rows[newIndex]["Part75_Name"].ToString();
-            textBoxQuestion.Text = p75DataSet.Tables[0].Rows[newIndex]["Part75_Question"].ToString();
-            textBoxAnswer.Text = p75DataSet.Tables[0].Rows[newIndex]["Part75_Answer"].ToString();
-
-            comboBoxSectionNumber.SelectedIndex = comboBoxSectionNumber.FindString(textBoxSectionNumber.Text);
+            ChangeRecord(newIndex, p75DataSet);
         }
 
         private void comboBoxSectionNumber_SelectedIndexChanged(object sender, EventArgs e)
@@ -214,10 +222,7 @@ namespace CEMSStudyApp.Pages
             var index = comboBoxSectionNumber.SelectedIndex;
 
             if (part75DataSet.Tables[0].Rows.Count == 0) return;
-            textBoxQuestion.Text = part75DataSet.Tables[0].Rows[index]["Part75_Question"].ToString();
-            textBoxSectionName.Text = part75DataSet.Tables[0].Rows[index]["Part75_Name"].ToString();
-            textBoxSectionNumber.Text = part75DataSet.Tables[0].Rows[index]["Part75_Number"].ToString();
-            textBoxAnswer.Text = part75DataSet.Tables[0].Rows[index]["Part75_Answer"].ToString();
+            ChangeRecord(index, part75DataSet);
         }
         private void EnableTextBoxes()
         {
@@ -267,6 +272,8 @@ namespace CEMSStudyApp.Pages
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            if (buttonEdit.Visible && buttonNew.Visible) return;
+
             if (buttonEdit.Visible)
             {
                 //IF NOTHING TO EDIT
@@ -358,7 +365,10 @@ namespace CEMSStudyApp.Pages
                 connection.Open();
                 adapter.InsertCommand = new SqlCommand(sql, connection);
                 adapter.InsertCommand.ExecuteNonQuery();
-                MessageBox.Show("Row inserted !! ", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("Record Added", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                adapter.Dispose();
+                connection.Close();
             }
             catch (Exception ex)
             {
@@ -386,13 +396,14 @@ namespace CEMSStudyApp.Pages
                 MessageBox.Show("Update Successful !!", "CEMS Study App", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
 
+                adapter.Dispose();
+                connection.Close();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-
-
         }
 
         private void RefreshComboboxTextboxes()
@@ -402,17 +413,65 @@ namespace CEMSStudyApp.Pages
             comboBoxSectionNumber.DataSource = aDataSet.Tables[0];
             comboBoxSectionNumber.ValueMember = "Part75_Id";
             comboBoxSectionNumber.DisplayMember = "Part75_Name";
-            comboBoxSectionNumber.SelectedIndex = newIndex;
-            textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Part75_Answer"].ToString();
-            textBoxQuestion.Text = aDataSet.Tables[0].Rows[newIndex]["Part75_Question"].ToString();
-            textBoxSectionName.Text = aDataSet.Tables[0].Rows[newIndex]["Part75_Name"].ToString();
-            textBoxSectionNumber.Text = aDataSet.Tables[0].Rows[newIndex]["Part75_Number"].ToString();
+            ChangeRecord(newIndex, aDataSet);
         }
 
         private DialogResult SaveQuestion()
         {
             var answer = MessageBox.Show("Save ??", "CEMS Study App", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             return answer;
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            var wantsToDelete = MessageBox.Show("Delete This Record ??", "CEMS Study App", MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning);
+
+            var itemIndex = comboBoxSectionNumber.SelectedIndex + 1;
+
+            if (wantsToDelete == DialogResult.OK)
+            {
+                SqlConnection connection;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                string sql = null;
+
+                var connectionString = Settings.Default.LocalDb;
+                connection = new SqlConnection(connectionString);
+                sql = "DELETE FROM Part75 WHERE Part75_Id = " + itemIndex;
+                try
+                {
+                    connection.Open();
+                    adapter.DeleteCommand = connection.CreateCommand();
+                    adapter.DeleteCommand.CommandText = sql;
+                    adapter.DeleteCommand.ExecuteNonQuery();
+                    MessageBox.Show("Record Delted", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+                adapter.Dispose();
+                connection.Close();
+
+                LoadComboBoxTextBox();
+
+                RefreshDisableShow();
+            }
+
+        }
+
+        private void LoadComboBoxTextBox()
+        {
+            //LOAD COMBOBOX
+            var aDataSet = LoadTable("Part75");
+            comboBoxSectionNumber.DataSource = aDataSet.Tables[0];
+            comboBoxSectionNumber.ValueMember = "Part75_Id";
+            comboBoxSectionNumber.DisplayMember = "Part75_Number";
+
+            //LOAD TEXTBOXES
+            if (aDataSet.Tables[0].Rows.Count == 0) return;
+            ChangeRecord(0, aDataSet);
         }
     }
 }

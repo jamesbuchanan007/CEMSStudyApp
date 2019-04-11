@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 using CEMSStudyApp.Models;
 using CEMSStudyApp.Properties;
@@ -10,10 +11,24 @@ namespace CEMSStudyApp.Pages
 {
     public partial class Formulas : Form
     {
+        public static bool isLocked { get; set; }
+
         public Formulas()
         {
+            isLocked = PasswordsLogin.appIsLocked;
             InitializeComponent();
 
+            //SETS SAVE BUTTON TO WHEN USER PRESSES ENTER
+            AcceptButton = buttonSave;
+
+            if (isLocked)
+            {
+                buttonEdit.Hide();
+                buttonNew.Hide();
+                buttonSave.Hide();
+                buttonDelete.Hide();
+                buttonCancel.Hide();
+            }
             //LOAD COMBOBOX PAGES
             var pagesDataSet = LoadTable("Pages");
 
@@ -25,12 +40,20 @@ namespace CEMSStudyApp.Pages
                 comboDictionary.Add((int)pagesDataSet.Tables[0].Rows[i]["Pages_Id"], pagesDataSet.Tables[0].Rows[i]["Pages_Name"].ToString());
             }
 
-            comboDictionary.Remove(4);  //REMOVE FORMULA SELECTION
+            var pageName = "Formulas";
+            var item = comboDictionary.First(q => q.Value == pageName);
+
+            comboDictionary.Remove(item.Key);  //REMOVE FORMULA SELECTION
 
             comboBoxSiteNavigation.DataSource = new BindingSource(comboDictionary, null);
             comboBoxSiteNavigation.ValueMember = "Key";
             comboBoxSiteNavigation.DisplayMember = "Value";
 
+            LoadComboboxTextbox();
+        }
+
+        private void LoadComboboxTextbox()
+        {
             //LOAD COMBOBOX ACRONYMS
             var aDataSet = LoadTable("Formulas");
             comboBoxFormula.DataSource = aDataSet.Tables[0];
@@ -39,8 +62,14 @@ namespace CEMSStudyApp.Pages
 
             //LOAD TEXTBOXES
             if (aDataSet.Tables[0].Rows.Count == 0) return;
-            textBoxFormula.Text = aDataSet.Tables[0].Rows[0]["Formulas_Name"].ToString();
-            textBoxAnswer.Text = aDataSet.Tables[0].Rows[0]["Formulas_Description"].ToString();
+            ChangeRecord(0, aDataSet);
+        }
+
+        private void ChangeRecord(int index, DataSet aDataSet)
+        {
+            textBoxFormula.Text = aDataSet.Tables[0].Rows[index]["Formulas_Name"].ToString();
+            textBoxAnswer.Text = aDataSet.Tables[0].Rows[index]["Formulas_Description"].ToString();
+            comboBoxFormula.SelectedIndex = comboBoxFormula.FindString(textBoxFormula.Text);
         }
 
         //CONNECTS TO DB AND LOADS DATA SET
@@ -91,33 +120,33 @@ namespace CEMSStudyApp.Pages
 
         private void comboBoxSiteNavigation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var formIndex = comboBoxSiteNavigation.SelectedIndex;
+            var formIndex = comboBoxSiteNavigation.GetItemText(comboBoxSiteNavigation.SelectedItem);
 
             Hide();
 
             switch (formIndex)
             {
-                case 4:
+                case "Acronyms":
                     Hide();
                     Acronyms acronyms = new Acronyms();
                     acronyms.Show();
                     break;
-                case 5:
+                case "How To":
                     Hide();
                     HowTos howTos = new HowTos();
                     howTos.Show();
                     break;
-                case 0:
+                case "Main Menu":
                     Hide();
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
                     break;
-                case 1:
+                case "Part 60":
                     Hide();
                     Part60 part60 = new Part60();
                     part60.Show();
                     break;
-                case 2:
+                case "Part 75":
                     Hide();
                     Part75 part75 = new Part75();
                     part75.Show();
@@ -127,6 +156,9 @@ namespace CEMSStudyApp.Pages
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
+            //IF NOTHING TO EDIT
+            if (comboBoxFormula.Items.Count == 0) return;
+
             textBoxAnswer.ReadOnly = false;
             textBoxAnswer.Enabled = true;
 
@@ -151,7 +183,7 @@ namespace CEMSStudyApp.Pages
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonCancel_Click(object sender, EventArgs e)
         {
             textBoxAnswer.Undo();
             textBoxFormula.Undo();
@@ -191,9 +223,7 @@ namespace CEMSStudyApp.Pages
 
             var newIndex = index - 1;
 
-            textBoxFormula.Text = fDataTable.Tables[0].Rows[newIndex]["Formulas_Name"].ToString();
-            textBoxAnswer.Text = fDataTable.Tables[0].Rows[newIndex]["Formulas_Description"].ToString();
-            comboBoxFormula.SelectedIndex = comboBoxFormula.FindString(textBoxFormula.Text);
+            ChangeRecord(newIndex, fDataTable);
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
@@ -206,9 +236,7 @@ namespace CEMSStudyApp.Pages
 
             var newIndex = index + 1;
 
-            textBoxFormula.Text = fDataSet.Tables[0].Rows[newIndex]["Formulas_Name"].ToString();
-            textBoxAnswer.Text = fDataSet.Tables[0].Rows[newIndex]["Formulas_Description"].ToString();
-            comboBoxFormula.SelectedIndex = comboBoxFormula.FindString(textBoxFormula.Text);
+            ChangeRecord(newIndex, fDataSet);
         }
 
         private void comboBoxFormula_SelectedIndexChanged(object sender, EventArgs e)
@@ -218,13 +246,14 @@ namespace CEMSStudyApp.Pages
 
             if (fDataSet.Tables[0].Rows.Count == 0) return;
 
-            textBoxFormula.Text = fDataSet.Tables[0].Rows[index]["Formula_Name"].ToString();
-            textBoxAnswer.Text = fDataSet.Tables[0].Rows[index]["Formula_Description"].ToString();
+            ChangeRecord(index, fDataSet);
 
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            if (buttonEdit.Visible && buttonNew.Visible) return;
+
             if (buttonEdit.Visible)
             {
                 //IF NOTHING TO EDIT
@@ -280,8 +309,9 @@ namespace CEMSStudyApp.Pages
                       vm.DateAdded.ToString(format) + "'" + "," +
                       vm.IsActive + ")";
                 AddToDatabase(sql);
-                RefreshDisableShow();
             }
+
+            RefreshDisableShow();
         }
 
         private void RefreshDisableShow()
@@ -307,7 +337,10 @@ namespace CEMSStudyApp.Pages
                 connection.Open();
                 adapter.InsertCommand = new SqlCommand(sql, connection);
                 adapter.InsertCommand.ExecuteNonQuery();
-                MessageBox.Show("Row inserted !! ", "Database Update", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("Record Added", "Database Update", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                adapter.Dispose();
+                connection.Close();
             }
             catch (Exception ex)
             {
@@ -337,6 +370,9 @@ namespace CEMSStudyApp.Pages
                 MessageBox.Show("Update Successful !!", "CEMS Study App", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
 
+                adapter.Dispose();
+                connection.Close();
+
             }
             catch (Exception ex)
             {
@@ -352,9 +388,7 @@ namespace CEMSStudyApp.Pages
             comboBoxFormula.DataSource = aDataSet.Tables[0];
             comboBoxFormula.ValueMember = "Formulas_Id";
             comboBoxFormula.DisplayMember = "Formulas_Name";
-            comboBoxFormula.SelectedIndex = newIndex;
-            comboBoxFormula.Text = aDataSet.Tables[0].Rows[newIndex]["Formulas_Name"].ToString();
-            textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Formulas_Description"].ToString();
+            ChangeRecord(newIndex, aDataSet);
         }
 
         private DialogResult SaveQuestion()
@@ -395,8 +429,42 @@ namespace CEMSStudyApp.Pages
             buttonNext.Hide();
         }
 
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            var wantsToDelete = MessageBox.Show("Delete This Record ??", "CEMS Study App", MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning);
 
+            var itemIndex = comboBoxFormula.SelectedIndex + 1;
 
+            if (wantsToDelete == DialogResult.OK)
+            {
+                SqlConnection connection;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                string sql = null;
 
+                var connectionString = Settings.Default.LocalDb;
+                connection = new SqlConnection(connectionString);
+                sql = "DELETE FROM Formulas WHERE Formulas_Id = " + itemIndex;
+                try
+                {
+                    connection.Open();
+                    adapter.DeleteCommand = connection.CreateCommand();
+                    adapter.DeleteCommand.CommandText = sql;
+                    adapter.DeleteCommand.ExecuteNonQuery();
+                    MessageBox.Show("Record Deleted", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+                adapter.Dispose();
+                connection.Close();
+
+                LoadComboboxTextbox();
+
+                RefreshDisableShow();
+            }
+        }
     }
 }

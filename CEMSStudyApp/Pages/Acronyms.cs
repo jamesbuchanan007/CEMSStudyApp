@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using CEMSStudyApp.Models;
@@ -11,13 +12,25 @@ namespace CEMSStudyApp.Pages
 {
     public partial class Acronyms : Form
     {
+        public static bool isLocked { get; set; }
 
         public Acronyms()
         {
-            var isLocked = PasswordsLogin.appIsLocked;
+            isLocked = PasswordsLogin.appIsLocked;
 
-            MessageBox.Show("App is " + isLocked);
             InitializeComponent();
+
+            //SETS SAVE BUTTON TO WHEN USER PRESSES ENTER
+            AcceptButton = buttonSave;
+
+            if (isLocked)
+            {
+                buttonNew.Hide();
+                buttonEdit.Hide();
+                buttonSave.Hide();
+                buttonDelete.Hide();
+                buttonCancel.Hide();
+            }
 
             //LOAD COMBOBOX PAGES
             var pagesDataSet = LoadTable("Pages");
@@ -30,22 +43,16 @@ namespace CEMSStudyApp.Pages
                 comboDictionary.Add((int)pagesDataSet.Tables[0].Rows[i]["Pages_Id"], pagesDataSet.Tables[0].Rows[i]["Pages_Name"].ToString());
             }
 
-            comboDictionary.Remove(5);
+            //REMOVE FROM DICTIONARY
+            var pageName = "Acronyms";
+            var item = comboDictionary.First(q => q.Value == pageName);
+            comboDictionary.Remove(item.Key);
 
             comboBoxSiteNavigation.DataSource = new BindingSource(comboDictionary, null);
             comboBoxSiteNavigation.ValueMember = "Key";
             comboBoxSiteNavigation.DisplayMember = "Value";
 
-            //LOAD COMBOBOX ACRONYMS
-            var aDataSet = LoadTable("Acronyms");
-            comboBoxAcronym.DataSource = aDataSet.Tables[0];
-            comboBoxAcronym.ValueMember = "Acronyms_Id";
-            comboBoxAcronym.DisplayMember = "Acronyms_Name";
-
-            //LOAD TEXTBOXES
-            if (aDataSet.Tables[0].Rows.Count == 0) return;
-            textBoxAcronym.Text = aDataSet.Tables[0].Rows[0]["Acronyms_Name"].ToString();
-            textBoxAnswer.Text = aDataSet.Tables[0].Rows[0]["Acronyms_Description"].ToString();
+            LoadComboboxTextbox();
         }
 
         //CONNECTS TO DB AND LOADS DATA SET
@@ -84,7 +91,6 @@ namespace CEMSStudyApp.Pages
             return ds;
         }
 
-
         private void EnableTextBoxes()
         {
             textBoxAnswer.ReadOnly = false;
@@ -108,8 +114,7 @@ namespace CEMSStudyApp.Pages
             buttonDelete.Hide();
             buttonBack.Hide();
             buttonNext.Hide();
-            buttonBack.Hide();
-            buttonNext.Hide();
+            buttonSave.Hide();
         }
 
         private void ShowAllButtons()
@@ -119,6 +124,7 @@ namespace CEMSStudyApp.Pages
             buttonNew.Show();
             buttonBack.Show();
             buttonNext.Show();
+            buttonSave.Show();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -134,9 +140,12 @@ namespace CEMSStudyApp.Pages
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
+            //IF NOTHING TO EDIT
+            if (comboBoxAcronym.Items.Count == 0) return;
             EnableTextBoxes();
             HideAllButtons();
             buttonEdit.Show();
+            buttonSave.Show();
             buttonToggle.Enabled = false;
         }
 
@@ -145,8 +154,10 @@ namespace CEMSStudyApp.Pages
             EnableTextBoxes();
             textBoxAnswer.Text = "";
             textBoxAcronym.Text = "";
+
             HideAllButtons();
             buttonNew.Show();
+            buttonSave.Show();
             buttonToggle.Enabled = false;
 
         }
@@ -187,6 +198,11 @@ namespace CEMSStudyApp.Pages
 
             var newIndex = index + 1;
 
+            ChangeRecord(newIndex, aDataTable);
+        }
+
+        private void ChangeRecord(int newIndex, DataSet aDataTable)
+        {
             textBoxAcronym.Text = aDataTable.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
             textBoxAnswer.Text = aDataTable.Tables[0].Rows[newIndex]["Acronyms_Description"].ToString();
             comboBoxAcronym.SelectedIndex = comboBoxAcronym.FindString(textBoxAcronym.Text);
@@ -201,13 +217,13 @@ namespace CEMSStudyApp.Pages
 
             var newIndex = index - 1;
 
-            textBoxAcronym.Text = aDataTable.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
-            textBoxAnswer.Text = aDataTable.Tables[0].Rows[newIndex]["Acronyms_Description"].ToString();
-            comboBoxAcronym.SelectedIndex = comboBoxAcronym.FindString(textBoxAcronym.Text);
+            ChangeRecord(newIndex, aDataTable);
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            if (buttonEdit.Visible && buttonNew.Visible) return;
+
             if (buttonEdit.Visible)
             {
                 //IF NOTHING TO EDIT
@@ -225,7 +241,7 @@ namespace CEMSStudyApp.Pages
                     IsActive = 1
                 };
 
-                var index = comboBoxAcronym.SelectedIndex;
+                var index = comboBoxAcronym.SelectedIndex + 1;
 
                 var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
 
@@ -238,6 +254,8 @@ namespace CEMSStudyApp.Pages
                       "WHERE Acronyms_Id = " + index;
 
                 UpdateDataBase(sql);
+
+
             }
 
             if (buttonNew.Visible)
@@ -263,11 +281,12 @@ namespace CEMSStudyApp.Pages
                       vm.Date_Added.ToString(format) + "'" + "," +
                       vm.IsActive + ")";
                 AddToDatabase(sql);
-                RefreshDisableShow();
             }
+
+            RefreshDisableShow();
         }
 
-        private void RefreshDisableShow()
+        public void RefreshDisableShow()
         {
             RefreshComboboxTextboxes();
             DisableTextBoxes();
@@ -289,20 +308,20 @@ namespace CEMSStudyApp.Pages
                 connection.Open();
                 adapter.InsertCommand = new SqlCommand(sql, connection);
                 adapter.InsertCommand.ExecuteNonQuery();
-                MessageBox.Show("Row inserted !! ", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("Record Added", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
 
+            adapter.Dispose();
+            connection.Close();
+
         }
 
         private void UpdateDataBase(string sqlCommandString)
         {
-            //CHECK WHETHER USER MEANT TO HIT SAVE BUTTON
-            if (SaveQuestion() == DialogResult.No) return;
-
             SqlConnection connection;
             SqlDataAdapter adapter = new SqlDataAdapter();
             var sql = sqlCommandString;
@@ -325,6 +344,9 @@ namespace CEMSStudyApp.Pages
             {
                 MessageBox.Show(ex.ToString());
             }
+
+            adapter.Dispose();
+            connection.Close();
         }
 
         //REFRESH COMBOBOX AND TEXTBOXES
@@ -336,8 +358,7 @@ namespace CEMSStudyApp.Pages
             comboBoxAcronym.ValueMember = "Acronyms_Id";
             comboBoxAcronym.DisplayMember = "Acronyms_Name";
             comboBoxAcronym.SelectedIndex = newIndex;
-            textBoxAcronym.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
-            textBoxAnswer.Text = aDataSet.Tables[0].Rows[newIndex]["Acronyms_Description"].ToString();
+            ChangeRecord(newIndex, aDataSet);
         }
 
         private void comboBoxAcronym_SelectedIndexChanged(object sender, EventArgs e)
@@ -346,8 +367,8 @@ namespace CEMSStudyApp.Pages
             var index = comboBoxAcronym.SelectedIndex;
 
             if (aDataSet.Tables[0].Rows.Count == 0) return;
-            textBoxAcronym.Text = aDataSet.Tables[0].Rows[index]["Acronyms_Name"].ToString();
-            textBoxAnswer.Text = aDataSet.Tables[0].Rows[index]["Acronyms_Description"].ToString();
+
+            ChangeRecord(index, aDataSet);
         }
 
         private DialogResult SaveQuestion()
@@ -359,33 +380,31 @@ namespace CEMSStudyApp.Pages
         //NAVIGATE TO DIFFERENT FORM
         private void comboBoxSiteNavigation_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            var formIndex = comboBoxSiteNavigation.SelectedIndex;
-
-            Hide();
+            var formIndex = comboBoxSiteNavigation.GetItemText(comboBoxSiteNavigation.SelectedItem);
 
             switch (formIndex)
             {
-                case 3:
+                case "Formulas":
                     Hide();
                     Formulas formulas = new Formulas();
                     formulas.Show();
                     break;
-                case 4:
+                case "How To":
                     Hide();
                     HowTos howTos = new HowTos();
                     howTos.Show();
                     break;
-                case 0:
+                case "Main Menu":
                     Hide();
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
                     break;
-                case 1:
+                case "Part 60":
                     Hide();
                     Part60 part60 = new Part60();
                     part60.Show();
                     break;
-                case 2:
+                case "Part 75":
                     Hide();
                     Part75 part75 = new Part75();
                     part75.Show();
@@ -393,6 +412,57 @@ namespace CEMSStudyApp.Pages
             }
 
 
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            var wantsToDelete = MessageBox.Show("Delete This Record ??", "CEMS Study App", MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning);
+
+            var itemIndex = comboBoxAcronym.SelectedIndex + 1;
+
+            if (wantsToDelete == DialogResult.OK)
+            {
+                SqlConnection connection;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                string sql = null;
+
+                var connectionString = Settings.Default.LocalDb;
+                connection = new SqlConnection(connectionString);
+                sql = "DELETE from Acronyms WHERE Acronyms_Id = " + itemIndex;
+                try
+                {
+                    connection.Open();
+                    adapter.DeleteCommand = connection.CreateCommand();
+                    adapter.DeleteCommand.CommandText = sql;
+                    adapter.DeleteCommand.ExecuteNonQuery();
+                    MessageBox.Show("Record Deleted", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+                adapter.Dispose();
+                connection.Close();
+
+                LoadComboboxTextbox();
+
+                RefreshDisableShow();
+            }
+        }
+
+        private void LoadComboboxTextbox()
+        {
+            //LOAD COMBOBOX ACRONYMS
+            var aDataSet = LoadTable("Acronyms");
+            comboBoxAcronym.DataSource = aDataSet.Tables[0];
+            comboBoxAcronym.ValueMember = "Acronyms_Id";
+            comboBoxAcronym.DisplayMember = "Acronyms_Name";
+
+            //LOAD TEXTBOXES
+            if (aDataSet.Tables[0].Rows.Count == 0) return;
+            ChangeRecord(0, aDataSet);
         }
     }
 }

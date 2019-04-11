@@ -11,115 +11,134 @@ namespace CEMSStudyApp.Pages
     public partial class PasswordsLogin : Form
     {
         public static bool appIsLocked { get; set; }
-        public static bool editPassword { get; set; }
+        public static bool wantsToEditPassword { get; set; }
 
         public PasswordsLogin()
         {
             InitializeComponent();
-            DisableTextboxes();
-            appIsLocked = true;
 
-            textBoxPassword.Enabled = true;
-            textBoxPassword.ReadOnly = false;
+            //SETS SAVE BUTTON TO WHEN USER PRESSES ENTER
+            AcceptButton = buttonSubmit;
+
+            DisableTextboxes();
+
+            if (appIsLocked)
+            {
+                textBoxPassword.Enabled = true;
+                textBoxPassword.ReadOnly = false;
+            }
+            else
+            {
+                textBoxPassword.Enabled = false;
+                textBoxPassword.ReadOnly = true;
+            }
+
+            //appIsLocked = true;
 
             buttonUpdate.Enabled = true;
 
             //EDIT PASSWORD BUTTON TOGGLES THIS
-            var editPassword = 0;
+            var wantsToEditPassword = false;
 
         }
 
         public void buttonExit_Click(object sender, EventArgs e)
         {
 
-            DialogResult dr = MessageBox.Show("Are You Sure?", "Exit Application", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Exit Admin?", "CEMS Study App", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
             if (dr == DialogResult.Yes)
             {
-                Application.Exit();
+                Hide();
             }
         }
 
         public void buttonSubmit_Click(object sender, EventArgs e)
         {
-            //IF UPDATING DB
-            if (!editPassword)
+            if (textBoxPassword.Visible == false) return;
+
+            //IF ENTERING ONLY PASSWORD
+            if (!wantsToEditPassword)
             {
                 var ds = GetPassword();
                 var dbPassword = ds.Tables[0].Rows[0]["Password"].ToString();
 
                 if (textBoxPassword.Text.Trim() == dbPassword)
                 {
-                    MessageBox.Show("App is Unlocked", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Edit Mode", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     Hide();
-
                     appIsLocked = false;
+
                 }
                 else
                 {
-                    MessageBox.Show("Not Unlocked !!", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Incorrect Password !!", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Hide();
-
                     appIsLocked = true;
                 }
             }
-            //IF ONLY ENTERING PASSWORD
+            //IF UPDATING DB
             else
             {
-                EnableTextboxes();
-                GetPassword();
-
                 var ds = GetPassword();
                 var dbPassword = ds.Tables[0].Rows[0]["Password"].ToString();
+
+                if (textBoxPassword.Text.Trim() != dbPassword)
+                {
+                    MessageBox.Show("Incorrect Password !!", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Hide();
+                    appIsLocked = true;
+                    return;
+                }
+
+                if (textBoxNewPassword1.Text != textBoxNewPassword2.Text)
+                {
+                    MessageBox.Show("New Passwords Do Not Match !!", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Hide();
+                    appIsLocked = true;
+                    return;
+                }
 
                 PasswordsLoginViewModel vm = new PasswordsLoginViewModel
                 {
                     UserName = textBoxUserName.Text,
-                    Password = textBoxPassword.Text,
+                    Password = textBoxNewPassword1.Text,
                     DateAdded = DateTime.Now,
                     IsActive = 1
                 };
 
-                if (textBoxPassword.Text.Trim() == dbPassword)
+                var format = "yyyy-MM-dd HH:mm:ss";
+
+                SqlConnection connection;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                var sql = "INSERT into PasswordsLogin (Password,Date_Added,Is_Active,User_Name) Values('" +
+                    vm.Password + "'" + "," + "'" +
+                    vm.DateAdded.ToString(format) + "'" + "," +
+                    vm.IsActive + "," + "'" +
+                    vm.UserName + "')";
+
+                //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
+                var connectionString = Settings.Default.LocalDb;
+
+                connection = new SqlConnection(connectionString);
+
+                try
                 {
-                    var format = "yyyy-MM-dd HH:mm:ss";
+                    connection.Open();
+                    adapter.InsertCommand = new SqlCommand(sql, connection);
+                    adapter.InsertCommand.ExecuteNonQuery();
 
-                    SqlConnection connection;
-                    SqlDataAdapter adapter = new SqlDataAdapter();
-                    var sql = "INSERT into PasswordsLogin (Password,Date_Added,Is_Active,User_Name) Values('" +
-                        vm.Password + "'" + "," + "'" +
-                        vm.DateAdded.ToString(format) + "'" + "," +
-                        vm.IsActive + "," + ",'" +
-                        vm.UserName + "'";
+                    MessageBox.Show("Password Updated", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
-                    //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
-                    var connectionString = Settings.Default.LocalDb;
-
-                    connection = new SqlConnection(connectionString);
-
-                    try
-                    {
-                        connection.Open();
-                        adapter.UpdateCommand = connection.CreateCommand();
-                        adapter.UpdateCommand.CommandText = sql;
-                        adapter.UpdateCommand.ExecuteNonQuery();
-
-                        MessageBox.Show("App is Unlocked", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
-                        appIsLocked = false;
-                        Hide();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Original Passwords Do Not Match !!", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    appIsLocked = true;
+                    appIsLocked = false;
                     Hide();
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+                wantsToEditPassword = false;
             }
 
 
@@ -182,7 +201,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            editPassword = true;
+            wantsToEditPassword = true;
             buttonUpdate.Hide();
             EnableTextboxes();
         }

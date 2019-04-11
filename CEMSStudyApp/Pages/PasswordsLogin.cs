@@ -205,5 +205,12 @@ namespace CEMSStudyApp.Pages
             buttonUpdate.Hide();
             EnableTextboxes();
         }
+
+        private void buttonDatabase_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var dbp = new DbPassword();
+            dbp.Show();
+        }
     }
 }

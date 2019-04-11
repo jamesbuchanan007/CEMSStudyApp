@@ -65,6 +65,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonUnlock_Click(object sender, EventArgs e)
         {
+            Hide();
             PasswordsLogin pw = new PasswordsLogin();
             pw.Show();
         }

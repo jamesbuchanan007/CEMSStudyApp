@@ -20,7 +20,7 @@ namespace CEMSStudyApp.Pages
                     MessageBox.Show("Incorrect Password!!", "CEMS Study App", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
                     Hide();
-                    var pl = new PasswordsLogin();
+                    var pl = new PasswordsLogin(false);
                     pl.Show();
                 }
                 else

@@ -4,17 +4,10 @@ using System.Windows.Forms;
 namespace CEMSStudyApp.Pages
 {
     public partial class MainMenu : Form
-    { public static bool isLocked { get; set; }
+    {
         public MainMenu()
         {
-            PasswordsLogin.appIsLocked = true;
-            isLocked = PasswordsLogin.appIsLocked;
             InitializeComponent();
-
-            if (isLocked)
-            {
-                buttonUnlock.Show();
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,9 +58,9 @@ namespace CEMSStudyApp.Pages
 
         private void buttonUnlock_Click(object sender, EventArgs e)
         {
-            Hide();
-            PasswordsLogin pw = new PasswordsLogin();
-            pw.Show();
+           PasswordsLogin pw = new PasswordsLogin(true);
+           pw.ShowDialog();
         }
+       
     }
 }

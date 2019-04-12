@@ -12,23 +12,13 @@ namespace CEMSStudyApp.Pages
 {
     public partial class Part75 : Form
     {
-        public static bool isLocked { get; set; }
         public Part75()
         {
-            isLocked = PasswordsLogin.appIsLocked;
             InitializeComponent();  //LOAD COMBOBOX PAGES
 
             //SETS SAVE BUTTON TO WHEN USER PRESSES ENTER
             AcceptButton = buttonSave;
 
-            if (isLocked)
-            {
-                buttonEdit.Hide();
-                buttonNew.Hide();
-                buttonSave.Hide();
-                buttonDelete.Hide();
-                buttonCancel.Hide();
-            }
             var pagesDataSet = LoadTable("Pages");
 
             //LOAD INTO DICTIONARY TO REMOVE ACTIVE PAGE
@@ -135,6 +125,8 @@ namespace CEMSStudyApp.Pages
             //IF NOTHING TO EDIT
             if (comboBoxSectionNumber.Items.Count == 0) return;
 
+            if (CheckPassword()) return;
+
             EnableTextBoxes();
             HideAllButtons();
             buttonEdit.Show();
@@ -142,8 +134,21 @@ namespace CEMSStudyApp.Pages
 
         }
 
+        private bool CheckPassword()
+        {
+            bool isLocked;
+            using (PasswordsLogin pw = new PasswordsLogin(false))
+            {
+                pw.ShowDialog();
+                isLocked = pw.appIsLocked;
+            }
+
+            return isLocked;
+        }
+
         private void buttonNew_Click(object sender, EventArgs e)
         {
+            if(CheckPassword()) return;
             EnableTextBoxes();
             textBoxAnswer.Text = "";
             textBoxQuestion.Text = "";
@@ -426,6 +431,8 @@ namespace CEMSStudyApp.Pages
         {
             var wantsToDelete = MessageBox.Show("Delete This Record ??", "CEMS Study App", MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Warning);
+
+            if (CheckPassword()) return;
 
             var itemIndex = comboBoxSectionNumber.SelectedIndex + 1;
 

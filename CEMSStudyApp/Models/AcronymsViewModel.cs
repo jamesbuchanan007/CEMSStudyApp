@@ -15,8 +15,6 @@ namespace CEMSStudyApp.Models
         public DateTime Date_Edited { get; set; }
         public DateTime Date_Deleted { get; set; }
         public int IsActive { get; set; }
-        public List<string> PagesList { get; set; }
-        public List<string> AcronymsList { get; set; }
     }
     
 }

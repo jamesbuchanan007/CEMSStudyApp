@@ -150,6 +150,7 @@ namespace CEMSStudyApp.Pages
             // comboBoxSiteNavigation
             // 
             this.comboBoxSiteNavigation.DisplayMember = "Pages_Name";
+            this.comboBoxSiteNavigation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSiteNavigation.FormattingEnabled = true;
             this.comboBoxSiteNavigation.Location = new System.Drawing.Point(620, 22);
             this.comboBoxSiteNavigation.Name = "comboBoxSiteNavigation";

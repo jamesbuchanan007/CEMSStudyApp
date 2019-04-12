@@ -11,23 +11,13 @@ namespace CEMSStudyApp.Pages
 {
     public partial class HowTos : Form
     {
-        public static bool isLocked { get; set; }
         public HowTos()
         {
-            isLocked = PasswordsLogin.appIsLocked;
             InitializeComponent();
 
             //SETS SAVE BUTTON TO WHEN USER PRESSES ENTER
             AcceptButton = buttonSave;
 
-            if (isLocked)
-            {
-                buttonEdit.Hide();
-                buttonNew.Hide();
-                buttonSave.Hide();
-                buttonDelete.Hide();
-                buttonCancel.Hide();
-            }
             //LOAD COMBOBOX PAGES
             var pagesDataSet = LoadTable("Pages");
 
@@ -147,6 +137,9 @@ namespace CEMSStudyApp.Pages
         {
             //IF NOTHING TO EDIT
             if (comboBoxHowTo.Items.Count == 0) return;
+
+            if (CheckPassword()) return;
+
             textBoxAnswer.ReadOnly = false;
             textBoxAnswer.Enabled = true;
 
@@ -160,8 +153,23 @@ namespace CEMSStudyApp.Pages
 
         }
 
+        private bool CheckPassword()
+        {
+            bool isLocked;
+
+            using (PasswordsLogin pw = new PasswordsLogin(false))
+            {
+                pw.ShowDialog();
+                isLocked = pw.appIsLocked;
+            }
+
+            return isLocked;
+        }
+
         private void buttonNew_Click(object sender, EventArgs e)
         {
+            if (CheckPassword()) return;
+
             EnableTextBoxes();
             textBoxAnswer.Text = "";
             textBoxHowTos.Text = "";
@@ -329,7 +337,6 @@ namespace CEMSStudyApp.Pages
         {
             RefreshComboboxTextboxes();
             DisableTextBoxes();
-            if (isLocked) return;
             ShowAllButtons();
         }
 
@@ -431,6 +438,8 @@ namespace CEMSStudyApp.Pages
         {
             var wantsToDelete = MessageBox.Show("Delete This Record ??", "CEMS Study App", MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Warning);
+
+            if (CheckPassword()) return;
 
             var itemIndex = comboBoxHowTo.SelectedIndex + 1;
 

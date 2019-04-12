@@ -10,10 +10,11 @@ namespace CEMSStudyApp.Pages
 {
     public partial class PasswordsLogin : Form
     {
-        public static bool appIsLocked { get; set; }
-        public static bool wantsToEditPassword { get; set; }
+        public bool appIsLocked { get; set; }
+        public bool wantsToEditPassword { get; set; }
+        public string userName { get; set; }
 
-        public PasswordsLogin()
+        public PasswordsLogin(bool locked)
         {
             InitializeComponent();
 
@@ -21,19 +22,16 @@ namespace CEMSStudyApp.Pages
             AcceptButton = buttonSubmit;
 
             DisableTextboxes();
-
-            if (appIsLocked)
-            {
-                textBoxPassword.Enabled = true;
-                textBoxPassword.ReadOnly = false;
-            }
-            else
+            if (locked)
             {
                 textBoxPassword.Enabled = false;
                 textBoxPassword.ReadOnly = true;
             }
-
-            //appIsLocked = true;
+            else
+            {
+                textBoxPassword.Enabled = true;
+                textBoxPassword.ReadOnly = false;
+            }
 
             buttonUpdate.Enabled = true;
 
@@ -68,15 +66,14 @@ namespace CEMSStudyApp.Pages
                 if (textBoxPassword.Text.Trim() == dbPassword)
                 {
                     MessageBox.Show("Edit Mode", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    Hide();
                     appIsLocked = false;
-
+                    Close();
                 }
                 else
                 {
                     MessageBox.Show("Incorrect Password !!", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Hide();
                     appIsLocked = true;
+                    Close();
                 }
             }
             //IF UPDATING DB
@@ -88,16 +85,16 @@ namespace CEMSStudyApp.Pages
                 if (textBoxPassword.Text.Trim() != dbPassword)
                 {
                     MessageBox.Show("Incorrect Password !!", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Hide();
                     appIsLocked = true;
+                    Close();
                     return;
                 }
 
                 if (textBoxNewPassword1.Text != textBoxNewPassword2.Text)
                 {
                     MessageBox.Show("New Passwords Do Not Match !!", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Hide();
                     appIsLocked = true;
+                    Close();
                     return;
                 }
 
@@ -108,6 +105,8 @@ namespace CEMSStudyApp.Pages
                     DateAdded = DateTime.Now,
                     IsActive = 1
                 };
+
+                userName = vm.UserName;
 
                 var format = "yyyy-MM-dd HH:mm:ss";
 
@@ -131,9 +130,8 @@ namespace CEMSStudyApp.Pages
                     adapter.InsertCommand.ExecuteNonQuery();
 
                     MessageBox.Show("Password Updated", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
                     appIsLocked = false;
-                    Hide();
+                    Close();
                 }
                 catch (Exception ex)
                 {

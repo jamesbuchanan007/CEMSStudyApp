@@ -12,25 +12,12 @@ namespace CEMSStudyApp.Pages
 {
     public partial class Acronyms : Form
     {
-        public static bool isLocked { get; set; }
-
         public Acronyms()
         {
-            isLocked = PasswordsLogin.appIsLocked;
-
             InitializeComponent();
 
             //SETS SAVE BUTTON TO WHEN USER PRESSES ENTER
             AcceptButton = buttonSave;
-
-            if (isLocked)
-            {
-                buttonNew.Hide();
-                buttonEdit.Hide();
-                buttonSave.Hide();
-                buttonDelete.Hide();
-                buttonCancel.Hide();
-            }
 
             //LOAD COMBOBOX PAGES
             var pagesDataSet = LoadTable("Pages");
@@ -142,6 +129,9 @@ namespace CEMSStudyApp.Pages
         {
             //IF NOTHING TO EDIT
             if (comboBoxAcronym.Items.Count == 0) return;
+
+            if (CheckPassword()) return;
+
             EnableTextBoxes();
             HideAllButtons();
             buttonEdit.Show();
@@ -149,8 +139,23 @@ namespace CEMSStudyApp.Pages
             buttonToggle.Enabled = false;
         }
 
+        private bool CheckPassword()
+        {
+            bool isLocked;
+
+            using (PasswordsLogin pw = new PasswordsLogin(false))
+            {
+                pw.ShowDialog();
+                isLocked = pw.appIsLocked;
+            }
+
+            return isLocked;
+        }
+
         private void buttonNew_Click(object sender, EventArgs e)
         {
+            if(CheckPassword()) return;
+
             EnableTextBoxes();
             textBoxAnswer.Text = "";
             textBoxAcronym.Text = "";
@@ -201,11 +206,12 @@ namespace CEMSStudyApp.Pages
             ChangeRecord(newIndex, aDataTable);
         }
 
-        private void ChangeRecord(int newIndex, DataSet aDataTable)
+        public void ChangeRecord(int newIndex, DataSet aDataTable)
         {
             textBoxAcronym.Text = aDataTable.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
             textBoxAnswer.Text = aDataTable.Tables[0].Rows[newIndex]["Acronyms_Description"].ToString();
             comboBoxAcronym.SelectedIndex = comboBoxAcronym.FindString(textBoxAcronym.Text);
+
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -418,6 +424,8 @@ namespace CEMSStudyApp.Pages
         {
             var wantsToDelete = MessageBox.Show("Delete This Record ??", "CEMS Study App", MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Warning);
+
+            if(CheckPassword())return;
 
             var itemIndex = comboBoxAcronym.SelectedIndex + 1;
 

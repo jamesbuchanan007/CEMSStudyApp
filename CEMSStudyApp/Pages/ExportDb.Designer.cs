@@ -35,7 +35,6 @@ namespace CEMSStudyApp.Pages
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonExport = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.buttonImport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +56,7 @@ namespace CEMSStudyApp.Pages
             this.buttonExport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExport.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonExport.Location = new System.Drawing.Point(17, 113);
+            this.buttonExport.Location = new System.Drawing.Point(32, 113);
             this.buttonExport.Name = "buttonExport";
             this.buttonExport.Size = new System.Drawing.Size(75, 23);
             this.buttonExport.TabIndex = 1;
@@ -70,7 +69,7 @@ namespace CEMSStudyApp.Pages
             this.buttonExit.BackColor = System.Drawing.Color.Red;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.ForeColor = System.Drawing.Color.White;
-            this.buttonExit.Location = new System.Drawing.Point(179, 113);
+            this.buttonExit.Location = new System.Drawing.Point(169, 113);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 6;
@@ -78,25 +77,11 @@ namespace CEMSStudyApp.Pages
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // buttonImport
-            // 
-            this.buttonImport.BackColor = System.Drawing.Color.Green;
-            this.buttonImport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonImport.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonImport.Location = new System.Drawing.Point(98, 113);
-            this.buttonImport.Name = "buttonImport";
-            this.buttonImport.Size = new System.Drawing.Size(75, 23);
-            this.buttonImport.TabIndex = 7;
-            this.buttonImport.Text = "Import Db";
-            this.buttonImport.UseVisualStyleBackColor = false;
-            // 
             // ExportDb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(270, 161);
-            this.Controls.Add(this.buttonImport);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonExport);
             this.Controls.Add(this.pictureBox1);
@@ -114,7 +99,6 @@ namespace CEMSStudyApp.Pages
         private PictureBox pictureBox1;
         private Button buttonExport;
         private Button buttonExit;
-        private Button buttonImport;
     }
 }
 

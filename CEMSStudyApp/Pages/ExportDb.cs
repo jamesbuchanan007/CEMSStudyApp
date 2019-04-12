@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using CEMSStudyApp.Properties;
 
@@ -18,7 +19,8 @@ namespace CEMSStudyApp.Pages
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Exit Export/Import Process?", "CEMS Study App", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dr = MessageBox.Show("Exit Export/Import Process?", "CEMS Study App", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
 
             if (dr == DialogResult.Yes)
             {
@@ -96,6 +98,7 @@ namespace CEMSStudyApp.Pages
                 pw.Show();
             }
         }
+
         //GETS TABLES FROM DB
         private void ExportToFile(List<string> DbTables, string filePath)
         {
@@ -127,7 +130,8 @@ namespace CEMSStudyApp.Pages
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Could Not Download " + table + " Table!!", @"CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Could Not Download " + table + " Table!!", @"CEMS Study App", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                 }
 
                 fileExportFunctionByTable(ds, table, filePath);
@@ -186,12 +190,13 @@ namespace CEMSStudyApp.Pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "OOPS !! Could not Export", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.ToString(), "OOPS !! Could not Export", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
             }
 
 
 
         }
-
+       
     }
 }

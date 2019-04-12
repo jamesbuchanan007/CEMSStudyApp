@@ -50,6 +50,8 @@ namespace CEMSStudyApp.Pages
             if (dr == DialogResult.Yes)
             {
                 Hide();
+                MainMenu mm = new MainMenu();
+                mm.Show();
             }
         }
 

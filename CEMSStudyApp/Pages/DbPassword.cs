@@ -13,7 +13,7 @@ namespace CEMSStudyApp.Pages
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                var password = "L0c@l111";
+                var password = "111";
 
                 if (textBoxPassword.Text != password)
                 {

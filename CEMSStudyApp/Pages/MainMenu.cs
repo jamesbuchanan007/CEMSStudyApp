@@ -61,6 +61,12 @@ namespace CEMSStudyApp.Pages
            PasswordsLogin pw = new PasswordsLogin(true);
            pw.ShowDialog();
         }
-       
+
+        private void buttonUoM_Click(object sender, EventArgs e)
+        {
+            Hide();
+            UnitOfMeasure unitOfMeasure = new UnitOfMeasure();
+            unitOfMeasure.Show();
+        }
     }
 }

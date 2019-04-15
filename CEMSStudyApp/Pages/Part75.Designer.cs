@@ -63,13 +63,15 @@ namespace CEMSStudyApp.Pages
             // 
             // textBoxSectionName
             // 
+            this.textBoxSectionName.BackColor = System.Drawing.Color.White;
             this.textBoxSectionName.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBoxSectionName.Enabled = false;
             this.textBoxSectionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSectionName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxSectionName.ForeColor = System.Drawing.Color.Black;
             this.textBoxSectionName.Location = new System.Drawing.Point(17, 177);
             this.textBoxSectionName.Name = "textBoxSectionName";
             this.textBoxSectionName.ReadOnly = true;
+            this.textBoxSectionName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxSectionName.Size = new System.Drawing.Size(320, 26);
             this.textBoxSectionName.TabIndex = 2;
             this.textBoxSectionName.Text = "Section Name";
@@ -91,14 +93,16 @@ namespace CEMSStudyApp.Pages
             // 
             // textBoxQuestion
             // 
+            this.textBoxQuestion.BackColor = System.Drawing.Color.White;
             this.textBoxQuestion.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBoxQuestion.Enabled = false;
             this.textBoxQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxQuestion.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxQuestion.ForeColor = System.Drawing.Color.Black;
             this.textBoxQuestion.Location = new System.Drawing.Point(17, 205);
             this.textBoxQuestion.Multiline = true;
             this.textBoxQuestion.Name = "textBoxQuestion";
             this.textBoxQuestion.ReadOnly = true;
+            this.textBoxQuestion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxQuestion.Size = new System.Drawing.Size(320, 171);
             this.textBoxQuestion.TabIndex = 5;
             this.textBoxQuestion.Text = "\r\n\r\nQuestion";
@@ -106,14 +110,15 @@ namespace CEMSStudyApp.Pages
             // 
             // textBoxAnswer
             // 
+            this.textBoxAnswer.BackColor = System.Drawing.Color.White;
             this.textBoxAnswer.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxAnswer.Enabled = false;
-            this.textBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAnswer.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAnswer.ForeColor = System.Drawing.Color.Black;
             this.textBoxAnswer.Location = new System.Drawing.Point(340, 50);
             this.textBoxAnswer.Multiline = true;
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.ReadOnly = true;
+            this.textBoxAnswer.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxAnswer.Size = new System.Drawing.Size(448, 326);
             this.textBoxAnswer.TabIndex = 6;
             this.textBoxAnswer.Text = "\r\n\r\n\r\n\r\n\r\nAnswer";
@@ -269,10 +274,11 @@ namespace CEMSStudyApp.Pages
             // 
             // textBoxSectionNumber
             // 
+            this.textBoxSectionNumber.BackColor = System.Drawing.Color.White;
             this.textBoxSectionNumber.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBoxSectionNumber.Enabled = false;
             this.textBoxSectionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSectionNumber.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxSectionNumber.ForeColor = System.Drawing.Color.Black;
             this.textBoxSectionNumber.Location = new System.Drawing.Point(17, 149);
             this.textBoxSectionNumber.Name = "textBoxSectionNumber";
             this.textBoxSectionNumber.ReadOnly = true;

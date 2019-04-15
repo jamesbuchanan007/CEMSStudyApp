@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using CEMSStudyApp.Models;
 using CEMSStudyApp.Properties;
 
 namespace CEMSStudyApp.Pages
 {
-    public partial class Acronyms : Form
+    public partial class UnitOfMeasure : Form
     {
-
-        public Acronyms()
+        public UnitOfMeasure()
         {
             InitializeComponent();
 
@@ -33,7 +31,7 @@ namespace CEMSStudyApp.Pages
             }
 
             //REMOVE FROM DICTIONARY
-            var pageName = "Acronyms";
+            var pageName = "UnitOfMeasure";
             var item = comboDictionary.First(q => q.Value == pageName);
             comboDictionary.Remove(item.Key);
 
@@ -84,16 +82,16 @@ namespace CEMSStudyApp.Pages
         {
             textBoxAnswer.ReadOnly = false;
             textBoxAnswer.Enabled = true;
-            textBoxAcronym.ReadOnly = false;
-            textBoxAcronym.Enabled = true;
+            textBoxUnitOfMeasure.ReadOnly = false;
+            textBoxUnitOfMeasure.Enabled = true;
         }
 
         private void DisableTextBoxes()
         {
             textBoxAnswer.ReadOnly = true;
             textBoxAnswer.Enabled = false;
-            textBoxAcronym.ReadOnly = true;
-            textBoxAcronym.Enabled = false;
+            textBoxUnitOfMeasure.ReadOnly = true;
+            textBoxUnitOfMeasure.Enabled = false;
         }
 
         private void HideAllButtons()
@@ -130,7 +128,7 @@ namespace CEMSStudyApp.Pages
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             //IF NOTHING TO EDIT
-            if (comboBoxAcronym.Items.Count == 0) return;
+            if (comboBoxUnitOfMeasure.Items.Count == 0) return;
 
             if (CheckPassword()) return;
 
@@ -160,7 +158,7 @@ namespace CEMSStudyApp.Pages
 
             EnableTextBoxes();
             textBoxAnswer.Text = "";
-            textBoxAcronym.Text = "";
+            textBoxUnitOfMeasure.Text = "";
 
             HideAllButtons();
             buttonNew.Show();
@@ -172,7 +170,7 @@ namespace CEMSStudyApp.Pages
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             textBoxAnswer.Undo();
-            textBoxAcronym.Undo();
+            textBoxUnitOfMeasure.Undo();
             DisableTextBoxes();
             ShowAllButtons();
             buttonToggle.Enabled = true;
@@ -197,9 +195,9 @@ namespace CEMSStudyApp.Pages
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            var aDataTable = LoadTable("Acronyms");
-            var index = comboBoxAcronym.SelectedIndex;
-            var count = comboBoxAcronym.Items.Count - 1;    //Count is NOT zero-indexed
+            var aDataTable = LoadTable("UnitOfMeasure");
+            var index = comboBoxUnitOfMeasure.SelectedIndex;
+            var count = comboBoxUnitOfMeasure.Items.Count - 1;    //Count is NOT zero-indexed
 
             if (index == count || aDataTable.Tables[0].Rows.Count == 0) return;
 
@@ -210,15 +208,15 @@ namespace CEMSStudyApp.Pages
 
         public void ChangeRecord(int newIndex, DataSet aDataTable)
         {
-            textBoxAcronym.Text = aDataTable.Tables[0].Rows[newIndex]["Acronyms_Name"].ToString();
-            textBoxAnswer.Text = aDataTable.Tables[0].Rows[newIndex]["Acronyms_Description"].ToString();
-            comboBoxAcronym.SelectedIndex = comboBoxAcronym.FindString(textBoxAcronym.Text);
+            textBoxUnitOfMeasure.Text = aDataTable.Tables[0].Rows[newIndex]["UnitOfMeasure_Name"].ToString();
+            textBoxAnswer.Text = aDataTable.Tables[0].Rows[newIndex]["UnitOfMeasure_Description"].ToString();
+            comboBoxUnitOfMeasure.SelectedIndex = comboBoxUnitOfMeasure.FindString(textBoxUnitOfMeasure.Text);
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            var aDataTable = LoadTable("Acronyms");
-            var index = comboBoxAcronym.SelectedIndex;
+            var aDataTable = LoadTable("UnitOfMeasure");
+            var index = comboBoxUnitOfMeasure.SelectedIndex;
 
             if (index == 0 || aDataTable.Tables[0].Rows.Count == 0) return;
 
@@ -234,32 +232,31 @@ namespace CEMSStudyApp.Pages
             if (buttonEdit.Visible)
             {
                 //IF NOTHING TO EDIT
-                if (comboBoxAcronym.Items.Count == 0) { RefreshDisableShow(); return; }
+                if (comboBoxUnitOfMeasure.Items.Count == 0) { RefreshDisableShow(); return; }
 
                 //CHECK WHETHER USER MEANT TO HIT SAVE BUTTON
                 if (SaveQuestion() == DialogResult.No) { RefreshDisableShow(); return; }
 
-                AcronymsViewModel vm = new AcronymsViewModel
+                UnitOfMeasureViewModel vm = new UnitOfMeasureViewModel
                 {
-                    
-                    Acronyms_Name = textBoxAcronym.Text,
-                    Acronyms_Description = textBoxAnswer.Text,
+                    UnitOfMeasure_Name = textBoxUnitOfMeasure.Text,
+                    UnitOfMeasure_Description = textBoxAnswer.Text,
                     Pages_Id = 1,
                     Date_Edited = DateTime.Now,
                     IsActive = 1
                 };
 
-                var index = comboBoxAcronym.SelectedIndex + 1;
+                var index = comboBoxUnitOfMeasure.SelectedIndex + 1;
 
                 var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
 
-                var sql = "UPDATE Acronyms " +
-                      "SET Acronyms_Name = " + "'" + vm.Acronyms_Name + "'," +
-                      "Acronyms_Description = " + "'" + vm.Acronyms_Description + "'," +
+                var sql = "UPDATE UnitOfMeasure " +
+                      "SET UnitOfMeasure_Name = " + "'" + vm.UnitOfMeasure_Name + "'," +
+                      "UnitOfMeasure_Description = " + "'" + vm.UnitOfMeasure_Description + "'," +
                       "Pages_Id = " + vm.Pages_Id + "," +
                       "Date_Edited = " + "'" + vm.Date_Edited.ToString(format) + "'," +
                       "Is_Active = " + vm.IsActive + " " +
-                      "WHERE Acronyms_Id = " + index;
+                      "WHERE UnitOfMeasure_Id = " + index;
 
                 UpdateDataBase(sql);
             }
@@ -269,10 +266,10 @@ namespace CEMSStudyApp.Pages
                 //CHECK WHETHER USER MEANT TO HIT SAVE BUTTON
                 if (SaveQuestion() == DialogResult.No) { RefreshDisableShow(); return; }
 
-                AcronymsViewModel vm = new AcronymsViewModel
+                UnitOfMeasureViewModel vm = new UnitOfMeasureViewModel
                 {
-                    Acronyms_Name = textBoxAcronym.Text,
-                    Acronyms_Description = textBoxAnswer.Text,
+                    UnitOfMeasure_Name = textBoxUnitOfMeasure.Text,
+                    UnitOfMeasure_Description = textBoxAnswer.Text,
                     Pages_Id = 1,
                     Date_Added = DateTime.Now,
                     IsActive = 1
@@ -280,9 +277,9 @@ namespace CEMSStudyApp.Pages
 
                 var format = "yyyy-MM-dd HH:mm:ss";
 
-                var sql = "INSERT into Acronyms (Acronyms_Name,Acronyms_Description,Pages_Id,Date_Added,Is_Active) values('" +
-                      vm.Acronyms_Name + "'" + "," + "'" +
-                      vm.Acronyms_Description + "'" + "," +
+                var sql = "INSERT into UnitOfMeasure (UnitOfMeasure_Name,UnitOfMeasure_Description,Pages_Id,Date_Added,Is_Active) values('" +
+                      vm.UnitOfMeasure_Name + "'" + "," + "'" +
+                      vm.UnitOfMeasure_Description + "'" + "," +
                       vm.Pages_Id + "," + "'" +
                       vm.Date_Added.ToString(format) + "'" + "," +
                       vm.IsActive + ")";
@@ -359,19 +356,19 @@ namespace CEMSStudyApp.Pages
         //REFRESH COMBOBOX AND TEXTBOXES
         public void RefreshComboboxTextboxes()
         {
-            var aDataSet = LoadTable("Acronyms");
-            var newIndex = comboBoxAcronym.SelectedIndex;
-            comboBoxAcronym.DataSource = aDataSet.Tables[0];
-            comboBoxAcronym.ValueMember = "Acronyms_Id";
-            comboBoxAcronym.DisplayMember = "Acronyms_Name";
-            comboBoxAcronym.SelectedIndex = newIndex;
+            var aDataSet = LoadTable("UnitOfMeasure");
+            var newIndex = comboBoxUnitOfMeasure.SelectedIndex;
+            comboBoxUnitOfMeasure.DataSource = aDataSet.Tables[0];
+            comboBoxUnitOfMeasure.ValueMember = "UnitOfMeasure_Id";
+            comboBoxUnitOfMeasure.DisplayMember = "UnitOfMeasure_Name";
+            comboBoxUnitOfMeasure.SelectedIndex = newIndex;
             ChangeRecord(newIndex, aDataSet);
         }
 
         private void comboBoxAcronym_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var aDataSet = LoadTable("Acronyms");
-            var index = comboBoxAcronym.SelectedIndex;
+            var aDataSet = LoadTable("UnitOfMeasure");
+            var index = comboBoxUnitOfMeasure.SelectedIndex;
 
             if (aDataSet.Tables[0].Rows.Count == 0) return;
 
@@ -416,11 +413,7 @@ namespace CEMSStudyApp.Pages
                     Part75 part75 = new Part75();
                     part75.Show();
                     break;
-                case "UnitOfMeasure":
-                    Hide();
-                    UnitOfMeasure unitOfMeasure = new UnitOfMeasure();
-                    unitOfMeasure.Show();
-                    break;
+
             }
 
 
@@ -433,7 +426,7 @@ namespace CEMSStudyApp.Pages
 
             if(CheckPassword())return;
 
-            var itemIndex = comboBoxAcronym.SelectedIndex + 1;
+            var itemIndex = comboBoxUnitOfMeasure.SelectedIndex + 1;
 
             if (wantsToDelete == DialogResult.OK)
             {
@@ -443,7 +436,7 @@ namespace CEMSStudyApp.Pages
 
                 var connectionString = Settings.Default.LocalDb;
                 connection = new SqlConnection(connectionString);
-                sql = "DELETE from Acronyms WHERE Acronyms_Id = " + itemIndex;
+                sql = "DELETE from UnitOfMeasure WHERE UnitOfMeasure_Id = " + itemIndex;
                 try
                 {
                     connection.Open();
@@ -468,12 +461,12 @@ namespace CEMSStudyApp.Pages
 
         private void LoadComboboxTextbox()
         {
-            //LOAD COMBOBOX ACRONYMS
-            var aDataSet = LoadTable("Acronyms");
+            //LOAD COMBOBOX UnitOfMeasure
+            var aDataSet = LoadTable("UnitOfMeasure");
 
-            comboBoxAcronym.DataSource = aDataSet.Tables[0];
-            comboBoxAcronym.ValueMember = "Acronyms_Id";
-            comboBoxAcronym.DisplayMember = "Acronyms_Name";
+            comboBoxUnitOfMeasure.DataSource = aDataSet.Tables[0];
+            comboBoxUnitOfMeasure.ValueMember = "UnitOfMeasure_Id";
+            comboBoxUnitOfMeasure.DisplayMember = "UnitOfMeasure_Name";
 
             //LOAD TEXTBOXES
             if (aDataSet.Tables[0].Rows.Count == 0) return;

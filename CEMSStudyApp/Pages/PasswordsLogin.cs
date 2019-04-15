@@ -42,15 +42,8 @@ namespace CEMSStudyApp.Pages
 
         public void buttonExit_Click(object sender, EventArgs e)
         {
-
-            DialogResult dr = MessageBox.Show("Exit Admin?", "CEMS Study App", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-
-            if (dr == DialogResult.Yes)
-            {
-                Hide();
-                MainMenu mm = new MainMenu();
-                mm.Show();
-            }
+            appIsLocked = true;
+            Close();
         }
 
         public void buttonSubmit_Click(object sender, EventArgs e)

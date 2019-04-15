@@ -56,11 +56,11 @@ namespace CEMSStudyApp.Pages
             this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(86, 18);
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 26);
+            this.label1.Size = new System.Drawing.Size(337, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "40 CFR Part 60";
+            this.label1.Text = "40 CFR Part 63, Subpart UUUUU";
             // 
             // textBoxSectionName
             // 
@@ -71,6 +71,7 @@ namespace CEMSStudyApp.Pages
             this.textBoxSectionName.Location = new System.Drawing.Point(17, 195);
             this.textBoxSectionName.Name = "textBoxSectionName";
             this.textBoxSectionName.ReadOnly = true;
+            this.textBoxSectionName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxSectionName.Size = new System.Drawing.Size(320, 26);
             this.textBoxSectionName.TabIndex = 2;
             this.textBoxSectionName.Text = "Section Name";
@@ -93,13 +94,13 @@ namespace CEMSStudyApp.Pages
             // textBoxQuestion
             // 
             this.textBoxQuestion.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxQuestion.Enabled = false;
             this.textBoxQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxQuestion.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxQuestion.Location = new System.Drawing.Point(17, 223);
             this.textBoxQuestion.Multiline = true;
             this.textBoxQuestion.Name = "textBoxQuestion";
             this.textBoxQuestion.ReadOnly = true;
+            this.textBoxQuestion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxQuestion.Size = new System.Drawing.Size(320, 153);
             this.textBoxQuestion.TabIndex = 5;
             this.textBoxQuestion.Text = "\r\n\r\nQuestion";
@@ -108,13 +109,13 @@ namespace CEMSStudyApp.Pages
             // textBoxAnswer
             // 
             this.textBoxAnswer.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxAnswer.Enabled = false;
-            this.textBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAnswer.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBoxAnswer.Location = new System.Drawing.Point(341, 47);
             this.textBoxAnswer.Multiline = true;
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.ReadOnly = true;
+            this.textBoxAnswer.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxAnswer.Size = new System.Drawing.Size(447, 329);
             this.textBoxAnswer.TabIndex = 6;
             this.textBoxAnswer.Text = "\r\n\r\n\r\n\r\n\r\nAnswer";

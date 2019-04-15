@@ -140,6 +140,11 @@ namespace CEMSStudyApp.Pages
                     Part75 part75 = new Part75();
                     part75.Show();
                     break;
+                case "UnitOfMeasure":
+                    Hide();
+                    UnitOfMeasure unitOfMeasure = new UnitOfMeasure();
+                    unitOfMeasure.Show();
+                    break;
             }
         }
 

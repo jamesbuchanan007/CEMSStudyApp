@@ -231,11 +231,6 @@ namespace CEMSStudyApp.Pages
         }
         private void EnableTextBoxes()
         {
-            textBoxAnswer.Enabled = true;
-            textBoxQuestion.Enabled = true;
-            textBoxSectionName.Enabled = true;
-            textBoxSectionNumber.Enabled = true;
-
             textBoxAnswer.ReadOnly = false;
             textBoxQuestion.ReadOnly = false;
             textBoxSectionName.ReadOnly = false;
@@ -244,11 +239,6 @@ namespace CEMSStudyApp.Pages
 
         private void DisableTextBoxes()
         {
-            textBoxAnswer.Enabled = false;
-            textBoxQuestion.Enabled = false;
-            textBoxSectionName.Enabled = false;
-            textBoxSectionNumber.Enabled = false;
-
             textBoxAnswer.ReadOnly = true;
             textBoxQuestion.ReadOnly = true;
             textBoxSectionName.ReadOnly = true;

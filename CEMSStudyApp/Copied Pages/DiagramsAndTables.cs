@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -123,8 +124,9 @@ namespace CEMSStudyApp.Pages
         {
             textBoxDiagramsAndTables_Name.Text = aDataTable.Tables[0].Rows[newIndex]["Table_Name"].ToString();
             textBoxDiagramsAndTables_Description.Text = aDataTable.Tables[0].Rows[newIndex]["Table_Description"].ToString();
-            pictureBoxDiagramsAndTables_Image.ImageLocation = @"C:\Users\jamesb\source\repos\CEMSStudyApp\CEMSStudyApp\Images\"+comboBoxDiagramsAndTables_Id+".png";
-            comboBoxDiagramsAndTables_Id.SelectedIndex = comboBoxDiagramsAndTables_Id.FindString(textBoxDiagramsAndTables_Name.Text);
+            pictureBoxDiagramsAndTables_Image.Image = Image.FromFile(aDataTable.Tables[0].Rows[newIndex]["Table_FileLocation"].ToString());
+
+            comboBoxDiagramsAndTables_Id.SelectedIndex = comboBoxDiagramsAndTables_Id.FindString(aDataTable.Tables[0].Rows[newIndex]["Table_Id"].ToString());
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -139,18 +141,6 @@ namespace CEMSStudyApp.Pages
             ChangeRecord(newIndex, aDataTable);
         }
 
-        //REFRESH COMBOBOX AND TEXTBOXES
-        public void RefreshComboboxTextboxes()
-        {
-            var aDataSet = LoadTable("DiagramsAndTables");
-            var newIndex = comboBoxDiagramsAndTables_Id.SelectedIndex;
-            comboBoxDiagramsAndTables_Id.DataSource = aDataSet.Tables[0];
-            comboBoxDiagramsAndTables_Id.ValueMember = "DiagramsAndTables_Id";
-            comboBoxDiagramsAndTables_Id.DisplayMember = "DiagramsAndTables_Name";
-            comboBoxDiagramsAndTables_Id.SelectedIndex = newIndex;
-            ChangeRecord(newIndex, aDataSet);
-        }
-
         private void comboBoxAcronym_SelectedIndexChanged(object sender, EventArgs e)
         {
             var aDataSet = LoadTable("DiagramsAndTables");
@@ -160,7 +150,7 @@ namespace CEMSStudyApp.Pages
 
             ChangeRecord(index, aDataSet);
         }
-        
+
         //NAVIGATE TO DIFFERENT FORM
         private void comboBoxSiteNavigation_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -198,6 +188,7 @@ namespace CEMSStudyApp.Pages
                     UnitOfMeasure unitOfMeasure = new UnitOfMeasure();
                     unitOfMeasure.Show();
                     break;
+
             }
 
 
@@ -209,8 +200,8 @@ namespace CEMSStudyApp.Pages
             var aDataSet = LoadTable("DiagramsAndTables");
 
             comboBoxDiagramsAndTables_Id.DataSource = aDataSet.Tables[0];
-            comboBoxDiagramsAndTables_Id.ValueMember = "Table_Id";
-            comboBoxDiagramsAndTables_Id.DisplayMember = "Table_Name";
+            comboBoxDiagramsAndTables_Id.ValueMember = "Table_Db_Id";
+            comboBoxDiagramsAndTables_Id.DisplayMember = "Table_Id";
 
             //LOAD TEXTBOXES
             if (aDataSet.Tables[0].Rows.Count == 0) return;

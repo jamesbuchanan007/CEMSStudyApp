@@ -209,7 +209,38 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>CEMS_Study_App_db.mdf</DependentUpon>
     </Content>
+    <Content Include="Images\Part75_PEG_Figure_1.PNG" />
+    <Content Include="Images\Part75_PEG_Figure_2.PNG" />
+    <Content Include="Images\Part75_PEG_Figure_3.PNG" />
+    <Content Include="Images\Part75_PEG_Figure_4.PNG" />
     <Content Include="Images\Part75_PEG_Table_1.PNG" />
+    <Content Include="Images\Part75_PEG_Table_10.PNG" />
+    <Content Include="Images\Part75_PEG_Table_11.PNG" />
+    <Content Include="Images\Part75_PEG_Table_12.PNG" />
+    <Content Include="Images\Part75_PEG_Table_13.PNG" />
+    <Content Include="Images\Part75_PEG_Table_14.PNG" />
+    <Content Include="Images\Part75_PEG_Table_17.PNG" />
+    <Content Include="Images\Part75_PEG_Table_18.PNG" />
+    <Content Include="Images\Part75_PEG_Table_19.PNG" />
+    <Content Include="Images\Part75_PEG_Table_2.PNG" />
+    <Content Include="Images\Part75_PEG_Table_3.PNG" />
+    <Content Include="Images\Part75_PEG_Table_4.PNG" />
+    <Content Include="Images\Part75_PEG_Table_5.PNG" />
+    <Content Include="Images\Part75_PEG_Table_6.PNG" />
+    <Content Include="Images\Part75_PEG_Table_7.PNG" />
+    <Content Include="Images\Part75_PEG_Table_8.PNG" />
+    <Content Include="Images\Part75_PEG_Table_9.PNG" />
+    <Content Include="Images\Part75_PEG_Table_A1_1.PNG" />
+    <Content Include="Images\Part75_PEG_Table_A1_2.PNG" />
+    <Content Include="Images\Part75_PEG_Table_A1_3.PNG" />
+    <Content Include="Images\Part75_PEG_Table_A1_4.PNG" />
+    <Content Include="Images\Part75_PEG_Table_A1_5.PNG" />
+    <Content Include="Images\Part75_PEG_Table_A1_6.PNG" />
+    <Content Include="Images\Part75_PEG_Table_A1_7.PNG" />
+    <Content Include="Images\Part75_PEG_Table_A1_8.PNG" />
+    <Content Include="Images\Part75_PEG_Table_B1_1.PNG" />
+    <Content Include="Images\Part75_PEG_Table_B1_2.PNG" />
+    <Content Include="Images\Part75_PEG_Table_B1_3.PNG" />
     <Content Include="Images\SpectrumLogo.png" />
   </ItemGroup>
   <ItemGroup />

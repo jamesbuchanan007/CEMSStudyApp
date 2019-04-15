@@ -68,5 +68,12 @@ namespace CEMSStudyApp.Pages
             UnitOfMeasure unitOfMeasure = new UnitOfMeasure();
             unitOfMeasure.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Hide();
+            DiagramsAndTables dt = new DiagramsAndTables();
+            dt.Show();
+        }
     }
 }

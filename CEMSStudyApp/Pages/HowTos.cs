@@ -135,6 +135,11 @@ namespace CEMSStudyApp.Pages
                     UnitOfMeasure unitOfMeasure = new UnitOfMeasure();
                     unitOfMeasure.Show();
                     break;
+                case "DiagramsAndTables":
+                    Hide();
+                    DiagramsAndTables dt = new DiagramsAndTables();
+                    dt.Show();
+                    break;
             }
         }
 

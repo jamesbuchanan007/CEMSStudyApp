@@ -93,7 +93,7 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(442, 81);
+            this.buttonToggle.Location = new System.Drawing.Point(780, 81);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;
@@ -108,7 +108,7 @@ namespace CEMSStudyApp.Pages
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.ForeColor = System.Drawing.Color.White;
-            this.buttonExit.Location = new System.Drawing.Point(445, 522);
+            this.buttonExit.Location = new System.Drawing.Point(780, 743);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 10;
@@ -126,7 +126,7 @@ namespace CEMSStudyApp.Pages
             this.comboBoxDiagramsAndTables_Id.FormattingEnabled = true;
             this.comboBoxDiagramsAndTables_Id.Location = new System.Drawing.Point(284, 54);
             this.comboBoxDiagramsAndTables_Id.Name = "comboBoxDiagramsAndTables_Id";
-            this.comboBoxDiagramsAndTables_Id.Size = new System.Drawing.Size(236, 21);
+            this.comboBoxDiagramsAndTables_Id.Size = new System.Drawing.Size(571, 21);
             this.comboBoxDiagramsAndTables_Id.TabIndex = 12;
             this.comboBoxDiagramsAndTables_Id.SelectedIndexChanged += new System.EventHandler(this.comboBoxAcronym_SelectedIndexChanged);
             // 
@@ -135,7 +135,7 @@ namespace CEMSStudyApp.Pages
             this.comboBoxSiteNavigation.DisplayMember = "Pages_Name";
             this.comboBoxSiteNavigation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSiteNavigation.FormattingEnabled = true;
-            this.comboBoxSiteNavigation.Location = new System.Drawing.Point(352, 22);
+            this.comboBoxSiteNavigation.Location = new System.Drawing.Point(687, 22);
             this.comboBoxSiteNavigation.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxSiteNavigation.Name = "comboBoxSiteNavigation";
             this.comboBoxSiteNavigation.Size = new System.Drawing.Size(168, 21);
@@ -145,13 +145,13 @@ namespace CEMSStudyApp.Pages
             // textBoxDiagramsAndTables_Name
             // 
             this.textBoxDiagramsAndTables_Name.BackColor = System.Drawing.Color.White;
-            this.textBoxDiagramsAndTables_Name.Location = new System.Drawing.Point(202, 85);
+            this.textBoxDiagramsAndTables_Name.Location = new System.Drawing.Point(284, 83);
             this.textBoxDiagramsAndTables_Name.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxDiagramsAndTables_Name.Name = "textBoxDiagramsAndTables_Name";
             this.textBoxDiagramsAndTables_Name.ReadOnly = true;
-            this.textBoxDiagramsAndTables_Name.Size = new System.Drawing.Size(236, 20);
+            this.textBoxDiagramsAndTables_Name.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxDiagramsAndTables_Name.Size = new System.Drawing.Size(492, 20);
             this.textBoxDiagramsAndTables_Name.TabIndex = 20;
-            this.textBoxDiagramsAndTables_Name.Text = "Acronym";
             this.textBoxDiagramsAndTables_Name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxDiagramsAndTables_Description
@@ -162,14 +162,15 @@ namespace CEMSStudyApp.Pages
             this.textBoxDiagramsAndTables_Description.Name = "textBoxDiagramsAndTables_Description";
             this.textBoxDiagramsAndTables_Description.ReadOnly = true;
             this.textBoxDiagramsAndTables_Description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxDiagramsAndTables_Description.Size = new System.Drawing.Size(503, 70);
+            this.textBoxDiagramsAndTables_Description.Size = new System.Drawing.Size(838, 70);
             this.textBoxDiagramsAndTables_Description.TabIndex = 21;
             // 
             // pictureBoxDiagramsAndTables_Image
             // 
             this.pictureBoxDiagramsAndTables_Image.Location = new System.Drawing.Point(17, 186);
             this.pictureBoxDiagramsAndTables_Image.Name = "pictureBoxDiagramsAndTables_Image";
-            this.pictureBoxDiagramsAndTables_Image.Size = new System.Drawing.Size(503, 316);
+            this.pictureBoxDiagramsAndTables_Image.Size = new System.Drawing.Size(838, 551);
+            this.pictureBoxDiagramsAndTables_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxDiagramsAndTables_Image.TabIndex = 22;
             this.pictureBoxDiagramsAndTables_Image.TabStop = false;
             // 
@@ -180,7 +181,7 @@ namespace CEMSStudyApp.Pages
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(534, 557);
+            this.ClientSize = new System.Drawing.Size(867, 778);
             this.Controls.Add(this.pictureBoxDiagramsAndTables_Image);
             this.Controls.Add(this.textBoxDiagramsAndTables_Description);
             this.Controls.Add(this.textBoxDiagramsAndTables_Name);

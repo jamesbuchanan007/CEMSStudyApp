@@ -117,6 +117,11 @@ namespace CEMSStudyApp.Pages
                     HowTos howTos = new HowTos();
                     howTos.Show();
                     break;
+                case "DiagramsAndTables":
+                    Hide();
+                    DiagramsAndTables dt = new DiagramsAndTables();
+                    dt.Show();
+                    break;
             }
         }
 

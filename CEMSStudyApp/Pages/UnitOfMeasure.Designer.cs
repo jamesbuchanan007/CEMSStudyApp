@@ -74,6 +74,7 @@ namespace CEMSStudyApp.Pages
             this.textBoxAnswer.Size = new System.Drawing.Size(503, 266);
             this.textBoxAnswer.TabIndex = 6;
             this.textBoxAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxAnswer.Visible = false;
             // 
             // buttonBack
             // 
@@ -111,7 +112,7 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(442, 81);
+            this.buttonToggle.Location = new System.Drawing.Point(445, 78);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;
@@ -142,7 +143,7 @@ namespace CEMSStudyApp.Pages
             this.comboBoxUnitOfMeasure.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxUnitOfMeasure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxUnitOfMeasure.FormattingEnabled = true;
-            this.comboBoxUnitOfMeasure.Location = new System.Drawing.Point(284, 54);
+            this.comboBoxUnitOfMeasure.Location = new System.Drawing.Point(284, 51);
             this.comboBoxUnitOfMeasure.Name = "comboBoxUnitOfMeasure";
             this.comboBoxUnitOfMeasure.Size = new System.Drawing.Size(236, 21);
             this.comboBoxUnitOfMeasure.TabIndex = 12;
@@ -238,11 +239,12 @@ namespace CEMSStudyApp.Pages
             // textBoxUnitOfMeasure
             // 
             this.textBoxUnitOfMeasure.BackColor = System.Drawing.Color.White;
-            this.textBoxUnitOfMeasure.Location = new System.Drawing.Point(202, 85);
+            this.textBoxUnitOfMeasure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUnitOfMeasure.Location = new System.Drawing.Point(202, 78);
             this.textBoxUnitOfMeasure.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxUnitOfMeasure.Name = "textBoxUnitOfMeasure";
             this.textBoxUnitOfMeasure.ReadOnly = true;
-            this.textBoxUnitOfMeasure.Size = new System.Drawing.Size(236, 20);
+            this.textBoxUnitOfMeasure.Size = new System.Drawing.Size(236, 26);
             this.textBoxUnitOfMeasure.TabIndex = 20;
             this.textBoxUnitOfMeasure.Text = "Unit of Measure";
             this.textBoxUnitOfMeasure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

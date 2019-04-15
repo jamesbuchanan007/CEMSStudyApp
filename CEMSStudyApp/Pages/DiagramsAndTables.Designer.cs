@@ -98,7 +98,7 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;
             this.buttonToggle.Tag = "Click to toggle Answer";
-            this.buttonToggle.Text = "Hide";
+            this.buttonToggle.Text = "Show";
             this.buttonToggle.UseVisualStyleBackColor = false;
             this.buttonToggle.Click += new System.EventHandler(this.buttonToggle_Click);
             // 
@@ -108,7 +108,7 @@ namespace CEMSStudyApp.Pages
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.ForeColor = System.Drawing.Color.White;
-            this.buttonExit.Location = new System.Drawing.Point(780, 743);
+            this.buttonExit.Location = new System.Drawing.Point(780, 1157);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 10;
@@ -123,10 +123,11 @@ namespace CEMSStudyApp.Pages
             this.comboBoxDiagramsAndTables_Id.DisplayMember = "DiagramsAndTables_Name";
             this.comboBoxDiagramsAndTables_Id.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDiagramsAndTables_Id.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxDiagramsAndTables_Id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDiagramsAndTables_Id.FormattingEnabled = true;
             this.comboBoxDiagramsAndTables_Id.Location = new System.Drawing.Point(284, 54);
             this.comboBoxDiagramsAndTables_Id.Name = "comboBoxDiagramsAndTables_Id";
-            this.comboBoxDiagramsAndTables_Id.Size = new System.Drawing.Size(571, 21);
+            this.comboBoxDiagramsAndTables_Id.Size = new System.Drawing.Size(571, 24);
             this.comboBoxDiagramsAndTables_Id.TabIndex = 12;
             this.comboBoxDiagramsAndTables_Id.SelectedIndexChanged += new System.EventHandler(this.comboBoxAcronym_SelectedIndexChanged);
             // 
@@ -145,18 +146,20 @@ namespace CEMSStudyApp.Pages
             // textBoxDiagramsAndTables_Name
             // 
             this.textBoxDiagramsAndTables_Name.BackColor = System.Drawing.Color.White;
+            this.textBoxDiagramsAndTables_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDiagramsAndTables_Name.Location = new System.Drawing.Point(284, 83);
             this.textBoxDiagramsAndTables_Name.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxDiagramsAndTables_Name.Name = "textBoxDiagramsAndTables_Name";
             this.textBoxDiagramsAndTables_Name.ReadOnly = true;
             this.textBoxDiagramsAndTables_Name.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxDiagramsAndTables_Name.Size = new System.Drawing.Size(492, 20);
+            this.textBoxDiagramsAndTables_Name.Size = new System.Drawing.Size(492, 22);
             this.textBoxDiagramsAndTables_Name.TabIndex = 20;
             this.textBoxDiagramsAndTables_Name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxDiagramsAndTables_Description
             // 
             this.textBoxDiagramsAndTables_Description.BackColor = System.Drawing.Color.White;
+            this.textBoxDiagramsAndTables_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDiagramsAndTables_Description.Location = new System.Drawing.Point(17, 110);
             this.textBoxDiagramsAndTables_Description.Multiline = true;
             this.textBoxDiagramsAndTables_Description.Name = "textBoxDiagramsAndTables_Description";
@@ -169,10 +172,12 @@ namespace CEMSStudyApp.Pages
             // 
             this.pictureBoxDiagramsAndTables_Image.Location = new System.Drawing.Point(17, 186);
             this.pictureBoxDiagramsAndTables_Image.Name = "pictureBoxDiagramsAndTables_Image";
-            this.pictureBoxDiagramsAndTables_Image.Size = new System.Drawing.Size(838, 551);
+            this.pictureBoxDiagramsAndTables_Image.Size = new System.Drawing.Size(838, 965);
             this.pictureBoxDiagramsAndTables_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxDiagramsAndTables_Image.TabIndex = 22;
             this.pictureBoxDiagramsAndTables_Image.TabStop = false;
+            this.pictureBoxDiagramsAndTables_Image.UseWaitCursor = true;
+            this.pictureBoxDiagramsAndTables_Image.Visible = false;
             // 
             // DiagramsAndTables
             // 
@@ -181,7 +186,7 @@ namespace CEMSStudyApp.Pages
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(867, 778);
+            this.ClientSize = new System.Drawing.Size(867, 1192);
             this.Controls.Add(this.pictureBoxDiagramsAndTables_Image);
             this.Controls.Add(this.textBoxDiagramsAndTables_Description);
             this.Controls.Add(this.textBoxDiagramsAndTables_Name);

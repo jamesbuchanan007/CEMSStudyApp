@@ -66,10 +66,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Copied Pages\DiagramsAndTables.cs">
+    <Compile Include="Pages\DiagramsAndTables.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Copied Pages\DiagramsAndTables.Designer.cs">
+    <Compile Include="Pages\DiagramsAndTables.Designer.cs">
       <DependentUpon>DiagramsAndTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DiagramsAndTablesViewModel.cs" />
@@ -145,7 +145,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <EmbeddedResource Include="Copied Pages\DiagramsAndTables.resx">
+    <EmbeddedResource Include="Pages\DiagramsAndTables.resx">
       <DependentUpon>DiagramsAndTables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\UnitOfMeasure.resx">
@@ -209,41 +209,118 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>CEMS_Study_App_db.mdf</DependentUpon>
     </Content>
-    <Content Include="Images\Part75_PEG_Figure_1.PNG" />
-    <Content Include="Images\Part75_PEG_Figure_2.PNG" />
-    <Content Include="Images\Part75_PEG_Figure_3.PNG" />
-    <Content Include="Images\Part75_PEG_Figure_4.PNG" />
-    <Content Include="Images\Part75_PEG_Table_1.PNG" />
-    <Content Include="Images\Part75_PEG_Table_10.PNG" />
-    <Content Include="Images\Part75_PEG_Table_11.PNG" />
-    <Content Include="Images\Part75_PEG_Table_12.PNG" />
-    <Content Include="Images\Part75_PEG_Table_13.PNG" />
-    <Content Include="Images\Part75_PEG_Table_14.PNG" />
-    <Content Include="Images\Part75_PEG_Table_17.PNG" />
-    <Content Include="Images\Part75_PEG_Table_18.PNG" />
-    <Content Include="Images\Part75_PEG_Table_19.PNG" />
-    <Content Include="Images\Part75_PEG_Table_2.PNG" />
-    <Content Include="Images\Part75_PEG_Table_3.PNG" />
-    <Content Include="Images\Part75_PEG_Table_4.PNG" />
-    <Content Include="Images\Part75_PEG_Table_5.PNG" />
-    <Content Include="Images\Part75_PEG_Table_6.PNG" />
-    <Content Include="Images\Part75_PEG_Table_7.PNG" />
-    <Content Include="Images\Part75_PEG_Table_8.PNG" />
-    <Content Include="Images\Part75_PEG_Table_9.PNG" />
-    <Content Include="Images\Part75_PEG_Table_A1_1.PNG" />
-    <Content Include="Images\Part75_PEG_Table_A1_2.PNG" />
-    <Content Include="Images\Part75_PEG_Table_A1_3.PNG" />
-    <Content Include="Images\Part75_PEG_Table_A1_4.PNG" />
-    <Content Include="Images\Part75_PEG_Table_A1_5.PNG" />
-    <Content Include="Images\Part75_PEG_Table_A1_6.PNG" />
-    <Content Include="Images\Part75_PEG_Table_A1_7.PNG" />
-    <Content Include="Images\Part75_PEG_Table_A1_8.PNG" />
-    <Content Include="Images\Part75_PEG_Table_B1_1.PNG" />
-    <Content Include="Images\Part75_PEG_Table_B1_2.PNG" />
-    <Content Include="Images\Part75_PEG_Table_B1_3.PNG" />
-    <Content Include="Images\SpectrumLogo.png" />
+    <Content Include="Images\Part75_PEG_Figure_1.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Figure_2.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Figure_3.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Figure_4.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_1.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_10.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_11.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_12.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_13.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_14.1.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_14.2.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_15.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_16.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_17.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_18.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_19.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_2.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_3.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_4.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_5.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_6.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_7.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_8.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_9.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_A1_1.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_A1_2.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_A1_3.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_A1_4.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_A1_5.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_A1_6.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_A1_7.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_A1_8.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_B1_1.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_B1_2.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Part75_PEG_Table_B1_3.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\SpectrumLogo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Copied Pages\" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>

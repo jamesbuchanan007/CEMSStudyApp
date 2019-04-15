@@ -16,9 +16,6 @@ namespace CEMSStudyApp.Pages
         public Acronyms()
         {
             InitializeComponent();
-
-            //SETS SAVE BUTTON TO WHEN USER PRESSES ENTER
-            AcceptButton = buttonSave;
             buttonToggle.Enabled = true;
 
             //LOAD COMBOBOX PAGES

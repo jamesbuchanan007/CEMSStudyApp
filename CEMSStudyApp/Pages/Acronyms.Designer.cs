@@ -74,6 +74,7 @@ namespace CEMSStudyApp.Pages
             this.textBoxAnswer.Size = new System.Drawing.Size(503, 266);
             this.textBoxAnswer.TabIndex = 6;
             this.textBoxAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxAnswer.Visible = false;
             // 
             // buttonBack
             // 
@@ -111,12 +112,12 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(442, 81);
+            this.buttonToggle.Location = new System.Drawing.Point(442, 83);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;
             this.buttonToggle.Tag = "Click to toggle Answer";
-            this.buttonToggle.Text = "Hide";
+            this.buttonToggle.Text = "Show";
             this.buttonToggle.UseVisualStyleBackColor = false;
             this.buttonToggle.Click += new System.EventHandler(this.buttonToggle_Click);
             // 

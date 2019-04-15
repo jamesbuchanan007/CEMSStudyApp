@@ -16,9 +16,6 @@ namespace CEMSStudyApp.Pages
         {
             InitializeComponent();  //LOAD COMBOBOX PAGES
 
-            //SETS SAVE BUTTON TO WHEN USER PRESSES ENTER
-            AcceptButton = buttonSave;
-
             var pagesDataSet = LoadTable("Pages");
 
             //LOAD INTO DICTIONARY TO REMOVE ACTIVE PAGE

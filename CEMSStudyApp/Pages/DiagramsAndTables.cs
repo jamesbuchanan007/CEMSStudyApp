@@ -4,9 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using CEMSStudyApp.Models;
 using CEMSStudyApp.Properties;
 
 namespace CEMSStudyApp.Pages
@@ -124,7 +122,10 @@ namespace CEMSStudyApp.Pages
         {
             textBoxDiagramsAndTables_Name.Text = aDataTable.Tables[0].Rows[newIndex]["Table_Name"].ToString();
             textBoxDiagramsAndTables_Description.Text = aDataTable.Tables[0].Rows[newIndex]["Table_Description"].ToString();
-            pictureBoxDiagramsAndTables_Image.Image = Image.FromFile(aDataTable.Tables[0].Rows[newIndex]["Table_FileLocation"].ToString());
+            string exePath = Application.StartupPath + @"\Images";
+            var fileNameFromDb = aDataTable.Tables[0].Rows[newIndex]["Table_FileLocation"].ToString();
+            var imagePath = exePath + fileNameFromDb;
+            pictureBoxDiagramsAndTables_Image.Image = Image.FromFile(imagePath);
 
             comboBoxDiagramsAndTables_Id.SelectedIndex = comboBoxDiagramsAndTables_Id.FindString(aDataTable.Tables[0].Rows[newIndex]["Table_Id"].ToString());
         }

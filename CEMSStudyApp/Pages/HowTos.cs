@@ -14,10 +14,6 @@ namespace CEMSStudyApp.Pages
         public HowTos()
         {
             InitializeComponent();
-
-            //SETS SAVE BUTTON TO WHEN USER PRESSES ENTER
-            AcceptButton = buttonSave;
-
             //LOAD COMBOBOX PAGES
             var pagesDataSet = LoadTable("Pages");
 

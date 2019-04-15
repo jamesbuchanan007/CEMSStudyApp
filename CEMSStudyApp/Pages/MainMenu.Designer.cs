@@ -134,7 +134,7 @@ namespace CEMSStudyApp.Pages
             this.buttonExit.BackColor = System.Drawing.Color.Red;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.ForeColor = System.Drawing.Color.White;
-            this.buttonExit.Location = new System.Drawing.Point(183, 264);
+            this.buttonExit.Location = new System.Drawing.Point(183, 294);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 6;
@@ -145,9 +145,10 @@ namespace CEMSStudyApp.Pages
             // buttonUnlock
             // 
             this.buttonUnlock.BackColor = System.Drawing.Color.Green;
+            this.buttonUnlock.Enabled = false;
             this.buttonUnlock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUnlock.ForeColor = System.Drawing.Color.White;
-            this.buttonUnlock.Location = new System.Drawing.Point(12, 264);
+            this.buttonUnlock.Location = new System.Drawing.Point(12, 294);
             this.buttonUnlock.Name = "buttonUnlock";
             this.buttonUnlock.Size = new System.Drawing.Size(75, 23);
             this.buttonUnlock.TabIndex = 7;
@@ -172,7 +173,7 @@ namespace CEMSStudyApp.Pages
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(84, 219);
+            this.label1.Location = new System.Drawing.Point(29, 250);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 13);
             this.label1.TabIndex = 9;
@@ -181,7 +182,7 @@ namespace CEMSStudyApp.Pages
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 232);
+            this.label2.Location = new System.Drawing.Point(146, 250);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 13);
             this.label2.TabIndex = 10;
@@ -205,7 +206,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 304);
+            this.ClientSize = new System.Drawing.Size(270, 336);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

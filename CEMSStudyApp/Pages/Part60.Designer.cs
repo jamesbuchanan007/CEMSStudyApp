@@ -56,7 +56,7 @@ namespace CEMSStudyApp.Pages
             this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Location = new System.Drawing.Point(0, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(337, 26);
             this.label1.TabIndex = 0;
@@ -64,15 +64,16 @@ namespace CEMSStudyApp.Pages
             // 
             // textBoxSectionName
             // 
+            this.textBoxSectionName.BackColor = System.Drawing.Color.White;
             this.textBoxSectionName.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBoxSectionName.Enabled = false;
             this.textBoxSectionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSectionName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBoxSectionName.Location = new System.Drawing.Point(17, 195);
+            this.textBoxSectionName.ForeColor = System.Drawing.Color.Black;
+            this.textBoxSectionName.Location = new System.Drawing.Point(667, 19);
             this.textBoxSectionName.Name = "textBoxSectionName";
             this.textBoxSectionName.ReadOnly = true;
             this.textBoxSectionName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSectionName.Size = new System.Drawing.Size(320, 26);
+            this.textBoxSectionName.Size = new System.Drawing.Size(795, 26);
             this.textBoxSectionName.TabIndex = 2;
             this.textBoxSectionName.Text = "Section Name";
             this.textBoxSectionName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -93,33 +94,34 @@ namespace CEMSStudyApp.Pages
             // 
             // textBoxQuestion
             // 
+            this.textBoxQuestion.BackColor = System.Drawing.Color.White;
             this.textBoxQuestion.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBoxQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxQuestion.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBoxQuestion.Location = new System.Drawing.Point(17, 223);
+            this.textBoxQuestion.ForeColor = System.Drawing.Color.Black;
+            this.textBoxQuestion.Location = new System.Drawing.Point(17, 149);
             this.textBoxQuestion.Multiline = true;
             this.textBoxQuestion.Name = "textBoxQuestion";
             this.textBoxQuestion.ReadOnly = true;
             this.textBoxQuestion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxQuestion.Size = new System.Drawing.Size(320, 153);
+            this.textBoxQuestion.Size = new System.Drawing.Size(320, 227);
             this.textBoxQuestion.TabIndex = 5;
             this.textBoxQuestion.Text = "\r\n\r\nQuestion";
             this.textBoxQuestion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxAnswer
             // 
+            this.textBoxAnswer.BackColor = System.Drawing.Color.White;
             this.textBoxAnswer.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAnswer.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxAnswer.ForeColor = System.Drawing.Color.Black;
             this.textBoxAnswer.Location = new System.Drawing.Point(341, 47);
             this.textBoxAnswer.Multiline = true;
             this.textBoxAnswer.Name = "textBoxAnswer";
             this.textBoxAnswer.ReadOnly = true;
             this.textBoxAnswer.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxAnswer.Size = new System.Drawing.Size(447, 329);
+            this.textBoxAnswer.Size = new System.Drawing.Size(1202, 329);
             this.textBoxAnswer.TabIndex = 6;
-            this.textBoxAnswer.Text = "\r\n\r\n\r\n\r\n\r\nAnswer";
-            this.textBoxAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxAnswer.Visible = false;
             // 
             // buttonBack
             // 
@@ -157,13 +159,14 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(711, 18);
+            this.buttonToggle.Location = new System.Drawing.Point(1468, 21);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;
             this.buttonToggle.Tag = "Click to toggle Answer";
-            this.buttonToggle.Text = "Hide";
+            this.buttonToggle.Text = "Show";
             this.buttonToggle.UseVisualStyleBackColor = false;
+            this.buttonToggle.Visible = false;
             this.buttonToggle.Click += new System.EventHandler(this.buttonToggle_Click);
             // 
             // buttonExit
@@ -172,7 +175,7 @@ namespace CEMSStudyApp.Pages
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.ForeColor = System.Drawing.Color.White;
-            this.buttonExit.Location = new System.Drawing.Point(713, 382);
+            this.buttonExit.Location = new System.Drawing.Point(1468, 392);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 10;
@@ -271,11 +274,12 @@ namespace CEMSStudyApp.Pages
             // 
             // textBoxSectionNumber
             // 
+            this.textBoxSectionNumber.BackColor = System.Drawing.Color.White;
             this.textBoxSectionNumber.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBoxSectionNumber.Enabled = false;
             this.textBoxSectionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSectionNumber.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBoxSectionNumber.Location = new System.Drawing.Point(17, 167);
+            this.textBoxSectionNumber.ForeColor = System.Drawing.Color.Black;
+            this.textBoxSectionNumber.Location = new System.Drawing.Point(341, 18);
             this.textBoxSectionNumber.Name = "textBoxSectionNumber";
             this.textBoxSectionNumber.ReadOnly = true;
             this.textBoxSectionNumber.Size = new System.Drawing.Size(320, 26);
@@ -290,7 +294,7 @@ namespace CEMSStudyApp.Pages
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(800, 419);
+            this.ClientSize = new System.Drawing.Size(1555, 427);
             this.Controls.Add(this.textBoxSectionNumber);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonDelete);

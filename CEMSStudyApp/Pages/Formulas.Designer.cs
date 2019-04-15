@@ -73,6 +73,7 @@ namespace CEMSStudyApp.Pages
             this.textBoxAnswer.Size = new System.Drawing.Size(771, 367);
             this.textBoxAnswer.TabIndex = 6;
             this.textBoxAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxAnswer.Visible = false;
             // 
             // buttonBack
             // 
@@ -110,12 +111,12 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(710, 61);
+            this.buttonToggle.Location = new System.Drawing.Point(713, 65);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;
             this.buttonToggle.Tag = "Click to toggle Answer";
-            this.buttonToggle.Text = "Hide";
+            this.buttonToggle.Text = "Show";
             this.buttonToggle.UseVisualStyleBackColor = false;
             this.buttonToggle.Click += new System.EventHandler(this.buttonToggle_Click);
             // 
@@ -140,10 +141,11 @@ namespace CEMSStudyApp.Pages
             this.comboBoxFormula.DisplayMember = "Formulas_Name";
             this.comboBoxFormula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFormula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxFormula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxFormula.FormattingEnabled = true;
             this.comboBoxFormula.Location = new System.Drawing.Point(290, 39);
             this.comboBoxFormula.Name = "comboBoxFormula";
-            this.comboBoxFormula.Size = new System.Drawing.Size(498, 21);
+            this.comboBoxFormula.Size = new System.Drawing.Size(498, 24);
             this.comboBoxFormula.TabIndex = 12;
             this.comboBoxFormula.SelectedIndexChanged += new System.EventHandler(this.comboBoxFormula_SelectedIndexChanged);
             // 
@@ -236,11 +238,12 @@ namespace CEMSStudyApp.Pages
             // textBoxFormula
             // 
             this.textBoxFormula.Enabled = false;
+            this.textBoxFormula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxFormula.Location = new System.Drawing.Point(209, 65);
             this.textBoxFormula.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxFormula.Name = "textBoxFormula";
             this.textBoxFormula.ReadOnly = true;
-            this.textBoxFormula.Size = new System.Drawing.Size(498, 20);
+            this.textBoxFormula.Size = new System.Drawing.Size(498, 22);
             this.textBoxFormula.TabIndex = 24;
             this.textBoxFormula.Text = "Formula";
             this.textBoxFormula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

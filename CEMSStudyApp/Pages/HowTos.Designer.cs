@@ -62,10 +62,11 @@ namespace CEMSStudyApp.Pages
             // 
             // textBoxAnswer
             // 
+            this.textBoxAnswer.BackColor = System.Drawing.Color.White;
             this.textBoxAnswer.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBoxAnswer.Enabled = false;
             this.textBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAnswer.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxAnswer.ForeColor = System.Drawing.Color.Black;
             this.textBoxAnswer.Location = new System.Drawing.Point(17, 99);
             this.textBoxAnswer.Multiline = true;
             this.textBoxAnswer.Name = "textBoxAnswer";
@@ -73,6 +74,7 @@ namespace CEMSStudyApp.Pages
             this.textBoxAnswer.Size = new System.Drawing.Size(771, 358);
             this.textBoxAnswer.TabIndex = 6;
             this.textBoxAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxAnswer.Visible = false;
             // 
             // buttonBack
             // 
@@ -110,13 +112,14 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(710, 70);
+            this.buttonToggle.Location = new System.Drawing.Point(713, 73);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;
             this.buttonToggle.Tag = "Click to toggle Answer";
-            this.buttonToggle.Text = "Hide";
+            this.buttonToggle.Text = "Show";
             this.buttonToggle.UseVisualStyleBackColor = false;
+            this.buttonToggle.Visible = false;
             this.buttonToggle.Click += new System.EventHandler(this.buttonToggle_Click);
             // 
             // buttonExit
@@ -140,10 +143,11 @@ namespace CEMSStudyApp.Pages
             this.comboBoxHowTo.DisplayMember = "Name";
             this.comboBoxHowTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxHowTo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxHowTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxHowTo.FormattingEnabled = true;
-            this.comboBoxHowTo.Location = new System.Drawing.Point(281, 48);
+            this.comboBoxHowTo.Location = new System.Drawing.Point(281, 43);
             this.comboBoxHowTo.Name = "comboBoxHowTo";
-            this.comboBoxHowTo.Size = new System.Drawing.Size(507, 21);
+            this.comboBoxHowTo.Size = new System.Drawing.Size(507, 24);
             this.comboBoxHowTo.TabIndex = 12;
             this.comboBoxHowTo.SelectedIndexChanged += new System.EventHandler(this.comboBoxHowTo_SelectedIndexChanged);
             // 
@@ -152,7 +156,7 @@ namespace CEMSStudyApp.Pages
             this.comboBoxSiteNavigation.DisplayMember = "Pages_Name";
             this.comboBoxSiteNavigation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSiteNavigation.FormattingEnabled = true;
-            this.comboBoxSiteNavigation.Location = new System.Drawing.Point(620, 22);
+            this.comboBoxSiteNavigation.Location = new System.Drawing.Point(620, 12);
             this.comboBoxSiteNavigation.Name = "comboBoxSiteNavigation";
             this.comboBoxSiteNavigation.Size = new System.Drawing.Size(168, 21);
             this.comboBoxSiteNavigation.TabIndex = 13;
@@ -235,12 +239,14 @@ namespace CEMSStudyApp.Pages
             // 
             // textBoxHowTos
             // 
+            this.textBoxHowTos.BackColor = System.Drawing.Color.White;
             this.textBoxHowTos.Enabled = false;
-            this.textBoxHowTos.Location = new System.Drawing.Point(200, 74);
+            this.textBoxHowTos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxHowTos.Location = new System.Drawing.Point(200, 71);
             this.textBoxHowTos.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxHowTos.Name = "textBoxHowTos";
             this.textBoxHowTos.ReadOnly = true;
-            this.textBoxHowTos.Size = new System.Drawing.Size(498, 20);
+            this.textBoxHowTos.Size = new System.Drawing.Size(509, 26);
             this.textBoxHowTos.TabIndex = 24;
             this.textBoxHowTos.Text = "How To";
             this.textBoxHowTos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

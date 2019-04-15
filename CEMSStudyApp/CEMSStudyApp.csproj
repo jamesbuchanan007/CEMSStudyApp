@@ -66,6 +66,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Copied Pages\DiagramsAndTables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Copied Pages\DiagramsAndTables.Designer.cs">
+      <DependentUpon>DiagramsAndTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DiagramsAndTablesViewModel.cs" />
     <Compile Include="Pages\UnitOfMeasure.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +145,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Copied Pages\DiagramsAndTables.resx">
+      <DependentUpon>DiagramsAndTables.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\UnitOfMeasure.resx">
       <DependentUpon>UnitOfMeasure.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,11 +209,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>CEMS_Study_App_db.mdf</DependentUpon>
     </Content>
+    <Content Include="Images\Part75_PEG_Table_1.PNG" />
     <Content Include="Images\SpectrumLogo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Copied Pages\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>

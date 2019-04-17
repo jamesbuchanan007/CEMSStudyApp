@@ -55,6 +55,7 @@ namespace CEMSStudyApp.Pages
             var connectionString = Settings.Default.LocalDb;
 
             connection = new SqlConnection(connectionString);
+            //connection = new SqlConnection(@"Data Source = |DataDirector|\CEMS_Study_App_db.mdf");
 
             try
             {

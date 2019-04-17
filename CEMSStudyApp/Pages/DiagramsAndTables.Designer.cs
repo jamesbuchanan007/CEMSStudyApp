@@ -41,7 +41,10 @@ namespace CEMSStudyApp.Pages
             this.comboBoxSiteNavigation = new System.Windows.Forms.ComboBox();
             this.textBoxDiagramsAndTables_Name = new System.Windows.Forms.TextBox();
             this.textBoxDiagramsAndTables_Description = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBoxDiagramsAndTables_Image = new System.Windows.Forms.PictureBox();
+            this.webBrowserPdf = new System.Windows.Forms.WebBrowser();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiagramsAndTables_Image)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,7 +111,7 @@ namespace CEMSStudyApp.Pages
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.ForeColor = System.Drawing.Color.White;
-            this.buttonExit.Location = new System.Drawing.Point(780, 1157);
+            this.buttonExit.Location = new System.Drawing.Point(780, 948);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 10;
@@ -168,16 +171,34 @@ namespace CEMSStudyApp.Pages
             this.textBoxDiagramsAndTables_Description.Size = new System.Drawing.Size(838, 70);
             this.textBoxDiagramsAndTables_Description.TabIndex = 21;
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.webBrowserPdf);
+            this.panel1.Controls.Add(this.pictureBoxDiagramsAndTables_Image);
+            this.panel1.Location = new System.Drawing.Point(17, 186);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(838, 735);
+            this.panel1.TabIndex = 22;
+            // 
             // pictureBoxDiagramsAndTables_Image
             // 
-            this.pictureBoxDiagramsAndTables_Image.Location = new System.Drawing.Point(17, 186);
+            this.pictureBoxDiagramsAndTables_Image.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.pictureBoxDiagramsAndTables_Image.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxDiagramsAndTables_Image.Name = "pictureBoxDiagramsAndTables_Image";
-            this.pictureBoxDiagramsAndTables_Image.Size = new System.Drawing.Size(838, 965);
-            this.pictureBoxDiagramsAndTables_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxDiagramsAndTables_Image.TabIndex = 22;
+            this.pictureBoxDiagramsAndTables_Image.Size = new System.Drawing.Size(832, 719);
+            this.pictureBoxDiagramsAndTables_Image.TabIndex = 24;
             this.pictureBoxDiagramsAndTables_Image.TabStop = false;
             this.pictureBoxDiagramsAndTables_Image.UseWaitCursor = true;
             this.pictureBoxDiagramsAndTables_Image.Visible = false;
+            // 
+            // webBrowserPdf
+            // 
+            this.webBrowserPdf.Location = new System.Drawing.Point(3, 3);
+            this.webBrowserPdf.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowserPdf.Name = "webBrowserPdf";
+            this.webBrowserPdf.Size = new System.Drawing.Size(832, 719);
+            this.webBrowserPdf.TabIndex = 25;
             // 
             // DiagramsAndTables
             // 
@@ -186,8 +207,8 @@ namespace CEMSStudyApp.Pages
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(867, 1192);
-            this.Controls.Add(this.pictureBoxDiagramsAndTables_Image);
+            this.ClientSize = new System.Drawing.Size(867, 993);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBoxDiagramsAndTables_Description);
             this.Controls.Add(this.textBoxDiagramsAndTables_Name);
             this.Controls.Add(this.comboBoxSiteNavigation);
@@ -202,6 +223,7 @@ namespace CEMSStudyApp.Pages
             this.Name = "DiagramsAndTables";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiagramsAndTables_Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -219,6 +241,8 @@ namespace CEMSStudyApp.Pages
         private ComboBox comboBoxSiteNavigation;
         private TextBox textBoxDiagramsAndTables_Name;
         private TextBox textBoxDiagramsAndTables_Description;
+        private Panel panel1;
         private PictureBox pictureBoxDiagramsAndTables_Image;
+        private WebBrowser webBrowserPdf;
     }
 }

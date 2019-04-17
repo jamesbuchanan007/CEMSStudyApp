@@ -19,6 +19,10 @@ namespace CEMSStudyApp.Pages
             //SETS SAVE BUTTON TO WHEN USER PRESSES ENTER
             buttonToggle.Enabled = true;
 
+            //MAKE SURE SCREENER IS CLOSED
+            pictureBoxDiagramsAndTables_Image.Hide();
+            webBrowserPdf.Hide();
+
             //LOAD COMBOBOX PAGES
             var pagesDataSet = LoadTable("Pages");
 
@@ -123,9 +127,32 @@ namespace CEMSStudyApp.Pages
             textBoxDiagramsAndTables_Name.Text = aDataTable.Tables[0].Rows[newIndex]["Table_Name"].ToString();
             textBoxDiagramsAndTables_Description.Text = aDataTable.Tables[0].Rows[newIndex]["Table_Description"].ToString();
             string exePath = Application.StartupPath + @"\Images";
-            var fileNameFromDb = aDataTable.Tables[0].Rows[newIndex]["Table_FileLocation"].ToString();
-            var imagePath = exePath + fileNameFromDb;
-            pictureBoxDiagramsAndTables_Image.Image = Image.FromFile(imagePath);
+            var fileNameFromDbImage = aDataTable.Tables[0].Rows[newIndex]["Table_FileLocation"].ToString();
+            var fileNameFromDbPdf = aDataTable.Tables[0].Rows[newIndex]["Pdf_FileLocation"].ToString();
+            string path;
+            string file;
+
+            //CHECK IF IMAGE FILE IS PRESENT, OTHERWISE GRAB PDF FILE
+            if (string.IsNullOrEmpty(fileNameFromDbImage))
+            {
+                pictureBoxDiagramsAndTables_Image.Hide();
+                webBrowserPdf.Show();
+
+                path = exePath + fileNameFromDbPdf; //PATH STRING
+
+                webBrowserPdf.Navigate(path);
+            }
+            else
+            {
+                pictureBoxDiagramsAndTables_Image.Show();
+                webBrowserPdf.Hide();
+
+                path = exePath + fileNameFromDbImage;
+
+                pictureBoxDiagramsAndTables_Image.Image = Image.FromFile(path);
+
+            }
+
 
             comboBoxDiagramsAndTables_Id.SelectedIndex = comboBoxDiagramsAndTables_Id.FindString(aDataTable.Tables[0].Rows[newIndex]["Table_Id"].ToString());
         }

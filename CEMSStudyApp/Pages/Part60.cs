@@ -309,7 +309,7 @@ namespace CEMSStudyApp.Pages
                     IsActive = 1
                 };
 
-                var index = comboBoxSectionNumber.SelectedIndex;
+                var index = comboBoxSectionNumber.SelectedIndex+1;
 
                 var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
 

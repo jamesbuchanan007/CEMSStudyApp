@@ -291,7 +291,7 @@ namespace CEMSStudyApp.Pages
                     IsActive = 1
                 };
 
-                var index = comboBoxSectionNumber.SelectedIndex;
+                var index = comboBoxSectionNumber.SelectedIndex+1;
 
                 var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE FOR DB
 
@@ -336,8 +336,9 @@ namespace CEMSStudyApp.Pages
                       vm.IsActive + ")";
 
                 AddToDatabase(sql);
-                RefreshDisableShow();
             }
+            RefreshDisableShow();
+
         }
 
         private void RefreshDisableShow()
@@ -410,6 +411,7 @@ namespace CEMSStudyApp.Pages
             comboBoxSectionNumber.DataSource = aDataSet.Tables[0];
             comboBoxSectionNumber.ValueMember = "Part75_Id";
             comboBoxSectionNumber.DisplayMember = "Part75_Name";
+            buttonToggle.Enabled = true;
             ChangeRecord(newIndex, aDataSet);
         }
 

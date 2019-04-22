@@ -85,7 +85,7 @@ namespace CEMSStudyApp.Pages
             this.buttonPart60.TabIndex = 2;
             this.buttonPart60.Text = "Part 63**";
             this.buttonPart60.UseVisualStyleBackColor = false;
-            this.buttonPart60.Click += new System.EventHandler(this.button2_Click);
+            this.buttonPart60.Click += new System.EventHandler(this.buttonPart60_Click);
             // 
             // buttonFormulas
             // 

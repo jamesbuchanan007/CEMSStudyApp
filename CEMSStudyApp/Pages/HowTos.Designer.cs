@@ -112,7 +112,7 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(713, 73);
+            this.buttonToggle.Location = new System.Drawing.Point(179, 70);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;
@@ -145,7 +145,7 @@ namespace CEMSStudyApp.Pages
             this.comboBoxHowTo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxHowTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxHowTo.FormattingEnabled = true;
-            this.comboBoxHowTo.Location = new System.Drawing.Point(281, 43);
+            this.comboBoxHowTo.Location = new System.Drawing.Point(281, 39);
             this.comboBoxHowTo.Name = "comboBoxHowTo";
             this.comboBoxHowTo.Size = new System.Drawing.Size(507, 24);
             this.comboBoxHowTo.TabIndex = 12;
@@ -242,7 +242,7 @@ namespace CEMSStudyApp.Pages
             this.textBoxHowTos.BackColor = System.Drawing.Color.White;
             this.textBoxHowTos.Enabled = false;
             this.textBoxHowTos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxHowTos.Location = new System.Drawing.Point(200, 71);
+            this.textBoxHowTos.Location = new System.Drawing.Point(279, 67);
             this.textBoxHowTos.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxHowTos.Name = "textBoxHowTos";
             this.textBoxHowTos.ReadOnly = true;

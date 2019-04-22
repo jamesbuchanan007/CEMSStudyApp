@@ -28,7 +28,7 @@ namespace CEMSStudyApp.Pages
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonPart60_Click(object sender, EventArgs e)
         {
             Hide();
             Part60 part60 = new Part60();

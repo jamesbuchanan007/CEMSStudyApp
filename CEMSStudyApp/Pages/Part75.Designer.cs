@@ -68,7 +68,7 @@ namespace CEMSStudyApp.Pages
             this.textBoxSectionName.Enabled = false;
             this.textBoxSectionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSectionName.ForeColor = System.Drawing.Color.Black;
-            this.textBoxSectionName.Location = new System.Drawing.Point(666, 22);
+            this.textBoxSectionName.Location = new System.Drawing.Point(747, 22);
             this.textBoxSectionName.Name = "textBoxSectionName";
             this.textBoxSectionName.ReadOnly = true;
             this.textBoxSectionName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -159,7 +159,7 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(1468, 25);
+            this.buttonToggle.Location = new System.Drawing.Point(259, 120);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;

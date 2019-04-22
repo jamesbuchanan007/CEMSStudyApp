@@ -42,8 +42,8 @@ namespace CEMSStudyApp.Pages
             this.textBoxDiagramsAndTables_Name = new System.Windows.Forms.TextBox();
             this.textBoxDiagramsAndTables_Description = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBoxDiagramsAndTables_Image = new System.Windows.Forms.PictureBox();
             this.webBrowserPdf = new System.Windows.Forms.WebBrowser();
+            this.pictureBoxDiagramsAndTables_Image = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiagramsAndTables_Image)).BeginInit();
             this.SuspendLayout();
@@ -96,7 +96,7 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(780, 81);
+            this.buttonToggle.Location = new System.Drawing.Point(179, 81);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;
@@ -128,7 +128,7 @@ namespace CEMSStudyApp.Pages
             this.comboBoxDiagramsAndTables_Id.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxDiagramsAndTables_Id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDiagramsAndTables_Id.FormattingEnabled = true;
-            this.comboBoxDiagramsAndTables_Id.Location = new System.Drawing.Point(284, 54);
+            this.comboBoxDiagramsAndTables_Id.Location = new System.Drawing.Point(284, 53);
             this.comboBoxDiagramsAndTables_Id.Name = "comboBoxDiagramsAndTables_Id";
             this.comboBoxDiagramsAndTables_Id.Size = new System.Drawing.Size(571, 24);
             this.comboBoxDiagramsAndTables_Id.TabIndex = 12;
@@ -139,7 +139,7 @@ namespace CEMSStudyApp.Pages
             this.comboBoxSiteNavigation.DisplayMember = "Pages_Name";
             this.comboBoxSiteNavigation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSiteNavigation.FormattingEnabled = true;
-            this.comboBoxSiteNavigation.Location = new System.Drawing.Point(687, 22);
+            this.comboBoxSiteNavigation.Location = new System.Drawing.Point(687, 27);
             this.comboBoxSiteNavigation.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxSiteNavigation.Name = "comboBoxSiteNavigation";
             this.comboBoxSiteNavigation.Size = new System.Drawing.Size(168, 21);
@@ -150,12 +150,12 @@ namespace CEMSStudyApp.Pages
             // 
             this.textBoxDiagramsAndTables_Name.BackColor = System.Drawing.Color.White;
             this.textBoxDiagramsAndTables_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDiagramsAndTables_Name.Location = new System.Drawing.Point(284, 83);
+            this.textBoxDiagramsAndTables_Name.Location = new System.Drawing.Point(284, 81);
             this.textBoxDiagramsAndTables_Name.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxDiagramsAndTables_Name.Name = "textBoxDiagramsAndTables_Name";
             this.textBoxDiagramsAndTables_Name.ReadOnly = true;
             this.textBoxDiagramsAndTables_Name.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxDiagramsAndTables_Name.Size = new System.Drawing.Size(492, 22);
+            this.textBoxDiagramsAndTables_Name.Size = new System.Drawing.Size(571, 22);
             this.textBoxDiagramsAndTables_Name.TabIndex = 20;
             this.textBoxDiagramsAndTables_Name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -181,6 +181,14 @@ namespace CEMSStudyApp.Pages
             this.panel1.Size = new System.Drawing.Size(838, 735);
             this.panel1.TabIndex = 22;
             // 
+            // webBrowserPdf
+            // 
+            this.webBrowserPdf.Location = new System.Drawing.Point(3, 3);
+            this.webBrowserPdf.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowserPdf.Name = "webBrowserPdf";
+            this.webBrowserPdf.Size = new System.Drawing.Size(832, 719);
+            this.webBrowserPdf.TabIndex = 25;
+            // 
             // pictureBoxDiagramsAndTables_Image
             // 
             this.pictureBoxDiagramsAndTables_Image.Cursor = System.Windows.Forms.Cursors.WaitCursor;
@@ -191,14 +199,6 @@ namespace CEMSStudyApp.Pages
             this.pictureBoxDiagramsAndTables_Image.TabStop = false;
             this.pictureBoxDiagramsAndTables_Image.UseWaitCursor = true;
             this.pictureBoxDiagramsAndTables_Image.Visible = false;
-            // 
-            // webBrowserPdf
-            // 
-            this.webBrowserPdf.Location = new System.Drawing.Point(3, 3);
-            this.webBrowserPdf.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowserPdf.Name = "webBrowserPdf";
-            this.webBrowserPdf.Size = new System.Drawing.Size(832, 719);
-            this.webBrowserPdf.TabIndex = 25;
             // 
             // DiagramsAndTables
             // 

@@ -56,6 +56,10 @@ namespace CEMSStudyApp.Pages
             textBoxFormula.Text = aDataSet.Tables[0].Rows[index]["Formulas_Name"].ToString();
             textBoxAnswer.Text = aDataSet.Tables[0].Rows[index]["Formulas_Description"].ToString();
             comboBoxFormula.SelectedIndex = comboBoxFormula.FindString(textBoxFormula.Text);
+
+            textBoxAnswer.Hide();
+            buttonToggle.Text = @"Show";
+
         }
 
         //CONNECTS TO DB AND LOADS DATA SET
@@ -127,7 +131,7 @@ namespace CEMSStudyApp.Pages
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
                     break;
-                case "Part 60":
+                case "Part 63":
                     Hide();
                     Part60 part60 = new Part60();
                     part60.Show();

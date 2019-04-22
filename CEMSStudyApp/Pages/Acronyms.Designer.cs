@@ -112,7 +112,7 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(442, 83);
+            this.buttonToggle.Location = new System.Drawing.Point(179, 81);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;
@@ -239,7 +239,7 @@ namespace CEMSStudyApp.Pages
             // textBoxAcronym
             // 
             this.textBoxAcronym.BackColor = System.Drawing.Color.White;
-            this.textBoxAcronym.Location = new System.Drawing.Point(202, 85);
+            this.textBoxAcronym.Location = new System.Drawing.Point(284, 83);
             this.textBoxAcronym.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxAcronym.Name = "textBoxAcronym";
             this.textBoxAcronym.ReadOnly = true;

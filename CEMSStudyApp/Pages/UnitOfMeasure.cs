@@ -18,6 +18,7 @@ namespace CEMSStudyApp.Pages
             //SETS SAVE BUTTON TO WHEN USER PRESSES ENTER
             AcceptButton = buttonSave;
             buttonToggle.Enabled = true;
+            buttonToggle.Show();
 
             //LOAD COMBOBOX PAGES
             var pagesDataSet = LoadTable("Pages");
@@ -211,6 +212,9 @@ namespace CEMSStudyApp.Pages
             textBoxUnitOfMeasure.Text = aDataTable.Tables[0].Rows[newIndex]["UnitOfMeasure_Name"].ToString();
             textBoxAnswer.Text = aDataTable.Tables[0].Rows[newIndex]["UnitOfMeasure_Description"].ToString();
             comboBoxUnitOfMeasure.SelectedIndex = comboBoxUnitOfMeasure.FindString(textBoxUnitOfMeasure.Text);
+
+            textBoxAnswer.Hide();
+            buttonToggle.Text = @"Show";
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -403,7 +407,7 @@ namespace CEMSStudyApp.Pages
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
                     break;
-                case "Part 60":
+                case "Part 63":
                     Hide();
                     Part60 part60 = new Part60();
                     part60.Show();

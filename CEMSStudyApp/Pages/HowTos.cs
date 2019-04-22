@@ -116,7 +116,7 @@ namespace CEMSStudyApp.Pages
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
                     break;
-                case "Part 60":
+                case "Part 63":
                     Hide();
                     Part60 part60 = new Part60();
                     part60.Show();
@@ -215,6 +215,15 @@ namespace CEMSStudyApp.Pages
 
             }
         }
+        private void ChangeRecord(int index, DataSet aDataSet)
+        {
+            textBoxHowTos.Text = aDataSet.Tables[0].Rows[index]["HowTos_Name"].ToString();
+            textBoxAnswer.Text = aDataSet.Tables[0].Rows[index]["HowTos_Description"].ToString();
+            comboBoxHowTo.SelectedIndex = comboBoxHowTo.FindString(textBoxHowTos.Text);
+
+            textBoxAnswer.Hide();
+            buttonToggle.Text = @"Show";
+        }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
@@ -225,9 +234,7 @@ namespace CEMSStudyApp.Pages
 
             var newIndex = index - 1;
 
-            textBoxHowTos.Text = hDataSet.Tables[0].Rows[newIndex]["HowTos_Name"].ToString();
-            textBoxAnswer.Text = hDataSet.Tables[0].Rows[newIndex]["HowTos_Description"].ToString();
-            comboBoxHowTo.SelectedIndex = comboBoxHowTo.FindString(textBoxHowTos.Text);
+            ChangeRecord(newIndex,hDataSet);
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
@@ -240,9 +247,7 @@ namespace CEMSStudyApp.Pages
 
             var newIndex = index + 1;
 
-            textBoxHowTos.Text = hDataSet.Tables[0].Rows[newIndex]["HowTos_Name"].ToString();
-            textBoxAnswer.Text = hDataSet.Tables[0].Rows[newIndex]["HowTos_Description"].ToString();
-            comboBoxHowTo.SelectedIndex = comboBoxHowTo.FindString(textBoxHowTos.Text);
+            ChangeRecord(newIndex,hDataSet);
         }
 
         private void comboBoxHowTo_SelectedIndexChanged(object sender, EventArgs e)

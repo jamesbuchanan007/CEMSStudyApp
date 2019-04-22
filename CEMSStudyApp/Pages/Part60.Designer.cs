@@ -69,7 +69,7 @@ namespace CEMSStudyApp.Pages
             this.textBoxSectionName.Enabled = false;
             this.textBoxSectionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSectionName.ForeColor = System.Drawing.Color.Black;
-            this.textBoxSectionName.Location = new System.Drawing.Point(667, 19);
+            this.textBoxSectionName.Location = new System.Drawing.Point(748, 18);
             this.textBoxSectionName.Name = "textBoxSectionName";
             this.textBoxSectionName.ReadOnly = true;
             this.textBoxSectionName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -159,7 +159,7 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(1468, 21);
+            this.buttonToggle.Location = new System.Drawing.Point(262, 120);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;
@@ -279,7 +279,7 @@ namespace CEMSStudyApp.Pages
             this.textBoxSectionNumber.Enabled = false;
             this.textBoxSectionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSectionNumber.ForeColor = System.Drawing.Color.Black;
-            this.textBoxSectionNumber.Location = new System.Drawing.Point(341, 18);
+            this.textBoxSectionNumber.Location = new System.Drawing.Point(343, 19);
             this.textBoxSectionNumber.Name = "textBoxSectionNumber";
             this.textBoxSectionNumber.ReadOnly = true;
             this.textBoxSectionNumber.Size = new System.Drawing.Size(320, 26);

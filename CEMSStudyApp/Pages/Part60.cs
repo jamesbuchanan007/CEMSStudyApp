@@ -25,7 +25,7 @@ namespace CEMSStudyApp.Pages
                 comboDictionary.Add((int)pagesDataSet.Tables[0].Rows[i]["Pages_Id"], pagesDataSet.Tables[0].Rows[i]["Pages_Name"].ToString());
             }
 
-            var pageName = "Part 60";
+            var pageName = "Part 63";
             var item = comboDictionary.First(q => q.Value == pageName);
             comboDictionary.Remove(item.Key);  //REMOVE PART60 SELECTION
 
@@ -34,6 +34,8 @@ namespace CEMSStudyApp.Pages
             comboBoxSiteNavigation.DisplayMember = "Value";
 
             LoadComboboxTextbox();
+
+            buttonToggle.Show();
         }
 
         //CONNECTS TO DB AND LOADS DATA SET
@@ -214,6 +216,9 @@ namespace CEMSStudyApp.Pages
             textBoxAnswer.Text = p60DataSet.Tables[0].Rows[newIndex]["Part60_Answer"].ToString();
 
             comboBoxSectionNumber.SelectedIndex = comboBoxSectionNumber.FindString(textBoxSectionNumber.Text);
+
+            textBoxAnswer.Hide();
+            buttonToggle.Text = @"Show";
         }
 
         private void buttonNext_Click(object sender, EventArgs e)

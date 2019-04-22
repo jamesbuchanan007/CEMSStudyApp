@@ -112,12 +112,12 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(445, 78);
+            this.buttonToggle.Location = new System.Drawing.Point(179, 81);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;
             this.buttonToggle.Tag = "Click to toggle Answer";
-            this.buttonToggle.Text = "Hide";
+            this.buttonToggle.Text = "Show";
             this.buttonToggle.UseVisualStyleBackColor = false;
             this.buttonToggle.Click += new System.EventHandler(this.buttonToggle_Click);
             // 
@@ -240,7 +240,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.textBoxUnitOfMeasure.BackColor = System.Drawing.Color.White;
             this.textBoxUnitOfMeasure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUnitOfMeasure.Location = new System.Drawing.Point(202, 78);
+            this.textBoxUnitOfMeasure.Location = new System.Drawing.Point(284, 78);
             this.textBoxUnitOfMeasure.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxUnitOfMeasure.Name = "textBoxUnitOfMeasure";
             this.textBoxUnitOfMeasure.ReadOnly = true;

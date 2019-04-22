@@ -111,7 +111,7 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(713, 65);
+            this.buttonToggle.Location = new System.Drawing.Point(179, 61);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;
@@ -143,7 +143,7 @@ namespace CEMSStudyApp.Pages
             this.comboBoxFormula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxFormula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxFormula.FormattingEnabled = true;
-            this.comboBoxFormula.Location = new System.Drawing.Point(290, 39);
+            this.comboBoxFormula.Location = new System.Drawing.Point(290, 33);
             this.comboBoxFormula.Name = "comboBoxFormula";
             this.comboBoxFormula.Size = new System.Drawing.Size(498, 24);
             this.comboBoxFormula.TabIndex = 12;
@@ -154,7 +154,7 @@ namespace CEMSStudyApp.Pages
             this.comboBoxSiteNavigation.DisplayMember = "Pages_Name";
             this.comboBoxSiteNavigation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSiteNavigation.FormattingEnabled = true;
-            this.comboBoxSiteNavigation.Location = new System.Drawing.Point(620, 13);
+            this.comboBoxSiteNavigation.Location = new System.Drawing.Point(620, 6);
             this.comboBoxSiteNavigation.Name = "comboBoxSiteNavigation";
             this.comboBoxSiteNavigation.Size = new System.Drawing.Size(168, 21);
             this.comboBoxSiteNavigation.TabIndex = 13;
@@ -239,7 +239,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.textBoxFormula.Enabled = false;
             this.textBoxFormula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFormula.Location = new System.Drawing.Point(209, 65);
+            this.textBoxFormula.Location = new System.Drawing.Point(290, 61);
             this.textBoxFormula.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxFormula.Name = "textBoxFormula";
             this.textBoxFormula.ReadOnly = true;

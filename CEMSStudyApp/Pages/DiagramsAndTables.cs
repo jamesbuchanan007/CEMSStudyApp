@@ -155,6 +155,10 @@ namespace CEMSStudyApp.Pages
 
 
             comboBoxDiagramsAndTables_Id.SelectedIndex = comboBoxDiagramsAndTables_Id.FindString(aDataTable.Tables[0].Rows[newIndex]["Table_Id"].ToString());
+
+            //Hides Answer box and resets toggle button
+            pictureBoxDiagramsAndTables_Image.Hide();
+            buttonToggle.Text = @"Show";
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -201,7 +205,7 @@ namespace CEMSStudyApp.Pages
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
                     break;
-                case "Part 60":
+                case "Part 63":
                     Hide();
                     Part60 part60 = new Part60();
                     part60.Show();

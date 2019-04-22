@@ -126,11 +126,10 @@ namespace CEMSStudyApp.Pages
         {
             textBoxDiagramsAndTables_Name.Text = aDataTable.Tables[0].Rows[newIndex]["Table_Name"].ToString();
             textBoxDiagramsAndTables_Description.Text = aDataTable.Tables[0].Rows[newIndex]["Table_Description"].ToString();
-            string exePath = Application.StartupPath + @"\Images";
+            string exePath = Application.StartupPath + @"\Images\";
             var fileNameFromDbImage = aDataTable.Tables[0].Rows[newIndex]["Table_FileLocation"].ToString();
             var fileNameFromDbPdf = aDataTable.Tables[0].Rows[newIndex]["Pdf_FileLocation"].ToString();
             string path;
-            string file;
 
             //CHECK IF IMAGE FILE IS PRESENT, OTHERWISE GRAB PDF FILE
             if (string.IsNullOrEmpty(fileNameFromDbImage))
@@ -138,14 +137,19 @@ namespace CEMSStudyApp.Pages
                 pictureBoxDiagramsAndTables_Image.Hide();
                 webBrowserPdf.Show();
 
+
                 path = exePath + fileNameFromDbPdf; //PATH STRING
 
-                webBrowserPdf.Navigate(path);
+                path = path.Replace(@"\\", @"");
+
+                webBrowserPdf.Navigate(new Uri(path),false);
             }
             else
             {
                 pictureBoxDiagramsAndTables_Image.Show();
                 webBrowserPdf.Hide();
+
+                Cursor.Current = Cursors.Hand;
 
                 path = exePath + fileNameFromDbImage;
 
@@ -157,8 +161,8 @@ namespace CEMSStudyApp.Pages
             comboBoxDiagramsAndTables_Id.SelectedIndex = comboBoxDiagramsAndTables_Id.FindString(aDataTable.Tables[0].Rows[newIndex]["Table_Id"].ToString());
 
             //Hides Answer box and resets toggle button
-            pictureBoxDiagramsAndTables_Image.Hide();
-            buttonToggle.Text = @"Show";
+            //pictureBoxDiagramsAndTables_Image.Hide();
+            //buttonToggle.Text = @"Show";
         }
 
         private void buttonBack_Click(object sender, EventArgs e)

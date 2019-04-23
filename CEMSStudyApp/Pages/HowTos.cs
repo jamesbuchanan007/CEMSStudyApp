@@ -126,15 +126,20 @@ namespace CEMSStudyApp.Pages
                     Part75 part75 = new Part75();
                     part75.Show();
                     break;
-                case "UnitOfMeasure":
+                case "Unit of Measure":
                     Hide();
                     UnitOfMeasure unitOfMeasure = new UnitOfMeasure();
                     unitOfMeasure.Show();
                     break;
-                case "DiagramsAndTables":
+                case "Diagrams and Tables":
                     Hide();
                     DiagramsAndTables dt = new DiagramsAndTables();
                     dt.Show();
+                    break;
+                case "Part 60":
+                    Hide();
+                    Part60 p60 = new Part60();
+                    p60.Show();
                     break;
             }
         }

@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using CEMSStudyApp.Models;
 using CEMSStudyApp.Properties;
-using iTextSharp.text.pdf;
 
 namespace CEMSStudyApp.Pages
 {
@@ -119,15 +115,20 @@ namespace CEMSStudyApp.Pages
                     Part75 part75 = new Part75();
                     part75.Show();
                     break;
-                case "UnitOfMeasure":
+                case "Unit of Measure":
                     Hide();
                     UnitOfMeasure unitOfMeasure = new UnitOfMeasure();
                     unitOfMeasure.Show();
                     break;
-                case "DiagramsAndTables":
+                case "Diagrams and Tables":
                     Hide();
                     DiagramsAndTables dt = new DiagramsAndTables();
                     dt.Show();
+                    break;
+                case "Part 63":
+                    Hide();
+                    Part63 part63 = new Part63();
+                    part63.Show();
                     break;
             }
         }

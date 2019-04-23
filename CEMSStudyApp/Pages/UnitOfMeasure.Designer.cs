@@ -45,7 +45,6 @@ namespace CEMSStudyApp.Pages
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.textBoxUnitOfMeasure = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -142,10 +141,11 @@ namespace CEMSStudyApp.Pages
             this.comboBoxUnitOfMeasure.DisplayMember = "UnitOfMeasure_Name";
             this.comboBoxUnitOfMeasure.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxUnitOfMeasure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxUnitOfMeasure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxUnitOfMeasure.FormattingEnabled = true;
-            this.comboBoxUnitOfMeasure.Location = new System.Drawing.Point(284, 51);
+            this.comboBoxUnitOfMeasure.Location = new System.Drawing.Point(258, 78);
             this.comboBoxUnitOfMeasure.Name = "comboBoxUnitOfMeasure";
-            this.comboBoxUnitOfMeasure.Size = new System.Drawing.Size(236, 21);
+            this.comboBoxUnitOfMeasure.Size = new System.Drawing.Size(262, 28);
             this.comboBoxUnitOfMeasure.TabIndex = 12;
             this.comboBoxUnitOfMeasure.SelectedIndexChanged += new System.EventHandler(this.comboBoxAcronym_SelectedIndexChanged);
             // 
@@ -236,19 +236,6 @@ namespace CEMSStudyApp.Pages
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // textBoxUnitOfMeasure
-            // 
-            this.textBoxUnitOfMeasure.BackColor = System.Drawing.Color.White;
-            this.textBoxUnitOfMeasure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUnitOfMeasure.Location = new System.Drawing.Point(284, 78);
-            this.textBoxUnitOfMeasure.Margin = new System.Windows.Forms.Padding(1);
-            this.textBoxUnitOfMeasure.Name = "textBoxUnitOfMeasure";
-            this.textBoxUnitOfMeasure.ReadOnly = true;
-            this.textBoxUnitOfMeasure.Size = new System.Drawing.Size(236, 26);
-            this.textBoxUnitOfMeasure.TabIndex = 20;
-            this.textBoxUnitOfMeasure.Text = "Unit of Measure";
-            this.textBoxUnitOfMeasure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // UnitOfMeasure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,7 +244,6 @@ namespace CEMSStudyApp.Pages
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(534, 419);
-            this.Controls.Add(this.textBoxUnitOfMeasure);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonEdit);
@@ -296,6 +282,5 @@ namespace CEMSStudyApp.Pages
         private Button buttonEdit;
         private Button buttonDelete;
         private Button buttonCancel;
-        private TextBox textBoxUnitOfMeasure;
     }
 }

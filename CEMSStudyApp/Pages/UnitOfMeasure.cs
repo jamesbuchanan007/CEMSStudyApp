@@ -83,16 +83,12 @@ namespace CEMSStudyApp.Pages
         {
             textBoxAnswer.ReadOnly = false;
             textBoxAnswer.Enabled = true;
-            textBoxUnitOfMeasure.ReadOnly = false;
-            textBoxUnitOfMeasure.Enabled = true;
         }
 
         private void DisableTextBoxes()
         {
             textBoxAnswer.ReadOnly = true;
             textBoxAnswer.Enabled = false;
-            textBoxUnitOfMeasure.ReadOnly = true;
-            textBoxUnitOfMeasure.Enabled = false;
         }
 
         private void HideAllButtons()
@@ -159,7 +155,6 @@ namespace CEMSStudyApp.Pages
 
             EnableTextBoxes();
             textBoxAnswer.Text = "";
-            textBoxUnitOfMeasure.Text = "";
 
             HideAllButtons();
             buttonNew.Show();
@@ -171,7 +166,6 @@ namespace CEMSStudyApp.Pages
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             textBoxAnswer.Undo();
-            textBoxUnitOfMeasure.Undo();
             DisableTextBoxes();
             ShowAllButtons();
             buttonToggle.Enabled = true;
@@ -209,9 +203,9 @@ namespace CEMSStudyApp.Pages
 
         public void ChangeRecord(int newIndex, DataSet aDataTable)
         {
-            textBoxUnitOfMeasure.Text = aDataTable.Tables[0].Rows[newIndex]["UnitOfMeasure_Name"].ToString();
+            var uomText = aDataTable.Tables[0].Rows[newIndex]["UnitOfMeasure_Name"].ToString();
             textBoxAnswer.Text = aDataTable.Tables[0].Rows[newIndex]["UnitOfMeasure_Description"].ToString();
-            comboBoxUnitOfMeasure.SelectedIndex = comboBoxUnitOfMeasure.FindString(textBoxUnitOfMeasure.Text);
+            comboBoxUnitOfMeasure.SelectedIndex = comboBoxUnitOfMeasure.FindString(uomText);
 
             textBoxAnswer.Hide();
             buttonToggle.Text = @"Show";
@@ -243,7 +237,6 @@ namespace CEMSStudyApp.Pages
 
                 UnitOfMeasureViewModel vm = new UnitOfMeasureViewModel
                 {
-                    UnitOfMeasure_Name = textBoxUnitOfMeasure.Text,
                     UnitOfMeasure_Description = textBoxAnswer.Text,
                     Pages_Id = 1,
                     Date_Edited = DateTime.Now,
@@ -255,8 +248,7 @@ namespace CEMSStudyApp.Pages
                 var format = "yyyy-MM-dd HH:mm:ss"; //FORMAT DATE
 
                 var sql = "UPDATE UnitOfMeasure " +
-                      "SET UnitOfMeasure_Name = " + "'" + vm.UnitOfMeasure_Name + "'," +
-                      "UnitOfMeasure_Description = " + "'" + vm.UnitOfMeasure_Description + "'," +
+                      "SET UnitOfMeasure_Description = " + "'" + vm.UnitOfMeasure_Description + "'," +
                       "Pages_Id = " + vm.Pages_Id + "," +
                       "Date_Edited = " + "'" + vm.Date_Edited.ToString(format) + "'," +
                       "Is_Active = " + vm.IsActive + " " +
@@ -272,7 +264,6 @@ namespace CEMSStudyApp.Pages
 
                 UnitOfMeasureViewModel vm = new UnitOfMeasureViewModel
                 {
-                    UnitOfMeasure_Name = textBoxUnitOfMeasure.Text,
                     UnitOfMeasure_Description = textBoxAnswer.Text,
                     Pages_Id = 1,
                     Date_Added = DateTime.Now,
@@ -281,8 +272,7 @@ namespace CEMSStudyApp.Pages
 
                 var format = "yyyy-MM-dd HH:mm:ss";
 
-                var sql = "INSERT into UnitOfMeasure (UnitOfMeasure_Name,UnitOfMeasure_Description,Pages_Id,Date_Added,Is_Active) values('" +
-                      vm.UnitOfMeasure_Name + "'" + "," + "'" +
+                var sql = "INSERT into UnitOfMeasure (UnitOfMeasure_Description,Pages_Id,Date_Added,Is_Active) values('" +
                       vm.UnitOfMeasure_Description + "'" + "," +
                       vm.Pages_Id + "," + "'" +
                       vm.Date_Added.ToString(format) + "'" + "," +
@@ -417,10 +407,20 @@ namespace CEMSStudyApp.Pages
                     Part75 part75 = new Part75();
                     part75.Show();
                     break;
-                case "DiagramsAndTables":
+                case "Diagrams and Tables":
                     Hide();
                     DiagramsAndTables dt = new DiagramsAndTables();
                     dt.Show();
+                    break;
+                case "Part 60":
+                    Hide();
+                    Part60 p60 = new Part60();
+                    p60.Show();
+                    break;
+                case "Acronyms":
+                    Hide();
+                    Acronyms acronyms = new Acronyms();
+                    acronyms.Show();
                     break;
             }
 

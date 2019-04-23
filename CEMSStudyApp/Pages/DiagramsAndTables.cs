@@ -139,10 +139,10 @@ namespace CEMSStudyApp.Pages
 
 
                 path = exePath + fileNameFromDbPdf; //PATH STRING
+                path = path.Replace(@"\", "/");
+                webBrowserPdf?.Navigate(new Uri(path));
 
-                path = path.Replace(@"\\", @"");
-
-                webBrowserPdf.Navigate(new Uri(path),false);
+                //webBrowserPdf.Navigate(new Uri(path));
             }
             else
             {

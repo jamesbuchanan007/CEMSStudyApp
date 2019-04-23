@@ -205,5 +205,12 @@ namespace CEMSStudyApp.Pages
             var dbp = new DbPassword();
             dbp.Show();
         }
+
+        private void buttonHyperlinks_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var rpl = new RemovePdfLinks();
+            rpl.Show();
+        }
     }
 }

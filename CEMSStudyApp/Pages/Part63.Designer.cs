@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace CEMSStudyApp.Pages
 {
-    partial class Part60
+    partial class Part63
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace CEMSStudyApp.Pages
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Part60));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Part63));
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxSectionName = new System.Windows.Forms.TextBox();
             this.comboBoxSiteNavigation = new System.Windows.Forms.ComboBox();

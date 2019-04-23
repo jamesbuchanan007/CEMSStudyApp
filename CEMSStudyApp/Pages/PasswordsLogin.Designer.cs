@@ -45,6 +45,7 @@ namespace CEMSStudyApp.Pages
             this.label3 = new System.Windows.Forms.Label();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonDatabase = new System.Windows.Forms.Button();
+            this.buttonHyperlinks = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,11 +179,25 @@ namespace CEMSStudyApp.Pages
             this.buttonDatabase.UseVisualStyleBackColor = false;
             this.buttonDatabase.Click += new System.EventHandler(this.buttonDatabase_Click);
             // 
+            // buttonHyperlinks
+            // 
+            this.buttonHyperlinks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonHyperlinks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHyperlinks.ForeColor = System.Drawing.Color.White;
+            this.buttonHyperlinks.Location = new System.Drawing.Point(32, 97);
+            this.buttonHyperlinks.Name = "buttonHyperlinks";
+            this.buttonHyperlinks.Size = new System.Drawing.Size(75, 23);
+            this.buttonHyperlinks.TabIndex = 22;
+            this.buttonHyperlinks.Text = "Hyperlinks";
+            this.buttonHyperlinks.UseVisualStyleBackColor = false;
+            this.buttonHyperlinks.Click += new System.EventHandler(this.buttonHyperlinks_Click);
+            // 
             // PasswordsLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(270, 297);
+            this.Controls.Add(this.buttonHyperlinks);
             this.Controls.Add(this.buttonDatabase);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.label3);
@@ -221,6 +236,7 @@ namespace CEMSStudyApp.Pages
         private Label label3;
         private Button buttonUpdate;
         private Button buttonDatabase;
+        private Button buttonHyperlinks;
     }
 }
 

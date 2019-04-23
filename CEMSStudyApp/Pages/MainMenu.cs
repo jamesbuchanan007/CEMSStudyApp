@@ -28,11 +28,11 @@ namespace CEMSStudyApp.Pages
             }
         }
 
-        private void buttonPart60_Click(object sender, EventArgs e)
+        private void buttonPart63_Click(object sender, EventArgs e)
         {
             Hide();
-            Part60 part60 = new Part60();
-            part60.Show();
+            Part63 part63 = new Part63();
+            part63.Show();
         }
 
         private void buttonFormulas_Click(object sender, EventArgs e)
@@ -74,6 +74,13 @@ namespace CEMSStudyApp.Pages
             Hide();
             DiagramsAndTables dt = new DiagramsAndTables();
             dt.Show();
+        }
+
+        private void buttonPart60_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Part60 part60 = new Part60();
+            part60.Show();
         }
     }
 }

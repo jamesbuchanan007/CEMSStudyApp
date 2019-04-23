@@ -116,7 +116,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Are You Sure?", "Exit Application", MessageBoxButtons.YesNo,
+            DialogResult dr = MessageBox.Show("Exit Application?", "CEMS Study App", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
             if (dr == DialogResult.Yes)
@@ -410,8 +410,8 @@ namespace CEMSStudyApp.Pages
                     break;
                 case "Part 63":
                     Hide();
-                    Part60 part60 = new Part60();
-                    part60.Show();
+                    Part63 part63 = new Part63();
+                    part63.Show();
                     break;
                 case "Part 75":
                     Hide();

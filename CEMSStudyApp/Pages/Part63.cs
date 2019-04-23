@@ -9,9 +9,9 @@ using CEMSStudyApp.Properties;
 
 namespace CEMSStudyApp.Pages
 {
-    public partial class Part60 : Form
+    public partial class Part63 : Form
     {
-        public Part60()
+        public Part63()
         {
             InitializeComponent(); //LOAD COMBOBOX PAGES
 
@@ -76,7 +76,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Are You Sure?", "Exit Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dr = MessageBox.Show("Exit Application", "CEMS Study App", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (dr == DialogResult.Yes)
             {

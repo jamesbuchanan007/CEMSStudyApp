@@ -54,10 +54,9 @@ namespace CEMSStudyApp.Pages
             this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(123, 52);
-            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label1.Location = new System.Drawing.Point(46, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(540, 63);
+            this.label1.Size = new System.Drawing.Size(218, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Diagrams and Tables";
             // 
@@ -67,10 +66,9 @@ namespace CEMSStudyApp.Pages
             this.buttonBack.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBack.ForeColor = System.Drawing.Color.White;
-            this.buttonBack.Location = new System.Drawing.Point(45, 193);
-            this.buttonBack.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonBack.Location = new System.Drawing.Point(17, 81);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(200, 55);
+            this.buttonBack.Size = new System.Drawing.Size(75, 23);
             this.buttonBack.TabIndex = 7;
             this.buttonBack.Tag = "Previous Question";
             this.buttonBack.Text = "<<";
@@ -83,10 +81,9 @@ namespace CEMSStudyApp.Pages
             this.buttonNext.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNext.ForeColor = System.Drawing.Color.White;
-            this.buttonNext.Location = new System.Drawing.Point(261, 193);
-            this.buttonNext.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonNext.Location = new System.Drawing.Point(98, 81);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(200, 55);
+            this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 8;
             this.buttonNext.Tag = "Next Question";
             this.buttonNext.Text = ">>";
@@ -99,10 +96,9 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(477, 193);
-            this.buttonToggle.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonToggle.Location = new System.Drawing.Point(179, 81);
             this.buttonToggle.Name = "buttonToggle";
-            this.buttonToggle.Size = new System.Drawing.Size(200, 55);
+            this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;
             this.buttonToggle.Tag = "Click to toggle Answer";
             this.buttonToggle.Text = "Show";
@@ -115,10 +111,9 @@ namespace CEMSStudyApp.Pages
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.ForeColor = System.Drawing.Color.White;
-            this.buttonExit.Location = new System.Drawing.Point(2080, 2261);
-            this.buttonExit.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.buttonExit.Location = new System.Drawing.Point(780, 671);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(200, 55);
+            this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 10;
             this.buttonExit.Tag = "Exit Application";
             this.buttonExit.Text = "Exit";
@@ -133,10 +128,9 @@ namespace CEMSStudyApp.Pages
             this.comboBoxDiagramsAndTables_Id.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxDiagramsAndTables_Id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDiagramsAndTables_Id.FormattingEnabled = true;
-            this.comboBoxDiagramsAndTables_Id.Location = new System.Drawing.Point(757, 126);
-            this.comboBoxDiagramsAndTables_Id.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.comboBoxDiagramsAndTables_Id.Location = new System.Drawing.Point(284, 53);
             this.comboBoxDiagramsAndTables_Id.Name = "comboBoxDiagramsAndTables_Id";
-            this.comboBoxDiagramsAndTables_Id.Size = new System.Drawing.Size(1516, 45);
+            this.comboBoxDiagramsAndTables_Id.Size = new System.Drawing.Size(571, 24);
             this.comboBoxDiagramsAndTables_Id.TabIndex = 12;
             this.comboBoxDiagramsAndTables_Id.SelectedIndexChanged += new System.EventHandler(this.comboBoxAcronym_SelectedIndexChanged);
             // 
@@ -145,10 +139,10 @@ namespace CEMSStudyApp.Pages
             this.comboBoxSiteNavigation.DisplayMember = "Pages_Name";
             this.comboBoxSiteNavigation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSiteNavigation.FormattingEnabled = true;
-            this.comboBoxSiteNavigation.Location = new System.Drawing.Point(1832, 64);
-            this.comboBoxSiteNavigation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxSiteNavigation.Location = new System.Drawing.Point(687, 27);
+            this.comboBoxSiteNavigation.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.comboBoxSiteNavigation.Name = "comboBoxSiteNavigation";
-            this.comboBoxSiteNavigation.Size = new System.Drawing.Size(441, 39);
+            this.comboBoxSiteNavigation.Size = new System.Drawing.Size(168, 21);
             this.comboBoxSiteNavigation.TabIndex = 13;
             this.comboBoxSiteNavigation.SelectedIndexChanged += new System.EventHandler(this.comboBoxSiteNavigation_SelectedIndexChanged_1);
             // 
@@ -156,12 +150,12 @@ namespace CEMSStudyApp.Pages
             // 
             this.textBoxDiagramsAndTables_Name.BackColor = System.Drawing.Color.White;
             this.textBoxDiagramsAndTables_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDiagramsAndTables_Name.Location = new System.Drawing.Point(757, 193);
-            this.textBoxDiagramsAndTables_Name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxDiagramsAndTables_Name.Location = new System.Drawing.Point(284, 81);
+            this.textBoxDiagramsAndTables_Name.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.textBoxDiagramsAndTables_Name.Name = "textBoxDiagramsAndTables_Name";
             this.textBoxDiagramsAndTables_Name.ReadOnly = true;
             this.textBoxDiagramsAndTables_Name.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxDiagramsAndTables_Name.Size = new System.Drawing.Size(1516, 44);
+            this.textBoxDiagramsAndTables_Name.Size = new System.Drawing.Size(571, 22);
             this.textBoxDiagramsAndTables_Name.TabIndex = 20;
             this.textBoxDiagramsAndTables_Name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -169,13 +163,12 @@ namespace CEMSStudyApp.Pages
             // 
             this.textBoxDiagramsAndTables_Description.BackColor = System.Drawing.Color.White;
             this.textBoxDiagramsAndTables_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDiagramsAndTables_Description.Location = new System.Drawing.Point(45, 262);
-            this.textBoxDiagramsAndTables_Description.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBoxDiagramsAndTables_Description.Location = new System.Drawing.Point(17, 110);
             this.textBoxDiagramsAndTables_Description.Multiline = true;
             this.textBoxDiagramsAndTables_Description.Name = "textBoxDiagramsAndTables_Description";
             this.textBoxDiagramsAndTables_Description.ReadOnly = true;
             this.textBoxDiagramsAndTables_Description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxDiagramsAndTables_Description.Size = new System.Drawing.Size(2228, 161);
+            this.textBoxDiagramsAndTables_Description.Size = new System.Drawing.Size(838, 70);
             this.textBoxDiagramsAndTables_Description.TabIndex = 21;
             // 
             // panel1
@@ -183,29 +176,25 @@ namespace CEMSStudyApp.Pages
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.webBrowserPdf);
             this.panel1.Controls.Add(this.pictureBoxDiagramsAndTables_Image);
-            this.panel1.Location = new System.Drawing.Point(45, 444);
-            this.panel1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.panel1.Location = new System.Drawing.Point(17, 186);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2235, 1753);
+            this.panel1.Size = new System.Drawing.Size(838, 472);
             this.panel1.TabIndex = 22;
             // 
             // webBrowserPdf
             // 
-            this.webBrowserPdf.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowserPdf.Location = new System.Drawing.Point(0, 0);
-            this.webBrowserPdf.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.webBrowserPdf.MinimumSize = new System.Drawing.Size(53, 48);
+            this.webBrowserPdf.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowserPdf.Name = "webBrowserPdf";
-            this.webBrowserPdf.Size = new System.Drawing.Size(2235, 1753);
+            this.webBrowserPdf.Size = new System.Drawing.Size(838, 475);
             this.webBrowserPdf.TabIndex = 25;
             // 
             // pictureBoxDiagramsAndTables_Image
             // 
             this.pictureBoxDiagramsAndTables_Image.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.pictureBoxDiagramsAndTables_Image.Location = new System.Drawing.Point(8, 7);
-            this.pictureBoxDiagramsAndTables_Image.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.pictureBoxDiagramsAndTables_Image.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxDiagramsAndTables_Image.Name = "pictureBoxDiagramsAndTables_Image";
-            this.pictureBoxDiagramsAndTables_Image.Size = new System.Drawing.Size(2219, 1715);
+            this.pictureBoxDiagramsAndTables_Image.Size = new System.Drawing.Size(832, 719);
             this.pictureBoxDiagramsAndTables_Image.TabIndex = 24;
             this.pictureBoxDiagramsAndTables_Image.TabStop = false;
             this.pictureBoxDiagramsAndTables_Image.UseWaitCursor = true;
@@ -213,12 +202,12 @@ namespace CEMSStudyApp.Pages
             // 
             // DiagramsAndTables
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(2312, 2108);
+            this.ClientSize = new System.Drawing.Size(867, 706);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBoxDiagramsAndTables_Description);
             this.Controls.Add(this.textBoxDiagramsAndTables_Name);
@@ -231,7 +220,6 @@ namespace CEMSStudyApp.Pages
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "DiagramsAndTables";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";

@@ -50,10 +50,13 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -66,6 +69,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Copied Pages\RemovePdfLinks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Copied Pages\RemovePdfLinks.Designer.cs">
+      <DependentUpon>RemovePdfLinks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Copied Pages\Part60.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Copied Pages\Part60.Designer.cs">
+      <DependentUpon>Part60.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DiagramsAndTables.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,11 +139,11 @@
     <Compile Include="Pages\Formulas.Designer.cs">
       <DependentUpon>Formulas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Part60.cs">
+    <Compile Include="Pages\Part63.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\Part60.Designer.cs">
-      <DependentUpon>Part60.cs</DependentUpon>
+    <Compile Include="Pages\Part63.Designer.cs">
+      <DependentUpon>Part63.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainMenu.cs">
       <SubType>Form</SubType>
@@ -145,6 +160,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Copied Pages\RemovePdfLinks.resx">
+      <DependentUpon>RemovePdfLinks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Copied Pages\Part60.resx">
+      <DependentUpon>Part60.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\DiagramsAndTables.resx">
       <DependentUpon>DiagramsAndTables.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,8 +190,8 @@
     <EmbeddedResource Include="Pages\Formulas.resx">
       <DependentUpon>Formulas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Part60.resx">
-      <DependentUpon>Part60.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\Part63.resx">
+      <DependentUpon>Part63.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
@@ -319,9 +340,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Copied Pages\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>

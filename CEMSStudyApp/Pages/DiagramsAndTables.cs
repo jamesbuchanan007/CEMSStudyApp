@@ -35,7 +35,7 @@ namespace CEMSStudyApp.Pages
             }
 
             //REMOVE FROM DICTIONARY
-            var pageName = "DiagramsAndTables";
+            var pageName = "Diagrams and Tables";
             var item = comboDictionary.First(q => q.Value == pageName);
             comboDictionary.Remove(item.Key);
 

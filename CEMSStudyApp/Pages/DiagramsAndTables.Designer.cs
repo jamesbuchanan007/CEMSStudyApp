@@ -140,7 +140,7 @@ namespace CEMSStudyApp.Pages
             this.comboBoxSiteNavigation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSiteNavigation.FormattingEnabled = true;
             this.comboBoxSiteNavigation.Location = new System.Drawing.Point(687, 27);
-            this.comboBoxSiteNavigation.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.comboBoxSiteNavigation.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxSiteNavigation.Name = "comboBoxSiteNavigation";
             this.comboBoxSiteNavigation.Size = new System.Drawing.Size(168, 21);
             this.comboBoxSiteNavigation.TabIndex = 13;
@@ -151,7 +151,7 @@ namespace CEMSStudyApp.Pages
             this.textBoxDiagramsAndTables_Name.BackColor = System.Drawing.Color.White;
             this.textBoxDiagramsAndTables_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDiagramsAndTables_Name.Location = new System.Drawing.Point(284, 81);
-            this.textBoxDiagramsAndTables_Name.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBoxDiagramsAndTables_Name.Margin = new System.Windows.Forms.Padding(1);
             this.textBoxDiagramsAndTables_Name.Name = "textBoxDiagramsAndTables_Name";
             this.textBoxDiagramsAndTables_Name.ReadOnly = true;
             this.textBoxDiagramsAndTables_Name.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -191,19 +191,19 @@ namespace CEMSStudyApp.Pages
             // 
             // pictureBoxDiagramsAndTables_Image
             // 
-            this.pictureBoxDiagramsAndTables_Image.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.pictureBoxDiagramsAndTables_Image.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxDiagramsAndTables_Image.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxDiagramsAndTables_Image.Name = "pictureBoxDiagramsAndTables_Image";
-            this.pictureBoxDiagramsAndTables_Image.Size = new System.Drawing.Size(832, 719);
+            this.pictureBoxDiagramsAndTables_Image.Size = new System.Drawing.Size(832, 469);
             this.pictureBoxDiagramsAndTables_Image.TabIndex = 24;
             this.pictureBoxDiagramsAndTables_Image.TabStop = false;
-            this.pictureBoxDiagramsAndTables_Image.UseWaitCursor = true;
             this.pictureBoxDiagramsAndTables_Image.Visible = false;
             // 
             // DiagramsAndTables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SeaGreen;

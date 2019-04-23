@@ -59,13 +59,13 @@ namespace CEMSStudyApp.Pages
             // 
             this.textBoxSectionName.BackColor = System.Drawing.Color.White;
             this.textBoxSectionName.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBoxSectionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSectionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSectionName.ForeColor = System.Drawing.Color.Black;
             this.textBoxSectionName.Location = new System.Drawing.Point(17, 77);
             this.textBoxSectionName.Name = "textBoxSectionName";
             this.textBoxSectionName.ReadOnly = true;
             this.textBoxSectionName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSectionName.Size = new System.Drawing.Size(885, 22);
+            this.textBoxSectionName.Size = new System.Drawing.Size(885, 21);
             this.textBoxSectionName.TabIndex = 2;
             this.textBoxSectionName.Text = "Section Name";
             this.textBoxSectionName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

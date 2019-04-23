@@ -14,7 +14,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Are You Sure?", "Exit Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dr = MessageBox.Show("Exit Application?", "CEMS Study App", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (dr == DialogResult.Yes)
             {
@@ -42,6 +42,11 @@ namespace CEMSStudyApp.Pages
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
+            var doubleCheck = MessageBox.Show("Are You Sure?", "CEMS Study App", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (doubleCheck != DialogResult.Yes) return;
+
             //GET FILE NAMES FROM SELECTED FOLDER
 
             DirectoryInfo d = new DirectoryInfo(textBoxInput.Text);
@@ -50,9 +55,9 @@ namespace CEMSStudyApp.Pages
 
             foreach (FileInfo file in files)
             {
-                var inputPath = textBoxInput.Text + file.Name + ".pdf";
-                var outputPath = textBoxOutput.Text + file.Name + ".pdf";
-
+                var inputPath = textBoxInput.Text + @"\" + file.Name;
+                var outputPath = textBoxOutput.Text + @"\ " + file.Name;
+               
                 RemoveAnnotations(inputPath, outputPath);
             }
         }

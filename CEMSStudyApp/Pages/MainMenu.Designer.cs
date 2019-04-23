@@ -147,7 +147,6 @@ namespace CEMSStudyApp.Pages
             // buttonUnlock
             // 
             this.buttonUnlock.BackColor = System.Drawing.Color.Green;
-            this.buttonUnlock.Enabled = false;
             this.buttonUnlock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUnlock.ForeColor = System.Drawing.Color.White;
             this.buttonUnlock.Location = new System.Drawing.Point(12, 294);

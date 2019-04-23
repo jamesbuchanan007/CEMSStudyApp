@@ -171,21 +171,10 @@ namespace CEMSStudyApp.Pages
             var fileName = p60DataSet.Tables[0].Rows[newIndex]["Part60_Appendix_FileLocation"].ToString();
             var path = exePath + fileName + ".pdf"; //PATH STRING
             path = path.Replace(@"\", "/");
-            var outputPath = "C:/Users/jamesb/source/repos/CEMSStudyApp/CEMSStudyApp/Images/" + fileName + ".pdf";
 
-            RemoveAnnotations(path, outputPath);
 
             webBrowserPdf?.Navigate(new Uri(path));
 
-        }
-
-        private void RemoveAnnotations(string inputPath, string outputPath)
-        {
-            PdfReader pdfReader = new PdfReader(inputPath);
-            PdfStamper pdfStamper = new PdfStamper(pdfReader, new FileStream(outputPath, FileMode.Create));
-
-            pdfReader.RemoveAnnotations();
-            pdfStamper.Close();
         }
 
         private void buttonNext_Click(object sender, EventArgs e)

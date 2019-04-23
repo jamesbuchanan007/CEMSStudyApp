@@ -25,9 +25,33 @@ namespace CEMSStudyApp.Pages
                 }
                 else
                 {
+                    //USER WANTS TO EDIT DB AFTER ENTERING PASSWORD
+                    var openDb = MessageBox.Show("Edit Database?", "CEMS Study App", MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (openDb == DialogResult.Yes)
+                    {
+                        Hide();
+                        var export = new ExportDb();
+                        export.Show();
+                    }
+
+                    //USER WANTS TO EDIT DB AFTER ENTERING PASSWORD
+                    var openHyperlink = MessageBox.Show("Remove PDF Hyperlinks?", "CEMS Study App", MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (openHyperlink == DialogResult.Yes)
+                    {
+                        Hide();
+                        var rpl = new RemovePdfLinks();
+                        rpl.Show();
+                    }
+
+                    //DEFAULTS BACK TO PASSWORD SCREEN
                     Hide();
-                    var export = new ExportDb();
-                    export.Show();
+                    var pl = new PasswordsLogin(false);
+                    pl.Show();
+
                 }
 
               

@@ -74,7 +74,6 @@ namespace CEMSStudyApp.Pages
             // buttonSubmit
             // 
             this.buttonSubmit.BackColor = System.Drawing.Color.Green;
-            this.buttonSubmit.Enabled = false;
             this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubmit.ForeColor = System.Drawing.Color.White;
             this.buttonSubmit.Location = new System.Drawing.Point(12, 301);
@@ -129,7 +128,6 @@ namespace CEMSStudyApp.Pages
             // buttonInputPath
             // 
             this.buttonInputPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonInputPath.Enabled = false;
             this.buttonInputPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInputPath.ForeColor = System.Drawing.Color.White;
             this.buttonInputPath.Location = new System.Drawing.Point(250, 168);
@@ -143,7 +141,6 @@ namespace CEMSStudyApp.Pages
             // buttonOutputPath
             // 
             this.buttonOutputPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonOutputPath.Enabled = false;
             this.buttonOutputPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOutputPath.ForeColor = System.Drawing.Color.White;
             this.buttonOutputPath.Location = new System.Drawing.Point(250, 212);

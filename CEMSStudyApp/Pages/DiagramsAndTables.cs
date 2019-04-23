@@ -126,7 +126,7 @@ namespace CEMSStudyApp.Pages
         {
             textBoxDiagramsAndTables_Name.Text = aDataTable.Tables[0].Rows[newIndex]["Table_Name"].ToString();
             textBoxDiagramsAndTables_Description.Text = aDataTable.Tables[0].Rows[newIndex]["Table_Description"].ToString();
-            string exePath = Application.StartupPath + @"\Images";
+            string exePath = Application.StartupPath + @"\Images\";
             var fileNameFromDbImage = aDataTable.Tables[0].Rows[newIndex]["Table_FileLocation"].ToString();
             var fileNameFromDbPdf = aDataTable.Tables[0].Rows[newIndex]["Pdf_FileLocation"].ToString();
             string path;
@@ -139,8 +139,10 @@ namespace CEMSStudyApp.Pages
                 webBrowserPdf.Show();
 
                 path = exePath + fileNameFromDbPdf; //PATH STRING
+                path = path.Replace(@"\", "/");
+                webBrowserPdf?.Navigate(new Uri(path));
 
-                webBrowserPdf.Navigate(path);
+                //webBrowserPdf.Navigate(new Uri(path));
             }
             else
             {

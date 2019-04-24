@@ -234,6 +234,7 @@
   <ItemGroup>
     <Folder Include="Copied Pages\" />
     <Folder Include="Images\" />
+    <Folder Include="Part75Files\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

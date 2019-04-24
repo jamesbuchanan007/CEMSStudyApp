@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace CEMSStudyApp.Pages
 {
-    partial class Part60
+    partial class Part75_PE
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace CEMSStudyApp.Pages
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Part60));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Part75_PE));
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxSectionName = new System.Windows.Forms.TextBox();
             this.comboBoxSiteNavigation = new System.Windows.Forms.ComboBox();
@@ -51,9 +51,9 @@ namespace CEMSStudyApp.Pages
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 26);
+            this.label1.Size = new System.Drawing.Size(376, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "40 CFR Part 60, Appendix B, F";
+            this.label1.Text = "40 CFR Part 73 Plain English Version";
             // 
             // textBoxSectionName
             // 
@@ -167,7 +167,7 @@ namespace CEMSStudyApp.Pages
             this.webBrowserPdf.Size = new System.Drawing.Size(885, 601);
             this.webBrowserPdf.TabIndex = 25;
             // 
-            // Part60
+            // Part75_PE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -186,7 +186,7 @@ namespace CEMSStudyApp.Pages
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Part60";
+            this.Name = "Part75_PE";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";
             this.ResumeLayout(false);

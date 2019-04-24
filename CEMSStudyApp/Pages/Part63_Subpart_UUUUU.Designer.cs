@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace CEMSStudyApp.Pages
 {
-    partial class Part60
+    partial class Part63_Subpart_UUUUU
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace CEMSStudyApp.Pages
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Part60));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Part63_Subpart_UUUUU));
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxSectionName = new System.Windows.Forms.TextBox();
             this.comboBoxSiteNavigation = new System.Windows.Forms.ComboBox();
@@ -39,8 +39,8 @@ namespace CEMSStudyApp.Pages
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonToggle = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.comboBoxSectionNumber = new System.Windows.Forms.ComboBox();
             this.webBrowserPdf = new System.Windows.Forms.WebBrowser();
+            this.comboBoxSectionNumber = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -49,11 +49,12 @@ namespace CEMSStudyApp.Pages
             this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 26);
+            this.label1.Size = new System.Drawing.Size(582, 78);
             this.label1.TabIndex = 0;
-            this.label1.Text = "40 CFR Part 60, Appendix B, F";
+            this.label1.Text = "40 CFR Part 63 Subpart UUUUU \r\nNational Emission Standards for Hazardous Air Poll" +
+    "utants: \r\nCoal- and Oil-Fired Electric Utility Steam Generating Units";
             // 
             // textBoxSectionName
             // 
@@ -61,7 +62,7 @@ namespace CEMSStudyApp.Pages
             this.textBoxSectionName.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBoxSectionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSectionName.ForeColor = System.Drawing.Color.Black;
-            this.textBoxSectionName.Location = new System.Drawing.Point(17, 50);
+            this.textBoxSectionName.Location = new System.Drawing.Point(17, 106);
             this.textBoxSectionName.Name = "textBoxSectionName";
             this.textBoxSectionName.ReadOnly = true;
             this.textBoxSectionName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -90,7 +91,7 @@ namespace CEMSStudyApp.Pages
             this.buttonBack.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBack.ForeColor = System.Drawing.Color.White;
-            this.buttonBack.Location = new System.Drawing.Point(17, 716);
+            this.buttonBack.Location = new System.Drawing.Point(17, 772);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(75, 23);
             this.buttonBack.TabIndex = 7;
@@ -105,7 +106,7 @@ namespace CEMSStudyApp.Pages
             this.buttonNext.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNext.ForeColor = System.Drawing.Color.White;
-            this.buttonNext.Location = new System.Drawing.Point(98, 716);
+            this.buttonNext.Location = new System.Drawing.Point(98, 772);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 8;
@@ -120,7 +121,7 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonToggle.ForeColor = System.Drawing.Color.White;
-            this.buttonToggle.Location = new System.Drawing.Point(179, 716);
+            this.buttonToggle.Location = new System.Drawing.Point(179, 772);
             this.buttonToggle.Name = "buttonToggle";
             this.buttonToggle.Size = new System.Drawing.Size(75, 23);
             this.buttonToggle.TabIndex = 9;
@@ -136,7 +137,7 @@ namespace CEMSStudyApp.Pages
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.ForeColor = System.Drawing.Color.White;
-            this.buttonExit.Location = new System.Drawing.Point(827, 716);
+            this.buttonExit.Location = new System.Drawing.Point(827, 772);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 10;
@@ -144,6 +145,14 @@ namespace CEMSStudyApp.Pages
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // webBrowserPdf
+            // 
+            this.webBrowserPdf.Location = new System.Drawing.Point(17, 165);
+            this.webBrowserPdf.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowserPdf.Name = "webBrowserPdf";
+            this.webBrowserPdf.Size = new System.Drawing.Size(885, 601);
+            this.webBrowserPdf.TabIndex = 25;
             // 
             // comboBoxSectionNumber
             // 
@@ -153,21 +162,12 @@ namespace CEMSStudyApp.Pages
             this.comboBoxSectionNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSectionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSectionNumber.FormattingEnabled = true;
-            this.comboBoxSectionNumber.Location = new System.Drawing.Point(18, 79);
+            this.comboBoxSectionNumber.Location = new System.Drawing.Point(18, 135);
             this.comboBoxSectionNumber.Name = "comboBoxSectionNumber";
             this.comboBoxSectionNumber.Size = new System.Drawing.Size(884, 24);
-            this.comboBoxSectionNumber.TabIndex = 12;
-            this.comboBoxSectionNumber.SelectedIndexChanged += new System.EventHandler(this.comboBoxSectionNumber_SelectedIndexChanged);
+            this.comboBoxSectionNumber.TabIndex = 26;
             // 
-            // webBrowserPdf
-            // 
-            this.webBrowserPdf.Location = new System.Drawing.Point(17, 109);
-            this.webBrowserPdf.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowserPdf.Name = "webBrowserPdf";
-            this.webBrowserPdf.Size = new System.Drawing.Size(885, 601);
-            this.webBrowserPdf.TabIndex = 25;
-            // 
-            // Part60
+            // Part63_Subpart_UUUUU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -175,8 +175,8 @@ namespace CEMSStudyApp.Pages
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(923, 807);
-            this.Controls.Add(this.webBrowserPdf);
             this.Controls.Add(this.comboBoxSectionNumber);
+            this.Controls.Add(this.webBrowserPdf);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonToggle);
             this.Controls.Add(this.buttonNext);
@@ -186,7 +186,7 @@ namespace CEMSStudyApp.Pages
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Part60";
+            this.Name = "Part63_Subpart_UUUUU";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";
             this.ResumeLayout(false);
@@ -203,7 +203,7 @@ namespace CEMSStudyApp.Pages
         private Button buttonNext;
         private Button buttonToggle;
         private Button buttonExit;
-        private ComboBox comboBoxSectionNumber;
         private WebBrowser webBrowserPdf;
+        private ComboBox comboBoxSectionNumber;
     }
 }

@@ -48,18 +48,28 @@ namespace CEMSStudyApp.Pages
             if (doubleCheck != DialogResult.Yes) return;
 
             //GET FILE NAMES FROM SELECTED FOLDER
-
-            DirectoryInfo d = new DirectoryInfo(textBoxInput.Text);
-            FileInfo[] files = d.GetFiles("*.pdf");
-            string str = "";
-
-            foreach (FileInfo file in files)
+            try
             {
-                var inputPath = textBoxInput.Text + @"\" + file.Name;
-                var outputPath = textBoxOutput.Text + @"\ " + file.Name;
-               
-                RemoveAnnotations(inputPath, outputPath);
+                DirectoryInfo d = new DirectoryInfo(textBoxInput.Text);
+                FileInfo[] files = d.GetFiles("*.pdf");
+                string str = "";
+
+                foreach (FileInfo file in files)
+                {
+                    var inputPath = textBoxInput.Text + @"\" + file.Name;
+                    var outputPath = textBoxOutput.Text + @"\ " + file.Name;
+
+                    RemoveAnnotations(inputPath, outputPath);
+                }
+
+                MessageBox.Show("Completed", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Could not complete... " + exception.ToString());
+                throw;
+            }
+            
         }
         private void RemoveAnnotations(string inputPath, string outputPath)
         {

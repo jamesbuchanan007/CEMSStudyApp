@@ -13,7 +13,7 @@ namespace CEMSStudyApp.Pages
         private void button1_Click(object sender, EventArgs e)
         {
             Hide();
-            Part75 part75 = new Part75();
+            Part75_PE part75 = new Part75_PE();
             part75.Show();
 
         }
@@ -31,7 +31,7 @@ namespace CEMSStudyApp.Pages
         private void buttonPart63_Click(object sender, EventArgs e)
         {
             Hide();
-            Part63 part63 = new Part63();
+            Part63_Subpart_UUUUU part63 = new Part63_Subpart_UUUUU();
             part63.Show();
         }
 

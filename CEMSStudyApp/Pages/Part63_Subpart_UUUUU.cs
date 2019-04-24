@@ -8,9 +8,9 @@ using CEMSStudyApp.Properties;
 
 namespace CEMSStudyApp.Pages
 {
-    public partial class Part60 : Form
+    public partial class Part63_Subpart_UUUUU : Form
     {
-        public Part60()
+        public Part63_Subpart_UUUUU()
         {
             InitializeComponent(); //LOAD COMBOBOX PAGES
 
@@ -24,9 +24,9 @@ namespace CEMSStudyApp.Pages
                 comboDictionary.Add((int)pagesDataSet.Tables[0].Rows[i]["Pages_Id"], pagesDataSet.Tables[0].Rows[i]["Pages_Name"].ToString());
             }
 
-            var pageName = "Part 60";
+            var pageName = "Part 63 Subpart UUUUU";
             var item = comboDictionary.First(q => q.Value == pageName);
-            comboDictionary.Remove(item.Key);  //REMOVE PART60 SELECTION
+            comboDictionary.Remove(item.Key);  //REMOVE Part63_Appendix SELECTION
 
             comboBoxSiteNavigation.DataSource = new BindingSource(comboDictionary, null);
             comboBoxSiteNavigation.ValueMember = "Key";
@@ -110,7 +110,7 @@ namespace CEMSStudyApp.Pages
                     HowTos howTos = new HowTos();
                     howTos.Show();
                     break;
-                case "Part 75":
+                case "Part 75 Plain English":
                     Hide();
                     Part75_PE part75_Pe = new Part75_PE();
                     part75_Pe.Show();
@@ -125,10 +125,10 @@ namespace CEMSStudyApp.Pages
                     DiagramsAndTables dt = new DiagramsAndTables();
                     dt.Show();
                     break;
-                case "Part 63 Subpart UUUUU":
+                case "Part 60 Appendix B, F":
                     Hide();
-                    Part63_Subpart_UUUUU part63 = new Part63_Subpart_UUUUU();
-                    part63.Show();
+                    Part60 part60 = new Part60();
+                    part60.Show();
                     break;
             }
         }
@@ -150,7 +150,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            var p60DataSet = LoadTable("Part60_Appendix");
+            var p60DataSet = LoadTable("Part63_Subpart_UUUUU");
             var index = comboBoxSectionNumber.SelectedIndex;
 
             if (index == 0 || p60DataSet.Tables[0].Rows.Count == 0) return;
@@ -162,14 +162,14 @@ namespace CEMSStudyApp.Pages
 
         private void ChangeRecord(int newIndex, DataSet p60DataSet)
         {
-            textBoxSectionName.Text = p60DataSet.Tables[0].Rows[newIndex]["Part60_Appendix_Name"].ToString();
-            var part60AppendixNumber = p60DataSet.Tables[0].Rows[newIndex]["Part60_Appendix_Number"].ToString();
-            comboBoxSectionNumber.SelectedIndex = comboBoxSectionNumber.FindString(part60AppendixNumber);
+            textBoxSectionName.Text = p60DataSet.Tables[0].Rows[newIndex]["Part63_Subpart_UUUUU_Name"].ToString();
+            var Part63_AppendixAppendixNumber = p60DataSet.Tables[0].Rows[newIndex]["Part63_Subpart_UUUUU_Number"].ToString();
+            comboBoxSectionNumber.SelectedIndex = comboBoxSectionNumber.FindString(Part63_AppendixAppendixNumber);
 
             buttonToggle.Text = @"Hide";
 
-            string exePath = Application.StartupPath + @"\Part60_Files\";
-            var fileName = p60DataSet.Tables[0].Rows[newIndex]["Part60_Appendix_FileLocation"].ToString();
+            string exePath = Application.StartupPath + @"\Part63_Files\";
+            var fileName = p60DataSet.Tables[0].Rows[newIndex]["Part63_Subpart_UUUUU_FileLocation"].ToString();
             var path = exePath + fileName + ".pdf"; //PATH STRING
             path = path.Replace(@"\", "/");
 
@@ -180,7 +180,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            var p60DataSet = LoadTable("Part60_Appendix");
+            var p60DataSet = LoadTable("Part63_Subpart_UUUUU");
             var index = comboBoxSectionNumber.SelectedIndex;
             var count = comboBoxSiteNavigation.Items.Count - 1;
 
@@ -194,20 +194,20 @@ namespace CEMSStudyApp.Pages
 
         private void comboBoxSectionNumber_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var part60DataSet = LoadTable("Part60_Appendix");
+            var Part63_AppendixDataSet = LoadTable("Part63_Subpart_UUUUU");
             var index = comboBoxSectionNumber.SelectedIndex;
 
-            if (part60DataSet.Tables[0].Rows.Count == 0) return;
-            ChangeRecord(index, part60DataSet);
+            if (Part63_AppendixDataSet.Tables[0].Rows.Count == 0) return;
+            ChangeRecord(index, Part63_AppendixDataSet);
         }
 
         private void LoadComboboxTextbox()
         {
             //LOAD COMBOBOX 
-            var aDataSet = LoadTable("Part60_Appendix");
+            var aDataSet = LoadTable("Part63_Subpart_UUUUU");
             comboBoxSectionNumber.DataSource = aDataSet.Tables[0];
-            comboBoxSectionNumber.ValueMember = "Part60_Appendix_Id";
-            comboBoxSectionNumber.DisplayMember = "Part60_Appendix_Number";
+            comboBoxSectionNumber.ValueMember = "Part63_Subpart_UUUUU_Id";
+            comboBoxSectionNumber.DisplayMember = "Part63_Subpart_UUUUU_Number";
 
             //LOAD TEXTBOXES
             if (aDataSet.Tables[0].Rows.Count == 0) return;

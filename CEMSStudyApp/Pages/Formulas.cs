@@ -131,14 +131,14 @@ namespace CEMSStudyApp.Pages
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
                     break;
-                case "Part 63":
+                case "Part 63 Subpart UUUUU":
                     Hide();
-                    Part63 part63 = new Part63();
+                    Part63_Subpart_UUUUU part63 = new Part63_Subpart_UUUUU();
                     part63.Show();
                     break;
-                case "Part 75":
+                case "Part 75 Plain English":
                     Hide();
-                    Part75 part75 = new Part75();
+                    Part75_PE part75 = new Part75_PE();
                     part75.Show();
                     break;
                 case "Unit of Measure":

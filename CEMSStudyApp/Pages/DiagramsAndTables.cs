@@ -127,6 +127,7 @@ namespace CEMSStudyApp.Pages
             textBoxDiagramsAndTables_Name.Text = aDataTable.Tables[0].Rows[newIndex]["Table_Name"].ToString();
             textBoxDiagramsAndTables_Description.Text = aDataTable.Tables[0].Rows[newIndex]["Table_Description"].ToString();
             string exePath = Application.StartupPath + @"\Images\";
+            string pdfPath = Application.StartupPath + @"\Part63_Files\";
             var fileNameFromDbImage = aDataTable.Tables[0].Rows[newIndex]["Table_FileLocation"].ToString();
             var fileNameFromDbPdf = aDataTable.Tables[0].Rows[newIndex]["Pdf_FileLocation"].ToString();
             string path;
@@ -138,11 +139,10 @@ namespace CEMSStudyApp.Pages
                 webBrowserPdf.Show();
 
 
-                path = exePath + fileNameFromDbPdf; //PATH STRING
+                path = pdfPath + fileNameFromDbPdf; //PATH STRING
                 path = path.Replace(@"\", "/");
                 webBrowserPdf?.Navigate(new Uri(path));
 
-                //webBrowserPdf.Navigate(new Uri(path));
             }
             else
             {
@@ -209,22 +209,22 @@ namespace CEMSStudyApp.Pages
                     MainMenu mainMenu = new MainMenu();
                     mainMenu.Show();
                     break;
-                case "Part 63":
+                case "Part 63 Subpart UUUUU":
                     Hide();
-                    Part60 part60 = new Part60();
-                    part60.Show();
+                    Part63_Subpart_UUUUU part63 = new Part63_Subpart_UUUUU();
+                    part63.Show();
                     break;
-                case "Part 75":
+                case "Part 75 Plain English":
                     Hide();
-                    Part75 part75 = new Part75();
-                    part75.Show();
+                    Part75_PE part75_Pe = new Part75_PE();
+                    part75_Pe.Show();
                     break;
                 case "Unit of Measure":
                     Hide();
                     UnitOfMeasure unitOfMeasure = new UnitOfMeasure();
                     unitOfMeasure.Show();
                     break;
-                case "Part 60":
+                case "Part 60 Appendix B, F":
                     Hide();
                     Part60 p60 = new Part60();
                     p60.Show();

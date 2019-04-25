@@ -14,13 +14,14 @@ namespace CEMSStudyApp.Pages
             if (e.KeyChar == (char) Keys.Enter)
             {
                 var password = "111";
+                PasswordsLogin pw = new PasswordsLogin();
 
                 if (textBoxPassword.Text != password)
                 {
                     MessageBox.Show("Incorrect Password!!", "CEMS Study App", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
                     Hide();
-                    var pl = new PasswordsLogin(false);
+                    var pl = new PasswordsLogin();
                     pl.Show();
                 }
 
@@ -31,8 +32,11 @@ namespace CEMSStudyApp.Pages
                 if (openDb == DialogResult.Yes)
                 {
                     Hide();
+                    pw.Hide();
                     var export = new ExportDb();
                     export.Show();
+                    export.TopMost = true;
+
                     return;
                 }
 
@@ -44,16 +48,17 @@ namespace CEMSStudyApp.Pages
                 if (openHyperlink == DialogResult.Yes)
                 {
                     Hide();
+                    pw.Hide();
                     var rpl = new RemovePdfLinks();
                     rpl.Show();
+                    rpl.TopMost = true;
                     return;
                 }
 
                 //DEFAULTS BACK TO PASSWORD SCREEN
                 Hide();
-                var passLog = new PasswordsLogin(false);
-                passLog.Show();
-
+                PasswordsLogin passwordsLoginl = new PasswordsLogin();
+                passwordsLoginl.Hide();
             }
         }
     }

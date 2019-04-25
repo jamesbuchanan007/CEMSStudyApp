@@ -94,7 +94,7 @@ namespace CEMSStudyApp.Pages
             else
             {
                 Hide();
-                var pw = new PasswordsLogin(false);
+                var pw = new PasswordsLogin();
                 pw.Show();
             }
         }
@@ -148,7 +148,7 @@ namespace CEMSStudyApp.Pages
 
 
             Hide();
-            PasswordsLogin pl = new PasswordsLogin(false);
+            PasswordsLogin pl = new PasswordsLogin();
             pl.Show();
         }
 

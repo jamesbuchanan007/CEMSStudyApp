@@ -14,11 +14,12 @@ namespace CEMSStudyApp.Pages
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Exit Application?", "CEMS Study App", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dr = MessageBox.Show("Exit Hyperlink Removal Process?", "CEMS Study App", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
 
             if (dr == DialogResult.Yes)
             {
-                Application.Exit();
+                Hide();
             }
         }
 

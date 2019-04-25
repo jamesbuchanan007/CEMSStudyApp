@@ -17,7 +17,7 @@ namespace CEMSStudyApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Pages.MainMenu());
+            Application.Run(new Pages.MainDashboard());
         }
 
         

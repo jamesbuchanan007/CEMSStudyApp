@@ -14,7 +14,7 @@ namespace CEMSStudyApp.Pages
         public bool wantsToEditPassword { get; set; }
         public string userName { get; set; }
 
-        public PasswordsLogin(bool locked)
+        public PasswordsLogin()
         {
             InitializeComponent();
 
@@ -22,16 +22,6 @@ namespace CEMSStudyApp.Pages
             AcceptButton = buttonSubmit;
 
             DisableTextboxes();
-            if (locked)
-            {
-                textBoxPassword.Enabled = false;
-                textBoxPassword.ReadOnly = true;
-            }
-            else
-            {
-                textBoxPassword.Enabled = true;
-                textBoxPassword.ReadOnly = false;
-            }
 
             buttonUpdate.Enabled = true;
 
@@ -48,7 +38,7 @@ namespace CEMSStudyApp.Pages
 
         public void buttonSubmit_Click(object sender, EventArgs e)
         {
-            if (textBoxPassword.Visible == false) return;
+            if (textBoxPassword.Enabled == false) return;
 
             //IF ENTERING ONLY PASSWORD
             if (!wantsToEditPassword)
@@ -91,25 +81,17 @@ namespace CEMSStudyApp.Pages
                     return;
                 }
 
-                PasswordsLoginViewModel vm = new PasswordsLoginViewModel
-                {
-                    UserName = textBoxUserName.Text,
-                    Password = textBoxNewPassword1.Text,
-                    DateAdded = DateTime.Now,
-                    IsActive = 1
-                };
-
-                userName = vm.UserName;
+                userName = textBoxUserName.Text;
 
                 var format = "yyyy-MM-dd HH:mm:ss";
 
                 SqlConnection connection;
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 var sql = "INSERT into PasswordsLogin (Password,Date_Added,Is_Active,User_Name) Values('" +
-                    vm.Password + "'" + "," + "'" +
-                    vm.DateAdded.ToString(format) + "'" + "," +
-                    vm.IsActive + "," + "'" +
-                    vm.UserName + "')";
+                          textBoxNewPassword1.Text + "'" + "," + "'" +
+                          DateTime.Now.ToString(format) + "'" + "," +
+                          1 + "," + "'" +
+                          textBoxUserName.Text + "')";
 
                 //SET CONNECTION STRING IN PROJECT > APP PROPERTIES > SETTINGS
                 var connectionString = Settings.Default.LocalDb;
@@ -180,6 +162,7 @@ namespace CEMSStudyApp.Pages
             textBoxUserName.Enabled = false;
             textBoxUserName.ReadOnly = true;
         }
+
         private void EnableTextboxes()
         {
             textBoxPassword.Enabled = true;
@@ -194,23 +177,14 @@ namespace CEMSStudyApp.Pages
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            wantsToEditPassword = true;
             buttonUpdate.Hide();
             EnableTextboxes();
         }
 
-        private void buttonDatabase_Click(object sender, EventArgs e)
+        private void buttonAdmin_Click(object sender, EventArgs e)
         {
-            Hide();
             var dbp = new DbPassword();
-            dbp.Show();
-        }
-
-        private void buttonHyperlinks_Click(object sender, EventArgs e)
-        {
-            Hide();
-            var dbp = new DbPassword();
-            dbp.Show();
+            dbp.ShowDialog();
         }
     }
 }

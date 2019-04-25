@@ -69,22 +69,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\Part63_Subpart_UUUUU.cs">
+    <Compile Include="Pages\MainDashboard.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Pages\Part63_Subpart_UUUUU.Designer.cs">
-      <DependentUpon>Part63_Subpart_UUUUU.cs</DependentUpon>
+    <Compile Include="Pages\MainDashboard.Designer.cs">
+      <DependentUpon>MainDashboard.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Pages\Part75_PE.cs">
-      <SubType>Form</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Pages\Part75_PE.Designer.cs">
-      <DependentUpon>Part75_PE.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
+    <Compile Include="Models\DashboardViewModel.cs" />
     <Compile Include="Pages\RemovePdfLinks.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -93,32 +86,6 @@
       <DependentUpon>RemovePdfLinks.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Pages\Part60.cs">
-      <SubType>Form</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Pages\Part60.Designer.cs">
-      <DependentUpon>Part60.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Pages\DiagramsAndTables.cs">
-      <SubType>Form</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Pages\DiagramsAndTables.Designer.cs">
-      <DependentUpon>DiagramsAndTables.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Models\DiagramsAndTablesViewModel.cs" />
-    <Compile Include="Pages\UnitOfMeasure.cs">
-      <SubType>Form</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Pages\UnitOfMeasure.Designer.cs">
-      <DependentUpon>UnitOfMeasure.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Models\UnitOfMeasureViewModel.cs" />
     <Compile Include="Pages\DbPassword.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -135,14 +102,6 @@
       <DependentUpon>ExportDb.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Models\PasswordsLoginViewModel.cs" />
-    <Compile Include="Models\AcronymsViewModel.cs" />
-    <Compile Include="Models\FormulasViewModel.cs" />
-    <Compile Include="Models\HowTosViewModel.cs" />
-    <Compile Include="Models\MainLogViewModel.cs" />
-    <Compile Include="Models\PagesViewModel.cs" />
-    <Compile Include="Models\Part60ViewModel.cs" />
-    <Compile Include="Models\Part75ViewModel.cs" />
     <Compile Include="Pages\PasswordsLogin.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -151,63 +110,15 @@
       <DependentUpon>PasswordsLogin.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Pages\HowTos.cs">
-      <SubType>Form</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Pages\HowTos.Designer.cs">
-      <DependentUpon>HowTos.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Pages\Acronyms.cs">
-      <SubType>Form</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Pages\Acronyms.Designer.cs">
-      <DependentUpon>Acronyms.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Pages\Formulas.cs">
-      <SubType>Form</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Pages\Formulas.Designer.cs">
-      <DependentUpon>Formulas.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Pages\MainMenu.cs">
-      <SubType>Form</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Pages\MainMenu.Designer.cs">
-      <DependentUpon>MainMenu.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <EmbeddedResource Include="Pages\Part63_Subpart_UUUUU.resx">
-      <DependentUpon>Part63_Subpart_UUUUU.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Part75_PE.resx">
-      <DependentUpon>Part75_PE.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\MainDashboard.resx">
+      <DependentUpon>MainDashboard.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\RemovePdfLinks.resx">
       <DependentUpon>RemovePdfLinks.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Part60.resx">
-      <DependentUpon>Part60.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\DiagramsAndTables.resx">
-      <DependentUpon>DiagramsAndTables.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\UnitOfMeasure.resx">
-      <DependentUpon>UnitOfMeasure.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\DbPassword.resx">
@@ -220,22 +131,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\PasswordsLogin.resx">
       <DependentUpon>PasswordsLogin.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\HowTos.resx">
-      <DependentUpon>HowTos.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Acronyms.resx">
-      <DependentUpon>Acronyms.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Formulas.resx">
-      <DependentUpon>Formulas.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\MainMenu.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

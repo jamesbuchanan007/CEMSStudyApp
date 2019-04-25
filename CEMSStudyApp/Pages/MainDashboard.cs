@@ -115,16 +115,45 @@ namespace CEMSStudyApp.Pages
             labelSectionSubHeading.Text = dashboardDictionary[index].Section_Name;
 
             //LOAD MAIN VIEWER
-            if (string.IsNullOrEmpty(dashboardDictionary[index].File_Location))
+            if (string.IsNullOrEmpty(dashboardDictionary[index].File_Location)) //FILE LOCATION IN DB
             {
-                textBoxDefinitions.Hide();
-                webBrowserPdf.Hide();
-                textBoxDefinitions.Text = dashboardDictionary[index].Definition;
+                switch (dashboardDictionary[index].Heading)
+                {
+                    //ENABLE STUDYING OF ACRONYMS, FORMULAS, AND UNITS OF MEASURE PRIOR TO SEEING ANSWER
+                    case "Acronyms":
+                    case "Units of Measure":
+                        textBoxDefinitions.Hide();
+                        webBrowserPdf.Hide();
+                        buttonToggle.Text = "Show";
+                        textBoxDefinitions.Text = dashboardDictionary[index].Definition;
+                        break;
+                    default:
+                        textBoxDefinitions.Show();
+                        webBrowserPdf.Hide();
+                        buttonToggle.Text = "Hide";
+                        textBoxDefinitions.Text = dashboardDictionary[index].Definition;
+                        break;
+                }
             }
+            //FILE LOCATION IN APP
             else
             {
-                textBoxDefinitions.Hide();
-                webBrowserPdf.Hide();
+                switch (dashboardDictionary[index].Heading)
+                {
+                    //ENABLE STUDYING OF ACRONYMS, FORMULAS, AND UNITS OF MEASURE PRIOR TO SEEING ANSWER
+                    case "Formulas":
+                    case "Software Questions":
+                    case "Technical Questions":
+                        textBoxDefinitions.Hide();
+                        webBrowserPdf.Hide();
+                        buttonToggle.Text = "Show";
+                        break;
+                    default:
+                        textBoxDefinitions.Hide();
+                        webBrowserPdf.Show();
+                        buttonToggle.Text = "Hide";
+                        break;
+                }
 
                 string exePath = Application.StartupPath + @"\" + folderName + @"\";
                 var fileName = dashboardDictionary[index].File_Location;
@@ -174,6 +203,7 @@ namespace CEMSStudyApp.Pages
         private void buttonBack_Click(object sender, EventArgs e)
         {
             var index = comboBoxSectionNumber.SelectedIndex;
+            if (index == -1) return;
 
             if (dashboardDictionary.Count == 0) return;
 
@@ -189,8 +219,10 @@ namespace CEMSStudyApp.Pages
         private void buttonNext_Click(object sender, EventArgs e)
         {
             var index = comboBoxSectionNumber.SelectedIndex;
+            if (index == -1) return;
 
-            if (dashboardDictionary.Count == 0) return;
+
+            if (dashboardDictionary.Count == 0 || index == -1) return;
 
             var newIndex = index + 1;
 

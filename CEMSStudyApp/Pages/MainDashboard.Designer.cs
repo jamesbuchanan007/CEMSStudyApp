@@ -323,11 +323,11 @@ namespace CEMSStudyApp.Pages
             this.comboBoxSectionNumber.DisplayMember = "Part_60_Number";
             this.comboBoxSectionNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSectionNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxSectionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSectionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSectionNumber.FormattingEnabled = true;
             this.comboBoxSectionNumber.Location = new System.Drawing.Point(221, 138);
             this.comboBoxSectionNumber.Name = "comboBoxSectionNumber";
-            this.comboBoxSectionNumber.Size = new System.Drawing.Size(884, 24);
+            this.comboBoxSectionNumber.Size = new System.Drawing.Size(884, 28);
             this.comboBoxSectionNumber.TabIndex = 45;
             this.comboBoxSectionNumber.SelectedIndexChanged += new System.EventHandler(this.comboBoxSectionNumber_SelectedIndexChanged);
             // 

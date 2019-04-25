@@ -167,10 +167,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Copied Pages\" />
+    <Folder Include="Definitions_Files\" />
     <Folder Include="Images\" />
     <Folder Include="Part60_Files\" />
     <Folder Include="Part63_Files\" />
     <Folder Include="Part75_PlainEnglish_Files\" />
+    <Folder Include="Software_Questions_Files\" />
+    <Folder Include="Technical_Questions_Files\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

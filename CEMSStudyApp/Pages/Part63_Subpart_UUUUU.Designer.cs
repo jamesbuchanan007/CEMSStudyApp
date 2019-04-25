@@ -166,6 +166,7 @@ namespace CEMSStudyApp.Pages
             this.comboBoxSectionNumber.Name = "comboBoxSectionNumber";
             this.comboBoxSectionNumber.Size = new System.Drawing.Size(884, 24);
             this.comboBoxSectionNumber.TabIndex = 26;
+            this.comboBoxSectionNumber.SelectedIndexChanged += new System.EventHandler(this.comboBoxSectionNumber_SelectedIndexChanged);
             // 
             // Part63_Subpart_UUUUU
             // 

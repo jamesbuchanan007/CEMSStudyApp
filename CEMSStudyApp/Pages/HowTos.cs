@@ -136,7 +136,7 @@ namespace CEMSStudyApp.Pages
                     DiagramsAndTables dt = new DiagramsAndTables();
                     dt.Show();
                     break;
-                case "Part 60":
+                case "Part 60 Appendix B, F":
                     Hide();
                     Part60 p60 = new Part60();
                     p60.Show();

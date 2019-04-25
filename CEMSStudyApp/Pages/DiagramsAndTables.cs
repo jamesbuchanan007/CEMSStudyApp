@@ -229,6 +229,11 @@ namespace CEMSStudyApp.Pages
                     Part60 p60 = new Part60();
                     p60.Show();
                     break;
+                case "Acronyms":
+                    Hide();
+                    Acronyms acronyms = new Acronyms();
+                    acronyms.Show();
+                    break;
 
             }
 

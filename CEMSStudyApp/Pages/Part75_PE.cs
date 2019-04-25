@@ -110,7 +110,7 @@ namespace CEMSStudyApp.Pages
                     HowTos howTos = new HowTos();
                     howTos.Show();
                     break;
-                case "Part 60":
+                case "Part 60 Appendix B, F":
                     Hide();
                     Part60 part60 = new Part60();
                     part60.Show();
@@ -162,8 +162,8 @@ namespace CEMSStudyApp.Pages
 
         private void ChangeRecord(int newIndex, DataSet p75PEDataSet)
         {
-            textBoxSectionName.Text = p75PEDataSet.Tables[0].Rows[newIndex]["Part75_PE_SectionName"].ToString();
-            var Part75_PEAppendixNumber = p75PEDataSet.Tables[0].Rows[newIndex]["Part75_PE_SectionNumber"].ToString();
+            textBoxSectionName.Text = p75PEDataSet.Tables[0].Rows[newIndex]["Part75_PE_SectionNumber"].ToString();
+            var Part75_PEAppendixNumber = p75PEDataSet.Tables[0].Rows[newIndex]["Part75_PE_SectionName"].ToString();
             comboBoxSectionNumber.SelectedIndex = comboBoxSectionNumber.FindString(Part75_PEAppendixNumber);
 
             buttonToggle.Text = @"Hide";
@@ -207,7 +207,7 @@ namespace CEMSStudyApp.Pages
             var aDataSet = LoadTable("Part75New");
             comboBoxSectionNumber.DataSource = aDataSet.Tables[0];
             comboBoxSectionNumber.ValueMember = "Part75_PE_Id";
-            comboBoxSectionNumber.DisplayMember = "Part75_PE_Number";
+            comboBoxSectionNumber.DisplayMember = "Part75_PE_SectionName";
 
             //LOAD TEXTBOXES
             if (aDataSet.Tables[0].Rows.Count == 0) return;

@@ -32,7 +32,7 @@ namespace CEMSStudyApp.Pages
             }
 
             //REMOVE FROM DICTIONARY
-            var pageName = "UnitOfMeasure";
+            var pageName = "Unit of Measure";
             var item = comboDictionary.First(q => q.Value == pageName);
             comboDictionary.Remove(item.Key);
 
@@ -412,7 +412,7 @@ namespace CEMSStudyApp.Pages
                     DiagramsAndTables dt = new DiagramsAndTables();
                     dt.Show();
                     break;
-                case "Part 60":
+                case "Part 60 Appendix B, F":
                     Hide();
                     Part60 p60 = new Part60();
                     p60.Show();

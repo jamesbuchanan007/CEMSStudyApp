@@ -24,7 +24,7 @@ namespace CEMSStudyApp.Pages
                 comboDictionary.Add((int)pagesDataSet.Tables[0].Rows[i]["Pages_Id"], pagesDataSet.Tables[0].Rows[i]["Pages_Name"].ToString());
             }
 
-            var pageName = "Part 60";
+            var pageName = "Part 60 Appendix B, F";
             var item = comboDictionary.First(q => q.Value == pageName);
             comboDictionary.Remove(item.Key);  //REMOVE PART60 SELECTION
 
@@ -110,7 +110,7 @@ namespace CEMSStudyApp.Pages
                     HowTos howTos = new HowTos();
                     howTos.Show();
                     break;
-                case "Part 75":
+                case "Part 75 Plain English":
                     Hide();
                     Part75_PE part75_Pe = new Part75_PE();
                     part75_Pe.Show();

@@ -192,15 +192,6 @@ namespace CEMSStudyApp.Pages
 
         }
 
-        private void comboBoxSectionNumber_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var Part63_AppendixDataSet = LoadTable("Part63_Subpart_UUUUU");
-            var index = comboBoxSectionNumber.SelectedIndex;
-
-            if (Part63_AppendixDataSet.Tables[0].Rows.Count == 0) return;
-            ChangeRecord(index, Part63_AppendixDataSet);
-        }
-
         private void LoadComboboxTextbox()
         {
             //LOAD COMBOBOX 
@@ -212,6 +203,15 @@ namespace CEMSStudyApp.Pages
             //LOAD TEXTBOXES
             if (aDataSet.Tables[0].Rows.Count == 0) return;
             ChangeRecord(0, aDataSet);
+        }
+
+        private void comboBoxSectionNumber_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var Part63_AppendixDataSet = LoadTable("Part63_Subpart_UUUUU");
+            var index = comboBoxSectionNumber.SelectedIndex;
+
+            if (Part63_AppendixDataSet.Tables[0].Rows.Count == 0) return;
+            ChangeRecord(index, Part63_AppendixDataSet);
         }
     }
 }

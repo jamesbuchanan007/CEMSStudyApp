@@ -72,6 +72,7 @@ namespace CEMSStudyApp.Pages
             }
             
         }
+
         private void RemoveAnnotations(string inputPath, string outputPath)
         {
             PdfReader pdfReader = new PdfReader(inputPath);

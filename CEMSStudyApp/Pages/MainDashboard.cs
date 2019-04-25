@@ -117,10 +117,15 @@ namespace CEMSStudyApp.Pages
             //LOAD MAIN VIEWER
             if (string.IsNullOrEmpty(dashboardDictionary[index].File_Location))
             {
+                textBoxDefinitions.Hide();
+                webBrowserPdf.Hide();
                 textBoxDefinitions.Text = dashboardDictionary[index].Definition;
             }
             else
             {
+                textBoxDefinitions.Hide();
+                webBrowserPdf.Hide();
+
                 string exePath = Application.StartupPath + @"\" + folderName + @"\";
                 var fileName = dashboardDictionary[index].File_Location;
                 var path = exePath + fileName + ".pdf"; //PATH STRING

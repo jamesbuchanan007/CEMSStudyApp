@@ -127,7 +127,7 @@ namespace CEMSStudyApp.Pages
             pictureBoxMain.Hide();
 
             //LOAD MAIN HEADING
-            labelSectionHeading.Text = dashboardDictionary[index].Heading;
+            textBoxSectionHeading.Text = dashboardDictionary[index].Heading;
 
             //LOAD SUB HEADING
             labelSectionSubHeading.Text = dashboardDictionary[index].Section_Name;

@@ -31,9 +31,11 @@ namespace CEMSStudyApp.Pages
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DbPassword));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +58,7 @@ namespace CEMSStudyApp.Pages
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(155, 20);
             this.textBoxPassword.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.textBoxPassword, "Enter Password then ENTER");
             this.textBoxPassword.UseSystemPasswordChar = true;
             this.textBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPassword_KeyPress);
             // 
@@ -80,6 +83,7 @@ namespace CEMSStudyApp.Pages
 
         private PictureBox pictureBox1;
         private TextBox textBoxPassword;
+        private ToolTip toolTip1;
     }
 }
 

@@ -920,6 +920,7 @@
       <DependentUpon>CEMS_Study_App_db.mdf</DependentUpon>
     </Content>
     <Content Include="icons8_factory_64_QmM_icon.ico" />
+    <None Include="Resources\icons8_factory_64_QmM_icon.ico" />
     <None Include="Images\AppLogo.png" />
   </ItemGroup>
   <ItemGroup>

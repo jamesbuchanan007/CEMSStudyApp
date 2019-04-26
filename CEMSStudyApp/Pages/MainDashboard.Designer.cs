@@ -31,6 +31,7 @@ namespace CEMSStudyApp.Pages
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDashboard));
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonDefinitions = new System.Windows.Forms.Button();
@@ -55,6 +56,7 @@ namespace CEMSStudyApp.Pages
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.textBoxSectionHeading = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -107,6 +109,7 @@ namespace CEMSStudyApp.Pages
             this.buttonDefinitions.Size = new System.Drawing.Size(110, 47);
             this.buttonDefinitions.TabIndex = 2;
             this.buttonDefinitions.Text = "Definitions";
+            this.toolTip1.SetToolTip(this.buttonDefinitions, "Definitions");
             this.buttonDefinitions.UseVisualStyleBackColor = false;
             // 
             // pictureBoxMain
@@ -147,6 +150,7 @@ namespace CEMSStudyApp.Pages
             this.buttonTechQuestions.Size = new System.Drawing.Size(110, 47);
             this.buttonTechQuestions.TabIndex = 10;
             this.buttonTechQuestions.Text = "Tech Questions";
+            this.toolTip1.SetToolTip(this.buttonTechQuestions, "Technical Test Questions");
             this.buttonTechQuestions.UseVisualStyleBackColor = false;
             // 
             // buttonSoftwareQuestions
@@ -163,6 +167,7 @@ namespace CEMSStudyApp.Pages
             this.buttonSoftwareQuestions.Size = new System.Drawing.Size(110, 47);
             this.buttonSoftwareQuestions.TabIndex = 9;
             this.buttonSoftwareQuestions.Text = "Software Questions";
+            this.toolTip1.SetToolTip(this.buttonSoftwareQuestions, "Software Test Questions");
             this.buttonSoftwareQuestions.UseVisualStyleBackColor = false;
             // 
             // labelSectionSubHeading
@@ -204,6 +209,7 @@ namespace CEMSStudyApp.Pages
             this.buttonAdmin.Size = new System.Drawing.Size(110, 47);
             this.buttonAdmin.TabIndex = 16;
             this.buttonAdmin.Text = "Admin";
+            this.toolTip1.SetToolTip(this.buttonAdmin, "Admin Functions");
             this.buttonAdmin.UseVisualStyleBackColor = false;
             this.buttonAdmin.Click += new System.EventHandler(this.buttonAdmin_Click);
             // 
@@ -220,6 +226,7 @@ namespace CEMSStudyApp.Pages
             this.buttonUnitsOfMeasure.Size = new System.Drawing.Size(110, 47);
             this.buttonUnitsOfMeasure.TabIndex = 8;
             this.buttonUnitsOfMeasure.Text = "Units of Measure";
+            this.toolTip1.SetToolTip(this.buttonUnitsOfMeasure, "Units of Measure");
             this.buttonUnitsOfMeasure.UseVisualStyleBackColor = false;
             this.buttonUnitsOfMeasure.Click += new System.EventHandler(this.buttonUnitsOfMeasure_Click);
             // 
@@ -236,6 +243,7 @@ namespace CEMSStudyApp.Pages
             this.buttonPart75PlainEnglish.Size = new System.Drawing.Size(110, 47);
             this.buttonPart75PlainEnglish.TabIndex = 7;
             this.buttonPart75PlainEnglish.Text = "Part 75\r\nPlain English";
+            this.toolTip1.SetToolTip(this.buttonPart75PlainEnglish, "Part 75 Plain English Version");
             this.buttonPart75PlainEnglish.UseVisualStyleBackColor = false;
             this.buttonPart75PlainEnglish.Click += new System.EventHandler(this.buttonPart75PlainEnglish_Click);
             // 
@@ -252,6 +260,7 @@ namespace CEMSStudyApp.Pages
             this.buttonPart63SubUUUUU.Size = new System.Drawing.Size(110, 47);
             this.buttonPart63SubUUUUU.TabIndex = 6;
             this.buttonPart63SubUUUUU.Text = "Part 63\r\nSubpart UUUUU";
+            this.toolTip1.SetToolTip(this.buttonPart63SubUUUUU, "Part 63 Subpart UUUUU");
             this.buttonPart63SubUUUUU.UseVisualStyleBackColor = false;
             this.buttonPart63SubUUUUU.Click += new System.EventHandler(this.buttonPart63SubUUUUU_Click);
             // 
@@ -268,6 +277,7 @@ namespace CEMSStudyApp.Pages
             this.button60AppBF.Size = new System.Drawing.Size(110, 47);
             this.button60AppBF.TabIndex = 5;
             this.button60AppBF.Text = "Part 60\r\nAppendix B and F";
+            this.toolTip1.SetToolTip(this.button60AppBF, "Part 60 Appendix B and F");
             this.button60AppBF.UseVisualStyleBackColor = false;
             this.button60AppBF.Click += new System.EventHandler(this.button60AppBF_Click);
             // 
@@ -285,6 +295,7 @@ namespace CEMSStudyApp.Pages
             this.buttonHowTos.Size = new System.Drawing.Size(110, 47);
             this.buttonHowTos.TabIndex = 4;
             this.buttonHowTos.Text = "How To\'s";
+            this.toolTip1.SetToolTip(this.buttonHowTos, "\'How To\' Documentation");
             this.buttonHowTos.UseVisualStyleBackColor = false;
             // 
             // buttonFormulas
@@ -301,6 +312,7 @@ namespace CEMSStudyApp.Pages
             this.buttonFormulas.Size = new System.Drawing.Size(110, 47);
             this.buttonFormulas.TabIndex = 3;
             this.buttonFormulas.Text = "Formulas";
+            this.toolTip1.SetToolTip(this.buttonFormulas, "Formulas");
             this.buttonFormulas.UseVisualStyleBackColor = false;
             this.buttonFormulas.Click += new System.EventHandler(this.buttonFormulas_Click);
             // 
@@ -317,6 +329,7 @@ namespace CEMSStudyApp.Pages
             this.buttonAcronyms.Size = new System.Drawing.Size(110, 47);
             this.buttonAcronyms.TabIndex = 1;
             this.buttonAcronyms.Text = "Acronyms";
+            this.toolTip1.SetToolTip(this.buttonAcronyms, "Acronyms");
             this.buttonAcronyms.UseVisualStyleBackColor = false;
             this.buttonAcronyms.Click += new System.EventHandler(this.buttonAcronyms_Click);
             // 
@@ -358,6 +371,7 @@ namespace CEMSStudyApp.Pages
             this.buttonExit.TabIndex = 15;
             this.buttonExit.Tag = "Exit Application";
             this.buttonExit.Text = "Exit";
+            this.toolTip1.SetToolTip(this.buttonExit, "Exit Application");
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
@@ -375,6 +389,7 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle.TabIndex = 14;
             this.buttonToggle.Tag = "Click to toggle Answer";
             this.buttonToggle.Text = "Show";
+            this.toolTip1.SetToolTip(this.buttonToggle, "Show / Hide");
             this.buttonToggle.UseVisualStyleBackColor = false;
             this.buttonToggle.Visible = false;
             this.buttonToggle.Click += new System.EventHandler(this.buttonToggle_Click);
@@ -393,6 +408,7 @@ namespace CEMSStudyApp.Pages
             this.buttonNext.TabIndex = 13;
             this.buttonNext.Tag = "Next Question";
             this.buttonNext.Text = ">>";
+            this.toolTip1.SetToolTip(this.buttonNext, "Next");
             this.buttonNext.UseVisualStyleBackColor = false;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
@@ -410,6 +426,7 @@ namespace CEMSStudyApp.Pages
             this.buttonBack.TabIndex = 12;
             this.buttonBack.Tag = "Previous Question";
             this.buttonBack.Text = "<<";
+            this.toolTip1.SetToolTip(this.buttonBack, "Previous");
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
@@ -474,5 +491,6 @@ namespace CEMSStudyApp.Pages
         private Button buttonNext;
         private Button buttonBack;
         private TextBox textBoxSectionHeading;
+        private ToolTip toolTip1;
     }
 }

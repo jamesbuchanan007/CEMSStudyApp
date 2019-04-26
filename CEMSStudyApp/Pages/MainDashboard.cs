@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 using CEMSStudyApp.Models;
 using CEMSStudyApp.Properties;
@@ -172,6 +175,7 @@ namespace CEMSStudyApp.Pages
                         buttonToggle.Text = "Hide";
                         break;
                 }
+
 
                 string exePath = Application.StartupPath + @"\" + folderName + @"\";
                 var fileName = dashboardDictionary[index].File_Location;

@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 using CEMSStudyApp.Models;
 using CEMSStudyApp.Properties;
+using Microsoft.Win32;
 
 namespace CEMSStudyApp.Pages
 {
@@ -18,6 +20,10 @@ namespace CEMSStudyApp.Pages
         {
             InitializeComponent(); //LOAD COMBOBOX PAGES
 
+            this.Font = SystemFonts.IconTitleFont;
+            SystemEvents.UserPreferenceChanged += new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
+            this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
+
             buttonToggle.Show();
             buttonToggle.Text = "Show";
 
@@ -27,6 +33,18 @@ namespace CEMSStudyApp.Pages
 
             webBrowserPdf.Hide();
             textBoxDefinitions.Hide();
+        }
+
+        void SystemEvents_UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
+        {
+            if (e.Category == UserPreferenceCategory.Window)
+            {
+                this.Font = SystemFonts.IconTitleFont;
+            }
+        }
+        void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SystemEvents.UserPreferenceChanged -= new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
         }
 
         //CONNECTS TO DB AND LOADS DATA SET
@@ -289,6 +307,11 @@ namespace CEMSStudyApp.Pages
         {
             PasswordsLogin pw = new PasswordsLogin();
             pw.ShowDialog();
+        }
+
+        private void MainDashboard_Load(object sender, EventArgs e)
+        {
+            AutoSize = true;
         }
     }
 }

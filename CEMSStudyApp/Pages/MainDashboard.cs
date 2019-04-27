@@ -176,7 +176,6 @@ namespace CEMSStudyApp.Pages
                         break;
                 }
 
-
                 string exePath = Application.StartupPath + @"\" + folderName + @"\";
                 var fileName = dashboardDictionary[index].File_Location;
                 var path = exePath + fileName + ".pdf"; //PATH STRING

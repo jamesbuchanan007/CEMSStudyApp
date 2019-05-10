@@ -926,6 +926,7 @@
   <ItemGroup>
     <Folder Include="Copied Pages\" />
     <Folder Include="Definitions_Files\" />
+    <Folder Include="Part75_Files\" />
     <Folder Include="Software_Questions_Files\" />
     <Folder Include="Technical_Questions_Files\" />
   </ItemGroup>

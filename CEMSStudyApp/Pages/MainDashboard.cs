@@ -4,8 +4,10 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Runtime.Remoting.Messaging;
 using System.Windows.Forms;
 using CEMSStudyApp.Models;
 using CEMSStudyApp.Properties;
@@ -36,6 +38,7 @@ namespace CEMSStudyApp.Pages
 
             webBrowserPdf.Hide();
             textBoxDefinitions.Hide();
+            panelFormulas.Hide();
         }
 
         void SystemEvents_UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
@@ -91,7 +94,7 @@ namespace CEMSStudyApp.Pages
             string definition;
             string file_Location;
             string sectionName;
-            string sectionHeading;
+            string sectionHeading = "";
 
             //CHECK IF TABLE IS EMPTY
             if (dataSet.Tables[0].Rows.Count == 0) return;
@@ -103,6 +106,7 @@ namespace CEMSStudyApp.Pages
 
             for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
             {
+
                 sectionName = string.IsNullOrEmpty(sectionColumnName) ? "" : dataSet.Tables[0].Rows[i][sectionColumnName].ToString();
                 file_Location = string.IsNullOrEmpty(file_LocationColumnName) ? "" : dataSet.Tables[0].Rows[i][file_LocationColumnName].ToString();
                 definition = string.IsNullOrEmpty(definitionColumnName) ? "" : dataSet.Tables[0].Rows[i][definitionColumnName].ToString();
@@ -119,9 +123,13 @@ namespace CEMSStudyApp.Pages
                     Definition = definition
                 });
 
+                if (sectionHeading == "Formulas") return;
+
                 //LOAD DROPDOWN DICTIONARY
                 dropDownDictionary.Add(i, dataSet.Tables[0].Rows[i][sectionNumber].ToString());
             }
+
+            if (sectionHeading == "Formulas") return;
 
             //LOAD DROP DOWN NAVIGATION
             comboBoxSectionNumber.DataSource = new BindingSource(dropDownDictionary, null);
@@ -139,7 +147,7 @@ namespace CEMSStudyApp.Pages
             //LOAD SUB HEADING
             labelSectionSubHeading.Text = dashboardDictionary[index].Section_Name;
 
-            //LOAD MAIN VIEWER
+            //LOAD MAIN VIEWER TYPE
             if (string.IsNullOrEmpty(dashboardDictionary[index].File_Location)) //FILE LOCATION IN DB
             {
                 switch (dashboardDictionary[index].Heading)
@@ -147,12 +155,22 @@ namespace CEMSStudyApp.Pages
                     //ENABLE STUDYING OF ACRONYMS, FORMULAS, AND UNITS OF MEASURE PRIOR TO SEEING ANSWER
                     case "Acronyms":
                     case "Units of Measure":
+                        comboBoxSectionNumber.Show();
+                        panelFormulas.Hide();
                         textBoxDefinitions.Hide();
                         webBrowserPdf.Hide();
                         buttonToggle.Text = "Show";
                         textBoxDefinitions.Text = dashboardDictionary[index].Definition;
                         break;
+                    case "Formulas":
+                        panelFormulas.Show();
+                        textBoxDefinitions.Hide();
+                        webBrowserPdf.Hide();
+                        buttonToggle.Text = "Show";
+                        comboBoxSectionNumber.Hide();
+                        break;
                     default:
+                        comboBoxSectionNumber.Show();
                         textBoxDefinitions.Show();
                         webBrowserPdf.Hide();
                         buttonToggle.Text = "Hide";
@@ -166,14 +184,17 @@ namespace CEMSStudyApp.Pages
                 switch (dashboardDictionary[index].Heading)
                 {
                     //ENABLE STUDYING OF ACRONYMS, FORMULAS, AND UNITS OF MEASURE PRIOR TO SEEING ANSWER
-                    case "Formulas":
                     case "Software Questions":
                     case "Technical Questions":
+                        comboBoxSectionNumber.Show();
+                        panelFormulas.Hide();
                         textBoxDefinitions.Hide();
                         webBrowserPdf.Hide();
                         buttonToggle.Text = "Show";
                         break;
                     default:
+                        comboBoxSectionNumber.Show();
+                        panelFormulas.Hide();
                         textBoxDefinitions.Hide();
                         webBrowserPdf.Show();
                         buttonToggle.Text = "Hide";
@@ -279,7 +300,8 @@ namespace CEMSStudyApp.Pages
         {
             var dataSet = LoadTable("Formulas");
             folderName = "";
-            LoadDashboardViewModel(dataSet, "", "Formulas_Name", "", "Formulas_Description");
+            LoadDashboardViewModel(dataSet, "Formulas_Name", "", "", "");
+            LoadDashboard(0);
         }
 
         private void button60AppBF_Click(object sender, EventArgs e)
@@ -326,6 +348,36 @@ namespace CEMSStudyApp.Pages
             var dataSet = LoadTable("Part75");
             folderName = "Part75_Files";
             LoadDashboardViewModel(dataSet, "Part75_Section_Number", "Part_75_Question_Number", "File_Location", "");
+        }
+
+        private double ConvertToDouble(string textValue, TextBox textBox)
+        {
+            if (string.IsNullOrEmpty(textValue))
+            {
+                MessageBox.Show("Please Enter Value", "CEMS Study", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox.Focus();
+                return 0;
+            }
+
+            double OutVal;
+            double.TryParse(textValue, out OutVal);
+
+            if (double.IsNaN(OutVal) || double.IsInfinity(OutVal))
+            {
+                return 0;
+            }
+            return OutVal;
+        }
+
+        private void buttonTabOilFlowCalculate_Click(object sender, EventArgs e)
+        {
+            var oilFlow = ConvertToDouble(textBoxTabOilFlowOilFlow.Text, textBoxTabOilFlowOilFlow);
+            if (oilFlow == 0) return;
+
+            var densityOfOil = ConvertToDouble(textBoxTabOilFlowDensityofOil.Text, textBoxTabOilFlowDensityofOil);
+            if (densityOfOil == 0) return;
+
+            textBoxTabOilFlowMassOilFlow.Text = (oilFlow * densityOfOil * 60).ToString(CultureInfo.InvariantCulture);
         }
     }
 }

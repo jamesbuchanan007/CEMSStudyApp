@@ -34,6 +34,40 @@ namespace CEMSStudyApp.Pages
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDashboard));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelFormulas = new System.Windows.Forms.Panel();
+            this.tabFormulasMain = new System.Windows.Forms.TabControl();
+            this.tabOilFlow = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonTabOilFlowCalculate = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxTabOilFlowMassOilFlow = new System.Windows.Forms.TextBox();
+            this.textBoxTabOilFlowDensityofOil = new System.Windows.Forms.TextBox();
+            this.textBoxTabOilFlowOilFlow = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tabCO2Gas = new System.Windows.Forms.TabPage();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.buttonTabCO2Calculate = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxTabCO2CO2TonsHr = new System.Windows.Forms.TextBox();
+            this.textBoxTabCO2GasFlow = new System.Windows.Forms.TextBox();
+            this.textBoxTabCO2CarbonContent = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tabCO2Oil = new System.Windows.Forms.TabPage();
+            this.tabCO2Flow = new System.Windows.Forms.TabPage();
+            this.tabHeatInputGas = new System.Windows.Forms.TabPage();
+            this.tabHeatInputOil = new System.Windows.Forms.TabPage();
+            this.tabHeatInputFlow = new System.Windows.Forms.TabPage();
+            this.tabSO2Gas = new System.Windows.Forms.TabPage();
             this.buttonPart75 = new System.Windows.Forms.Button();
             this.textBoxSectionHeading = new System.Windows.Forms.TextBox();
             this.buttonDefinitions = new System.Windows.Forms.Button();
@@ -58,7 +92,36 @@ namespace CEMSStudyApp.Pages
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.tabSO2Oil = new System.Windows.Forms.TabPage();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tabSO2Flow = new System.Windows.Forms.TabPage();
+            this.tabNOx = new System.Windows.Forms.TabPage();
+            this.tabFuelFactor = new System.Windows.Forms.TabPage();
+            this.tabCoal = new System.Windows.Forms.TabPage();
+            this.tabCO = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
+            this.panelFormulas.SuspendLayout();
+            this.tabFormulasMain.SuspendLayout();
+            this.tabOilFlow.SuspendLayout();
+            this.tabCO2Gas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +132,7 @@ namespace CEMSStudyApp.Pages
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.panelFormulas);
             this.panel1.Controls.Add(this.buttonPart75);
             this.panel1.Controls.Add(this.textBoxSectionHeading);
             this.panel1.Controls.Add(this.buttonDefinitions);
@@ -96,6 +160,435 @@ namespace CEMSStudyApp.Pages
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1193, 775);
             this.panel1.TabIndex = 0;
+            // 
+            // panelFormulas
+            // 
+            this.panelFormulas.Controls.Add(this.tabFormulasMain);
+            this.panelFormulas.Location = new System.Drawing.Point(200, 152);
+            this.panelFormulas.Name = "panelFormulas";
+            this.panelFormulas.Size = new System.Drawing.Size(947, 566);
+            this.panelFormulas.TabIndex = 129;
+            // 
+            // tabFormulasMain
+            // 
+            this.tabFormulasMain.Controls.Add(this.tabOilFlow);
+            this.tabFormulasMain.Controls.Add(this.tabCO2Gas);
+            this.tabFormulasMain.Controls.Add(this.tabCO2Oil);
+            this.tabFormulasMain.Controls.Add(this.tabCO2Flow);
+            this.tabFormulasMain.Controls.Add(this.tabHeatInputGas);
+            this.tabFormulasMain.Controls.Add(this.tabHeatInputOil);
+            this.tabFormulasMain.Controls.Add(this.tabHeatInputFlow);
+            this.tabFormulasMain.Controls.Add(this.tabSO2Gas);
+            this.tabFormulasMain.Controls.Add(this.tabSO2Oil);
+            this.tabFormulasMain.Controls.Add(this.tabSO2Flow);
+            this.tabFormulasMain.Controls.Add(this.tabNOx);
+            this.tabFormulasMain.Controls.Add(this.tabFuelFactor);
+            this.tabFormulasMain.Controls.Add(this.tabCoal);
+            this.tabFormulasMain.Controls.Add(this.tabCO);
+            this.tabFormulasMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabFormulasMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabFormulasMain.Location = new System.Drawing.Point(0, 0);
+            this.tabFormulasMain.Name = "tabFormulasMain";
+            this.tabFormulasMain.SelectedIndex = 0;
+            this.tabFormulasMain.Size = new System.Drawing.Size(947, 566);
+            this.tabFormulasMain.TabIndex = 0;
+            // 
+            // tabOilFlow
+            // 
+            this.tabOilFlow.BackColor = System.Drawing.Color.Ivory;
+            this.tabOilFlow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabOilFlow.Controls.Add(this.textBox1);
+            this.tabOilFlow.Controls.Add(this.buttonTabOilFlowCalculate);
+            this.tabOilFlow.Controls.Add(this.label9);
+            this.tabOilFlow.Controls.Add(this.textBoxTabOilFlowMassOilFlow);
+            this.tabOilFlow.Controls.Add(this.textBoxTabOilFlowDensityofOil);
+            this.tabOilFlow.Controls.Add(this.textBoxTabOilFlowOilFlow);
+            this.tabOilFlow.Controls.Add(this.label8);
+            this.tabOilFlow.Controls.Add(this.label7);
+            this.tabOilFlow.Controls.Add(this.label6);
+            this.tabOilFlow.Controls.Add(this.label5);
+            this.tabOilFlow.Controls.Add(this.label4);
+            this.tabOilFlow.Controls.Add(this.label3);
+            this.tabOilFlow.Controls.Add(this.label2);
+            this.tabOilFlow.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabOilFlow.Location = new System.Drawing.Point(4, 22);
+            this.tabOilFlow.Name = "tabOilFlow";
+            this.tabOilFlow.Padding = new System.Windows.Forms.Padding(3);
+            this.tabOilFlow.Size = new System.Drawing.Size(939, 540);
+            this.tabOilFlow.TabIndex = 0;
+            this.tabOilFlow.Text = "Oil Flow";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.BackColor = System.Drawing.Color.Blue;
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(5, 16);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(927, 29);
+            this.textBox1.TabIndex = 13;
+            this.textBox1.Text = "Calculate the Mass Flow of OIL";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // buttonTabOilFlowCalculate
+            // 
+            this.buttonTabOilFlowCalculate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabOilFlowCalculate.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonTabOilFlowCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabOilFlowCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabOilFlowCalculate.ForeColor = System.Drawing.Color.White;
+            this.buttonTabOilFlowCalculate.Location = new System.Drawing.Point(591, 255);
+            this.buttonTabOilFlowCalculate.Name = "buttonTabOilFlowCalculate";
+            this.buttonTabOilFlowCalculate.Size = new System.Drawing.Size(75, 34);
+            this.buttonTabOilFlowCalculate.TabIndex = 12;
+            this.buttonTabOilFlowCalculate.Text = "Calculate";
+            this.buttonTabOilFlowCalculate.UseVisualStyleBackColor = false;
+            this.buttonTabOilFlowCalculate.Click += new System.EventHandler(this.buttonTabOilFlowCalculate_Click);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(415, 214);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(151, 16);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Mass Oi Flow lb/hr = ";
+            // 
+            // textBoxTabOilFlowMassOilFlow
+            // 
+            this.textBoxTabOilFlowMassOilFlow.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabOilFlowMassOilFlow.Location = new System.Drawing.Point(566, 209);
+            this.textBoxTabOilFlowMassOilFlow.Name = "textBoxTabOilFlowMassOilFlow";
+            this.textBoxTabOilFlowMassOilFlow.Size = new System.Drawing.Size(100, 29);
+            this.textBoxTabOilFlowMassOilFlow.TabIndex = 10;
+            this.textBoxTabOilFlowMassOilFlow.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabOilFlowDensityofOil
+            // 
+            this.textBoxTabOilFlowDensityofOil.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabOilFlowDensityofOil.Location = new System.Drawing.Point(566, 169);
+            this.textBoxTabOilFlowDensityofOil.Name = "textBoxTabOilFlowDensityofOil";
+            this.textBoxTabOilFlowDensityofOil.Size = new System.Drawing.Size(100, 29);
+            this.textBoxTabOilFlowDensityofOil.TabIndex = 9;
+            this.textBoxTabOilFlowDensityofOil.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabOilFlowOilFlow
+            // 
+            this.textBoxTabOilFlowOilFlow.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabOilFlowOilFlow.Location = new System.Drawing.Point(566, 134);
+            this.textBoxTabOilFlowOilFlow.Name = "textBoxTabOilFlowOilFlow";
+            this.textBoxTabOilFlowOilFlow.Size = new System.Drawing.Size(100, 29);
+            this.textBoxTabOilFlowOilFlow.TabIndex = 8;
+            this.textBoxTabOilFlowOilFlow.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(467, 176);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 16);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Density of Oil = ";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(498, 140);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 16);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Oil Flow = ";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(248, 175);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(139, 16);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "60 - Conversion min/hr";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(247, 156);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(152, 16);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "OD - Oil Density in lb/gal";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(247, 136);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(143, 16);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "OF - Oil Flow in gal/min";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(429, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 15);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Formula D-3";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(406, 63);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(131, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "E = OF x OD x 60";
+            // 
+            // tabCO2Gas
+            // 
+            this.tabCO2Gas.BackColor = System.Drawing.Color.Ivory;
+            this.tabCO2Gas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabCO2Gas.Controls.Add(this.textBox5);
+            this.tabCO2Gas.Controls.Add(this.textBox7);
+            this.tabCO2Gas.Controls.Add(this.button2);
+            this.tabCO2Gas.Controls.Add(this.label21);
+            this.tabCO2Gas.Controls.Add(this.textBox8);
+            this.tabCO2Gas.Controls.Add(this.textBox9);
+            this.tabCO2Gas.Controls.Add(this.textBox10);
+            this.tabCO2Gas.Controls.Add(this.label22);
+            this.tabCO2Gas.Controls.Add(this.label23);
+            this.tabCO2Gas.Controls.Add(this.label25);
+            this.tabCO2Gas.Controls.Add(this.label26);
+            this.tabCO2Gas.Controls.Add(this.textBox3);
+            this.tabCO2Gas.Controls.Add(this.button1);
+            this.tabCO2Gas.Controls.Add(this.label15);
+            this.tabCO2Gas.Controls.Add(this.textBox4);
+            this.tabCO2Gas.Controls.Add(this.textBox6);
+            this.tabCO2Gas.Controls.Add(this.label17);
+            this.tabCO2Gas.Controls.Add(this.label19);
+            this.tabCO2Gas.Controls.Add(this.label20);
+            this.tabCO2Gas.Controls.Add(this.textBox2);
+            this.tabCO2Gas.Controls.Add(this.buttonTabCO2Calculate);
+            this.tabCO2Gas.Controls.Add(this.label1);
+            this.tabCO2Gas.Controls.Add(this.textBoxTabCO2CO2TonsHr);
+            this.tabCO2Gas.Controls.Add(this.textBoxTabCO2GasFlow);
+            this.tabCO2Gas.Controls.Add(this.textBoxTabCO2CarbonContent);
+            this.tabCO2Gas.Controls.Add(this.label10);
+            this.tabCO2Gas.Controls.Add(this.label11);
+            this.tabCO2Gas.Controls.Add(this.label12);
+            this.tabCO2Gas.Controls.Add(this.label13);
+            this.tabCO2Gas.Controls.Add(this.label14);
+            this.tabCO2Gas.Location = new System.Drawing.Point(4, 24);
+            this.tabCO2Gas.Name = "tabCO2Gas";
+            this.tabCO2Gas.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCO2Gas.Size = new System.Drawing.Size(939, 538);
+            this.tabCO2Gas.TabIndex = 1;
+            this.tabCO2Gas.Text = "CO2 - Gas";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox2.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(21, 69);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(419, 22);
+            this.textBox2.TabIndex = 26;
+            this.textBox2.Text = "E = ((CC / 100 x GAS x 100 x DEN) x 44) / (2000 x12)      Formula G-1";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // buttonTabCO2Calculate
+            // 
+            this.buttonTabCO2Calculate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabCO2Calculate.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonTabCO2Calculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabCO2Calculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabCO2Calculate.ForeColor = System.Drawing.Color.White;
+            this.buttonTabCO2Calculate.Location = new System.Drawing.Point(365, 183);
+            this.buttonTabCO2Calculate.Name = "buttonTabCO2Calculate";
+            this.buttonTabCO2Calculate.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabCO2Calculate.TabIndex = 25;
+            this.buttonTabCO2Calculate.Text = "Calculate";
+            this.buttonTabCO2Calculate.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(222, 158);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 15);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "CO2 Tons / Hr = ";
+            // 
+            // textBoxTabCO2CO2TonsHr
+            // 
+            this.textBoxTabCO2CO2TonsHr.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabCO2CO2TonsHr.Location = new System.Drawing.Point(340, 155);
+            this.textBoxTabCO2CO2TonsHr.Name = "textBoxTabCO2CO2TonsHr";
+            this.textBoxTabCO2CO2TonsHr.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabCO2CO2TonsHr.TabIndex = 23;
+            this.textBoxTabCO2CO2TonsHr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabCO2GasFlow
+            // 
+            this.textBoxTabCO2GasFlow.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabCO2GasFlow.Location = new System.Drawing.Point(340, 127);
+            this.textBoxTabCO2GasFlow.Name = "textBoxTabCO2GasFlow";
+            this.textBoxTabCO2GasFlow.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabCO2GasFlow.TabIndex = 22;
+            this.textBoxTabCO2GasFlow.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabCO2CarbonContent
+            // 
+            this.textBoxTabCO2CarbonContent.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabCO2CarbonContent.Location = new System.Drawing.Point(340, 99);
+            this.textBoxTabCO2CarbonContent.Name = "textBoxTabCO2CarbonContent";
+            this.textBoxTabCO2CarbonContent.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabCO2CarbonContent.TabIndex = 21;
+            this.textBoxTabCO2CarbonContent.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(263, 130);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(71, 15);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Gas Flow = ";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(229, 102);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(105, 15);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "Carbon Content = ";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(21, 140);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(164, 15);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "DEN - Density, 0.0452 lbs/scf";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(21, 121);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(154, 15);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "GAS - Gas Flow in 100 scfh";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(21, 101);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(182, 15);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "CC   - Carbon Content for GAS %";
+            // 
+            // tabCO2Oil
+            // 
+            this.tabCO2Oil.BackColor = System.Drawing.Color.Ivory;
+            this.tabCO2Oil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabCO2Oil.Location = new System.Drawing.Point(4, 22);
+            this.tabCO2Oil.Name = "tabCO2Oil";
+            this.tabCO2Oil.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCO2Oil.Size = new System.Drawing.Size(939, 540);
+            this.tabCO2Oil.TabIndex = 2;
+            this.tabCO2Oil.Text = "CO2 - Oil";
+            // 
+            // tabCO2Flow
+            // 
+            this.tabCO2Flow.BackColor = System.Drawing.Color.Ivory;
+            this.tabCO2Flow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabCO2Flow.Location = new System.Drawing.Point(4, 24);
+            this.tabCO2Flow.Name = "tabCO2Flow";
+            this.tabCO2Flow.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCO2Flow.Size = new System.Drawing.Size(939, 538);
+            this.tabCO2Flow.TabIndex = 3;
+            this.tabCO2Flow.Text = "CO2 - Flow";
+            // 
+            // tabHeatInputGas
+            // 
+            this.tabHeatInputGas.BackColor = System.Drawing.Color.Ivory;
+            this.tabHeatInputGas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabHeatInputGas.Location = new System.Drawing.Point(4, 22);
+            this.tabHeatInputGas.Name = "tabHeatInputGas";
+            this.tabHeatInputGas.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHeatInputGas.Size = new System.Drawing.Size(939, 540);
+            this.tabHeatInputGas.TabIndex = 4;
+            this.tabHeatInputGas.Text = "Heat Input - Gas";
+            // 
+            // tabHeatInputOil
+            // 
+            this.tabHeatInputOil.BackColor = System.Drawing.Color.Ivory;
+            this.tabHeatInputOil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabHeatInputOil.Location = new System.Drawing.Point(4, 24);
+            this.tabHeatInputOil.Name = "tabHeatInputOil";
+            this.tabHeatInputOil.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHeatInputOil.Size = new System.Drawing.Size(939, 538);
+            this.tabHeatInputOil.TabIndex = 5;
+            this.tabHeatInputOil.Text = "Heat Input - Oil";
+            // 
+            // tabHeatInputFlow
+            // 
+            this.tabHeatInputFlow.BackColor = System.Drawing.Color.Ivory;
+            this.tabHeatInputFlow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabHeatInputFlow.Location = new System.Drawing.Point(4, 24);
+            this.tabHeatInputFlow.Name = "tabHeatInputFlow";
+            this.tabHeatInputFlow.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHeatInputFlow.Size = new System.Drawing.Size(939, 538);
+            this.tabHeatInputFlow.TabIndex = 6;
+            this.tabHeatInputFlow.Text = "Heat Input - Flow";
+            // 
+            // tabSO2Gas
+            // 
+            this.tabSO2Gas.BackColor = System.Drawing.Color.Ivory;
+            this.tabSO2Gas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabSO2Gas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabSO2Gas.Location = new System.Drawing.Point(4, 24);
+            this.tabSO2Gas.Name = "tabSO2Gas";
+            this.tabSO2Gas.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSO2Gas.Size = new System.Drawing.Size(939, 538);
+            this.tabSO2Gas.TabIndex = 7;
+            this.tabSO2Gas.Text = "SO2 - Gas";
             // 
             // buttonPart75
             // 
@@ -293,7 +786,7 @@ namespace CEMSStudyApp.Pages
             this.buttonPart63SubUUUUU.Name = "buttonPart63SubUUUUU";
             this.buttonPart63SubUUUUU.Size = new System.Drawing.Size(110, 47);
             this.buttonPart63SubUUUUU.TabIndex = 6;
-            this.buttonPart63SubUUUUU.Text = "Part 63\r\nSubpart UUUUU";
+            this.buttonPart63SubUUUUU.Text = "Part 63\r\nSub. UUUUU";
             this.toolTip1.SetToolTip(this.buttonPart63SubUUUUU, "Part 63 Subpart UUUUU");
             this.buttonPart63SubUUUUU.UseVisualStyleBackColor = false;
             this.buttonPart63SubUUUUU.Click += new System.EventHandler(this.buttonPart63SubUUUUU_Click);
@@ -310,7 +803,7 @@ namespace CEMSStudyApp.Pages
             this.button60AppBF.Name = "button60AppBF";
             this.button60AppBF.Size = new System.Drawing.Size(110, 47);
             this.button60AppBF.TabIndex = 5;
-            this.button60AppBF.Text = "Part 60\r\nAppendix B and F";
+            this.button60AppBF.Text = "Part 60\r\nApp. B and F";
             this.toolTip1.SetToolTip(this.button60AppBF, "Part 60 Appendix B and F");
             this.button60AppBF.UseVisualStyleBackColor = false;
             this.button60AppBF.Click += new System.EventHandler(this.button60AppBF_Click);
@@ -337,7 +830,6 @@ namespace CEMSStudyApp.Pages
             this.buttonFormulas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonFormulas.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonFormulas.BackColor = System.Drawing.Color.Blue;
-            this.buttonFormulas.Enabled = false;
             this.buttonFormulas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFormulas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFormulas.ForeColor = System.Drawing.Color.White;
@@ -464,6 +956,277 @@ namespace CEMSStudyApp.Pages
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox3.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.ForeColor = System.Drawing.Color.White;
+            this.textBox3.Location = new System.Drawing.Point(489, 69);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(419, 22);
+            this.textBox3.TabIndex = 37;
+            this.textBox3.Text = "E = Fc x HTIP (1 / 385) x (44 / 2000)      Formula G-4";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(833, 183);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 30);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Calculate";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(690, 158);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(112, 15);
+            this.label15.TabIndex = 35;
+            this.label15.Text = "CO2 Tons / Hr = ";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox4.Location = new System.Drawing.Point(808, 155);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 21);
+            this.textBox4.TabIndex = 34;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox6.Location = new System.Drawing.Point(808, 99);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 21);
+            this.textBox6.TabIndex = 32;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(754, 102);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(47, 15);
+            this.label17.TabIndex = 30;
+            this.label17.Text = "HTIP = ";
+            // 
+            // label19
+            // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(489, 121);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(144, 15);
+            this.label19.TabIndex = 28;
+            this.label19.Text = "HTIP - Heat Input for GAS";
+            // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(489, 101);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(166, 15);
+            this.label20.TabIndex = 27;
+            this.label20.Text = "Fc - 1040 Fuel Factor for GAS";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox7.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.ForeColor = System.Drawing.Color.White;
+            this.textBox7.Location = new System.Drawing.Point(21, 240);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(419, 22);
+            this.textBox7.TabIndex = 48;
+            this.textBox7.Text = "E = (5.7 / 10000000) x CO2 x GF      Formula F-11";
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(365, 354);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 30);
+            this.button2.TabIndex = 47;
+            this.button2.Text = "Calculate";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(229, 329);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(104, 15);
+            this.label21.TabIndex = 46;
+            this.label21.Text = "CO2 Tons/Hr = ";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox8.Location = new System.Drawing.Point(340, 326);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(100, 21);
+            this.textBox8.TabIndex = 45;
+            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox9.Location = new System.Drawing.Point(340, 298);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 21);
+            this.textBox9.TabIndex = 44;
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox10.Location = new System.Drawing.Point(340, 270);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(100, 21);
+            this.textBox10.TabIndex = 43;
+            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label22
+            // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(263, 301);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(71, 15);
+            this.label22.TabIndex = 42;
+            this.label22.Text = "Gas Flow = ";
+            // 
+            // label23
+            // 
+            this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(208, 273);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(126, 15);
+            this.label23.TabIndex = 41;
+            this.label23.Text = "CO2 Concentration =  ";
+            // 
+            // label25
+            // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(21, 292);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(84, 15);
+            this.label25.TabIndex = 39;
+            this.label25.Text = "GF - Gas Flow";
+            // 
+            // label26
+            // 
+            this.label26.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(21, 272);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(166, 15);
+            this.label26.TabIndex = 38;
+            this.label26.Text = "CO2 - CO2 Concentration (%)";
+            // 
+            // tabSO2Oil
+            // 
+            this.tabSO2Oil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabSO2Oil.Location = new System.Drawing.Point(4, 24);
+            this.tabSO2Oil.Name = "tabSO2Oil";
+            this.tabSO2Oil.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSO2Oil.Size = new System.Drawing.Size(939, 538);
+            this.tabSO2Oil.TabIndex = 8;
+            this.tabSO2Oil.Text = "SO2 - Oil";
+            this.tabSO2Oil.UseVisualStyleBackColor = true;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox5.BackColor = System.Drawing.Color.Blue;
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.ForeColor = System.Drawing.Color.White;
+            this.textBox5.Location = new System.Drawing.Point(2, 16);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(927, 29);
+            this.textBox5.TabIndex = 49;
+            this.textBox5.Text = "Calculate CO2 Tons / Hr for GAS";
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tabSO2Flow
+            // 
+            this.tabSO2Flow.Location = new System.Drawing.Point(4, 22);
+            this.tabSO2Flow.Name = "tabSO2Flow";
+            this.tabSO2Flow.Size = new System.Drawing.Size(939, 540);
+            this.tabSO2Flow.TabIndex = 9;
+            this.tabSO2Flow.Text = "SO2 - Flow";
+            this.tabSO2Flow.UseVisualStyleBackColor = true;
+            // 
+            // tabNOx
+            // 
+            this.tabNOx.Location = new System.Drawing.Point(4, 24);
+            this.tabNOx.Name = "tabNOx";
+            this.tabNOx.Size = new System.Drawing.Size(939, 538);
+            this.tabNOx.TabIndex = 10;
+            this.tabNOx.Text = "NOx";
+            this.tabNOx.UseVisualStyleBackColor = true;
+            // 
+            // tabFuelFactor
+            // 
+            this.tabFuelFactor.Location = new System.Drawing.Point(4, 24);
+            this.tabFuelFactor.Name = "tabFuelFactor";
+            this.tabFuelFactor.Size = new System.Drawing.Size(939, 538);
+            this.tabFuelFactor.TabIndex = 11;
+            this.tabFuelFactor.Text = "Fuel Factor";
+            this.tabFuelFactor.UseVisualStyleBackColor = true;
+            // 
+            // tabCoal
+            // 
+            this.tabCoal.Location = new System.Drawing.Point(4, 22);
+            this.tabCoal.Name = "tabCoal";
+            this.tabCoal.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCoal.Size = new System.Drawing.Size(939, 540);
+            this.tabCoal.TabIndex = 12;
+            this.tabCoal.Text = "Coal";
+            this.tabCoal.UseVisualStyleBackColor = true;
+            // 
+            // tabCO
+            // 
+            this.tabCO.Location = new System.Drawing.Point(4, 24);
+            this.tabCO.Name = "tabCO";
+            this.tabCO.Size = new System.Drawing.Size(939, 538);
+            this.tabCO.TabIndex = 13;
+            this.tabCO.Text = "CO";
+            this.tabCO.UseVisualStyleBackColor = true;
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,6 +1242,12 @@ namespace CEMSStudyApp.Pages
             this.Load += new System.EventHandler(this.MainDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelFormulas.ResumeLayout(false);
+            this.tabFormulasMain.ResumeLayout(false);
+            this.tabOilFlow.ResumeLayout(false);
+            this.tabOilFlow.PerformLayout();
+            this.tabCO2Gas.ResumeLayout(false);
+            this.tabCO2Gas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -512,5 +1281,64 @@ namespace CEMSStudyApp.Pages
         private TextBox textBoxSectionHeading;
         private ToolTip toolTip1;
         private Button buttonPart75;
+        private Panel panelFormulas;
+        private TabControl tabFormulasMain;
+        private TabPage tabOilFlow;
+        private TabPage tabCO2Gas;
+        private TabPage tabCO2Oil;
+        private TabPage tabCO2Flow;
+        private TabPage tabHeatInputGas;
+        private TabPage tabHeatInputOil;
+        private TabPage tabHeatInputFlow;
+        private TabPage tabSO2Gas;
+        private Label label9;
+        private TextBox textBoxTabOilFlowMassOilFlow;
+        private TextBox textBoxTabOilFlowDensityofOil;
+        private TextBox textBoxTabOilFlowOilFlow;
+        private Label label8;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Button buttonTabOilFlowCalculate;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private Button buttonTabCO2Calculate;
+        private Label label1;
+        private TextBox textBoxTabCO2CO2TonsHr;
+        private TextBox textBoxTabCO2GasFlow;
+        private TextBox textBoxTabCO2CarbonContent;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private Label label13;
+        private Label label14;
+        private TextBox textBox7;
+        private Button button2;
+        private Label label21;
+        private TextBox textBox8;
+        private TextBox textBox9;
+        private TextBox textBox10;
+        private Label label22;
+        private Label label23;
+        private Label label25;
+        private Label label26;
+        private TextBox textBox3;
+        private Button button1;
+        private Label label15;
+        private TextBox textBox4;
+        private TextBox textBox6;
+        private Label label17;
+        private Label label19;
+        private Label label20;
+        private TabPage tabSO2Oil;
+        private TextBox textBox5;
+        private TabPage tabSO2Flow;
+        private TabPage tabNOx;
+        private TabPage tabFuelFactor;
+        private TabPage tabCoal;
+        private TabPage tabCO;
     }
 }

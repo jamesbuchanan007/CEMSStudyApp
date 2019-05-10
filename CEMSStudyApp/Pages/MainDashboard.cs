@@ -91,6 +91,7 @@ namespace CEMSStudyApp.Pages
             string definition;
             string file_Location;
             string sectionName;
+            string sectionHeading;
 
             //CHECK IF TABLE IS EMPTY
             if (dataSet.Tables[0].Rows.Count == 0) return;
@@ -105,11 +106,14 @@ namespace CEMSStudyApp.Pages
                 sectionName = string.IsNullOrEmpty(sectionColumnName) ? "" : dataSet.Tables[0].Rows[i][sectionColumnName].ToString();
                 file_Location = string.IsNullOrEmpty(file_LocationColumnName) ? "" : dataSet.Tables[0].Rows[i][file_LocationColumnName].ToString();
                 definition = string.IsNullOrEmpty(definitionColumnName) ? "" : dataSet.Tables[0].Rows[i][definitionColumnName].ToString();
+                sectionHeading = sectionColumnName == "Part75_Section_Number"
+                    ? dataSet.Tables[0].Rows[i]["Part75_Section_Heading"].ToString()
+                    : dataSet.Tables[0].Rows[i]["Section_Heading"].ToString();
 
                 //LOAD DASHBOARD DICTIONARY
                 dashboardDictionary.Add(i, new DashboardViewModel()
                 {
-                    Heading = dataSet.Tables[0].Rows[i]["Section_Heading"].ToString(),
+                    Heading = sectionHeading,
                     Section_Name = sectionName,
                     File_Location = file_Location,
                     Definition = definition
@@ -315,6 +319,13 @@ namespace CEMSStudyApp.Pages
         private void MainDashboard_Load(object sender, EventArgs e)
         {
             AutoSize = true;
+        }
+
+        private void buttonPart75_Click(object sender, EventArgs e)
+        {
+            var dataSet = LoadTable("Part75");
+            folderName = "Part75_Files";
+            LoadDashboardViewModel(dataSet, "Part75_Section_Number", "Part_75_Question_Number", "File_Location", "");
         }
     }
 }

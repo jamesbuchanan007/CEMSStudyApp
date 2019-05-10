@@ -34,6 +34,8 @@ namespace CEMSStudyApp.Pages
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDashboard));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonPart75 = new System.Windows.Forms.Button();
+            this.textBoxSectionHeading = new System.Windows.Forms.TextBox();
             this.buttonDefinitions = new System.Windows.Forms.Button();
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             this.textBoxDefinitions = new System.Windows.Forms.TextBox();
@@ -55,7 +57,6 @@ namespace CEMSStudyApp.Pages
             this.buttonToggle = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
-            this.textBoxSectionHeading = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
@@ -68,6 +69,7 @@ namespace CEMSStudyApp.Pages
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.buttonPart75);
             this.panel1.Controls.Add(this.textBoxSectionHeading);
             this.panel1.Controls.Add(this.buttonDefinitions);
             this.panel1.Controls.Add(this.pictureBoxMain);
@@ -95,6 +97,38 @@ namespace CEMSStudyApp.Pages
             this.panel1.Size = new System.Drawing.Size(1193, 775);
             this.panel1.TabIndex = 0;
             // 
+            // buttonPart75
+            // 
+            this.buttonPart75.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonPart75.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonPart75.BackColor = System.Drawing.Color.Blue;
+            this.buttonPart75.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPart75.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPart75.ForeColor = System.Drawing.Color.White;
+            this.buttonPart75.Location = new System.Drawing.Point(43, 264);
+            this.buttonPart75.Name = "buttonPart75";
+            this.buttonPart75.Size = new System.Drawing.Size(110, 47);
+            this.buttonPart75.TabIndex = 128;
+            this.buttonPart75.Text = "Part 75";
+            this.toolTip1.SetToolTip(this.buttonPart75, "Part 75 Plain English Version");
+            this.buttonPart75.UseVisualStyleBackColor = false;
+            this.buttonPart75.Click += new System.EventHandler(this.buttonPart75_Click);
+            // 
+            // textBoxSectionHeading
+            // 
+            this.textBoxSectionHeading.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxSectionHeading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxSectionHeading.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSectionHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSectionHeading.ForeColor = System.Drawing.Color.White;
+            this.textBoxSectionHeading.Location = new System.Drawing.Point(200, 5);
+            this.textBoxSectionHeading.Multiline = true;
+            this.textBoxSectionHeading.Name = "textBoxSectionHeading";
+            this.textBoxSectionHeading.ReadOnly = true;
+            this.textBoxSectionHeading.Size = new System.Drawing.Size(942, 58);
+            this.textBoxSectionHeading.TabIndex = 127;
+            this.textBoxSectionHeading.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // buttonDefinitions
             // 
             this.buttonDefinitions.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -104,7 +138,7 @@ namespace CEMSStudyApp.Pages
             this.buttonDefinitions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDefinitions.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDefinitions.ForeColor = System.Drawing.Color.White;
-            this.buttonDefinitions.Location = new System.Drawing.Point(43, 174);
+            this.buttonDefinitions.Location = new System.Drawing.Point(43, 370);
             this.buttonDefinitions.Name = "buttonDefinitions";
             this.buttonDefinitions.Size = new System.Drawing.Size(110, 47);
             this.buttonDefinitions.TabIndex = 2;
@@ -145,7 +179,7 @@ namespace CEMSStudyApp.Pages
             this.buttonTechQuestions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTechQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTechQuestions.ForeColor = System.Drawing.Color.White;
-            this.buttonTechQuestions.Location = new System.Drawing.Point(43, 609);
+            this.buttonTechQuestions.Location = new System.Drawing.Point(43, 647);
             this.buttonTechQuestions.Name = "buttonTechQuestions";
             this.buttonTechQuestions.Size = new System.Drawing.Size(110, 47);
             this.buttonTechQuestions.TabIndex = 10;
@@ -162,7 +196,7 @@ namespace CEMSStudyApp.Pages
             this.buttonSoftwareQuestions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSoftwareQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSoftwareQuestions.ForeColor = System.Drawing.Color.White;
-            this.buttonSoftwareQuestions.Location = new System.Drawing.Point(43, 556);
+            this.buttonSoftwareQuestions.Location = new System.Drawing.Point(43, 594);
             this.buttonSoftwareQuestions.Name = "buttonSoftwareQuestions";
             this.buttonSoftwareQuestions.Size = new System.Drawing.Size(110, 47);
             this.buttonSoftwareQuestions.TabIndex = 9;
@@ -189,7 +223,7 @@ namespace CEMSStudyApp.Pages
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(28, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(28, 16);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(141, 73);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -204,7 +238,7 @@ namespace CEMSStudyApp.Pages
             this.buttonAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdmin.ForeColor = System.Drawing.Color.White;
-            this.buttonAdmin.Location = new System.Drawing.Point(43, 673);
+            this.buttonAdmin.Location = new System.Drawing.Point(43, 711);
             this.buttonAdmin.Name = "buttonAdmin";
             this.buttonAdmin.Size = new System.Drawing.Size(110, 47);
             this.buttonAdmin.TabIndex = 16;
@@ -221,7 +255,7 @@ namespace CEMSStudyApp.Pages
             this.buttonUnitsOfMeasure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUnitsOfMeasure.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUnitsOfMeasure.ForeColor = System.Drawing.Color.White;
-            this.buttonUnitsOfMeasure.Location = new System.Drawing.Point(43, 492);
+            this.buttonUnitsOfMeasure.Location = new System.Drawing.Point(43, 529);
             this.buttonUnitsOfMeasure.Name = "buttonUnitsOfMeasure";
             this.buttonUnitsOfMeasure.Size = new System.Drawing.Size(110, 47);
             this.buttonUnitsOfMeasure.TabIndex = 8;
@@ -238,7 +272,7 @@ namespace CEMSStudyApp.Pages
             this.buttonPart75PlainEnglish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPart75PlainEnglish.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPart75PlainEnglish.ForeColor = System.Drawing.Color.White;
-            this.buttonPart75PlainEnglish.Location = new System.Drawing.Point(43, 439);
+            this.buttonPart75PlainEnglish.Location = new System.Drawing.Point(43, 211);
             this.buttonPart75PlainEnglish.Name = "buttonPart75PlainEnglish";
             this.buttonPart75PlainEnglish.Size = new System.Drawing.Size(110, 47);
             this.buttonPart75PlainEnglish.TabIndex = 7;
@@ -255,7 +289,7 @@ namespace CEMSStudyApp.Pages
             this.buttonPart63SubUUUUU.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPart63SubUUUUU.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPart63SubUUUUU.ForeColor = System.Drawing.Color.White;
-            this.buttonPart63SubUUUUU.Location = new System.Drawing.Point(43, 386);
+            this.buttonPart63SubUUUUU.Location = new System.Drawing.Point(43, 158);
             this.buttonPart63SubUUUUU.Name = "buttonPart63SubUUUUU";
             this.buttonPart63SubUUUUU.Size = new System.Drawing.Size(110, 47);
             this.buttonPart63SubUUUUU.TabIndex = 6;
@@ -272,7 +306,7 @@ namespace CEMSStudyApp.Pages
             this.button60AppBF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button60AppBF.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button60AppBF.ForeColor = System.Drawing.Color.White;
-            this.button60AppBF.Location = new System.Drawing.Point(43, 333);
+            this.button60AppBF.Location = new System.Drawing.Point(43, 105);
             this.button60AppBF.Name = "button60AppBF";
             this.button60AppBF.Size = new System.Drawing.Size(110, 47);
             this.button60AppBF.TabIndex = 5;
@@ -290,7 +324,7 @@ namespace CEMSStudyApp.Pages
             this.buttonHowTos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHowTos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHowTos.ForeColor = System.Drawing.Color.White;
-            this.buttonHowTos.Location = new System.Drawing.Point(43, 280);
+            this.buttonHowTos.Location = new System.Drawing.Point(43, 476);
             this.buttonHowTos.Name = "buttonHowTos";
             this.buttonHowTos.Size = new System.Drawing.Size(110, 47);
             this.buttonHowTos.TabIndex = 4;
@@ -307,7 +341,7 @@ namespace CEMSStudyApp.Pages
             this.buttonFormulas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFormulas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFormulas.ForeColor = System.Drawing.Color.White;
-            this.buttonFormulas.Location = new System.Drawing.Point(43, 227);
+            this.buttonFormulas.Location = new System.Drawing.Point(43, 423);
             this.buttonFormulas.Name = "buttonFormulas";
             this.buttonFormulas.Size = new System.Drawing.Size(110, 47);
             this.buttonFormulas.TabIndex = 3;
@@ -324,7 +358,7 @@ namespace CEMSStudyApp.Pages
             this.buttonAcronyms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAcronyms.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAcronyms.ForeColor = System.Drawing.Color.White;
-            this.buttonAcronyms.Location = new System.Drawing.Point(43, 118);
+            this.buttonAcronyms.Location = new System.Drawing.Point(43, 317);
             this.buttonAcronyms.Name = "buttonAcronyms";
             this.buttonAcronyms.Size = new System.Drawing.Size(110, 47);
             this.buttonAcronyms.TabIndex = 1;
@@ -430,21 +464,6 @@ namespace CEMSStudyApp.Pages
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
-            // textBoxSectionHeading
-            // 
-            this.textBoxSectionHeading.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxSectionHeading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxSectionHeading.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxSectionHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSectionHeading.ForeColor = System.Drawing.Color.White;
-            this.textBoxSectionHeading.Location = new System.Drawing.Point(200, 5);
-            this.textBoxSectionHeading.Multiline = true;
-            this.textBoxSectionHeading.Name = "textBoxSectionHeading";
-            this.textBoxSectionHeading.ReadOnly = true;
-            this.textBoxSectionHeading.Size = new System.Drawing.Size(942, 58);
-            this.textBoxSectionHeading.TabIndex = 127;
-            this.textBoxSectionHeading.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,5 +511,6 @@ namespace CEMSStudyApp.Pages
         private Button buttonBack;
         private TextBox textBoxSectionHeading;
         private ToolTip toolTip1;
+        private Button buttonPart75;
     }
 }

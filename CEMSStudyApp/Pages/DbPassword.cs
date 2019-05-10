@@ -22,6 +22,7 @@ namespace CEMSStudyApp.Pages
                     Hide();
                     var pl = new PasswordsLogin();
                     pl.Show();
+                    return;
                 }
 
                 //USER WANTS TO EDIT DB AFTER ENTERING PASSWORD

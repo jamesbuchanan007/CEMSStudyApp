@@ -117,11 +117,35 @@ namespace CEMSStudyApp.Pages
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panelFormulas.SuspendLayout();
             this.tabFormulasMain.SuspendLayout();
             this.tabOilFlow.SuspendLayout();
             this.tabCO2Gas.SuspendLayout();
+            this.tabCO2Oil.SuspendLayout();
+            this.tabCO2Flow.SuspendLayout();
+            this.tabHeatInputGas.SuspendLayout();
+            this.tabHeatInputOil.SuspendLayout();
+            this.tabHeatInputFlow.SuspendLayout();
+            this.tabSO2Gas.SuspendLayout();
+            this.tabSO2Oil.SuspendLayout();
+            this.tabSO2Flow.SuspendLayout();
+            this.tabNOx.SuspendLayout();
+            this.tabFuelFactor.SuspendLayout();
+            this.tabCoal.SuspendLayout();
+            this.tabCO.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -191,7 +215,7 @@ namespace CEMSStudyApp.Pages
             this.tabFormulasMain.Controls.Add(this.tabCoal);
             this.tabFormulasMain.Controls.Add(this.tabCO);
             this.tabFormulasMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabFormulasMain.Location = new System.Drawing.Point(0, -12);
+            this.tabFormulasMain.Location = new System.Drawing.Point(0, -4);
             this.tabFormulasMain.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabFormulasMain.Name = "tabFormulasMain";
             this.tabFormulasMain.SelectedIndex = 0;
@@ -411,7 +435,7 @@ namespace CEMSStudyApp.Pages
             this.tabCO2Gas.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabCO2Gas.Name = "tabCO2Gas";
             this.tabCO2Gas.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.tabCO2Gas.Size = new System.Drawing.Size(2505, 1255);
+            this.tabCO2Gas.Size = new System.Drawing.Size(2505, 1257);
             this.tabCO2Gas.TabIndex = 1;
             this.tabCO2Gas.Text = "CO2 - Gas";
             // 
@@ -421,7 +445,7 @@ namespace CEMSStudyApp.Pages
             this.textBox5.BackColor = System.Drawing.Color.Blue;
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(5, 38);
+            this.textBox5.Location = new System.Drawing.Point(13, 23);
             this.textBox5.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
@@ -436,7 +460,7 @@ namespace CEMSStudyApp.Pages
             this.textBox7.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.ForeColor = System.Drawing.Color.White;
-            this.textBox7.Location = new System.Drawing.Point(56, 572);
+            this.textBox7.Location = new System.Drawing.Point(56, 573);
             this.textBox7.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
@@ -453,7 +477,7 @@ namespace CEMSStudyApp.Pages
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(973, 844);
+            this.button2.Location = new System.Drawing.Point(973, 845);
             this.button2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(200, 72);
@@ -465,7 +489,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(611, 785);
+            this.label21.Location = new System.Drawing.Point(611, 786);
             this.label21.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(629, 86);
@@ -475,7 +499,7 @@ namespace CEMSStudyApp.Pages
             // textBox8
             // 
             this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox8.Location = new System.Drawing.Point(907, 777);
+            this.textBox8.Location = new System.Drawing.Point(907, 778);
             this.textBox8.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(260, 41);
@@ -485,7 +509,7 @@ namespace CEMSStudyApp.Pages
             // textBox9
             // 
             this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox9.Location = new System.Drawing.Point(907, 711);
+            this.textBox9.Location = new System.Drawing.Point(907, 712);
             this.textBox9.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(260, 41);
@@ -495,7 +519,7 @@ namespace CEMSStudyApp.Pages
             // textBox10
             // 
             this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox10.Location = new System.Drawing.Point(907, 644);
+            this.textBox10.Location = new System.Drawing.Point(907, 645);
             this.textBox10.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(260, 41);
@@ -506,7 +530,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(701, 718);
+            this.label22.Location = new System.Drawing.Point(701, 719);
             this.label22.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(464, 86);
@@ -517,7 +541,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(555, 651);
+            this.label23.Location = new System.Drawing.Point(555, 652);
             this.label23.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(827, 86);
@@ -528,7 +552,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(56, 696);
+            this.label25.Location = new System.Drawing.Point(56, 697);
             this.label25.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(555, 86);
@@ -539,7 +563,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(56, 649);
+            this.label26.Location = new System.Drawing.Point(56, 650);
             this.label26.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(1093, 86);
@@ -552,7 +576,7 @@ namespace CEMSStudyApp.Pages
             this.textBox3.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(1304, 165);
+            this.textBox3.Location = new System.Drawing.Point(1304, 166);
             this.textBox3.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
@@ -569,7 +593,7 @@ namespace CEMSStudyApp.Pages
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(2221, 436);
+            this.button1.Location = new System.Drawing.Point(2221, 437);
             this.button1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 72);
@@ -581,7 +605,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(1840, 377);
+            this.label15.Location = new System.Drawing.Point(1840, 378);
             this.label15.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(677, 86);
@@ -591,7 +615,7 @@ namespace CEMSStudyApp.Pages
             // textBox4
             // 
             this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.Location = new System.Drawing.Point(2155, 370);
+            this.textBox4.Location = new System.Drawing.Point(2155, 371);
             this.textBox4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(260, 41);
@@ -601,7 +625,7 @@ namespace CEMSStudyApp.Pages
             // textBox6
             // 
             this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox6.Location = new System.Drawing.Point(2155, 236);
+            this.textBox6.Location = new System.Drawing.Point(2155, 237);
             this.textBox6.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(260, 41);
@@ -612,7 +636,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(2011, 243);
+            this.label17.Location = new System.Drawing.Point(2011, 244);
             this.label17.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(307, 86);
@@ -623,7 +647,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(1304, 289);
+            this.label19.Location = new System.Drawing.Point(1304, 290);
             this.label19.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(957, 86);
@@ -634,7 +658,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(1304, 241);
+            this.label20.Location = new System.Drawing.Point(1304, 242);
             this.label20.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(1107, 86);
@@ -647,7 +671,7 @@ namespace CEMSStudyApp.Pages
             this.textBox2.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(56, 165);
+            this.textBox2.Location = new System.Drawing.Point(56, 166);
             this.textBox2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -664,7 +688,7 @@ namespace CEMSStudyApp.Pages
             this.buttonTabCO2Calculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTabCO2Calculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTabCO2Calculate.ForeColor = System.Drawing.Color.White;
-            this.buttonTabCO2Calculate.Location = new System.Drawing.Point(973, 436);
+            this.buttonTabCO2Calculate.Location = new System.Drawing.Point(973, 437);
             this.buttonTabCO2Calculate.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.buttonTabCO2Calculate.Name = "buttonTabCO2Calculate";
             this.buttonTabCO2Calculate.Size = new System.Drawing.Size(200, 72);
@@ -676,7 +700,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(592, 377);
+            this.label1.Location = new System.Drawing.Point(592, 378);
             this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(677, 86);
@@ -686,7 +710,7 @@ namespace CEMSStudyApp.Pages
             // textBoxTabCO2CO2TonsHr
             // 
             this.textBoxTabCO2CO2TonsHr.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxTabCO2CO2TonsHr.Location = new System.Drawing.Point(907, 370);
+            this.textBoxTabCO2CO2TonsHr.Location = new System.Drawing.Point(907, 371);
             this.textBoxTabCO2CO2TonsHr.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBoxTabCO2CO2TonsHr.Name = "textBoxTabCO2CO2TonsHr";
             this.textBoxTabCO2CO2TonsHr.Size = new System.Drawing.Size(260, 41);
@@ -696,7 +720,7 @@ namespace CEMSStudyApp.Pages
             // textBoxTabCO2GasFlow
             // 
             this.textBoxTabCO2GasFlow.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxTabCO2GasFlow.Location = new System.Drawing.Point(907, 303);
+            this.textBoxTabCO2GasFlow.Location = new System.Drawing.Point(907, 304);
             this.textBoxTabCO2GasFlow.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBoxTabCO2GasFlow.Name = "textBoxTabCO2GasFlow";
             this.textBoxTabCO2GasFlow.Size = new System.Drawing.Size(260, 41);
@@ -706,7 +730,7 @@ namespace CEMSStudyApp.Pages
             // textBoxTabCO2CarbonContent
             // 
             this.textBoxTabCO2CarbonContent.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxTabCO2CarbonContent.Location = new System.Drawing.Point(907, 236);
+            this.textBoxTabCO2CarbonContent.Location = new System.Drawing.Point(907, 237);
             this.textBoxTabCO2CarbonContent.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.textBoxTabCO2CarbonContent.Name = "textBoxTabCO2CarbonContent";
             this.textBoxTabCO2CarbonContent.Size = new System.Drawing.Size(260, 41);
@@ -717,7 +741,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(701, 310);
+            this.label10.Location = new System.Drawing.Point(701, 311);
             this.label10.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(464, 86);
@@ -728,7 +752,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(611, 243);
+            this.label11.Location = new System.Drawing.Point(611, 244);
             this.label11.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(688, 86);
@@ -739,7 +763,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(56, 334);
+            this.label12.Location = new System.Drawing.Point(56, 335);
             this.label12.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(1080, 86);
@@ -750,7 +774,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(56, 289);
+            this.label13.Location = new System.Drawing.Point(56, 290);
             this.label13.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(1027, 86);
@@ -761,7 +785,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(56, 241);
+            this.label14.Location = new System.Drawing.Point(56, 242);
             this.label14.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(1224, 86);
@@ -772,11 +796,12 @@ namespace CEMSStudyApp.Pages
             // 
             this.tabCO2Oil.BackColor = System.Drawing.Color.Ivory;
             this.tabCO2Oil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabCO2Oil.Controls.Add(this.textBox11);
             this.tabCO2Oil.Location = new System.Drawing.Point(10, 53);
             this.tabCO2Oil.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabCO2Oil.Name = "tabCO2Oil";
             this.tabCO2Oil.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.tabCO2Oil.Size = new System.Drawing.Size(2505, 1255);
+            this.tabCO2Oil.Size = new System.Drawing.Size(2505, 1257);
             this.tabCO2Oil.TabIndex = 2;
             this.tabCO2Oil.Text = "CO2 - Oil";
             // 
@@ -784,11 +809,12 @@ namespace CEMSStudyApp.Pages
             // 
             this.tabCO2Flow.BackColor = System.Drawing.Color.Ivory;
             this.tabCO2Flow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabCO2Flow.Controls.Add(this.textBox12);
             this.tabCO2Flow.Location = new System.Drawing.Point(10, 53);
             this.tabCO2Flow.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabCO2Flow.Name = "tabCO2Flow";
             this.tabCO2Flow.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.tabCO2Flow.Size = new System.Drawing.Size(2505, 1255);
+            this.tabCO2Flow.Size = new System.Drawing.Size(2505, 1257);
             this.tabCO2Flow.TabIndex = 3;
             this.tabCO2Flow.Text = "CO2 - Flow";
             // 
@@ -796,11 +822,12 @@ namespace CEMSStudyApp.Pages
             // 
             this.tabHeatInputGas.BackColor = System.Drawing.Color.Ivory;
             this.tabHeatInputGas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabHeatInputGas.Controls.Add(this.textBox13);
             this.tabHeatInputGas.Location = new System.Drawing.Point(10, 53);
             this.tabHeatInputGas.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabHeatInputGas.Name = "tabHeatInputGas";
             this.tabHeatInputGas.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.tabHeatInputGas.Size = new System.Drawing.Size(2505, 1255);
+            this.tabHeatInputGas.Size = new System.Drawing.Size(2505, 1257);
             this.tabHeatInputGas.TabIndex = 4;
             this.tabHeatInputGas.Text = "Heat Input - Gas";
             // 
@@ -808,11 +835,12 @@ namespace CEMSStudyApp.Pages
             // 
             this.tabHeatInputOil.BackColor = System.Drawing.Color.Ivory;
             this.tabHeatInputOil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabHeatInputOil.Controls.Add(this.textBox14);
             this.tabHeatInputOil.Location = new System.Drawing.Point(10, 53);
             this.tabHeatInputOil.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabHeatInputOil.Name = "tabHeatInputOil";
             this.tabHeatInputOil.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.tabHeatInputOil.Size = new System.Drawing.Size(2505, 1255);
+            this.tabHeatInputOil.Size = new System.Drawing.Size(2505, 1257);
             this.tabHeatInputOil.TabIndex = 5;
             this.tabHeatInputOil.Text = "Heat Input - Oil";
             // 
@@ -820,11 +848,12 @@ namespace CEMSStudyApp.Pages
             // 
             this.tabHeatInputFlow.BackColor = System.Drawing.Color.Ivory;
             this.tabHeatInputFlow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabHeatInputFlow.Controls.Add(this.textBox15);
             this.tabHeatInputFlow.Location = new System.Drawing.Point(10, 53);
             this.tabHeatInputFlow.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabHeatInputFlow.Name = "tabHeatInputFlow";
             this.tabHeatInputFlow.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.tabHeatInputFlow.Size = new System.Drawing.Size(2505, 1255);
+            this.tabHeatInputFlow.Size = new System.Drawing.Size(2505, 1257);
             this.tabHeatInputFlow.TabIndex = 6;
             this.tabHeatInputFlow.Text = "Heat Input - Flow";
             // 
@@ -832,77 +861,84 @@ namespace CEMSStudyApp.Pages
             // 
             this.tabSO2Gas.BackColor = System.Drawing.Color.Ivory;
             this.tabSO2Gas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabSO2Gas.Controls.Add(this.textBox16);
             this.tabSO2Gas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabSO2Gas.Location = new System.Drawing.Point(10, 53);
             this.tabSO2Gas.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabSO2Gas.Name = "tabSO2Gas";
             this.tabSO2Gas.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.tabSO2Gas.Size = new System.Drawing.Size(2505, 1255);
+            this.tabSO2Gas.Size = new System.Drawing.Size(2505, 1257);
             this.tabSO2Gas.TabIndex = 7;
             this.tabSO2Gas.Text = "SO2 - Gas";
             // 
             // tabSO2Oil
             // 
+            this.tabSO2Oil.BackColor = System.Drawing.Color.Ivory;
             this.tabSO2Oil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabSO2Oil.Controls.Add(this.textBox17);
             this.tabSO2Oil.Location = new System.Drawing.Point(10, 53);
             this.tabSO2Oil.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabSO2Oil.Name = "tabSO2Oil";
             this.tabSO2Oil.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.tabSO2Oil.Size = new System.Drawing.Size(2505, 1255);
+            this.tabSO2Oil.Size = new System.Drawing.Size(2505, 1257);
             this.tabSO2Oil.TabIndex = 8;
             this.tabSO2Oil.Text = "SO2 - Oil";
-            this.tabSO2Oil.UseVisualStyleBackColor = true;
             // 
             // tabSO2Flow
             // 
+            this.tabSO2Flow.BackColor = System.Drawing.Color.Ivory;
+            this.tabSO2Flow.Controls.Add(this.textBox18);
             this.tabSO2Flow.Location = new System.Drawing.Point(10, 53);
             this.tabSO2Flow.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabSO2Flow.Name = "tabSO2Flow";
-            this.tabSO2Flow.Size = new System.Drawing.Size(2505, 1255);
+            this.tabSO2Flow.Size = new System.Drawing.Size(2505, 1257);
             this.tabSO2Flow.TabIndex = 9;
             this.tabSO2Flow.Text = "SO2 - Flow";
-            this.tabSO2Flow.UseVisualStyleBackColor = true;
             // 
             // tabNOx
             // 
+            this.tabNOx.BackColor = System.Drawing.Color.Ivory;
+            this.tabNOx.Controls.Add(this.textBox19);
             this.tabNOx.Location = new System.Drawing.Point(10, 53);
             this.tabNOx.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabNOx.Name = "tabNOx";
-            this.tabNOx.Size = new System.Drawing.Size(2505, 1255);
+            this.tabNOx.Size = new System.Drawing.Size(2505, 1257);
             this.tabNOx.TabIndex = 10;
             this.tabNOx.Text = "NOx";
-            this.tabNOx.UseVisualStyleBackColor = true;
             // 
             // tabFuelFactor
             // 
+            this.tabFuelFactor.BackColor = System.Drawing.Color.Ivory;
+            this.tabFuelFactor.Controls.Add(this.textBox20);
             this.tabFuelFactor.Location = new System.Drawing.Point(10, 53);
             this.tabFuelFactor.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabFuelFactor.Name = "tabFuelFactor";
-            this.tabFuelFactor.Size = new System.Drawing.Size(2505, 1255);
+            this.tabFuelFactor.Size = new System.Drawing.Size(2505, 1257);
             this.tabFuelFactor.TabIndex = 11;
             this.tabFuelFactor.Text = "Fuel Factor";
-            this.tabFuelFactor.UseVisualStyleBackColor = true;
             // 
             // tabCoal
             // 
+            this.tabCoal.BackColor = System.Drawing.Color.Ivory;
+            this.tabCoal.Controls.Add(this.textBox21);
             this.tabCoal.Location = new System.Drawing.Point(10, 53);
             this.tabCoal.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabCoal.Name = "tabCoal";
             this.tabCoal.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.tabCoal.Size = new System.Drawing.Size(2505, 1255);
+            this.tabCoal.Size = new System.Drawing.Size(2505, 1257);
             this.tabCoal.TabIndex = 12;
             this.tabCoal.Text = "Coal";
-            this.tabCoal.UseVisualStyleBackColor = true;
             // 
             // tabCO
             // 
+            this.tabCO.BackColor = System.Drawing.Color.Ivory;
+            this.tabCO.Controls.Add(this.textBox22);
             this.tabCO.Location = new System.Drawing.Point(10, 53);
             this.tabCO.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.tabCO.Name = "tabCO";
-            this.tabCO.Size = new System.Drawing.Size(2505, 1255);
+            this.tabCO.Size = new System.Drawing.Size(2505, 1257);
             this.tabCO.TabIndex = 13;
             this.tabCO.Text = "CO";
-            this.tabCO.UseVisualStyleBackColor = true;
             // 
             // buttonPart75
             // 
@@ -1293,6 +1329,186 @@ namespace CEMSStudyApp.Pages
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // textBox11
+            // 
+            this.textBox11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox11.BackColor = System.Drawing.Color.Blue;
+            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.ForeColor = System.Drawing.Color.White;
+            this.textBox11.Location = new System.Drawing.Point(13, 23);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.ReadOnly = true;
+            this.textBox11.Size = new System.Drawing.Size(2465, 61);
+            this.textBox11.TabIndex = 50;
+            this.textBox11.Text = "Calculate CO2 Tons / Hr for OIL\r\n";
+            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox12.BackColor = System.Drawing.Color.Blue;
+            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox12.ForeColor = System.Drawing.Color.White;
+            this.textBox12.Location = new System.Drawing.Point(13, 23);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.ReadOnly = true;
+            this.textBox12.Size = new System.Drawing.Size(2465, 61);
+            this.textBox12.TabIndex = 50;
+            this.textBox12.Text = "Calculate CO2 Tons / Hr for FLOW";
+            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox13.BackColor = System.Drawing.Color.Blue;
+            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox13.ForeColor = System.Drawing.Color.White;
+            this.textBox13.Location = new System.Drawing.Point(13, 23);
+            this.textBox13.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.ReadOnly = true;
+            this.textBox13.Size = new System.Drawing.Size(2465, 61);
+            this.textBox13.TabIndex = 50;
+            this.textBox13.Text = "Calculate Heat Input (HTIP) mm/Btu for GAS";
+            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox14.BackColor = System.Drawing.Color.Blue;
+            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox14.ForeColor = System.Drawing.Color.White;
+            this.textBox14.Location = new System.Drawing.Point(13, 23);
+            this.textBox14.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.ReadOnly = true;
+            this.textBox14.Size = new System.Drawing.Size(2465, 61);
+            this.textBox14.TabIndex = 50;
+            this.textBox14.Text = "Calculate Heat Input (HTIP) mm/Btu for OIL";
+            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox15.BackColor = System.Drawing.Color.Blue;
+            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox15.ForeColor = System.Drawing.Color.White;
+            this.textBox15.Location = new System.Drawing.Point(13, 23);
+            this.textBox15.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.ReadOnly = true;
+            this.textBox15.Size = new System.Drawing.Size(2465, 61);
+            this.textBox15.TabIndex = 50;
+            this.textBox15.Text = "Calculate Heat Input (HTIP) mm/Btu for FLOW\r\n";
+            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox16.BackColor = System.Drawing.Color.Blue;
+            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox16.ForeColor = System.Drawing.Color.White;
+            this.textBox16.Location = new System.Drawing.Point(13, 23);
+            this.textBox16.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.ReadOnly = true;
+            this.textBox16.Size = new System.Drawing.Size(2465, 61);
+            this.textBox16.TabIndex = 50;
+            this.textBox16.Text = "Calculate SO2 Mass Emission lbs/hr for GAS";
+            this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox17
+            // 
+            this.textBox17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox17.BackColor = System.Drawing.Color.Blue;
+            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox17.ForeColor = System.Drawing.Color.White;
+            this.textBox17.Location = new System.Drawing.Point(13, 23);
+            this.textBox17.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.ReadOnly = true;
+            this.textBox17.Size = new System.Drawing.Size(2465, 61);
+            this.textBox17.TabIndex = 50;
+            this.textBox17.Text = "Calculate SO2 Mass Emission lbs/hr for OIL\r\n";
+            this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox18
+            // 
+            this.textBox18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox18.BackColor = System.Drawing.Color.Blue;
+            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox18.ForeColor = System.Drawing.Color.White;
+            this.textBox18.Location = new System.Drawing.Point(13, 23);
+            this.textBox18.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.ReadOnly = true;
+            this.textBox18.Size = new System.Drawing.Size(2465, 61);
+            this.textBox18.TabIndex = 50;
+            this.textBox18.Text = "Calculate CO2 Tons / Hr for FLOW";
+            this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox19
+            // 
+            this.textBox19.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox19.BackColor = System.Drawing.Color.Blue;
+            this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox19.ForeColor = System.Drawing.Color.White;
+            this.textBox19.Location = new System.Drawing.Point(13, 23);
+            this.textBox19.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.ReadOnly = true;
+            this.textBox19.Size = new System.Drawing.Size(2465, 61);
+            this.textBox19.TabIndex = 50;
+            this.textBox19.Text = "Calculate NOx lbs/mmBtu, lbs/hr, and ppmvd\r\n";
+            this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox20
+            // 
+            this.textBox20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox20.BackColor = System.Drawing.Color.Blue;
+            this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox20.ForeColor = System.Drawing.Color.White;
+            this.textBox20.Location = new System.Drawing.Point(13, 23);
+            this.textBox20.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.ReadOnly = true;
+            this.textBox20.Size = new System.Drawing.Size(2465, 61);
+            this.textBox20.TabIndex = 50;
+            this.textBox20.Text = "Calculate for Apportioned Fuel Factor";
+            this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox21
+            // 
+            this.textBox21.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox21.BackColor = System.Drawing.Color.Blue;
+            this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox21.ForeColor = System.Drawing.Color.White;
+            this.textBox21.Location = new System.Drawing.Point(13, 23);
+            this.textBox21.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.ReadOnly = true;
+            this.textBox21.Size = new System.Drawing.Size(2465, 61);
+            this.textBox21.TabIndex = 50;
+            this.textBox21.Text = "Calculate for COAL";
+            this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox22
+            // 
+            this.textBox22.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox22.BackColor = System.Drawing.Color.Blue;
+            this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox22.ForeColor = System.Drawing.Color.White;
+            this.textBox22.Location = new System.Drawing.Point(13, 23);
+            this.textBox22.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.ReadOnly = true;
+            this.textBox22.Size = new System.Drawing.Size(2465, 61);
+            this.textBox22.TabIndex = 50;
+            this.textBox22.Text = "Calculate for CO";
+            this.textBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -1317,6 +1533,30 @@ namespace CEMSStudyApp.Pages
             this.tabOilFlow.PerformLayout();
             this.tabCO2Gas.ResumeLayout(false);
             this.tabCO2Gas.PerformLayout();
+            this.tabCO2Oil.ResumeLayout(false);
+            this.tabCO2Oil.PerformLayout();
+            this.tabCO2Flow.ResumeLayout(false);
+            this.tabCO2Flow.PerformLayout();
+            this.tabHeatInputGas.ResumeLayout(false);
+            this.tabHeatInputGas.PerformLayout();
+            this.tabHeatInputOil.ResumeLayout(false);
+            this.tabHeatInputOil.PerformLayout();
+            this.tabHeatInputFlow.ResumeLayout(false);
+            this.tabHeatInputFlow.PerformLayout();
+            this.tabSO2Gas.ResumeLayout(false);
+            this.tabSO2Gas.PerformLayout();
+            this.tabSO2Oil.ResumeLayout(false);
+            this.tabSO2Oil.PerformLayout();
+            this.tabSO2Flow.ResumeLayout(false);
+            this.tabSO2Flow.PerformLayout();
+            this.tabNOx.ResumeLayout(false);
+            this.tabNOx.PerformLayout();
+            this.tabFuelFactor.ResumeLayout(false);
+            this.tabFuelFactor.PerformLayout();
+            this.tabCoal.ResumeLayout(false);
+            this.tabCoal.PerformLayout();
+            this.tabCO.ResumeLayout(false);
+            this.tabCO.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -1409,5 +1649,17 @@ namespace CEMSStudyApp.Pages
         private TabPage tabFuelFactor;
         private TabPage tabCoal;
         private TabPage tabCO;
+        private TextBox textBox11;
+        private TextBox textBox12;
+        private TextBox textBox13;
+        private TextBox textBox14;
+        private TextBox textBox15;
+        private TextBox textBox16;
+        private TextBox textBox17;
+        private TextBox textBox18;
+        private TextBox textBox19;
+        private TextBox textBox20;
+        private TextBox textBox21;
+        private TextBox textBox22;
     }
 }

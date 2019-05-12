@@ -159,6 +159,7 @@ namespace CEMSStudyApp.Pages
                         panelFormulas.Hide();
                         textBoxDefinitions.Hide();
                         webBrowserPdf.Hide();
+                        EnableNavButtons(true);
                         buttonToggle.Text = "Show";
                         textBoxDefinitions.Text = dashboardDictionary[index].Definition;
                         break;
@@ -167,12 +168,14 @@ namespace CEMSStudyApp.Pages
                         textBoxDefinitions.Hide();
                         webBrowserPdf.Hide();
                         buttonToggle.Text = "Show";
+                        EnableNavButtons(false);
                         comboBoxSectionNumber.Hide();
                         break;
                     default:
                         comboBoxSectionNumber.Show();
                         textBoxDefinitions.Show();
                         webBrowserPdf.Hide();
+                        EnableNavButtons(true);
                         buttonToggle.Text = "Hide";
                         textBoxDefinitions.Text = dashboardDictionary[index].Definition;
                         break;
@@ -190,6 +193,7 @@ namespace CEMSStudyApp.Pages
                         panelFormulas.Hide();
                         textBoxDefinitions.Hide();
                         webBrowserPdf.Hide();
+                        EnableNavButtons(true);
                         buttonToggle.Text = "Show";
                         break;
                     default:
@@ -197,6 +201,7 @@ namespace CEMSStudyApp.Pages
                         panelFormulas.Hide();
                         textBoxDefinitions.Hide();
                         webBrowserPdf.Show();
+                        EnableNavButtons(true);
                         buttonToggle.Text = "Hide";
                         break;
                 }
@@ -209,6 +214,13 @@ namespace CEMSStudyApp.Pages
                 //GET PDF
                 webBrowserPdf?.Navigate(new Uri(path));
             }
+        }
+
+        private void EnableNavButtons(bool b)
+        {
+            buttonToggle.Enabled = b;
+            buttonNext.Enabled = b;
+            buttonBack.Enabled = b;
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

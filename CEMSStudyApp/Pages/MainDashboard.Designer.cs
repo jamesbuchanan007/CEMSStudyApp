@@ -765,7 +765,7 @@ namespace CEMSStudyApp.Pages
             this.label208.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label208.Location = new System.Drawing.Point(247, 126);
             this.label208.Name = "label208";
-            this.label208.Size = new System.Drawing.Size(90, 18);
+            this.label208.Size = new System.Drawing.Size(88, 18);
             this.label208.TabIndex = 54;
             this.label208.Text = "Density of Oil = ";
             // 
@@ -775,7 +775,7 @@ namespace CEMSStudyApp.Pages
             this.label210.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label210.Location = new System.Drawing.Point(269, 98);
             this.label210.Name = "label210";
-            this.label210.Size = new System.Drawing.Size(69, 19);
+            this.label210.Size = new System.Drawing.Size(64, 19);
             this.label210.TabIndex = 53;
             this.label210.Text = "Oil Flow  = ";
             // 
@@ -1876,7 +1876,7 @@ namespace CEMSStudyApp.Pages
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label40.Location = new System.Drawing.Point(214, 152);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(126, 18);
+            this.label40.Size = new System.Drawing.Size(122, 18);
             this.label40.TabIndex = 82;
             this.label40.Text = " HTIP mm/BTU = ";
             // 

@@ -6420,6 +6420,7 @@ namespace CEMSStudyApp.Pages
             this.buttonDefinitions.Text = "Definitions";
             this.toolTip1.SetToolTip(this.buttonDefinitions, "Definitions");
             this.buttonDefinitions.UseVisualStyleBackColor = false;
+            this.buttonDefinitions.Click += new System.EventHandler(this.buttonDefinitions_Click);
             // 
             // pictureBoxMain
             // 

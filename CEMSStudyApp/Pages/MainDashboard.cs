@@ -1157,5 +1157,12 @@ namespace CEMSStudyApp.Pages
             textBoxTabCO2OilF3MassOfOil.Clear();
             textBoxTabCO2OilF3Answer.Clear();
         }
+
+        private void buttonDefinitions_Click(object sender, EventArgs e)
+        {
+            var dataSet = LoadTable("Definitions");
+            folderName = "";
+            LoadDashboardViewModel(dataSet, "", "Acronyms_Name", "", "Acronyms_Description");
+        }
     }
 }

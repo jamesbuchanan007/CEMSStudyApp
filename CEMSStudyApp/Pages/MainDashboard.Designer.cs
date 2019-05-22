@@ -535,6 +535,7 @@ namespace CEMSStudyApp.Pages
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.labelVersion = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelFormulas.SuspendLayout();
             this.tabFormulasMain.SuspendLayout();
@@ -566,6 +567,7 @@ namespace CEMSStudyApp.Pages
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.labelVersion);
             this.panel1.Controls.Add(this.buttonRandom);
             this.panel1.Controls.Add(this.panelFormulas);
             this.panel1.Controls.Add(this.buttonPart75);
@@ -601,7 +603,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.buttonRandom.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonRandom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonRandom.BackColor = System.Drawing.Color.Green;
+            this.buttonRandom.BackColor = System.Drawing.Color.ForestGreen;
             this.buttonRandom.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonRandom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRandom.ForeColor = System.Drawing.Color.White;
@@ -6676,9 +6678,10 @@ namespace CEMSStudyApp.Pages
             // comboBoxSectionNumber
             // 
             this.comboBoxSectionNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxSectionNumber.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxSectionNumber.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.comboBoxSectionNumber.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.comboBoxSectionNumber.DisplayMember = "Part_60_Number";
-            this.comboBoxSectionNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSectionNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSectionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSectionNumber.FormattingEnabled = true;
@@ -6760,6 +6763,16 @@ namespace CEMSStudyApp.Pages
             this.toolTip1.SetToolTip(this.buttonBack, "Previous");
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // labelVersion
+            // 
+            this.labelVersion.AutoSize = true;
+            this.labelVersion.ForeColor = System.Drawing.Color.White;
+            this.labelVersion.Location = new System.Drawing.Point(1102, 9);
+            this.labelVersion.Name = "labelVersion";
+            this.labelVersion.Size = new System.Drawing.Size(35, 13);
+            this.labelVersion.TabIndex = 131;
+            this.labelVersion.Text = "label2";
             // 
             // MainDashboard
             // 
@@ -7325,5 +7338,6 @@ namespace CEMSStudyApp.Pages
         private Button buttonTabCOppmvdF2Clear;
         private Button buttonTabCOppmvdF1Clear;
         private Button buttonRandom;
+        private Label labelVersion;
     }
 }

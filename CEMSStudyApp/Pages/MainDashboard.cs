@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.Remoting.Messaging;
 using System.Windows.Forms;
@@ -29,6 +30,8 @@ namespace CEMSStudyApp.Pages
             this.Font = SystemFonts.IconTitleFont;
             SystemEvents.UserPreferenceChanged += new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
             this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
+
+            labelVersion.Text = "Version: " + Application.ProductVersion;
 
             buttonToggle.Show();
             buttonToggle.Enabled = false;

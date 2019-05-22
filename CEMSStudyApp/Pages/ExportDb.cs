@@ -19,7 +19,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Exit Export/Import Process?", "CEMS Study App", MessageBoxButtons.YesNo,
+            DialogResult dr = MessageBox.Show("Exit Export/Import Process?", "CEMS Study", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
             if (dr == DialogResult.Yes)
@@ -30,7 +30,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
-            var answer = MessageBox.Show("Export Database??", "CEMS Study App", MessageBoxButtons.OKCancel,
+            var answer = MessageBox.Show("Export Database??", "CEMS Study", MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Question);
 
             //EXPORT
@@ -85,7 +85,7 @@ namespace CEMSStudyApp.Pages
                 else
                 {
                     filePath = string.Empty;
-                    MessageBox.Show("No Path Selected. Aborting Process", "CEMS Study App", MessageBoxButtons.OK,
+                    MessageBox.Show("No Path Selected. Aborting Process", "CEMS Study", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
 
@@ -130,14 +130,14 @@ namespace CEMSStudyApp.Pages
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Could Not Download " + table + " Table!!", @"CEMS Study App", MessageBoxButtons.OK,
+                    MessageBox.Show("Could Not Download " + table + " Table!!", @"CEMS Study", MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
                 }
 
                 fileExportFunctionByTable(ds, table, filePath);
             }
 
-            MessageBox.Show(@"DB Table Files Downloaded to " + filePath, @"CEMS Study App", MessageBoxButtons.OK,
+            MessageBox.Show(@"DB Table Files Downloaded to " + filePath, @"CEMS Study", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
             //OPENS FOLDERS WHERE FILES ARE SAVED

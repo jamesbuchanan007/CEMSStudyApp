@@ -35,6 +35,9 @@ namespace CEMSStudyApp.Pages
             buttonToggle.Text = "Show";
             EnableNavButtons(false);
 
+            buttonRandom.Show();
+            buttonRandom.Enabled = false;
+
             folderName = "";
 
             pictureBoxMain.Show();
@@ -109,29 +112,60 @@ namespace CEMSStudyApp.Pages
             dropDownDictionary = new Dictionary<int, string>();
 
 
-            for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
+            if (sectionColumnName == "Definitions")
             {
-
-                sectionName = string.IsNullOrEmpty(sectionColumnName) ? "" : dataSet.Tables[0].Rows[i][sectionColumnName].ToString();
-                file_Location = string.IsNullOrEmpty(file_LocationColumnName) ? "" : dataSet.Tables[0].Rows[i][file_LocationColumnName].ToString();
-                definition = string.IsNullOrEmpty(definitionColumnName) ? "" : dataSet.Tables[0].Rows[i][definitionColumnName].ToString();
-                sectionHeading = sectionColumnName == "Part75_Section_Number"
-                    ? dataSet.Tables[0].Rows[i]["Part75_Section_Heading"].ToString()
-                    : dataSet.Tables[0].Rows[i]["Section_Heading"].ToString();
-
-                //LOAD DASHBOARD DICTIONARY
-                dashboardDictionary.Add(i, new DashboardViewModel()
+                for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
                 {
-                    Heading = sectionHeading,
-                    Section_Name = sectionName,
-                    File_Location = file_Location,
-                    Definition = definition
-                });
+                    var regulation = dataSet.Tables[0].Rows[i]["Part75_Regulation"].ToString();
+                    var section = dataSet.Tables[0].Rows[i]["Part75_Section"].ToString();
+                    sectionHeading = regulation + " - " + section;
+                    var secNumber = dataSet.Tables[0].Rows[i]["Part75_Section_Number"].ToString();
+                    var secName = dataSet.Tables[0].Rows[i]["Part75_Section_Sub_Name"].ToString();
+                    var subHeading = secNumber + " - " + secName;
+                    definition = dataSet.Tables[0].Rows[i]["Part75_Definition"].ToString();
 
-                if (sectionHeading == "Formulas") return;
+                    //LOAD DASHBOARD DICTIONARY
+                    dashboardDictionary.Add(i, new DashboardViewModel()
+                    {
+                        Heading = sectionHeading,
+                        Section_Name = subHeading,
+                        File_Location = "",
+                        Definition = definition
+                    });
 
-                //LOAD DROPDOWN DICTIONARY
-                dropDownDictionary.Add(i, dataSet.Tables[0].Rows[i][sectionNumber].ToString());
+                    var word = dataSet.Tables[0].Rows[i]["Part75_Word"].ToString();
+                    var dropDown = word + " - " + subHeading;
+
+                    //LOAD DROPDOWN DICTIONARY
+                    dropDownDictionary.Add(i, dropDown);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
+                {
+
+                    sectionName = string.IsNullOrEmpty(sectionColumnName) ? "" : dataSet.Tables[0].Rows[i][sectionColumnName].ToString();
+                    file_Location = string.IsNullOrEmpty(file_LocationColumnName) ? "" : dataSet.Tables[0].Rows[i][file_LocationColumnName].ToString();
+                    definition = string.IsNullOrEmpty(definitionColumnName) ? "" : dataSet.Tables[0].Rows[i][definitionColumnName].ToString();
+                    sectionHeading = sectionColumnName == "Part75_Section_Number"
+                        ? dataSet.Tables[0].Rows[i]["Part75_Section_Heading"].ToString()
+                        : dataSet.Tables[0].Rows[i]["Section_Heading"].ToString();
+
+                    //LOAD DASHBOARD DICTIONARY
+                    dashboardDictionary.Add(i, new DashboardViewModel()
+                    {
+                        Heading = sectionHeading,
+                        Section_Name = sectionName,
+                        File_Location = file_Location,
+                        Definition = definition
+                    });
+
+                    if (sectionHeading == "Formulas") return;
+
+                    //LOAD DROPDOWN DICTIONARY
+                    dropDownDictionary.Add(i, dataSet.Tables[0].Rows[i][sectionNumber].ToString());
+                }
             }
 
             if (sectionHeading == "Formulas") return;
@@ -160,6 +194,15 @@ namespace CEMSStudyApp.Pages
                     //ENABLE STUDYING OF ACRONYMS, FORMULAS, AND UNITS OF MEASURE PRIOR TO SEEING ANSWER
                     case "Acronyms":
                     case "Units of Measure":
+                    case "Part 60 - Appendix B":
+                    case "Part 60 - Appendix F":
+                    case "Part 63 - Subpart UUUUU":
+                    case "Part 75 - Section 7":
+                    case "Part 75 - Section 8":
+                    case "Part 75 - Section 9":
+                    case "Part 75 - Section 20":
+                    case "Part 75 - Section 22":
+                    case "Part 75 - Appendix A":
                         comboBoxSectionNumber.Show();
                         panelFormulas.Hide();
                         textBoxDefinitions.Hide();
@@ -179,6 +222,7 @@ namespace CEMSStudyApp.Pages
                     default:
                         comboBoxSectionNumber.Show();
                         textBoxDefinitions.Show();
+                        panelFormulas.Hide();
                         webBrowserPdf.Hide();
                         EnableNavButtons(true);
                         buttonToggle.Text = "Hide";
@@ -226,11 +270,12 @@ namespace CEMSStudyApp.Pages
             buttonToggle.Enabled = b;
             buttonNext.Enabled = b;
             buttonBack.Enabled = b;
+            buttonRandom.Enabled = b;
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Exit Application", "CEMS Study App", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dr = MessageBox.Show("Exit Application", "CEMS Study", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (dr == DialogResult.Yes)
             {
@@ -1160,9 +1205,35 @@ namespace CEMSStudyApp.Pages
 
         private void buttonDefinitions_Click(object sender, EventArgs e)
         {
-            var dataSet = LoadTable("Definitions");
+            var dataSet = LoadTable("Definitions_View");
             folderName = "";
-            LoadDashboardViewModel(dataSet, "", "Acronyms_Name", "", "Acronyms_Description");
+            LoadDashboardViewModel(dataSet, "Definitions", "", "", "");
+        }
+
+        private void buttonRandom_Click(object sender, EventArgs e)
+        {
+            var max = dropDownDictionary.Count;
+            var n = new Random().Next(0, max - 1);
+
+            LoadDashboard(n);
+            comboBoxSectionNumber.SelectedIndex = n;
+
+        }
+
+        private void buttonSoftwareQuestions_Click(object sender, EventArgs e)
+        {
+            SoftwarePassword sw = new SoftwarePassword();
+            sw.ShowDialog();
+
+            if (SoftwarePassword.SWPassword)
+            {
+                MessageBox.Show("Access Granted", "CEMS Study");
+            }
+            else
+            {
+                MessageBox.Show("Access Not Granted", "CEMS Study");
+
+            }
         }
     }
 }

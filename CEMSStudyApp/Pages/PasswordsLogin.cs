@@ -48,13 +48,13 @@ namespace CEMSStudyApp.Pages
 
                 if (textBoxPassword.Text.Trim() == dbPassword)
                 {
-                    MessageBox.Show("Edit Mode", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Edit Mode", "CEMS Study", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     appIsLocked = false;
                     Close();
                 }
                 else
                 {
-                    MessageBox.Show("Incorrect Password !!", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Incorrect Password !!", "CEMS Study", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     appIsLocked = true;
                     Close();
                 }
@@ -67,7 +67,7 @@ namespace CEMSStudyApp.Pages
 
                 if (textBoxPassword.Text.Trim() != dbPassword)
                 {
-                    MessageBox.Show("Incorrect Password !!", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Incorrect Password !!", "CEMS Study", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     appIsLocked = true;
                     Close();
                     return;
@@ -75,7 +75,7 @@ namespace CEMSStudyApp.Pages
 
                 if (textBoxNewPassword1.Text != textBoxNewPassword2.Text)
                 {
-                    MessageBox.Show("New Passwords Do Not Match !!", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("New Passwords Do Not Match !!", "CEMS Study", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     appIsLocked = true;
                     Close();
                     return;
@@ -104,7 +104,7 @@ namespace CEMSStudyApp.Pages
                     adapter.InsertCommand = new SqlCommand(sql, connection);
                     adapter.InsertCommand.ExecuteNonQuery();
 
-                    MessageBox.Show("Password Updated", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Password Updated", "CEMS Study", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     appIsLocked = false;
                     Close();
                 }

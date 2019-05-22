@@ -34,6 +34,7 @@ namespace CEMSStudyApp.Pages
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDashboard));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonRandom = new System.Windows.Forms.Button();
             this.panelFormulas = new System.Windows.Forms.Panel();
             this.tabFormulasMain = new System.Windows.Forms.TabControl();
             this.tabOilFlow = new System.Windows.Forms.TabPage();
@@ -565,6 +566,7 @@ namespace CEMSStudyApp.Pages
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.buttonRandom);
             this.panel1.Controls.Add(this.panelFormulas);
             this.panel1.Controls.Add(this.buttonPart75);
             this.panel1.Controls.Add(this.textBoxSectionHeading);
@@ -593,6 +595,25 @@ namespace CEMSStudyApp.Pages
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1193, 729);
             this.panel1.TabIndex = 0;
+            // 
+            // buttonRandom
+            // 
+            this.buttonRandom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonRandom.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonRandom.BackColor = System.Drawing.Color.Green;
+            this.buttonRandom.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.buttonRandom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRandom.ForeColor = System.Drawing.Color.White;
+            this.buttonRandom.Location = new System.Drawing.Point(499, 688);
+            this.buttonRandom.Name = "buttonRandom";
+            this.buttonRandom.Size = new System.Drawing.Size(75, 23);
+            this.buttonRandom.TabIndex = 130;
+            this.buttonRandom.Tag = "Click to toggle Answer";
+            this.buttonRandom.Text = "Random";
+            this.toolTip1.SetToolTip(this.buttonRandom, "Show / Hide");
+            this.buttonRandom.UseVisualStyleBackColor = false;
+            this.buttonRandom.Visible = false;
+            this.buttonRandom.Click += new System.EventHandler(this.buttonRandom_Click);
             // 
             // panelFormulas
             // 
@@ -6396,11 +6417,11 @@ namespace CEMSStudyApp.Pages
             this.textBoxSectionHeading.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxSectionHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSectionHeading.ForeColor = System.Drawing.Color.White;
-            this.textBoxSectionHeading.Location = new System.Drawing.Point(200, 40);
+            this.textBoxSectionHeading.Location = new System.Drawing.Point(200, 9);
             this.textBoxSectionHeading.Multiline = true;
             this.textBoxSectionHeading.Name = "textBoxSectionHeading";
             this.textBoxSectionHeading.ReadOnly = true;
-            this.textBoxSectionHeading.Size = new System.Drawing.Size(942, 27);
+            this.textBoxSectionHeading.Size = new System.Drawing.Size(942, 41);
             this.textBoxSectionHeading.TabIndex = 127;
             this.textBoxSectionHeading.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -6409,7 +6430,6 @@ namespace CEMSStudyApp.Pages
             this.buttonDefinitions.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonDefinitions.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonDefinitions.BackColor = System.Drawing.Color.Blue;
-            this.buttonDefinitions.Enabled = false;
             this.buttonDefinitions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDefinitions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDefinitions.ForeColor = System.Drawing.Color.White;
@@ -6479,6 +6499,7 @@ namespace CEMSStudyApp.Pages
             this.buttonSoftwareQuestions.Text = "Software Questions";
             this.toolTip1.SetToolTip(this.buttonSoftwareQuestions, "Software Test Questions");
             this.buttonSoftwareQuestions.UseVisualStyleBackColor = false;
+            this.buttonSoftwareQuestions.Click += new System.EventHandler(this.buttonSoftwareQuestions_Click);
             // 
             // labelSectionSubHeading
             // 
@@ -6486,10 +6507,10 @@ namespace CEMSStudyApp.Pages
             this.labelSectionSubHeading.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.labelSectionSubHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSectionSubHeading.ForeColor = System.Drawing.Color.White;
-            this.labelSectionSubHeading.Location = new System.Drawing.Point(199, 70);
+            this.labelSectionSubHeading.Location = new System.Drawing.Point(199, 53);
             this.labelSectionSubHeading.MaximumSize = new System.Drawing.Size(947, 58);
             this.labelSectionSubHeading.Name = "labelSectionSubHeading";
-            this.labelSectionSubHeading.Size = new System.Drawing.Size(943, 29);
+            this.labelSectionSubHeading.Size = new System.Drawing.Size(943, 46);
             this.labelSectionSubHeading.TabIndex = 122;
             this.labelSectionSubHeading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -7303,5 +7324,6 @@ namespace CEMSStudyApp.Pages
         private Button buttonTabCOlbshrF1Clear;
         private Button buttonTabCOppmvdF2Clear;
         private Button buttonTabCOppmvdF1Clear;
+        private Button buttonRandom;
     }
 }

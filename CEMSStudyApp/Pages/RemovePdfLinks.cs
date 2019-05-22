@@ -14,7 +14,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Exit Hyperlink Removal Process?", "CEMS Study App", MessageBoxButtons.YesNo,
+            DialogResult dr = MessageBox.Show("Exit Hyperlink Removal Process?", "CEMS Study", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
             if (dr == DialogResult.Yes)
@@ -43,7 +43,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-            var doubleCheck = MessageBox.Show("Are You Sure?", "CEMS Study App", MessageBoxButtons.YesNo,
+            var doubleCheck = MessageBox.Show("Are You Sure?", "CEMS Study", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
             if (doubleCheck != DialogResult.Yes) return;
@@ -63,7 +63,7 @@ namespace CEMSStudyApp.Pages
                     RemoveAnnotations(inputPath, outputPath);
                 }
 
-                MessageBox.Show("Completed", "CEMS Study App", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Completed", "CEMS Study", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception exception)
             {

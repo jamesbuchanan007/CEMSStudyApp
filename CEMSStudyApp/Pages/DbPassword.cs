@@ -12,21 +12,21 @@ namespace CEMSStudyApp.Pages
         {
             if (e.KeyChar == (char) Keys.Enter)
             {
-                var password = "111";
+                var password = "L0c@l111";
                 PasswordsLogin pw = new PasswordsLogin();
 
                 if (textBoxPassword.Text != password)
                 {
-                    MessageBox.Show("Incorrect Password!!", "CEMS Study App", MessageBoxButtons.OK,
+                    MessageBox.Show("Incorrect Password!!", "CEMS Study", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
                     Hide();
-                    var pl = new PasswordsLogin();
-                    pl.Show();
+                    //var pl = new PasswordsLogin();
+                    //pl.Show();
                     return;
                 }
 
                 //USER WANTS TO EDIT DB AFTER ENTERING PASSWORD
-                var openDb = MessageBox.Show("Edit Database?", "CEMS Study App", MessageBoxButtons.YesNo,
+                var openDb = MessageBox.Show("Edit Database?", "CEMS Study", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
 
                 if (openDb == DialogResult.Yes)
@@ -42,7 +42,7 @@ namespace CEMSStudyApp.Pages
 
 
                 //USER WANTS TO EDIT DB AFTER ENTERING PASSWORD
-                var openHyperlink = MessageBox.Show("Remove PDF Hyperlinks?", "CEMS Study App", MessageBoxButtons.YesNo,
+                var openHyperlink = MessageBox.Show("Remove PDF Hyperlinks?", "CEMS Study", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
 
                 if (openHyperlink == DialogResult.Yes)

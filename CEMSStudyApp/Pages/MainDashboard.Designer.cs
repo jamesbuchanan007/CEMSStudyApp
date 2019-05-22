@@ -592,6 +592,7 @@ namespace CEMSStudyApp.Pages
             this.panel1.Controls.Add(this.buttonNext);
             this.panel1.Controls.Add(this.buttonBack);
             this.panel1.Location = new System.Drawing.Point(17, 13);
+            this.panel1.MinimumSize = new System.Drawing.Size(1193, 729);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1193, 729);
             this.panel1.TabIndex = 0;
@@ -6764,7 +6765,6 @@ namespace CEMSStudyApp.Pages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Blue;
             this.ClientSize = new System.Drawing.Size(1227, 760);
             this.Controls.Add(this.panel1);

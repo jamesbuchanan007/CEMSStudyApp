@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Deployment.Application;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
@@ -31,7 +32,7 @@ namespace CEMSStudyApp.Pages
             SystemEvents.UserPreferenceChanged += new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
             this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
 
-            labelVersion.Text = "Version: " + Application.ProductVersion;
+            labelVersion.Text = "Version: " + ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4);
 
             buttonToggle.Show();
             buttonToggle.Enabled = false;

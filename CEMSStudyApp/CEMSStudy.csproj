@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\jamesb\Desktop\James\CEMS Study\1.0.0.8\</PublishUrl>
+    <PublishUrl>C:\Users\jamesb\Desktop\James\CEMS Study\1.0.0.10\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>//localhost/c%24/User/jamesb/Desktop/James/CEMS Study/</UpdateUrl>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -68,10 +68,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>F1DBD546EA38600144D94CB1CC1E13AC39ED32B0</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>EF4DA25B8888B1EB9F361F9C7F69EBFF97FA7E3D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>CEMSStudy_2_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>CEMSStudy_4_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
@@ -182,7 +182,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="CEMSStudy_2_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <Content Include="Part60_Files\AppB_PS1_1.pdf" />
     <Content Include="Part60_Files\AppB_PS1_12.pdf" />
@@ -773,6 +772,124 @@
     <Content Include="Part75_PlainEnglish_Files\Part75_PE_AppendixA.pdf" />
     <Content Include="Part75_PlainEnglish_Files\Part75_PE_AppendixB.pdf" />
     <Content Include="Part75_PlainEnglish_Files\Part75_PE_AppendixC.pdf" />
+    <Content Include="Part60_Files\App_B_Complete.pdf" />
+    <Content Include="Part60_Files\App_F_Complete.pdf" />
+    <Content Include="Part63_Files\Part63_S_U_63_Complete.pdf" />
+    <Content Include="Part75_Files\Part75_Full_Manual.pdf" />
+    <Content Include="Part75_PlainEnglish_Files\Part75_PE_Full_Manual.pdf" />
+    <Content Include="Prism_Files\Prism_1.1.pdf" />
+    <Content Include="Prism_Files\Prism_1.2.pdf" />
+    <Content Include="Prism_Files\Prism_1.3.pdf" />
+    <Content Include="Prism_Files\Prism_1.4.pdf" />
+    <Content Include="Prism_Files\Prism_1.5.pdf" />
+    <Content Include="Prism_Files\Prism_1.6.pdf" />
+    <Content Include="Prism_Files\Prism_1.7.pdf" />
+    <Content Include="Prism_Files\Prism_10.1.pdf" />
+    <Content Include="Prism_Files\Prism_10.10.pdf" />
+    <Content Include="Prism_Files\Prism_10.11.pdf" />
+    <Content Include="Prism_Files\Prism_10.2.pdf" />
+    <Content Include="Prism_Files\Prism_10.3.pdf" />
+    <Content Include="Prism_Files\Prism_10.4.pdf" />
+    <Content Include="Prism_Files\Prism_10.5.pdf" />
+    <Content Include="Prism_Files\Prism_10.6.pdf" />
+    <Content Include="Prism_Files\Prism_10.7.pdf" />
+    <Content Include="Prism_Files\Prism_10.8.pdf" />
+    <Content Include="Prism_Files\Prism_10.9.pdf" />
+    <Content Include="Prism_Files\Prism_11.1.pdf" />
+    <Content Include="Prism_Files\Prism_11.2.pdf" />
+    <Content Include="Prism_Files\Prism_11.3.pdf" />
+    <Content Include="Prism_Files\Prism_11.4.pdf" />
+    <Content Include="Prism_Files\Prism_11.5.pdf" />
+    <Content Include="Prism_Files\Prism_11.6.pdf" />
+    <Content Include="Prism_Files\Prism_11.7.pdf" />
+    <Content Include="Prism_Files\Prism_12.1.pdf" />
+    <Content Include="Prism_Files\Prism_12.2.pdf" />
+    <Content Include="Prism_Files\Prism_12.3.pdf" />
+    <Content Include="Prism_Files\Prism_12.4.pdf" />
+    <Content Include="Prism_Files\Prism_13.1.pdf" />
+    <Content Include="Prism_Files\Prism_13.10.pdf" />
+    <Content Include="Prism_Files\Prism_13.11.pdf" />
+    <Content Include="Prism_Files\Prism_13.12.pdf" />
+    <Content Include="Prism_Files\Prism_13.13.pdf" />
+    <Content Include="Prism_Files\Prism_13.14.pdf" />
+    <Content Include="Prism_Files\Prism_13.15.pdf" />
+    <Content Include="Prism_Files\Prism_13.16.pdf" />
+    <Content Include="Prism_Files\Prism_13.17.pdf" />
+    <Content Include="Prism_Files\Prism_13.18.pdf" />
+    <Content Include="Prism_Files\Prism_13.19.pdf" />
+    <Content Include="Prism_Files\Prism_13.2.pdf" />
+    <Content Include="Prism_Files\Prism_13.20.pdf" />
+    <Content Include="Prism_Files\Prism_13.21.pdf" />
+    <Content Include="Prism_Files\Prism_13.22.pdf" />
+    <Content Include="Prism_Files\Prism_13.23.pdf" />
+    <Content Include="Prism_Files\Prism_13.24.pdf" />
+    <Content Include="Prism_Files\Prism_13.25.pdf" />
+    <Content Include="Prism_Files\Prism_13.26.pdf" />
+    <Content Include="Prism_Files\Prism_13.27.pdf" />
+    <Content Include="Prism_Files\Prism_13.3.pdf" />
+    <Content Include="Prism_Files\Prism_13.4.pdf" />
+    <Content Include="Prism_Files\Prism_13.5.pdf" />
+    <Content Include="Prism_Files\Prism_13.6.pdf" />
+    <Content Include="Prism_Files\Prism_13.7.pdf" />
+    <Content Include="Prism_Files\Prism_13.8.pdf" />
+    <Content Include="Prism_Files\Prism_13.9.pdf" />
+    <Content Include="Prism_Files\Prism_14.1.pdf" />
+    <Content Include="Prism_Files\Prism_14.2.pdf" />
+    <Content Include="Prism_Files\Prism_2.1.pdf" />
+    <Content Include="Prism_Files\Prism_2.2.pdf" />
+    <Content Include="Prism_Files\Prism_2.3.pdf" />
+    <Content Include="Prism_Files\Prism_3.1.pdf" />
+    <Content Include="Prism_Files\Prism_3.10.pdf" />
+    <Content Include="Prism_Files\Prism_3.11.pdf" />
+    <Content Include="Prism_Files\Prism_3.12.pdf" />
+    <Content Include="Prism_Files\Prism_3.13.pdf" />
+    <Content Include="Prism_Files\Prism_3.2.pdf" />
+    <Content Include="Prism_Files\Prism_3.3.pdf" />
+    <Content Include="Prism_Files\Prism_3.4.pdf" />
+    <Content Include="Prism_Files\Prism_3.5.pdf" />
+    <Content Include="Prism_Files\Prism_3.6.pdf" />
+    <Content Include="Prism_Files\Prism_3.7.pdf" />
+    <Content Include="Prism_Files\Prism_3.8.pdf" />
+    <Content Include="Prism_Files\Prism_3.9.pdf" />
+    <Content Include="Prism_Files\Prism_4.1.pdf" />
+    <Content Include="Prism_Files\Prism_4.2.pdf" />
+    <Content Include="Prism_Files\Prism_4.3.pdf" />
+    <Content Include="Prism_Files\Prism_4.4.pdf" />
+    <Content Include="Prism_Files\Prism_4.5.pdf" />
+    <Content Include="Prism_Files\Prism_5.1.pdf" />
+    <Content Include="Prism_Files\Prism_5.2.pdf" />
+    <Content Include="Prism_Files\Prism_5.3.pdf" />
+    <Content Include="Prism_Files\Prism_5.4.pdf" />
+    <Content Include="Prism_Files\Prism_5.5.pdf" />
+    <Content Include="Prism_Files\Prism_6.1.pdf" />
+    <Content Include="Prism_Files\Prism_6.2.pdf" />
+    <Content Include="Prism_Files\Prism_6.3.pdf" />
+    <Content Include="Prism_Files\Prism_6.4.pdf" />
+    <Content Include="Prism_Files\Prism_6.5.pdf" />
+    <Content Include="Prism_Files\Prism_6.6.pdf" />
+    <Content Include="Prism_Files\Prism_6.7.pdf" />
+    <Content Include="Prism_Files\Prism_7.1.pdf" />
+    <Content Include="Prism_Files\Prism_7.2.pdf" />
+    <Content Include="Prism_Files\Prism_7.3.pdf" />
+    <Content Include="Prism_Files\Prism_7.4.pdf" />
+    <Content Include="Prism_Files\Prism_8.1.pdf" />
+    <Content Include="Prism_Files\Prism_8.2.pdf" />
+    <Content Include="Prism_Files\Prism_8.3.pdf" />
+    <Content Include="Prism_Files\Prism_8.4.pdf" />
+    <Content Include="Prism_Files\Prism_8.5.pdf" />
+    <Content Include="Prism_Files\Prism_9.1.pdf" />
+    <Content Include="Prism_Files\Prism_9.10.pdf" />
+    <Content Include="Prism_Files\Prism_9.11.pdf" />
+    <Content Include="Prism_Files\Prism_9.12.pdf" />
+    <Content Include="Prism_Files\Prism_9.2.pdf" />
+    <Content Include="Prism_Files\Prism_9.3.pdf" />
+    <Content Include="Prism_Files\Prism_9.4.pdf" />
+    <Content Include="Prism_Files\Prism_9.5.pdf" />
+    <Content Include="Prism_Files\Prism_9.6.pdf" />
+    <Content Include="Prism_Files\Prism_9.7.pdf" />
+    <Content Include="Prism_Files\Prism_9.8.pdf" />
+    <Content Include="Prism_Files\Prism_9.9.pdf" />
+    <Content Include="Prism_Files\Prism_Full_Manual.pdf" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

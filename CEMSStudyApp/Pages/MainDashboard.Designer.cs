@@ -34,6 +34,7 @@ namespace CEMSStudyApp.Pages
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDashboard));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelVersion = new System.Windows.Forms.Label();
             this.buttonRandom = new System.Windows.Forms.Button();
             this.panelFormulas = new System.Windows.Forms.Panel();
             this.tabFormulasMain = new System.Windows.Forms.TabControl();
@@ -535,7 +536,6 @@ namespace CEMSStudyApp.Pages
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.labelVersion = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelFormulas.SuspendLayout();
             this.tabFormulasMain.SuspendLayout();
@@ -598,6 +598,16 @@ namespace CEMSStudyApp.Pages
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1193, 729);
             this.panel1.TabIndex = 0;
+            // 
+            // labelVersion
+            // 
+            this.labelVersion.AutoSize = true;
+            this.labelVersion.ForeColor = System.Drawing.Color.White;
+            this.labelVersion.Location = new System.Drawing.Point(1102, 9);
+            this.labelVersion.Name = "labelVersion";
+            this.labelVersion.Size = new System.Drawing.Size(48, 13);
+            this.labelVersion.TabIndex = 131;
+            this.labelVersion.Text = "Version: ";
             // 
             // buttonRandom
             // 
@@ -6762,16 +6772,6 @@ namespace CEMSStudyApp.Pages
             this.toolTip1.SetToolTip(this.buttonBack, "Previous");
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
-            // 
-            // labelVersion
-            // 
-            this.labelVersion.AutoSize = true;
-            this.labelVersion.ForeColor = System.Drawing.Color.White;
-            this.labelVersion.Location = new System.Drawing.Point(1102, 9);
-            this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(35, 13);
-            this.labelVersion.TabIndex = 131;
-            this.labelVersion.Text = "label2";
             // 
             // MainDashboard
             // 

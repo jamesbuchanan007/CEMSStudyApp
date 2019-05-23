@@ -603,7 +603,7 @@ namespace CEMSStudyApp.Pages
             // 
             this.labelVersion.AutoSize = true;
             this.labelVersion.ForeColor = System.Drawing.Color.White;
-            this.labelVersion.Location = new System.Drawing.Point(1102, 9);
+            this.labelVersion.Location = new System.Drawing.Point(3, 6);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(48, 13);
             this.labelVersion.TabIndex = 131;

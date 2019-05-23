@@ -14,7 +14,7 @@ namespace CEMSStudyApp.Pages
         {
             if (e.KeyChar == (char) Keys.Enter)
             {
-                var password = "Spectrum_3410";
+                var password = "prism";
 
                 MainDashboard md = new MainDashboard();
 

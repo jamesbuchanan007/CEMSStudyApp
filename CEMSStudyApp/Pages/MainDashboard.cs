@@ -31,8 +31,17 @@ namespace CEMSStudyApp.Pages
             this.Font = SystemFonts.IconTitleFont;
             SystemEvents.UserPreferenceChanged += new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
             this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
+           
+            try
+            {
+                var version = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4);
+                labelVersion.Text = "Version: " + version;
 
-            labelVersion.Text = "Version: " + ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4);
+            }
+            catch (Exception e)
+            {
+                labelVersion.Text = "Version: Debug";
+            }
 
             buttonToggle.Show();
             buttonToggle.Enabled = false;
@@ -1231,7 +1240,9 @@ namespace CEMSStudyApp.Pages
 
             if (SoftwarePassword.SWPassword)
             {
-                MessageBox.Show("Access Granted", "CEMS Study");
+                var dataSet = LoadTable("Prism");
+                folderName = "Prism_Files";
+                LoadDashboardViewModel(dataSet, "Prism_SectionNumber", "Prism_SectionName", "File_Location", "");
             }
             else
             {

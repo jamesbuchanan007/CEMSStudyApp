@@ -31,7 +31,7 @@ namespace CEMSStudyApp.Pages
             this.Font = SystemFonts.IconTitleFont;
             SystemEvents.UserPreferenceChanged += new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
             this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
-           
+
             try
             {
                 var version = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4);
@@ -1235,8 +1235,11 @@ namespace CEMSStudyApp.Pages
 
         private void buttonSoftwareQuestions_Click(object sender, EventArgs e)
         {
-            SoftwarePassword sw = new SoftwarePassword();
-            sw.ShowDialog();
+            if (!SoftwarePassword.SWPassword)
+            {
+                SoftwarePassword sw = new SoftwarePassword();
+                sw.ShowDialog();
+            }
 
             if (SoftwarePassword.SWPassword)
             {

@@ -402,7 +402,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonUnitsOfMeasure_Click(object sender, EventArgs e)
         {
-            var dataSet = LoadTable("UnitOfMeasure");
+            var dataSet = LoadTable("UnitsOfMeasure_View");
             folderName = "";
             LoadDashboardViewModel(dataSet, "", "UnitOfMeasure_Name", "", "UnitOfMeasure_Description");
         }

@@ -15,22 +15,18 @@ namespace CEMSStudyApp.Pages
             if (e.KeyChar == (char) Keys.Enter)
             {
                 var password = "prism";
-
-                MainDashboard md = new MainDashboard();
-
+                
                 if (textBoxPassword.Text != password)
                 {
                     MessageBox.Show("Incorrect Password!!", "CEMS Study", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
                     SWPassword = false;
                     Hide();
-                    //md.Show();
                     return;
                 }
 
                 SWPassword = true;
                 Hide();
-                md.Show();
             }
         }
     }

@@ -361,7 +361,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonAcronyms_Click(object sender, EventArgs e)
         {
-            var dataSet = LoadTable("Acronyms");
+            var dataSet = LoadTable("Acronyms_View");
             folderName = "";
 
             LoadDashboardViewModel(dataSet, "Acronyms_Name", "Acronyms_Name", "", "Acronyms_Description");

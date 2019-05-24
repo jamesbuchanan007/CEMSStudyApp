@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using CEMSStudyApp.Pages;
-
-namespace CEMSStudyApp.Models
+﻿namespace CEMSStudyApp.Models
 {
     public class DashboardViewModel
     {

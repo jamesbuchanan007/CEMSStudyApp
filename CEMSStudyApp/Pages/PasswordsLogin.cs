@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
-using CEMSStudyApp.Models;
 using CEMSStudyApp.Properties;
 
 namespace CEMSStudyApp.Pages

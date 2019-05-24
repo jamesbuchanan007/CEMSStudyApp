@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Deployment.Application;
-using System.Diagnostics;
 using System.Drawing;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.Remoting.Messaging;
 using System.Windows.Forms;
 using CEMSStudyApp.Models;
 using CEMSStudyApp.Properties;
@@ -116,6 +109,7 @@ namespace CEMSStudyApp.Pages
             string file_Location;
             string sectionName;
             string sectionHeading = "";
+            string dropDown = "";
 
             //CHECK IF TABLE IS EMPTY
             if (dataSet.Tables[0].Rows.Count == 0) return;
@@ -147,7 +141,7 @@ namespace CEMSStudyApp.Pages
                     });
 
                     var word = dataSet.Tables[0].Rows[i]["Part75_Word"].ToString();
-                    var dropDown = word + " - " + subHeading;
+                    dropDown = word + " - " + subHeading;
 
                     //LOAD DROPDOWN DICTIONARY
                     dropDownDictionary.Add(i, dropDown);
@@ -176,8 +170,10 @@ namespace CEMSStudyApp.Pages
 
                     if (sectionHeading == "Formulas") return;
 
+                    dropDown = dataSet.Tables[0].Rows[i][sectionNumber].ToString();
+
                     //LOAD DROPDOWN DICTIONARY
-                    dropDownDictionary.Add(i, dataSet.Tables[0].Rows[i][sectionNumber].ToString());
+                    dropDownDictionary.Add(i, dropDown);
                 }
             }
 

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Data;
-using System.Data.SqlClient;
-using CEMSStudyApp.Models;
 
 namespace CEMSStudyApp
 {

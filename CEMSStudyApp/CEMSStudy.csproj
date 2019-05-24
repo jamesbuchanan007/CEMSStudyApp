@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\jamesb\Desktop\James\CEMS Study\1.0.0.16\</PublishUrl>
+    <PublishUrl>C:\Users\jamesb\Desktop\James\CEMS Study\1.0.0.17\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>//localhost/c%24/User/jamesb/Desktop/James/CEMS Study/</UpdateUrl>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

@@ -368,7 +368,7 @@ namespace CEMSStudyApp.Pages
             var dataSet = LoadTable("Acronyms");
             folderName = "";
 
-            LoadDashboardViewModel(dataSet, "", "Acronyms_Name", "", "Acronyms_Description");
+            LoadDashboardViewModel(dataSet, "Acronyms_Name", "Acronyms_Name", "", "Acronyms_Description");
         }
 
         private void buttonFormulas_Click(object sender, EventArgs e)
@@ -404,7 +404,7 @@ namespace CEMSStudyApp.Pages
         {
             var dataSet = LoadTable("UnitsOfMeasure_View");
             folderName = "";
-            LoadDashboardViewModel(dataSet, "", "UnitOfMeasure_Name", "", "UnitOfMeasure_Description");
+            LoadDashboardViewModel(dataSet, "UnitOfMeasure_Name", "UnitOfMeasure_Name", "", "UnitOfMeasure_Description");
         }
 
         private void buttonAdmin_Click(object sender, EventArgs e)

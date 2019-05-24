@@ -6828,7 +6828,7 @@ namespace CEMSStudyApp.Pages
             this.buttonTab420Clear.Location = new System.Drawing.Point(250, 260);
             this.buttonTab420Clear.Name = "buttonTab420Clear";
             this.buttonTab420Clear.Size = new System.Drawing.Size(75, 30);
-            this.buttonTab420Clear.TabIndex = 240;
+            this.buttonTab420Clear.TabIndex = 243;
             this.buttonTab420Clear.Text = "Clear";
             this.buttonTab420Clear.UseVisualStyleBackColor = false;
             this.buttonTab420Clear.Click += new System.EventHandler(this.buttonTab420Clear_Click);
@@ -6872,7 +6872,7 @@ namespace CEMSStudyApp.Pages
             this.buttonTab420Calculate.Location = new System.Drawing.Point(361, 260);
             this.buttonTab420Calculate.Name = "buttonTab420Calculate";
             this.buttonTab420Calculate.Size = new System.Drawing.Size(75, 30);
-            this.buttonTab420Calculate.TabIndex = 239;
+            this.buttonTab420Calculate.TabIndex = 242;
             this.buttonTab420Calculate.Text = "Calculate";
             this.buttonTab420Calculate.UseVisualStyleBackColor = false;
             this.buttonTab420Calculate.Click += new System.EventHandler(this.buttonTab420Calculate_Click);
@@ -6941,7 +6941,7 @@ namespace CEMSStudyApp.Pages
             this.textBoxTab42020ma.Location = new System.Drawing.Point(336, 151);
             this.textBoxTab42020ma.Name = "textBoxTab42020ma";
             this.textBoxTab42020ma.Size = new System.Drawing.Size(100, 21);
-            this.textBoxTab42020ma.TabIndex = 245;
+            this.textBoxTab42020ma.TabIndex = 239;
             this.textBoxTab42020ma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxTab420HighScale
@@ -6950,7 +6950,7 @@ namespace CEMSStudyApp.Pages
             this.textBoxTab420HighScale.Location = new System.Drawing.Point(336, 178);
             this.textBoxTab420HighScale.Name = "textBoxTab420HighScale";
             this.textBoxTab420HighScale.Size = new System.Drawing.Size(100, 21);
-            this.textBoxTab420HighScale.TabIndex = 246;
+            this.textBoxTab420HighScale.TabIndex = 240;
             this.textBoxTab420HighScale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxTab420LowScale
@@ -6959,7 +6959,7 @@ namespace CEMSStudyApp.Pages
             this.textBoxTab420LowScale.Location = new System.Drawing.Point(336, 205);
             this.textBoxTab420LowScale.Name = "textBoxTab420LowScale";
             this.textBoxTab420LowScale.Size = new System.Drawing.Size(100, 21);
-            this.textBoxTab420LowScale.TabIndex = 247;
+            this.textBoxTab420LowScale.TabIndex = 241;
             this.textBoxTab420LowScale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label206

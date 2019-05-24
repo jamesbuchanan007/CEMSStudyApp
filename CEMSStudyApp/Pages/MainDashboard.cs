@@ -22,8 +22,8 @@ namespace CEMSStudyApp.Pages
             InitializeComponent(); //LOAD COMBOBOX PAGES
 
             this.Font = SystemFonts.IconTitleFont;
-            SystemEvents.UserPreferenceChanged += new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
-            this.FormClosing += new FormClosingEventHandler(Form1_FormClosing);
+            SystemEvents.UserPreferenceChanged += SystemEvents_UserPreferenceChanged;
+            this.FormClosing += Form1_FormClosing;
 
             try
             {
@@ -64,7 +64,7 @@ namespace CEMSStudyApp.Pages
         }
         void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            SystemEvents.UserPreferenceChanged -= new UserPreferenceChangedEventHandler(SystemEvents_UserPreferenceChanged);
+            SystemEvents.UserPreferenceChanged -= SystemEvents_UserPreferenceChanged;
         }
 
         //CONNECTS TO DB AND LOADS DATA SET
@@ -1248,6 +1248,38 @@ namespace CEMSStudyApp.Pages
                 MessageBox.Show("Access Not Granted", "CEMS Study");
 
             }
+        }
+
+        private void buttonTab420Clear_Click(object sender, EventArgs e)
+        {
+            textBoxTab42020ma.Clear();
+            textBoxTab4204ma.Clear();
+            textBoxTab420ActualCount.Clear();
+            textBoxTab420Answer.Clear();
+            textBoxTab420HighScale.Clear();
+            textBoxTab420LowScale.Clear();
+            textBoxTab420ActualCount.Focus();
+        }
+
+        private void buttonTab420Calculate_Click(object sender, EventArgs e)
+        {
+            var ac = CTD(textBoxTab420ActualCount.Text, textBoxTab420ActualCount);
+            if (ac == null) return;
+
+            var low4ma = CTD(textBoxTab4204ma.Text, textBoxTab4204ma);
+            if (low4ma == null) return;
+
+            var high20ma = CTD(textBoxTab42020ma.Text, textBoxTab42020ma);
+            if (high20ma == null) return;
+
+            var highScale = CTD(textBoxTab420HighScale.Text, textBoxTab420HighScale);
+            if (highScale == null) return;
+
+            var lowScale = CTD(textBoxTab420LowScale.Text, textBoxTab420LowScale);
+            if (lowScale == null) return;
+           
+            var answer = (ac - low4ma) / (high20ma - low4ma) * (highScale - lowScale);
+            DisplayAnswer(answer, textBoxTab420Answer);
         }
     }
 }

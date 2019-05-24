@@ -536,6 +536,23 @@ namespace CEMSStudyApp.Pages
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tabPage4_20ma = new System.Windows.Forms.TabPage();
+            this.buttonTab420Clear = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.buttonTab420Calculate = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxTab420Answer = new System.Windows.Forms.TextBox();
+            this.textBoxTab4204ma = new System.Windows.Forms.TextBox();
+            this.textBoxTab420ActualCount = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxTab42020ma = new System.Windows.Forms.TextBox();
+            this.textBoxTab420HighScale = new System.Windows.Forms.TextBox();
+            this.textBoxTab420LowScale = new System.Windows.Forms.TextBox();
+            this.label206 = new System.Windows.Forms.Label();
+            this.label225 = new System.Windows.Forms.Label();
+            this.label226 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelFormulas.SuspendLayout();
             this.tabFormulasMain.SuspendLayout();
@@ -559,6 +576,7 @@ namespace CEMSStudyApp.Pages
             this.tabCOppmvd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage4_20ma.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -659,6 +677,7 @@ namespace CEMSStudyApp.Pages
             this.tabFormulasMain.Controls.Add(this.tabColbsmmBtu);
             this.tabFormulasMain.Controls.Add(this.tabCOlbshr);
             this.tabFormulasMain.Controls.Add(this.tabCOppmvd);
+            this.tabFormulasMain.Controls.Add(this.tabPage4_20ma);
             this.tabFormulasMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabFormulasMain.Location = new System.Drawing.Point(0, -3);
             this.tabFormulasMain.Name = "tabFormulasMain";
@@ -6772,6 +6791,207 @@ namespace CEMSStudyApp.Pages
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // tabPage4_20ma
+            // 
+            this.tabPage4_20ma.BackColor = System.Drawing.Color.Ivory;
+            this.tabPage4_20ma.Controls.Add(this.label226);
+            this.tabPage4_20ma.Controls.Add(this.label225);
+            this.tabPage4_20ma.Controls.Add(this.label206);
+            this.tabPage4_20ma.Controls.Add(this.textBoxTab420LowScale);
+            this.tabPage4_20ma.Controls.Add(this.textBoxTab420HighScale);
+            this.tabPage4_20ma.Controls.Add(this.textBoxTab42020ma);
+            this.tabPage4_20ma.Controls.Add(this.buttonTab420Clear);
+            this.tabPage4_20ma.Controls.Add(this.textBox4);
+            this.tabPage4_20ma.Controls.Add(this.textBox6);
+            this.tabPage4_20ma.Controls.Add(this.buttonTab420Calculate);
+            this.tabPage4_20ma.Controls.Add(this.label2);
+            this.tabPage4_20ma.Controls.Add(this.textBoxTab420Answer);
+            this.tabPage4_20ma.Controls.Add(this.textBoxTab4204ma);
+            this.tabPage4_20ma.Controls.Add(this.textBoxTab420ActualCount);
+            this.tabPage4_20ma.Controls.Add(this.label3);
+            this.tabPage4_20ma.Controls.Add(this.label4);
+            this.tabPage4_20ma.Location = new System.Drawing.Point(4, 24);
+            this.tabPage4_20ma.Name = "tabPage4_20ma";
+            this.tabPage4_20ma.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4_20ma.Size = new System.Drawing.Size(939, 514);
+            this.tabPage4_20ma.TabIndex = 18;
+            this.tabPage4_20ma.Text = "4-20ma";
+            // 
+            // buttonTab420Clear
+            // 
+            this.buttonTab420Clear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTab420Clear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTab420Clear.BackColor = System.Drawing.Color.Firebrick;
+            this.buttonTab420Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTab420Clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTab420Clear.ForeColor = System.Drawing.Color.White;
+            this.buttonTab420Clear.Location = new System.Drawing.Point(250, 260);
+            this.buttonTab420Clear.Name = "buttonTab420Clear";
+            this.buttonTab420Clear.Size = new System.Drawing.Size(75, 30);
+            this.buttonTab420Clear.TabIndex = 240;
+            this.buttonTab420Clear.Text = "Clear";
+            this.buttonTab420Clear.UseVisualStyleBackColor = false;
+            this.buttonTab420Clear.Click += new System.EventHandler(this.buttonTab420Clear_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox4.BackColor = System.Drawing.Color.Blue;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.ForeColor = System.Drawing.Color.White;
+            this.textBox4.Location = new System.Drawing.Point(-1, 7);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(927, 29);
+            this.textBox4.TabIndex = 236;
+            this.textBox4.Text = "Calculate Output Reading for 4-20mA Loop";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox6.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.ForeColor = System.Drawing.Color.White;
+            this.textBox6.Location = new System.Drawing.Point(17, 65);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(425, 22);
+            this.textBox6.TabIndex = 235;
+            this.textBox6.Text = "Value = (Actual Count - 4mA) / (20mA - 4mA) * (High Scale - Low Scale)";
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // buttonTab420Calculate
+            // 
+            this.buttonTab420Calculate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTab420Calculate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTab420Calculate.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonTab420Calculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTab420Calculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTab420Calculate.ForeColor = System.Drawing.Color.White;
+            this.buttonTab420Calculate.Location = new System.Drawing.Point(361, 260);
+            this.buttonTab420Calculate.Name = "buttonTab420Calculate";
+            this.buttonTab420Calculate.Size = new System.Drawing.Size(75, 30);
+            this.buttonTab420Calculate.TabIndex = 239;
+            this.buttonTab420Calculate.Text = "Calculate";
+            this.buttonTab420Calculate.UseVisualStyleBackColor = false;
+            this.buttonTab420Calculate.Click += new System.EventHandler(this.buttonTab420Calculate_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(199, 235);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 20);
+            this.label2.TabIndex = 234;
+            this.label2.Text = "Analog Reading =";
+            // 
+            // textBoxTab420Answer
+            // 
+            this.textBoxTab420Answer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTab420Answer.Location = new System.Drawing.Point(336, 232);
+            this.textBoxTab420Answer.Name = "textBoxTab420Answer";
+            this.textBoxTab420Answer.ReadOnly = true;
+            this.textBoxTab420Answer.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTab420Answer.TabIndex = 233;
+            this.textBoxTab420Answer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTab4204ma
+            // 
+            this.textBoxTab4204ma.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTab4204ma.Location = new System.Drawing.Point(336, 123);
+            this.textBoxTab4204ma.Name = "textBoxTab4204ma";
+            this.textBoxTab4204ma.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTab4204ma.TabIndex = 238;
+            this.textBoxTab4204ma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTab420ActualCount
+            // 
+            this.textBoxTab420ActualCount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTab420ActualCount.Location = new System.Drawing.Point(336, 95);
+            this.textBoxTab420ActualCount.Name = "textBoxTab420ActualCount";
+            this.textBoxTab420ActualCount.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTab420ActualCount.TabIndex = 237;
+            this.textBoxTab420ActualCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(205, 126);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 18);
+            this.label3.TabIndex = 232;
+            this.label3.Text = "Low Count (4mA) =";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(232, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 19);
+            this.label4.TabIndex = 231;
+            this.label4.Text = "Actual Count =";
+            // 
+            // textBoxTab42020ma
+            // 
+            this.textBoxTab42020ma.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTab42020ma.Location = new System.Drawing.Point(336, 151);
+            this.textBoxTab42020ma.Name = "textBoxTab42020ma";
+            this.textBoxTab42020ma.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTab42020ma.TabIndex = 245;
+            this.textBoxTab42020ma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTab420HighScale
+            // 
+            this.textBoxTab420HighScale.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTab420HighScale.Location = new System.Drawing.Point(336, 178);
+            this.textBoxTab420HighScale.Name = "textBoxTab420HighScale";
+            this.textBoxTab420HighScale.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTab420HighScale.TabIndex = 246;
+            this.textBoxTab420HighScale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTab420LowScale
+            // 
+            this.textBoxTab420LowScale.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTab420LowScale.Location = new System.Drawing.Point(336, 205);
+            this.textBoxTab420LowScale.Name = "textBoxTab420LowScale";
+            this.textBoxTab420LowScale.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTab420LowScale.TabIndex = 247;
+            this.textBoxTab420LowScale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label206
+            // 
+            this.label206.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label206.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label206.Location = new System.Drawing.Point(196, 154);
+            this.label206.Name = "label206";
+            this.label206.Size = new System.Drawing.Size(129, 18);
+            this.label206.TabIndex = 248;
+            this.label206.Text = "High Count (20mA) =";
+            // 
+            // label225
+            // 
+            this.label225.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label225.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label225.Location = new System.Drawing.Point(240, 181);
+            this.label225.Name = "label225";
+            this.label225.Size = new System.Drawing.Size(85, 18);
+            this.label225.TabIndex = 249;
+            this.label225.Text = "High Scale =";
+            // 
+            // label226
+            // 
+            this.label226.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label226.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label226.Location = new System.Drawing.Point(243, 208);
+            this.label226.Name = "label226";
+            this.label226.Size = new System.Drawing.Size(82, 18);
+            this.label226.TabIndex = 250;
+            this.label226.Text = "Low Scale =";
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -6828,6 +7048,8 @@ namespace CEMSStudyApp.Pages
             this.tabCOppmvd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage4_20ma.ResumeLayout(false);
+            this.tabPage4_20ma.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -7337,5 +7559,22 @@ namespace CEMSStudyApp.Pages
         private Button buttonTabCOppmvdF1Clear;
         private Button buttonRandom;
         private Label labelVersion;
+        private TabPage tabPage4_20ma;
+        private Label label226;
+        private Label label225;
+        private Label label206;
+        private TextBox textBoxTab420LowScale;
+        private TextBox textBoxTab420HighScale;
+        private TextBox textBoxTab42020ma;
+        private Button buttonTab420Clear;
+        private TextBox textBox4;
+        private TextBox textBox6;
+        private Button buttonTab420Calculate;
+        private Label label2;
+        private TextBox textBoxTab420Answer;
+        private TextBox textBoxTab4204ma;
+        private TextBox textBoxTab420ActualCount;
+        private Label label3;
+        private Label label4;
     }
 }

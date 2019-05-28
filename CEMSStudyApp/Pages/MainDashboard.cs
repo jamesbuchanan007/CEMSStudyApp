@@ -62,6 +62,8 @@ namespace CEMSStudyApp.Pages
 
             comboBoxSearch.SelectedIndex = 0;
             comboBoxSearch.ForeColor = Color.Gray;
+
+            buttonSearch.Enabled = true;
         }
 
         void SystemEvents_UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
@@ -324,10 +326,10 @@ namespace CEMSStudyApp.Pages
                     tabFormulasMain.SelectTab(tabPageHg);
                     break;
                 case 13:
-                    tabFormulasMain.SelectTab(tabPageLMEHI);
+                    tabFormulasMain.SelectTab(tabPageLME_HI);
                     break;
                 case 14:
-                    tabFormulasMain.SelectTab(tabPageLMEMass);
+                    tabFormulasMain.SelectTab(tabPageLME_Mass);
                     break;
                 case 15:
                     tabFormulasMain.SelectTab(tabNOxlbshr);

@@ -603,7 +603,7 @@ namespace CEMSStudyApp.Pages
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tabPageLMEHI = new System.Windows.Forms.TabPage();
+            this.tabPageLME_HI = new System.Windows.Forms.TabPage();
             this.buttonTabLMEHIHourClear = new System.Windows.Forms.Button();
             this.buttonTabLMEHIQuarterClear = new System.Windows.Forms.Button();
             this.label238 = new System.Windows.Forms.Label();
@@ -632,7 +632,7 @@ namespace CEMSStudyApp.Pages
             this.label258 = new System.Windows.Forms.Label();
             this.label259 = new System.Windows.Forms.Label();
             this.label260 = new System.Windows.Forms.Label();
-            this.tabPageLMEMass = new System.Windows.Forms.TabPage();
+            this.tabPageLME_Mass = new System.Windows.Forms.TabPage();
             this.buttonTabLMEHourSo2Clear = new System.Windows.Forms.Button();
             this.buttonTabLMEHourNoxClear = new System.Windows.Forms.Button();
             this.buttonTabLMEHourSo2Calculate = new System.Windows.Forms.Button();
@@ -695,8 +695,8 @@ namespace CEMSStudyApp.Pages
             this.tabPageHg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabPageLMEHI.SuspendLayout();
-            this.tabPageLMEMass.SuspendLayout();
+            this.tabPageLME_HI.SuspendLayout();
+            this.tabPageLME_Mass.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -748,21 +748,19 @@ namespace CEMSStudyApp.Pages
             this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearch.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.Location = new System.Drawing.Point(961, 688);
+            this.buttonSearch.Location = new System.Drawing.Point(973, 688);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(51, 23);
             this.buttonSearch.TabIndex = 134;
-            this.buttonSearch.Tag = "Click to toggle Answer";
+            this.buttonSearch.Tag = "";
             this.buttonSearch.Text = "Search";
-            this.toolTip1.SetToolTip(this.buttonSearch, "Show / Hide");
             this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Visible = false;
             // 
             // textBoxSearch
             // 
             this.textBoxSearch.BackColor = System.Drawing.Color.White;
             this.textBoxSearch.ForeColor = System.Drawing.Color.Gray;
-            this.textBoxSearch.Location = new System.Drawing.Point(705, 690);
+            this.textBoxSearch.Location = new System.Drawing.Point(713, 690);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(254, 20);
             this.textBoxSearch.TabIndex = 133;
@@ -782,10 +780,11 @@ namespace CEMSStudyApp.Pages
             "Part 75 Plain English",
             "Part 60 App B",
             "Part 60 App F",
-            "Part 63 Sub UUUUU"});
-            this.comboBoxSearch.Location = new System.Drawing.Point(577, 689);
+            "Part 63 Sub UUUUU",
+            "ECMPS Reporting Instructions"});
+            this.comboBoxSearch.Location = new System.Drawing.Point(562, 689);
             this.comboBoxSearch.Name = "comboBoxSearch";
-            this.comboBoxSearch.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSearch.Size = new System.Drawing.Size(145, 21);
             this.comboBoxSearch.TabIndex = 132;
             this.toolTip1.SetToolTip(this.comboBoxSearch, "Select Full Regulation");
             this.comboBoxSearch.Enter += new System.EventHandler(this.comboBoxSearch_Enter);
@@ -853,8 +852,8 @@ namespace CEMSStudyApp.Pages
             this.tabFormulasMain.Controls.Add(this.tabCOppmvd);
             this.tabFormulasMain.Controls.Add(this.tabPage4_20ma);
             this.tabFormulasMain.Controls.Add(this.tabPageHg);
-            this.tabFormulasMain.Controls.Add(this.tabPageLMEHI);
-            this.tabFormulasMain.Controls.Add(this.tabPageLMEMass);
+            this.tabFormulasMain.Controls.Add(this.tabPageLME_HI);
+            this.tabFormulasMain.Controls.Add(this.tabPageLME_Mass);
             this.tabFormulasMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabFormulasMain.Location = new System.Drawing.Point(0, -3);
             this.tabFormulasMain.Name = "tabFormulasMain";
@@ -6862,6 +6861,7 @@ namespace CEMSStudyApp.Pages
             // 
             // buttonTabHglbhrConvert
             // 
+            this.buttonTabHglbhrConvert.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonTabHglbhrConvert.BackColor = System.Drawing.Color.Transparent;
             this.buttonTabHglbhrConvert.FlatAppearance.BorderSize = 0;
             this.buttonTabHglbhrConvert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -6878,6 +6878,7 @@ namespace CEMSStudyApp.Pages
             // 
             // buttonTabHgHGREConvert
             // 
+            this.buttonTabHgHGREConvert.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonTabHgHGREConvert.BackColor = System.Drawing.Color.Transparent;
             this.buttonTabHgHGREConvert.FlatAppearance.BorderSize = 0;
             this.buttonTabHgHGREConvert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -6894,6 +6895,7 @@ namespace CEMSStudyApp.Pages
             // 
             // buttonTabHgHGRHConvert
             // 
+            this.buttonTabHgHGRHConvert.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonTabHgHGRHConvert.BackColor = System.Drawing.Color.Transparent;
             this.buttonTabHgHGRHConvert.FlatAppearance.BorderSize = 0;
             this.buttonTabHgHGRHConvert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -7745,43 +7747,43 @@ namespace CEMSStudyApp.Pages
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
-            // tabPageLMEHI
+            // tabPageLME_HI
             // 
-            this.tabPageLMEHI.BackColor = System.Drawing.Color.Ivory;
-            this.tabPageLMEHI.Controls.Add(this.buttonTabLMEHIHourClear);
-            this.tabPageLMEHI.Controls.Add(this.buttonTabLMEHIQuarterClear);
-            this.tabPageLMEHI.Controls.Add(this.label238);
-            this.tabPageLMEHI.Controls.Add(this.textBoxTabLMEHIHourH);
-            this.tabPageLMEHI.Controls.Add(this.buttonTabLMEHIHourCalculate);
-            this.tabPageLMEHI.Controls.Add(this.label243);
-            this.tabPageLMEHI.Controls.Add(this.textBoxTabLMEHIHourAnswer);
-            this.tabPageLMEHI.Controls.Add(this.textBoxTabLMEHIHourQL);
-            this.tabPageLMEHI.Controls.Add(this.textBoxTabLMEHIHourL);
-            this.tabPageLMEHI.Controls.Add(this.label244);
-            this.tabPageLMEHI.Controls.Add(this.label247);
-            this.tabPageLMEHI.Controls.Add(this.label249);
-            this.tabPageLMEHI.Controls.Add(this.label250);
-            this.tabPageLMEHI.Controls.Add(this.label251);
-            this.tabPageLMEHI.Controls.Add(this.label254);
-            this.tabPageLMEHI.Controls.Add(this.label255);
-            this.tabPageLMEHI.Controls.Add(this.textBox31);
-            this.tabPageLMEHI.Controls.Add(this.textBox32);
-            this.tabPageLMEHI.Controls.Add(this.label256);
-            this.tabPageLMEHI.Controls.Add(this.textBox33);
-            this.tabPageLMEHI.Controls.Add(this.buttonTabLMEHIQuarterCalculate);
-            this.tabPageLMEHI.Controls.Add(this.label257);
-            this.tabPageLMEHI.Controls.Add(this.textBoxTabLMEHIQuarterAnswer);
-            this.tabPageLMEHI.Controls.Add(this.textBoxTabLMEHIQuarterGCV);
-            this.tabPageLMEHI.Controls.Add(this.textBoxTabLMEHIQuarterFF);
-            this.tabPageLMEHI.Controls.Add(this.label258);
-            this.tabPageLMEHI.Controls.Add(this.label259);
-            this.tabPageLMEHI.Controls.Add(this.label260);
-            this.tabPageLMEHI.Location = new System.Drawing.Point(4, 24);
-            this.tabPageLMEHI.Name = "tabPageLMEHI";
-            this.tabPageLMEHI.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageLMEHI.Size = new System.Drawing.Size(939, 514);
-            this.tabPageLMEHI.TabIndex = 20;
-            this.tabPageLMEHI.Text = "LME - Heat Input";
+            this.tabPageLME_HI.BackColor = System.Drawing.Color.Ivory;
+            this.tabPageLME_HI.Controls.Add(this.buttonTabLMEHIHourClear);
+            this.tabPageLME_HI.Controls.Add(this.buttonTabLMEHIQuarterClear);
+            this.tabPageLME_HI.Controls.Add(this.label238);
+            this.tabPageLME_HI.Controls.Add(this.textBoxTabLMEHIHourH);
+            this.tabPageLME_HI.Controls.Add(this.buttonTabLMEHIHourCalculate);
+            this.tabPageLME_HI.Controls.Add(this.label243);
+            this.tabPageLME_HI.Controls.Add(this.textBoxTabLMEHIHourAnswer);
+            this.tabPageLME_HI.Controls.Add(this.textBoxTabLMEHIHourQL);
+            this.tabPageLME_HI.Controls.Add(this.textBoxTabLMEHIHourL);
+            this.tabPageLME_HI.Controls.Add(this.label244);
+            this.tabPageLME_HI.Controls.Add(this.label247);
+            this.tabPageLME_HI.Controls.Add(this.label249);
+            this.tabPageLME_HI.Controls.Add(this.label250);
+            this.tabPageLME_HI.Controls.Add(this.label251);
+            this.tabPageLME_HI.Controls.Add(this.label254);
+            this.tabPageLME_HI.Controls.Add(this.label255);
+            this.tabPageLME_HI.Controls.Add(this.textBox31);
+            this.tabPageLME_HI.Controls.Add(this.textBox32);
+            this.tabPageLME_HI.Controls.Add(this.label256);
+            this.tabPageLME_HI.Controls.Add(this.textBox33);
+            this.tabPageLME_HI.Controls.Add(this.buttonTabLMEHIQuarterCalculate);
+            this.tabPageLME_HI.Controls.Add(this.label257);
+            this.tabPageLME_HI.Controls.Add(this.textBoxTabLMEHIQuarterAnswer);
+            this.tabPageLME_HI.Controls.Add(this.textBoxTabLMEHIQuarterGCV);
+            this.tabPageLME_HI.Controls.Add(this.textBoxTabLMEHIQuarterFF);
+            this.tabPageLME_HI.Controls.Add(this.label258);
+            this.tabPageLME_HI.Controls.Add(this.label259);
+            this.tabPageLME_HI.Controls.Add(this.label260);
+            this.tabPageLME_HI.Location = new System.Drawing.Point(4, 24);
+            this.tabPageLME_HI.Name = "tabPageLME_HI";
+            this.tabPageLME_HI.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageLME_HI.Size = new System.Drawing.Size(939, 514);
+            this.tabPageLME_HI.TabIndex = 20;
+            this.tabPageLME_HI.Text = "LME - Heat Input";
             // 
             // buttonTabLMEHIHourClear
             // 
@@ -8089,52 +8091,52 @@ namespace CEMSStudyApp.Pages
             this.label260.TabIndex = 222;
             this.label260.Text = "E - Quarterly Total Heat Input";
             // 
-            // tabPageLMEMass
+            // tabPageLME_Mass
             // 
-            this.tabPageLMEMass.BackColor = System.Drawing.Color.Ivory;
-            this.tabPageLMEMass.Controls.Add(this.buttonTabLMEHourCo2Clear);
-            this.tabPageLMEMass.Controls.Add(this.label248);
-            this.tabPageLMEMass.Controls.Add(this.label262);
-            this.tabPageLMEMass.Controls.Add(this.textBox8);
-            this.tabPageLMEMass.Controls.Add(this.buttonTabLMEHourCo2Calculate);
-            this.tabPageLMEMass.Controls.Add(this.label272);
-            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourCo2Answer);
-            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourCo2Co2);
-            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourCo2H);
-            this.tabPageLMEMass.Controls.Add(this.label273);
-            this.tabPageLMEMass.Controls.Add(this.label274);
-            this.tabPageLMEMass.Controls.Add(this.label275);
-            this.tabPageLMEMass.Controls.Add(this.buttonTabLMEHourSo2Clear);
-            this.tabPageLMEMass.Controls.Add(this.buttonTabLMEHourNoxClear);
-            this.tabPageLMEMass.Controls.Add(this.buttonTabLMEHourSo2Calculate);
-            this.tabPageLMEMass.Controls.Add(this.label252);
-            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourSo2Answer);
-            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourSo2So2);
-            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourSo2H);
-            this.tabPageLMEMass.Controls.Add(this.label253);
-            this.tabPageLMEMass.Controls.Add(this.label261);
-            this.tabPageLMEMass.Controls.Add(this.label263);
-            this.tabPageLMEMass.Controls.Add(this.label264);
-            this.tabPageLMEMass.Controls.Add(this.label265);
-            this.tabPageLMEMass.Controls.Add(this.label266);
-            this.tabPageLMEMass.Controls.Add(this.textBox29);
-            this.tabPageLMEMass.Controls.Add(this.textBox34);
-            this.tabPageLMEMass.Controls.Add(this.label267);
-            this.tabPageLMEMass.Controls.Add(this.textBox36);
-            this.tabPageLMEMass.Controls.Add(this.buttonTabLMEHourNoxCalculate);
-            this.tabPageLMEMass.Controls.Add(this.label268);
-            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourNoxAnswer);
-            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourNoxNox);
-            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourNoxH);
-            this.tabPageLMEMass.Controls.Add(this.label269);
-            this.tabPageLMEMass.Controls.Add(this.label270);
-            this.tabPageLMEMass.Controls.Add(this.label271);
-            this.tabPageLMEMass.Location = new System.Drawing.Point(4, 24);
-            this.tabPageLMEMass.Name = "tabPageLMEMass";
-            this.tabPageLMEMass.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageLMEMass.Size = new System.Drawing.Size(939, 514);
-            this.tabPageLMEMass.TabIndex = 21;
-            this.tabPageLMEMass.Text = "LME - Mass";
+            this.tabPageLME_Mass.BackColor = System.Drawing.Color.Ivory;
+            this.tabPageLME_Mass.Controls.Add(this.buttonTabLMEHourCo2Clear);
+            this.tabPageLME_Mass.Controls.Add(this.label248);
+            this.tabPageLME_Mass.Controls.Add(this.label262);
+            this.tabPageLME_Mass.Controls.Add(this.textBox8);
+            this.tabPageLME_Mass.Controls.Add(this.buttonTabLMEHourCo2Calculate);
+            this.tabPageLME_Mass.Controls.Add(this.label272);
+            this.tabPageLME_Mass.Controls.Add(this.textBoxTabLMEHourCo2Answer);
+            this.tabPageLME_Mass.Controls.Add(this.textBoxTabLMEHourCo2Co2);
+            this.tabPageLME_Mass.Controls.Add(this.textBoxTabLMEHourCo2H);
+            this.tabPageLME_Mass.Controls.Add(this.label273);
+            this.tabPageLME_Mass.Controls.Add(this.label274);
+            this.tabPageLME_Mass.Controls.Add(this.label275);
+            this.tabPageLME_Mass.Controls.Add(this.buttonTabLMEHourSo2Clear);
+            this.tabPageLME_Mass.Controls.Add(this.buttonTabLMEHourNoxClear);
+            this.tabPageLME_Mass.Controls.Add(this.buttonTabLMEHourSo2Calculate);
+            this.tabPageLME_Mass.Controls.Add(this.label252);
+            this.tabPageLME_Mass.Controls.Add(this.textBoxTabLMEHourSo2Answer);
+            this.tabPageLME_Mass.Controls.Add(this.textBoxTabLMEHourSo2So2);
+            this.tabPageLME_Mass.Controls.Add(this.textBoxTabLMEHourSo2H);
+            this.tabPageLME_Mass.Controls.Add(this.label253);
+            this.tabPageLME_Mass.Controls.Add(this.label261);
+            this.tabPageLME_Mass.Controls.Add(this.label263);
+            this.tabPageLME_Mass.Controls.Add(this.label264);
+            this.tabPageLME_Mass.Controls.Add(this.label265);
+            this.tabPageLME_Mass.Controls.Add(this.label266);
+            this.tabPageLME_Mass.Controls.Add(this.textBox29);
+            this.tabPageLME_Mass.Controls.Add(this.textBox34);
+            this.tabPageLME_Mass.Controls.Add(this.label267);
+            this.tabPageLME_Mass.Controls.Add(this.textBox36);
+            this.tabPageLME_Mass.Controls.Add(this.buttonTabLMEHourNoxCalculate);
+            this.tabPageLME_Mass.Controls.Add(this.label268);
+            this.tabPageLME_Mass.Controls.Add(this.textBoxTabLMEHourNoxAnswer);
+            this.tabPageLME_Mass.Controls.Add(this.textBoxTabLMEHourNoxNox);
+            this.tabPageLME_Mass.Controls.Add(this.textBoxTabLMEHourNoxH);
+            this.tabPageLME_Mass.Controls.Add(this.label269);
+            this.tabPageLME_Mass.Controls.Add(this.label270);
+            this.tabPageLME_Mass.Controls.Add(this.label271);
+            this.tabPageLME_Mass.Location = new System.Drawing.Point(4, 24);
+            this.tabPageLME_Mass.Name = "tabPageLME_Mass";
+            this.tabPageLME_Mass.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageLME_Mass.Size = new System.Drawing.Size(939, 514);
+            this.tabPageLME_Mass.TabIndex = 21;
+            this.tabPageLME_Mass.Text = "LME - Mass";
             // 
             // buttonTabLMEHourSo2Clear
             // 
@@ -8606,10 +8608,10 @@ namespace CEMSStudyApp.Pages
             this.tabPageHg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tabPageLMEHI.ResumeLayout(false);
-            this.tabPageLMEHI.PerformLayout();
-            this.tabPageLMEMass.ResumeLayout(false);
-            this.tabPageLMEMass.PerformLayout();
+            this.tabPageLME_HI.ResumeLayout(false);
+            this.tabPageLME_HI.PerformLayout();
+            this.tabPageLME_Mass.ResumeLayout(false);
+            this.tabPageLME_Mass.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -9186,7 +9188,7 @@ namespace CEMSStudyApp.Pages
         private Button buttonTabHglbhrConvert;
         private Button buttonTabHgHGREConvert;
         private Button buttonTabHgHGRHConvert;
-        private TabPage tabPageLMEHI;
+        private TabPage tabPageLME_HI;
         private Button buttonTabLMEHIHourClear;
         private Button buttonTabLMEHIQuarterClear;
         private Label label238;
@@ -9215,7 +9217,7 @@ namespace CEMSStudyApp.Pages
         private Label label258;
         private Label label259;
         private Label label260;
-        private TabPage tabPageLMEMass;
+        private TabPage tabPageLME_Mass;
         private Button buttonTabLMEHourSo2Clear;
         private Button buttonTabLMEHourNoxClear;
         private Button buttonTabLMEHourSo2Calculate;

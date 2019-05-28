@@ -755,6 +755,7 @@ namespace CEMSStudyApp.Pages
             this.buttonSearch.Tag = "";
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // textBoxSearch
             // 
@@ -776,11 +777,12 @@ namespace CEMSStudyApp.Pages
             this.comboBoxSearch.Items.AddRange(new object[] {
             "Select Regulation",
             "Part 75",
-            "Part 75 App D",
-            "Part 75 Plain English",
-            "Part 60 App B",
-            "Part 60 App F",
-            "Part 63 Sub UUUUU",
+            "Part 75 Appendix D",
+            "Part 75 Plain English Guide",
+            "Part 75 Field Audit Manual",
+            "Part 60 Appendix B",
+            "Part 60 Appendix F",
+            "Part 63 Subpart UUUUU",
             "ECMPS Reporting Instructions"});
             this.comboBoxSearch.Location = new System.Drawing.Point(562, 689);
             this.comboBoxSearch.Name = "comboBoxSearch";

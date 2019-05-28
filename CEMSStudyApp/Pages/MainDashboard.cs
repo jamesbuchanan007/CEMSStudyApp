@@ -19,6 +19,7 @@ namespace CEMSStudyApp.Pages
         public static double tabHgHGRHAnswer { get; set; }
         public static double tabHgHGREAnswer { get; set; }
         public static double tabHglbhrAnswer { get; set; }
+        public static int searchIndex { get; set; }
 
         public MainDashboard()
         {
@@ -64,6 +65,8 @@ namespace CEMSStudyApp.Pages
             comboBoxSearch.ForeColor = Color.Gray;
 
             buttonSearch.Enabled = true;
+            var searchIndex = -1;
+
         }
 
         void SystemEvents_UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
@@ -434,7 +437,17 @@ namespace CEMSStudyApp.Pages
 
         private void comboBoxSectionNumber_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var index = comboBoxSectionNumber.SelectedIndex;
+            int index;
+
+            if (searchIndex == -1)
+            {
+                index = comboBoxSectionNumber.SelectedIndex;
+            }
+            else
+            {
+                index = searchIndex;
+                comboBoxSectionNumber.SelectedIndex = searchIndex;
+            }
 
             if (dashboardDictionary.Count == 0) return;
 
@@ -454,7 +467,7 @@ namespace CEMSStudyApp.Pages
             var dataSet = LoadTable("Formulas_View");
             folderName = "";
             LoadDashboardViewModel(dataSet, "Formulas_Name", "Formulas_Description", "", "");
-            LoadDashboard(0);
+            // LoadDashboard(0);
         }
 
         private void button60AppBF_Click(object sender, EventArgs e)
@@ -1654,7 +1667,7 @@ namespace CEMSStudyApp.Pages
             //LME FUEL FLOW
             var ff = CTD(textBoxTabLMEHIQuarterFF.Text, textBoxTabLMEHIQuarterFF);
             if (ff == null) return;
-            
+
             //LME GROSS CALORIC VALUE
             var gcv = CTD(textBoxTabLMEHIQuarterGCV.Text, textBoxTabLMEHIQuarterGCV);
             if (gcv == null) return;
@@ -1764,6 +1777,51 @@ namespace CEMSStudyApp.Pages
             textBoxTabLMEHourCo2H.Text = "";
             textBoxTabLMEHourCo2H.Focus();
             textBoxTabLMEHourCo2Co2.Text = "";
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            var searchText = textBoxSearch.Text;
+            var searchRegIndex = comboBoxSearch.SelectedIndex;
+            if (searchText == "Search Item")
+            {
+                switch (searchRegIndex)
+                {
+                    case 1:
+                        searchIndex = 347;
+                        buttonPart75_Click(sender, e);
+                        break;
+                    case 2:
+                        searchIndex = 349;
+                        buttonPart75_Click(sender, e);
+                        break;
+                    case 3:
+                        searchIndex = 118;
+                        buttonPart75PlainEnglish_Click(sender, e);
+                        break;
+                    case 4:
+                        searchIndex = 348;
+                        buttonPart75_Click(sender, e);
+                        break;
+                    case 5:
+                        searchIndex = 114;
+                        button60AppBF_Click(sender, e);
+                        break;
+                    case 6:
+                        searchIndex = 115;
+                        button60AppBF_Click(sender, e);
+                        break;
+                    case 7:
+                        searchIndex = 37;
+                        buttonPart63SubUUUUU_Click(sender, e);
+                        break;
+                    case 8:
+                        searchIndex = 350;
+                        buttonPart75_Click(sender, e);
+                        break;
+
+                }
+            }
         }
     }
 }

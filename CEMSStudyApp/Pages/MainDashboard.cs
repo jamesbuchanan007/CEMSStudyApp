@@ -53,6 +53,12 @@ namespace CEMSStudyApp.Pages
             panelFormulas.Hide();
             comboBoxTabCOppmvdF2XCO2.SelectedIndex = 0;
             comboBoxTabNOxppmvdF2XCO2.SelectedIndex = 0;
+
+            textBoxSearch.ForeColor = Color.Gray;
+            textBoxSearch.Text = "Search Item";
+
+            comboBoxSearch.SelectedIndex = 0;
+            comboBoxSearch.ForeColor = Color.Gray;
         }
 
         void SystemEvents_UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
@@ -1280,6 +1286,99 @@ namespace CEMSStudyApp.Pages
            
             var answer = (ac - low4ma) / (high20ma - low4ma) * (highScale - lowScale);
             DisplayAnswer(answer, textBoxTab420Answer);
+        }
+
+        private void textBoxSearch_Enter(object sender, EventArgs e)
+        {
+            textBoxSearch.ForeColor = Color.Black;
+            textBoxSearch.Text = "";
+        }
+
+        private void textBoxSearch_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBoxSearch.Text))
+            {
+                textBoxSearch.ForeColor = Color.Gray;
+                textBoxSearch.Text = "Search Item";
+            }
+        }
+
+        private void comboBoxSearch_Enter(object sender, EventArgs e)
+        {
+            comboBoxSearch.ForeColor = Color.Black;
+        }
+
+        private void comboBoxSearch_Leave(object sender, EventArgs e)
+        {
+            if(comboBoxSearch.SelectedIndex == 0) comboBoxSearch.ForeColor = Color.Gray;
+        }
+
+        private void buttonTabHgHGRHAnswer_Click(object sender, EventArgs e)
+        {
+            var hg = CTD(textBoxTabHgHGRHHg.Text, textBoxTabHgHGRHHg);
+            if (hg == null) return;
+
+            var fc = CTD(textBoxTabHgHGRHFc.Text, textBoxTabHgHGRHFc);
+            if (fc == null) return;
+
+            var co2 = CTD(textBoxTabHgHGRHCO2.Text, textBoxTabHgHGRHCO2);
+            if (co2 == null) return;
+
+            var answer = 6.243E-11 * hg * fc * (100 / co2) * 1000000;
+            textBoxTabHgHGRHAnswer.Text = $@"{answer:E2}";
+        }
+
+        private void buttonTabHgHGREAnswer_Click(object sender, EventArgs e)
+        {
+            var flow = CTD(textBoxTabHgHGREFlow.Text, textBoxTabHgHGREFlow);
+            if (flow == null) return;
+
+            var hg = CTD(textBoxTabHgHGREHg.Text, textBoxTabHgHGREHg);
+            if (hg == null) return;
+
+            var mw = CTD(textBoxTabHgHGREMW.Text, textBoxTabHgHGREMW);
+            if (mw == null) return;
+
+            var answer = hg * flow * 6.243E-11 / (mw / 1000);
+            textBoxTabHgHGREAnswer.Text = $@"{answer:E2}";
+        }
+
+        private void buttonTabHglbhrAnswer_Click(object sender, EventArgs e)
+        {
+            var flow = CTD(textBoxTabHglbhrFlow.Text, textBoxTabHglbhrFlow);
+            if(flow == null)return;
+
+            var hg = CTD(textBoxTabHglbhrHg.Text, textBoxTabHglbhrHg);
+            if (hg == null) return;
+
+            var answer = hg * flow * 6.243E-11;
+            textBoxTabHglbhrAnswer.Text = $@"{answer:E2}";
+        }
+
+        private void buttonTabHgHGRHClear_Click(object sender, EventArgs e)
+        {
+            textBoxTabHgHGRHHg.Text = "";
+            textBoxTabHgHGRHHg.Focus();
+            textBoxTabHgHGRHFc.Text = "";
+            textBoxTabHgHGRHCO2.Text = "";
+            textBoxTabHgHGRHAnswer.Text = "";
+        }
+
+        private void buttonTabHgHGREClear_Click(object sender, EventArgs e)
+        {
+            textBoxTabHgHGREFlow.Text = "";
+            textBoxTabHgHGREFlow.Focus();
+            textBoxTabHgHGREHg.Text = "";
+            textBoxTabHgHGREMW.Text = "";
+            textBoxTabHgHGREAnswer.Text = "";
+        }
+
+        private void buttonTabHglbhrClear_Click(object sender, EventArgs e)
+        {
+            textBoxTabHglbhrFlow.Text = "";
+            textBoxTabHglbhrFlow.Focus();
+            textBoxTabHglbhrHg.Text = "";
+            textBoxTabHglbhrAnswer.Text = "";
         }
     }
 }

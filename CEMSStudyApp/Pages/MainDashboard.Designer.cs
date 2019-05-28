@@ -34,6 +34,9 @@ namespace CEMSStudyApp.Pages
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDashboard));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.comboBoxSearch = new System.Windows.Forms.ComboBox();
             this.labelVersion = new System.Windows.Forms.Label();
             this.buttonRandom = new System.Windows.Forms.Button();
             this.panelFormulas = new System.Windows.Forms.Panel();
@@ -512,6 +515,67 @@ namespace CEMSStudyApp.Pages
             this.label222 = new System.Windows.Forms.Label();
             this.label223 = new System.Windows.Forms.Label();
             this.label224 = new System.Windows.Forms.Label();
+            this.tabPage4_20ma = new System.Windows.Forms.TabPage();
+            this.label226 = new System.Windows.Forms.Label();
+            this.label225 = new System.Windows.Forms.Label();
+            this.label206 = new System.Windows.Forms.Label();
+            this.textBoxTab420LowScale = new System.Windows.Forms.TextBox();
+            this.textBoxTab420HighScale = new System.Windows.Forms.TextBox();
+            this.textBoxTab42020ma = new System.Windows.Forms.TextBox();
+            this.buttonTab420Clear = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.buttonTab420Calculate = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxTab420Answer = new System.Windows.Forms.TextBox();
+            this.textBoxTab4204ma = new System.Windows.Forms.TextBox();
+            this.textBoxTab420ActualCount = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tabPageHg = new System.Windows.Forms.TabPage();
+            this.textBoxTabHglbhrHg = new System.Windows.Forms.TextBox();
+            this.textBoxTabHglbhrFlow = new System.Windows.Forms.TextBox();
+            this.label239 = new System.Windows.Forms.Label();
+            this.label240 = new System.Windows.Forms.Label();
+            this.label246 = new System.Windows.Forms.Label();
+            this.label241 = new System.Windows.Forms.Label();
+            this.buttonTabHglbhrClear = new System.Windows.Forms.Button();
+            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.buttonTabHglbhrAnswer = new System.Windows.Forms.Button();
+            this.label242 = new System.Windows.Forms.Label();
+            this.textBoxTabHglbhrAnswer = new System.Windows.Forms.TextBox();
+            this.label245 = new System.Windows.Forms.Label();
+            this.textBoxTabHgHGREMW = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label237 = new System.Windows.Forms.Label();
+            this.label236 = new System.Windows.Forms.Label();
+            this.textBoxTabHgHGRHCO2 = new System.Windows.Forms.TextBox();
+            this.label235 = new System.Windows.Forms.Label();
+            this.label234 = new System.Windows.Forms.Label();
+            this.label233 = new System.Windows.Forms.Label();
+            this.label232 = new System.Windows.Forms.Label();
+            this.buttonTabHgHGREClear = new System.Windows.Forms.Button();
+            this.buttonTabHgHGRHClear = new System.Windows.Forms.Button();
+            this.buttonTabHgHGREAnswer = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxTabHgHGREAnswer = new System.Windows.Forms.TextBox();
+            this.textBoxTabHgHGREHg = new System.Windows.Forms.TextBox();
+            this.textBoxTabHgHGREFlow = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.label227 = new System.Windows.Forms.Label();
+            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.buttonTabHgHGRHAnswer = new System.Windows.Forms.Button();
+            this.label228 = new System.Windows.Forms.Label();
+            this.textBoxTabHgHGRHAnswer = new System.Windows.Forms.TextBox();
+            this.textBoxTabHgHGRHFc = new System.Windows.Forms.TextBox();
+            this.textBoxTabHgHGRHHg = new System.Windows.Forms.TextBox();
+            this.label229 = new System.Windows.Forms.Label();
+            this.label230 = new System.Windows.Forms.Label();
+            this.label231 = new System.Windows.Forms.Label();
             this.buttonPart75 = new System.Windows.Forms.Button();
             this.textBoxSectionHeading = new System.Windows.Forms.TextBox();
             this.buttonDefinitions = new System.Windows.Forms.Button();
@@ -536,23 +600,6 @@ namespace CEMSStudyApp.Pages
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tabPage4_20ma = new System.Windows.Forms.TabPage();
-            this.buttonTab420Clear = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.buttonTab420Calculate = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxTab420Answer = new System.Windows.Forms.TextBox();
-            this.textBoxTab4204ma = new System.Windows.Forms.TextBox();
-            this.textBoxTab420ActualCount = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxTab42020ma = new System.Windows.Forms.TextBox();
-            this.textBoxTab420HighScale = new System.Windows.Forms.TextBox();
-            this.textBoxTab420LowScale = new System.Windows.Forms.TextBox();
-            this.label206 = new System.Windows.Forms.Label();
-            this.label225 = new System.Windows.Forms.Label();
-            this.label226 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelFormulas.SuspendLayout();
             this.tabFormulasMain.SuspendLayout();
@@ -574,9 +621,10 @@ namespace CEMSStudyApp.Pages
             this.tabColbsmmBtu.SuspendLayout();
             this.tabCOlbshr.SuspendLayout();
             this.tabCOppmvd.SuspendLayout();
+            this.tabPage4_20ma.SuspendLayout();
+            this.tabPageHg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabPage4_20ma.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -585,6 +633,9 @@ namespace CEMSStudyApp.Pages
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.buttonSearch);
+            this.panel1.Controls.Add(this.textBoxSearch);
+            this.panel1.Controls.Add(this.comboBoxSearch);
             this.panel1.Controls.Add(this.labelVersion);
             this.panel1.Controls.Add(this.buttonRandom);
             this.panel1.Controls.Add(this.panelFormulas);
@@ -617,11 +668,62 @@ namespace CEMSStudyApp.Pages
             this.panel1.Size = new System.Drawing.Size(1193, 729);
             this.panel1.TabIndex = 0;
             // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonSearch.BackColor = System.Drawing.Color.Blue;
+            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.ForeColor = System.Drawing.Color.White;
+            this.buttonSearch.Location = new System.Drawing.Point(961, 688);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(51, 23);
+            this.buttonSearch.TabIndex = 134;
+            this.buttonSearch.Tag = "Click to toggle Answer";
+            this.buttonSearch.Text = "Search";
+            this.toolTip1.SetToolTip(this.buttonSearch, "Show / Hide");
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Visible = false;
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.BackColor = System.Drawing.Color.White;
+            this.textBoxSearch.ForeColor = System.Drawing.Color.Gray;
+            this.textBoxSearch.Location = new System.Drawing.Point(705, 690);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(254, 20);
+            this.textBoxSearch.TabIndex = 133;
+            this.textBoxSearch.Text = "Search Item";
+            this.textBoxSearch.Enter += new System.EventHandler(this.textBoxSearch_Enter);
+            this.textBoxSearch.Leave += new System.EventHandler(this.textBoxSearch_Leave);
+            // 
+            // comboBoxSearch
+            // 
+            this.comboBoxSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxSearch.FormattingEnabled = true;
+            this.comboBoxSearch.Items.AddRange(new object[] {
+            "Select Regulation",
+            "Part 75",
+            "Part 75 App D",
+            "Part 75 Plain English",
+            "Part 60 App B",
+            "Part 60 App F",
+            "Part 63 Sub UUUUU"});
+            this.comboBoxSearch.Location = new System.Drawing.Point(577, 689);
+            this.comboBoxSearch.Name = "comboBoxSearch";
+            this.comboBoxSearch.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSearch.TabIndex = 132;
+            this.toolTip1.SetToolTip(this.comboBoxSearch, "Select Full Regulation");
+            this.comboBoxSearch.Enter += new System.EventHandler(this.comboBoxSearch_Enter);
+            this.comboBoxSearch.Leave += new System.EventHandler(this.comboBoxSearch_Leave);
+            // 
             // labelVersion
             // 
             this.labelVersion.AutoSize = true;
             this.labelVersion.ForeColor = System.Drawing.Color.White;
-            this.labelVersion.Location = new System.Drawing.Point(3, 6);
+            this.labelVersion.Location = new System.Drawing.Point(40, 7);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(48, 13);
             this.labelVersion.TabIndex = 131;
@@ -635,7 +737,7 @@ namespace CEMSStudyApp.Pages
             this.buttonRandom.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.buttonRandom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRandom.ForeColor = System.Drawing.Color.White;
-            this.buttonRandom.Location = new System.Drawing.Point(499, 688);
+            this.buttonRandom.Location = new System.Drawing.Point(463, 688);
             this.buttonRandom.Name = "buttonRandom";
             this.buttonRandom.Size = new System.Drawing.Size(75, 23);
             this.buttonRandom.TabIndex = 130;
@@ -678,6 +780,7 @@ namespace CEMSStudyApp.Pages
             this.tabFormulasMain.Controls.Add(this.tabCOlbshr);
             this.tabFormulasMain.Controls.Add(this.tabCOppmvd);
             this.tabFormulasMain.Controls.Add(this.tabPage4_20ma);
+            this.tabFormulasMain.Controls.Add(this.tabPageHg);
             this.tabFormulasMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabFormulasMain.Location = new System.Drawing.Point(0, -3);
             this.tabFormulasMain.Name = "tabFormulasMain";
@@ -6425,6 +6528,731 @@ namespace CEMSStudyApp.Pages
             this.label224.TabIndex = 137;
             this.label224.Text = "Corrected to 15% Oxygen";
             // 
+            // tabPage4_20ma
+            // 
+            this.tabPage4_20ma.BackColor = System.Drawing.Color.Ivory;
+            this.tabPage4_20ma.Controls.Add(this.label226);
+            this.tabPage4_20ma.Controls.Add(this.label225);
+            this.tabPage4_20ma.Controls.Add(this.label206);
+            this.tabPage4_20ma.Controls.Add(this.textBoxTab420LowScale);
+            this.tabPage4_20ma.Controls.Add(this.textBoxTab420HighScale);
+            this.tabPage4_20ma.Controls.Add(this.textBoxTab42020ma);
+            this.tabPage4_20ma.Controls.Add(this.buttonTab420Clear);
+            this.tabPage4_20ma.Controls.Add(this.textBox4);
+            this.tabPage4_20ma.Controls.Add(this.textBox6);
+            this.tabPage4_20ma.Controls.Add(this.buttonTab420Calculate);
+            this.tabPage4_20ma.Controls.Add(this.label2);
+            this.tabPage4_20ma.Controls.Add(this.textBoxTab420Answer);
+            this.tabPage4_20ma.Controls.Add(this.textBoxTab4204ma);
+            this.tabPage4_20ma.Controls.Add(this.textBoxTab420ActualCount);
+            this.tabPage4_20ma.Controls.Add(this.label3);
+            this.tabPage4_20ma.Controls.Add(this.label4);
+            this.tabPage4_20ma.Location = new System.Drawing.Point(4, 24);
+            this.tabPage4_20ma.Name = "tabPage4_20ma";
+            this.tabPage4_20ma.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4_20ma.Size = new System.Drawing.Size(939, 514);
+            this.tabPage4_20ma.TabIndex = 18;
+            this.tabPage4_20ma.Text = "4-20ma";
+            // 
+            // label226
+            // 
+            this.label226.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label226.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label226.Location = new System.Drawing.Point(243, 208);
+            this.label226.Name = "label226";
+            this.label226.Size = new System.Drawing.Size(82, 18);
+            this.label226.TabIndex = 250;
+            this.label226.Text = "Low Scale =";
+            // 
+            // label225
+            // 
+            this.label225.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label225.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label225.Location = new System.Drawing.Point(240, 181);
+            this.label225.Name = "label225";
+            this.label225.Size = new System.Drawing.Size(85, 18);
+            this.label225.TabIndex = 249;
+            this.label225.Text = "High Scale =";
+            // 
+            // label206
+            // 
+            this.label206.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label206.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label206.Location = new System.Drawing.Point(196, 154);
+            this.label206.Name = "label206";
+            this.label206.Size = new System.Drawing.Size(129, 18);
+            this.label206.TabIndex = 248;
+            this.label206.Text = "High Count (20mA) =";
+            // 
+            // textBoxTab420LowScale
+            // 
+            this.textBoxTab420LowScale.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTab420LowScale.Location = new System.Drawing.Point(336, 205);
+            this.textBoxTab420LowScale.Name = "textBoxTab420LowScale";
+            this.textBoxTab420LowScale.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTab420LowScale.TabIndex = 241;
+            this.textBoxTab420LowScale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTab420HighScale
+            // 
+            this.textBoxTab420HighScale.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTab420HighScale.Location = new System.Drawing.Point(336, 178);
+            this.textBoxTab420HighScale.Name = "textBoxTab420HighScale";
+            this.textBoxTab420HighScale.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTab420HighScale.TabIndex = 240;
+            this.textBoxTab420HighScale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTab42020ma
+            // 
+            this.textBoxTab42020ma.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTab42020ma.Location = new System.Drawing.Point(336, 151);
+            this.textBoxTab42020ma.Name = "textBoxTab42020ma";
+            this.textBoxTab42020ma.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTab42020ma.TabIndex = 239;
+            this.textBoxTab42020ma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // buttonTab420Clear
+            // 
+            this.buttonTab420Clear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTab420Clear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTab420Clear.BackColor = System.Drawing.Color.Firebrick;
+            this.buttonTab420Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTab420Clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTab420Clear.ForeColor = System.Drawing.Color.White;
+            this.buttonTab420Clear.Location = new System.Drawing.Point(250, 260);
+            this.buttonTab420Clear.Name = "buttonTab420Clear";
+            this.buttonTab420Clear.Size = new System.Drawing.Size(75, 30);
+            this.buttonTab420Clear.TabIndex = 243;
+            this.buttonTab420Clear.Text = "Clear";
+            this.buttonTab420Clear.UseVisualStyleBackColor = false;
+            this.buttonTab420Clear.Click += new System.EventHandler(this.buttonTab420Clear_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox4.BackColor = System.Drawing.Color.Blue;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.ForeColor = System.Drawing.Color.White;
+            this.textBox4.Location = new System.Drawing.Point(-1, 7);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(927, 29);
+            this.textBox4.TabIndex = 236;
+            this.textBox4.Text = "Calculate Output Reading for 4-20mA Loop";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox6.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.ForeColor = System.Drawing.Color.White;
+            this.textBox6.Location = new System.Drawing.Point(17, 65);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(425, 22);
+            this.textBox6.TabIndex = 235;
+            this.textBox6.Text = "Value = (Actual Count - 4mA) / (20mA - 4mA) * (High Scale - Low Scale)";
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // buttonTab420Calculate
+            // 
+            this.buttonTab420Calculate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTab420Calculate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTab420Calculate.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonTab420Calculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTab420Calculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTab420Calculate.ForeColor = System.Drawing.Color.White;
+            this.buttonTab420Calculate.Location = new System.Drawing.Point(361, 260);
+            this.buttonTab420Calculate.Name = "buttonTab420Calculate";
+            this.buttonTab420Calculate.Size = new System.Drawing.Size(75, 30);
+            this.buttonTab420Calculate.TabIndex = 242;
+            this.buttonTab420Calculate.Text = "Calculate";
+            this.buttonTab420Calculate.UseVisualStyleBackColor = false;
+            this.buttonTab420Calculate.Click += new System.EventHandler(this.buttonTab420Calculate_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(199, 235);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 20);
+            this.label2.TabIndex = 234;
+            this.label2.Text = "Analog Reading =";
+            // 
+            // textBoxTab420Answer
+            // 
+            this.textBoxTab420Answer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTab420Answer.Location = new System.Drawing.Point(336, 232);
+            this.textBoxTab420Answer.Name = "textBoxTab420Answer";
+            this.textBoxTab420Answer.ReadOnly = true;
+            this.textBoxTab420Answer.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTab420Answer.TabIndex = 233;
+            this.textBoxTab420Answer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTab4204ma
+            // 
+            this.textBoxTab4204ma.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTab4204ma.Location = new System.Drawing.Point(336, 123);
+            this.textBoxTab4204ma.Name = "textBoxTab4204ma";
+            this.textBoxTab4204ma.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTab4204ma.TabIndex = 238;
+            this.textBoxTab4204ma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTab420ActualCount
+            // 
+            this.textBoxTab420ActualCount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTab420ActualCount.Location = new System.Drawing.Point(336, 95);
+            this.textBoxTab420ActualCount.Name = "textBoxTab420ActualCount";
+            this.textBoxTab420ActualCount.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTab420ActualCount.TabIndex = 237;
+            this.textBoxTab420ActualCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(205, 126);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 18);
+            this.label3.TabIndex = 232;
+            this.label3.Text = "Low Count (4mA) =";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(232, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 19);
+            this.label4.TabIndex = 231;
+            this.label4.Text = "Actual Count =";
+            // 
+            // tabPageHg
+            // 
+            this.tabPageHg.Controls.Add(this.textBoxTabHglbhrHg);
+            this.tabPageHg.Controls.Add(this.textBoxTabHglbhrFlow);
+            this.tabPageHg.Controls.Add(this.label239);
+            this.tabPageHg.Controls.Add(this.label240);
+            this.tabPageHg.Controls.Add(this.label246);
+            this.tabPageHg.Controls.Add(this.label241);
+            this.tabPageHg.Controls.Add(this.buttonTabHglbhrClear);
+            this.tabPageHg.Controls.Add(this.textBox35);
+            this.tabPageHg.Controls.Add(this.buttonTabHglbhrAnswer);
+            this.tabPageHg.Controls.Add(this.label242);
+            this.tabPageHg.Controls.Add(this.textBoxTabHglbhrAnswer);
+            this.tabPageHg.Controls.Add(this.label245);
+            this.tabPageHg.Controls.Add(this.textBoxTabHgHGREMW);
+            this.tabPageHg.Controls.Add(this.label5);
+            this.tabPageHg.Controls.Add(this.label237);
+            this.tabPageHg.Controls.Add(this.label236);
+            this.tabPageHg.Controls.Add(this.textBoxTabHgHGRHCO2);
+            this.tabPageHg.Controls.Add(this.label235);
+            this.tabPageHg.Controls.Add(this.label234);
+            this.tabPageHg.Controls.Add(this.label233);
+            this.tabPageHg.Controls.Add(this.label232);
+            this.tabPageHg.Controls.Add(this.buttonTabHgHGREClear);
+            this.tabPageHg.Controls.Add(this.buttonTabHgHGRHClear);
+            this.tabPageHg.Controls.Add(this.buttonTabHgHGREAnswer);
+            this.tabPageHg.Controls.Add(this.label6);
+            this.tabPageHg.Controls.Add(this.textBoxTabHgHGREAnswer);
+            this.tabPageHg.Controls.Add(this.textBoxTabHgHGREHg);
+            this.tabPageHg.Controls.Add(this.textBoxTabHgHGREFlow);
+            this.tabPageHg.Controls.Add(this.label7);
+            this.tabPageHg.Controls.Add(this.label8);
+            this.tabPageHg.Controls.Add(this.label9);
+            this.tabPageHg.Controls.Add(this.textBox24);
+            this.tabPageHg.Controls.Add(this.textBox25);
+            this.tabPageHg.Controls.Add(this.label227);
+            this.tabPageHg.Controls.Add(this.textBox26);
+            this.tabPageHg.Controls.Add(this.buttonTabHgHGRHAnswer);
+            this.tabPageHg.Controls.Add(this.label228);
+            this.tabPageHg.Controls.Add(this.textBoxTabHgHGRHAnswer);
+            this.tabPageHg.Controls.Add(this.textBoxTabHgHGRHFc);
+            this.tabPageHg.Controls.Add(this.textBoxTabHgHGRHHg);
+            this.tabPageHg.Controls.Add(this.label229);
+            this.tabPageHg.Controls.Add(this.label230);
+            this.tabPageHg.Controls.Add(this.label231);
+            this.tabPageHg.Location = new System.Drawing.Point(4, 24);
+            this.tabPageHg.Name = "tabPageHg";
+            this.tabPageHg.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageHg.Size = new System.Drawing.Size(939, 514);
+            this.tabPageHg.TabIndex = 19;
+            this.tabPageHg.Text = "Hg Rate";
+            this.tabPageHg.UseVisualStyleBackColor = true;
+            // 
+            // textBoxTabHglbhrHg
+            // 
+            this.textBoxTabHglbhrHg.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabHglbhrHg.Location = new System.Drawing.Point(343, 322);
+            this.textBoxTabHglbhrHg.Name = "textBoxTabHglbhrHg";
+            this.textBoxTabHglbhrHg.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabHglbhrHg.TabIndex = 261;
+            this.textBoxTabHglbhrHg.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabHglbhrFlow
+            // 
+            this.textBoxTabHglbhrFlow.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabHglbhrFlow.Location = new System.Drawing.Point(343, 294);
+            this.textBoxTabHglbhrFlow.Name = "textBoxTabHglbhrFlow";
+            this.textBoxTabHglbhrFlow.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabHglbhrFlow.TabIndex = 260;
+            this.textBoxTabHglbhrFlow.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label239
+            // 
+            this.label239.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label239.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label239.Location = new System.Drawing.Point(249, 324);
+            this.label239.Name = "label239";
+            this.label239.Size = new System.Drawing.Size(86, 18);
+            this.label239.TabIndex = 285;
+            this.label239.Text = "Hg (ug/scm) = ";
+            // 
+            // label240
+            // 
+            this.label240.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label240.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label240.Location = new System.Drawing.Point(258, 296);
+            this.label240.Name = "label240";
+            this.label240.Size = new System.Drawing.Size(77, 19);
+            this.label240.TabIndex = 284;
+            this.label240.Text = "Flow (scfh) = ";
+            // 
+            // label246
+            // 
+            this.label246.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label246.Location = new System.Drawing.Point(24, 337);
+            this.label246.Name = "label246";
+            this.label246.Size = new System.Drawing.Size(182, 15);
+            this.label246.TabIndex = 283;
+            this.label246.Text = "F = Unbiased Stack Flow (scfh)";
+            // 
+            // label241
+            // 
+            this.label241.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label241.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label241.Location = new System.Drawing.Point(24, 318);
+            this.label241.Name = "label241";
+            this.label241.Size = new System.Drawing.Size(156, 15);
+            this.label241.TabIndex = 278;
+            this.label241.Text = "Hg = Hg in ug/scm";
+            // 
+            // buttonTabHglbhrClear
+            // 
+            this.buttonTabHglbhrClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabHglbhrClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTabHglbhrClear.BackColor = System.Drawing.Color.Firebrick;
+            this.buttonTabHglbhrClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabHglbhrClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabHglbhrClear.ForeColor = System.Drawing.Color.White;
+            this.buttonTabHglbhrClear.Location = new System.Drawing.Point(257, 377);
+            this.buttonTabHglbhrClear.Name = "buttonTabHglbhrClear";
+            this.buttonTabHglbhrClear.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabHglbhrClear.TabIndex = 263;
+            this.buttonTabHglbhrClear.Text = "Clear";
+            this.buttonTabHglbhrClear.UseVisualStyleBackColor = false;
+            this.buttonTabHglbhrClear.Click += new System.EventHandler(this.buttonTabHglbhrClear_Click);
+            // 
+            // textBox35
+            // 
+            this.textBox35.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox35.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textBox35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox35.ForeColor = System.Drawing.Color.White;
+            this.textBox35.Location = new System.Drawing.Point(24, 266);
+            this.textBox35.Name = "textBox35";
+            this.textBox35.ReadOnly = true;
+            this.textBox35.Size = new System.Drawing.Size(419, 22);
+            this.textBox35.TabIndex = 273;
+            this.textBox35.Text = "(lb/hr)   E = Hg * F * 6.243E-11";
+            this.textBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // buttonTabHglbhrAnswer
+            // 
+            this.buttonTabHglbhrAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabHglbhrAnswer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTabHglbhrAnswer.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonTabHglbhrAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabHglbhrAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabHglbhrAnswer.ForeColor = System.Drawing.Color.White;
+            this.buttonTabHglbhrAnswer.Location = new System.Drawing.Point(368, 377);
+            this.buttonTabHglbhrAnswer.Name = "buttonTabHglbhrAnswer";
+            this.buttonTabHglbhrAnswer.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabHglbhrAnswer.TabIndex = 262;
+            this.buttonTabHglbhrAnswer.Text = "Calculate";
+            this.buttonTabHglbhrAnswer.UseVisualStyleBackColor = false;
+            this.buttonTabHglbhrAnswer.Click += new System.EventHandler(this.buttonTabHglbhrAnswer_Click);
+            // 
+            // label242
+            // 
+            this.label242.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label242.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label242.Location = new System.Drawing.Point(228, 352);
+            this.label242.Name = "label242";
+            this.label242.Size = new System.Drawing.Size(109, 25);
+            this.label242.TabIndex = 272;
+            this.label242.Text = "Hg Rate lb/hr = ";
+            // 
+            // textBoxTabHglbhrAnswer
+            // 
+            this.textBoxTabHglbhrAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabHglbhrAnswer.Location = new System.Drawing.Point(343, 349);
+            this.textBoxTabHglbhrAnswer.Name = "textBoxTabHglbhrAnswer";
+            this.textBoxTabHglbhrAnswer.ReadOnly = true;
+            this.textBoxTabHglbhrAnswer.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabHglbhrAnswer.TabIndex = 271;
+            this.textBoxTabHglbhrAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label245
+            // 
+            this.label245.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label245.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label245.Location = new System.Drawing.Point(24, 298);
+            this.label245.Name = "label245";
+            this.label245.Size = new System.Drawing.Size(128, 20);
+            this.label245.TabIndex = 268;
+            this.label245.Text = "E = Hg Rate in lb/hr";
+            // 
+            // textBoxTabHgHGREMW
+            // 
+            this.textBoxTabHgHGREMW.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabHgHGREMW.Location = new System.Drawing.Point(811, 150);
+            this.textBoxTabHgHGREMW.Name = "textBoxTabHgHGREMW";
+            this.textBoxTabHgHGREMW.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabHgHGREMW.TabIndex = 257;
+            this.textBoxTabHgHGREMW.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(761, 153);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 18);
+            this.label5.TabIndex = 266;
+            this.label5.Text = "MW = ";
+            // 
+            // label237
+            // 
+            this.label237.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label237.Location = new System.Drawing.Point(489, 170);
+            this.label237.Name = "label237";
+            this.label237.Size = new System.Drawing.Size(182, 15);
+            this.label237.TabIndex = 265;
+            this.label237.Text = "MW = MATS Load";
+            // 
+            // label236
+            // 
+            this.label236.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label236.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label236.Location = new System.Drawing.Point(489, 97);
+            this.label236.Name = "label236";
+            this.label236.Size = new System.Drawing.Size(209, 35);
+            this.label236.TabIndex = 264;
+            this.label236.Text = "E = Hg Electrical Output Based Emissions Rate (lb/GWh)";
+            // 
+            // textBoxTabHgHGRHCO2
+            // 
+            this.textBoxTabHgHGRHCO2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabHgHGRHCO2.Location = new System.Drawing.Point(343, 150);
+            this.textBoxTabHgHGRHCO2.Name = "textBoxTabHgHGRHCO2";
+            this.textBoxTabHgHGRHCO2.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabHgHGRHCO2.TabIndex = 252;
+            this.textBoxTabHgHGRHCO2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label235
+            // 
+            this.label235.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label235.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label235.Location = new System.Drawing.Point(279, 152);
+            this.label235.Name = "label235";
+            this.label235.Size = new System.Drawing.Size(55, 18);
+            this.label235.TabIndex = 262;
+            this.label235.Text = "CO2% = ";
+            // 
+            // label234
+            // 
+            this.label234.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label234.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label234.Location = new System.Drawing.Point(24, 170);
+            this.label234.Name = "label234";
+            this.label234.Size = new System.Drawing.Size(91, 19);
+            this.label234.TabIndex = 261;
+            this.label234.Text = "CO2 = CO2%";
+            // 
+            // label233
+            // 
+            this.label233.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label233.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label233.Location = new System.Drawing.Point(24, 151);
+            this.label233.Name = "label233";
+            this.label233.Size = new System.Drawing.Size(209, 19);
+            this.label233.TabIndex = 260;
+            this.label233.Text = "Fc = Fc Factor (Default 1800 for Coal)";
+            // 
+            // label232
+            // 
+            this.label232.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label232.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label232.Location = new System.Drawing.Point(24, 132);
+            this.label232.Name = "label232";
+            this.label232.Size = new System.Drawing.Size(156, 15);
+            this.label232.TabIndex = 259;
+            this.label232.Text = "Hg = Hg in ug/scm";
+            // 
+            // buttonTabHgHGREClear
+            // 
+            this.buttonTabHgHGREClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabHgHGREClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTabHgHGREClear.BackColor = System.Drawing.Color.Firebrick;
+            this.buttonTabHgHGREClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabHgHGREClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabHgHGREClear.ForeColor = System.Drawing.Color.White;
+            this.buttonTabHgHGREClear.Location = new System.Drawing.Point(718, 205);
+            this.buttonTabHgHGREClear.Name = "buttonTabHgHGREClear";
+            this.buttonTabHgHGREClear.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabHgHGREClear.TabIndex = 259;
+            this.buttonTabHgHGREClear.Text = "Clear";
+            this.buttonTabHgHGREClear.UseVisualStyleBackColor = false;
+            this.buttonTabHgHGREClear.Click += new System.EventHandler(this.buttonTabHgHGREClear_Click);
+            // 
+            // buttonTabHgHGRHClear
+            // 
+            this.buttonTabHgHGRHClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabHgHGRHClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTabHgHGRHClear.BackColor = System.Drawing.Color.Firebrick;
+            this.buttonTabHgHGRHClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabHgHGRHClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabHgHGRHClear.ForeColor = System.Drawing.Color.White;
+            this.buttonTabHgHGRHClear.Location = new System.Drawing.Point(257, 205);
+            this.buttonTabHgHGRHClear.Name = "buttonTabHgHGRHClear";
+            this.buttonTabHgHGRHClear.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabHgHGRHClear.TabIndex = 254;
+            this.buttonTabHgHGRHClear.Text = "Clear";
+            this.buttonTabHgHGRHClear.UseVisualStyleBackColor = false;
+            this.buttonTabHgHGRHClear.Click += new System.EventHandler(this.buttonTabHgHGRHClear_Click);
+            // 
+            // buttonTabHgHGREAnswer
+            // 
+            this.buttonTabHgHGREAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabHgHGREAnswer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTabHgHGREAnswer.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonTabHgHGREAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabHgHGREAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabHgHGREAnswer.ForeColor = System.Drawing.Color.White;
+            this.buttonTabHgHGREAnswer.Location = new System.Drawing.Point(836, 205);
+            this.buttonTabHgHGREAnswer.Name = "buttonTabHgHGREAnswer";
+            this.buttonTabHgHGREAnswer.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabHgHGREAnswer.TabIndex = 258;
+            this.buttonTabHgHGREAnswer.Text = "Calculate";
+            this.buttonTabHgHGREAnswer.UseVisualStyleBackColor = false;
+            this.buttonTabHgHGREAnswer.Click += new System.EventHandler(this.buttonTabHgHGREAnswer_Click);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(677, 179);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(128, 20);
+            this.label6.TabIndex = 248;
+            this.label6.Text = "Hg Rate lb/GWh = ";
+            // 
+            // textBoxTabHgHGREAnswer
+            // 
+            this.textBoxTabHgHGREAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabHgHGREAnswer.Location = new System.Drawing.Point(811, 177);
+            this.textBoxTabHgHGREAnswer.Name = "textBoxTabHgHGREAnswer";
+            this.textBoxTabHgHGREAnswer.ReadOnly = true;
+            this.textBoxTabHgHGREAnswer.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabHgHGREAnswer.TabIndex = 247;
+            this.textBoxTabHgHGREAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabHgHGREHg
+            // 
+            this.textBoxTabHgHGREHg.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabHgHGREHg.Location = new System.Drawing.Point(811, 123);
+            this.textBoxTabHgHGREHg.Name = "textBoxTabHgHGREHg";
+            this.textBoxTabHgHGREHg.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabHgHGREHg.TabIndex = 256;
+            this.textBoxTabHgHGREHg.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabHgHGREFlow
+            // 
+            this.textBoxTabHgHGREFlow.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabHgHGREFlow.Location = new System.Drawing.Point(811, 95);
+            this.textBoxTabHgHGREFlow.Name = "textBoxTabHgHGREFlow";
+            this.textBoxTabHgHGREFlow.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabHgHGREFlow.TabIndex = 255;
+            this.textBoxTabHgHGREFlow.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(717, 125);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 18);
+            this.label7.TabIndex = 246;
+            this.label7.Text = "Hg (ug/scm) = ";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(726, 97);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 19);
+            this.label8.TabIndex = 245;
+            this.label8.Text = "Flow (scfh) = ";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.Location = new System.Drawing.Point(489, 151);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(182, 15);
+            this.label9.TabIndex = 244;
+            this.label9.Text = "F = Unbiased Stack Flow (scfh)";
+            // 
+            // textBox24
+            // 
+            this.textBox24.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox24.BackColor = System.Drawing.Color.Blue;
+            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox24.ForeColor = System.Drawing.Color.White;
+            this.textBox24.Location = new System.Drawing.Point(6, 7);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.ReadOnly = true;
+            this.textBox24.Size = new System.Drawing.Size(927, 29);
+            this.textBox24.TabIndex = 243;
+            this.textBox24.Text = "Hg Rate lb/hr, lb/TBtu (HGRH), and lb/GWh (HGRE)";
+            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox25
+            // 
+            this.textBox25.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox25.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox25.ForeColor = System.Drawing.Color.White;
+            this.textBox25.Location = new System.Drawing.Point(492, 65);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.ReadOnly = true;
+            this.textBox25.Size = new System.Drawing.Size(419, 22);
+            this.textBox25.TabIndex = 242;
+            this.textBox25.Text = "(HGRE)  E = H * F * 6.243E-11 / (M / 1000)";
+            this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label227
+            // 
+            this.label227.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label227.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label227.Location = new System.Drawing.Point(489, 132);
+            this.label227.Name = "label227";
+            this.label227.Size = new System.Drawing.Size(156, 15);
+            this.label227.TabIndex = 241;
+            this.label227.Text = "Hg = Hg in ug/scm";
+            // 
+            // textBox26
+            // 
+            this.textBox26.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox26.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox26.ForeColor = System.Drawing.Color.White;
+            this.textBox26.Location = new System.Drawing.Point(24, 65);
+            this.textBox26.Name = "textBox26";
+            this.textBox26.ReadOnly = true;
+            this.textBox26.Size = new System.Drawing.Size(419, 22);
+            this.textBox26.TabIndex = 240;
+            this.textBox26.Text = "(HGRH)   E = 6.24E-11 * Hg * Fc * (100 / CO2) * 1000000";
+            this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // buttonTabHgHGRHAnswer
+            // 
+            this.buttonTabHgHGRHAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabHgHGRHAnswer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTabHgHGRHAnswer.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonTabHgHGRHAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabHgHGRHAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabHgHGRHAnswer.ForeColor = System.Drawing.Color.White;
+            this.buttonTabHgHGRHAnswer.Location = new System.Drawing.Point(368, 205);
+            this.buttonTabHgHGRHAnswer.Name = "buttonTabHgHGRHAnswer";
+            this.buttonTabHgHGRHAnswer.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabHgHGRHAnswer.TabIndex = 253;
+            this.buttonTabHgHGRHAnswer.Text = "Calculate";
+            this.buttonTabHgHGRHAnswer.UseVisualStyleBackColor = false;
+            this.buttonTabHgHGRHAnswer.Click += new System.EventHandler(this.buttonTabHgHGRHAnswer_Click);
+            // 
+            // label228
+            // 
+            this.label228.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label228.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label228.Location = new System.Drawing.Point(210, 180);
+            this.label228.Name = "label228";
+            this.label228.Size = new System.Drawing.Size(127, 25);
+            this.label228.TabIndex = 239;
+            this.label228.Text = "Hg Rate lb/TBtu = ";
+            // 
+            // textBoxTabHgHGRHAnswer
+            // 
+            this.textBoxTabHgHGRHAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabHgHGRHAnswer.Location = new System.Drawing.Point(343, 177);
+            this.textBoxTabHgHGRHAnswer.Name = "textBoxTabHgHGRHAnswer";
+            this.textBoxTabHgHGRHAnswer.ReadOnly = true;
+            this.textBoxTabHgHGRHAnswer.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabHgHGRHAnswer.TabIndex = 238;
+            this.textBoxTabHgHGRHAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabHgHGRHFc
+            // 
+            this.textBoxTabHgHGRHFc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabHgHGRHFc.Location = new System.Drawing.Point(343, 123);
+            this.textBoxTabHgHGRHFc.Name = "textBoxTabHgHGRHFc";
+            this.textBoxTabHgHGRHFc.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabHgHGRHFc.TabIndex = 251;
+            this.textBoxTabHgHGRHFc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabHgHGRHHg
+            // 
+            this.textBoxTabHgHGRHHg.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabHgHGRHHg.Location = new System.Drawing.Point(343, 95);
+            this.textBoxTabHgHGRHHg.Name = "textBoxTabHgHGRHHg";
+            this.textBoxTabHgHGRHHg.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabHgHGRHHg.TabIndex = 250;
+            this.textBoxTabHgHGRHHg.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label229
+            // 
+            this.label229.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label229.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label229.Location = new System.Drawing.Point(264, 126);
+            this.label229.Name = "label229";
+            this.label229.Size = new System.Drawing.Size(70, 18);
+            this.label229.TabIndex = 237;
+            this.label229.Text = "Fc Factor = ";
+            // 
+            // label230
+            // 
+            this.label230.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label230.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label230.Location = new System.Drawing.Point(254, 98);
+            this.label230.Name = "label230";
+            this.label230.Size = new System.Drawing.Size(78, 19);
+            this.label230.TabIndex = 236;
+            this.label230.Text = "Hg ug/scm =";
+            // 
+            // label231
+            // 
+            this.label231.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label231.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label231.Location = new System.Drawing.Point(24, 97);
+            this.label231.Name = "label231";
+            this.label231.Size = new System.Drawing.Size(209, 35);
+            this.label231.TabIndex = 235;
+            this.label231.Text = "E = Hg Heat Input Based Emissions Rate (lb/TBtu)";
+            // 
             // buttonPart75
             // 
             this.buttonPart75.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -6791,207 +7619,6 @@ namespace CEMSStudyApp.Pages
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
-            // tabPage4_20ma
-            // 
-            this.tabPage4_20ma.BackColor = System.Drawing.Color.Ivory;
-            this.tabPage4_20ma.Controls.Add(this.label226);
-            this.tabPage4_20ma.Controls.Add(this.label225);
-            this.tabPage4_20ma.Controls.Add(this.label206);
-            this.tabPage4_20ma.Controls.Add(this.textBoxTab420LowScale);
-            this.tabPage4_20ma.Controls.Add(this.textBoxTab420HighScale);
-            this.tabPage4_20ma.Controls.Add(this.textBoxTab42020ma);
-            this.tabPage4_20ma.Controls.Add(this.buttonTab420Clear);
-            this.tabPage4_20ma.Controls.Add(this.textBox4);
-            this.tabPage4_20ma.Controls.Add(this.textBox6);
-            this.tabPage4_20ma.Controls.Add(this.buttonTab420Calculate);
-            this.tabPage4_20ma.Controls.Add(this.label2);
-            this.tabPage4_20ma.Controls.Add(this.textBoxTab420Answer);
-            this.tabPage4_20ma.Controls.Add(this.textBoxTab4204ma);
-            this.tabPage4_20ma.Controls.Add(this.textBoxTab420ActualCount);
-            this.tabPage4_20ma.Controls.Add(this.label3);
-            this.tabPage4_20ma.Controls.Add(this.label4);
-            this.tabPage4_20ma.Location = new System.Drawing.Point(4, 24);
-            this.tabPage4_20ma.Name = "tabPage4_20ma";
-            this.tabPage4_20ma.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4_20ma.Size = new System.Drawing.Size(939, 514);
-            this.tabPage4_20ma.TabIndex = 18;
-            this.tabPage4_20ma.Text = "4-20ma";
-            // 
-            // buttonTab420Clear
-            // 
-            this.buttonTab420Clear.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonTab420Clear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonTab420Clear.BackColor = System.Drawing.Color.Firebrick;
-            this.buttonTab420Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTab420Clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTab420Clear.ForeColor = System.Drawing.Color.White;
-            this.buttonTab420Clear.Location = new System.Drawing.Point(250, 260);
-            this.buttonTab420Clear.Name = "buttonTab420Clear";
-            this.buttonTab420Clear.Size = new System.Drawing.Size(75, 30);
-            this.buttonTab420Clear.TabIndex = 243;
-            this.buttonTab420Clear.Text = "Clear";
-            this.buttonTab420Clear.UseVisualStyleBackColor = false;
-            this.buttonTab420Clear.Click += new System.EventHandler(this.buttonTab420Clear_Click);
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.BackColor = System.Drawing.Color.Blue;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(-1, 7);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(927, 29);
-            this.textBox4.TabIndex = 236;
-            this.textBox4.Text = "Calculate Output Reading for 4-20mA Loop";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox6.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(17, 65);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(425, 22);
-            this.textBox6.TabIndex = 235;
-            this.textBox6.Text = "Value = (Actual Count - 4mA) / (20mA - 4mA) * (High Scale - Low Scale)";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // buttonTab420Calculate
-            // 
-            this.buttonTab420Calculate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonTab420Calculate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonTab420Calculate.BackColor = System.Drawing.Color.DodgerBlue;
-            this.buttonTab420Calculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTab420Calculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTab420Calculate.ForeColor = System.Drawing.Color.White;
-            this.buttonTab420Calculate.Location = new System.Drawing.Point(361, 260);
-            this.buttonTab420Calculate.Name = "buttonTab420Calculate";
-            this.buttonTab420Calculate.Size = new System.Drawing.Size(75, 30);
-            this.buttonTab420Calculate.TabIndex = 242;
-            this.buttonTab420Calculate.Text = "Calculate";
-            this.buttonTab420Calculate.UseVisualStyleBackColor = false;
-            this.buttonTab420Calculate.Click += new System.EventHandler(this.buttonTab420Calculate_Click);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(199, 235);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 20);
-            this.label2.TabIndex = 234;
-            this.label2.Text = "Analog Reading =";
-            // 
-            // textBoxTab420Answer
-            // 
-            this.textBoxTab420Answer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxTab420Answer.Location = new System.Drawing.Point(336, 232);
-            this.textBoxTab420Answer.Name = "textBoxTab420Answer";
-            this.textBoxTab420Answer.ReadOnly = true;
-            this.textBoxTab420Answer.Size = new System.Drawing.Size(100, 21);
-            this.textBoxTab420Answer.TabIndex = 233;
-            this.textBoxTab420Answer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxTab4204ma
-            // 
-            this.textBoxTab4204ma.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxTab4204ma.Location = new System.Drawing.Point(336, 123);
-            this.textBoxTab4204ma.Name = "textBoxTab4204ma";
-            this.textBoxTab4204ma.Size = new System.Drawing.Size(100, 21);
-            this.textBoxTab4204ma.TabIndex = 238;
-            this.textBoxTab4204ma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxTab420ActualCount
-            // 
-            this.textBoxTab420ActualCount.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxTab420ActualCount.Location = new System.Drawing.Point(336, 95);
-            this.textBoxTab420ActualCount.Name = "textBoxTab420ActualCount";
-            this.textBoxTab420ActualCount.Size = new System.Drawing.Size(100, 21);
-            this.textBoxTab420ActualCount.TabIndex = 237;
-            this.textBoxTab420ActualCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(205, 126);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 18);
-            this.label3.TabIndex = 232;
-            this.label3.Text = "Low Count (4mA) =";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(232, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 19);
-            this.label4.TabIndex = 231;
-            this.label4.Text = "Actual Count =";
-            // 
-            // textBoxTab42020ma
-            // 
-            this.textBoxTab42020ma.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxTab42020ma.Location = new System.Drawing.Point(336, 151);
-            this.textBoxTab42020ma.Name = "textBoxTab42020ma";
-            this.textBoxTab42020ma.Size = new System.Drawing.Size(100, 21);
-            this.textBoxTab42020ma.TabIndex = 239;
-            this.textBoxTab42020ma.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxTab420HighScale
-            // 
-            this.textBoxTab420HighScale.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxTab420HighScale.Location = new System.Drawing.Point(336, 178);
-            this.textBoxTab420HighScale.Name = "textBoxTab420HighScale";
-            this.textBoxTab420HighScale.Size = new System.Drawing.Size(100, 21);
-            this.textBoxTab420HighScale.TabIndex = 240;
-            this.textBoxTab420HighScale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBoxTab420LowScale
-            // 
-            this.textBoxTab420LowScale.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBoxTab420LowScale.Location = new System.Drawing.Point(336, 205);
-            this.textBoxTab420LowScale.Name = "textBoxTab420LowScale";
-            this.textBoxTab420LowScale.Size = new System.Drawing.Size(100, 21);
-            this.textBoxTab420LowScale.TabIndex = 241;
-            this.textBoxTab420LowScale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label206
-            // 
-            this.label206.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label206.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label206.Location = new System.Drawing.Point(196, 154);
-            this.label206.Name = "label206";
-            this.label206.Size = new System.Drawing.Size(129, 18);
-            this.label206.TabIndex = 248;
-            this.label206.Text = "High Count (20mA) =";
-            // 
-            // label225
-            // 
-            this.label225.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label225.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label225.Location = new System.Drawing.Point(240, 181);
-            this.label225.Name = "label225";
-            this.label225.Size = new System.Drawing.Size(85, 18);
-            this.label225.TabIndex = 249;
-            this.label225.Text = "High Scale =";
-            // 
-            // label226
-            // 
-            this.label226.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label226.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label226.Location = new System.Drawing.Point(243, 208);
-            this.label226.Name = "label226";
-            this.label226.Size = new System.Drawing.Size(82, 18);
-            this.label226.TabIndex = 250;
-            this.label226.Text = "Low Scale =";
-            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -7046,10 +7673,12 @@ namespace CEMSStudyApp.Pages
             this.tabCOlbshr.PerformLayout();
             this.tabCOppmvd.ResumeLayout(false);
             this.tabCOppmvd.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage4_20ma.ResumeLayout(false);
             this.tabPage4_20ma.PerformLayout();
+            this.tabPageHg.ResumeLayout(false);
+            this.tabPageHg.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -7576,5 +8205,52 @@ namespace CEMSStudyApp.Pages
         private TextBox textBoxTab420ActualCount;
         private Label label3;
         private Label label4;
+        private TextBox textBoxSearch;
+        private ComboBox comboBoxSearch;
+        private Button buttonSearch;
+        private TabPage tabPageHg;
+        private Label label233;
+        private Label label232;
+        private Button buttonTabHgHGREClear;
+        private Button buttonTabHgHGRHClear;
+        private Button buttonTabHgHGREAnswer;
+        private Label label6;
+        private TextBox textBoxTabHgHGREAnswer;
+        private TextBox textBoxTabHgHGREHg;
+        private TextBox textBoxTabHgHGREFlow;
+        private Label label7;
+        private Label label8;
+        private Label label9;
+        private TextBox textBox24;
+        private TextBox textBox25;
+        private Label label227;
+        private TextBox textBox26;
+        private Button buttonTabHgHGRHAnswer;
+        private Label label228;
+        private TextBox textBoxTabHgHGRHAnswer;
+        private TextBox textBoxTabHgHGRHFc;
+        private TextBox textBoxTabHgHGRHHg;
+        private Label label229;
+        private Label label230;
+        private Label label231;
+        private TextBox textBoxTabHgHGRHCO2;
+        private Label label235;
+        private Label label234;
+        private TextBox textBoxTabHglbhrHg;
+        private TextBox textBoxTabHglbhrFlow;
+        private Label label239;
+        private Label label240;
+        private Label label246;
+        private Label label241;
+        private Button buttonTabHglbhrClear;
+        private TextBox textBox35;
+        private Button buttonTabHglbhrAnswer;
+        private Label label242;
+        private TextBox textBoxTabHglbhrAnswer;
+        private Label label245;
+        private TextBox textBoxTabHgHGREMW;
+        private Label label5;
+        private Label label237;
+        private Label label236;
     }
 }

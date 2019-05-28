@@ -16,6 +16,9 @@ namespace CEMSStudyApp.Pages
         public static Dictionary<int, DashboardViewModel> dashboardDictionary { get; set; }
         public static Dictionary<int, string> dropDownDictionary { get; set; }
         public static string folderName { get; set; }
+        public static double tabHgHGRHAnswer { get; set; }
+        public static double tabHgHGREAnswer { get; set; }
+        public static double tabHglbhrAnswer { get; set; }
 
         public MainDashboard()
         {
@@ -1324,8 +1327,8 @@ namespace CEMSStudyApp.Pages
             var co2 = CTD(textBoxTabHgHGRHCO2.Text, textBoxTabHgHGRHCO2);
             if (co2 == null) return;
 
-            var answer = 6.243E-11 * hg * fc * (100 / co2) * 1000000;
-            textBoxTabHgHGRHAnswer.Text = $@"{answer:E2}";
+            tabHgHGRHAnswer = (double) (6.243E-11 * hg * fc * (100 / co2) * 1000000);
+            textBoxTabHgHGRHAnswer.Text = $@"{tabHgHGRHAnswer:E2}";
         }
 
         private void buttonTabHgHGREAnswer_Click(object sender, EventArgs e)
@@ -1339,8 +1342,8 @@ namespace CEMSStudyApp.Pages
             var mw = CTD(textBoxTabHgHGREMW.Text, textBoxTabHgHGREMW);
             if (mw == null) return;
 
-            var answer = hg * flow * 6.243E-11 / (mw / 1000);
-            textBoxTabHgHGREAnswer.Text = $@"{answer:E2}";
+           tabHgHGREAnswer = (double) (hg * flow * 6.243E-11 / (mw / 1000));
+            textBoxTabHgHGREAnswer.Text = $@"{tabHgHGREAnswer:E2}";
         }
 
         private void buttonTabHglbhrAnswer_Click(object sender, EventArgs e)
@@ -1351,8 +1354,8 @@ namespace CEMSStudyApp.Pages
             var hg = CTD(textBoxTabHglbhrHg.Text, textBoxTabHglbhrHg);
             if (hg == null) return;
 
-            var answer = hg * flow * 6.243E-11;
-            textBoxTabHglbhrAnswer.Text = $@"{answer:E2}";
+            tabHglbhrAnswer = (double) (hg * flow * 6.243E-11);
+            textBoxTabHglbhrAnswer.Text = $@"{tabHglbhrAnswer:E2}";
         }
 
         private void buttonTabHgHGRHClear_Click(object sender, EventArgs e)
@@ -1379,6 +1382,54 @@ namespace CEMSStudyApp.Pages
             textBoxTabHglbhrFlow.Focus();
             textBoxTabHglbhrHg.Text = "";
             textBoxTabHglbhrAnswer.Text = "";
+        }
+
+        private void buttonTabHgHGRHConvert_Click(object sender, EventArgs e)
+        {
+            if (buttonTabHgHGRHConvert.Text == "D")
+            {
+                textBoxTabHgHGRHAnswer.Text = $@"{tabHgHGRHAnswer}";
+                buttonTabHgHGRHConvert.Text = "E";
+                toolTip1.SetToolTip(buttonTabHgHGRHConvert,"Convert to Exponent");
+            }
+            else
+            {
+                textBoxTabHgHGRHAnswer.Text = $@"{tabHgHGRHAnswer:E2}";
+                buttonTabHgHGRHConvert.Text = "D";
+                toolTip1.SetToolTip(buttonTabHgHGRHConvert, "Convert to Decimal");
+            }
+        }
+
+        private void buttonTabHgHGREConvert_Click(object sender, EventArgs e)
+        {
+            if (buttonTabHgHGREConvert.Text == "D")
+            {
+                textBoxTabHgHGREAnswer.Text = $@"{tabHgHGREAnswer:N}";
+                buttonTabHgHGREConvert.Text = "E";
+                toolTip1.SetToolTip(buttonTabHgHGREConvert, "Convert to Exponent");
+            }
+            else
+            {
+                textBoxTabHgHGREAnswer.Text = $@"{tabHgHGREAnswer:E2}";
+                buttonTabHgHGREConvert.Text = "D";
+                toolTip1.SetToolTip(buttonTabHgHGREConvert, "Convert to Decimal");
+            }
+        }
+
+        private void buttonTabHglbhrConvert_Click(object sender, EventArgs e)
+        {
+            if (buttonTabHglbhrConvert.Text == "D")
+            {
+                textBoxTabHglbhrAnswer.Text = $@"{tabHglbhrAnswer:N}";
+                buttonTabHglbhrConvert.Text = "E";
+                toolTip1.SetToolTip(buttonTabHglbhrConvert, "Convert to Exponent");
+            }
+            else
+            {
+                textBoxTabHglbhrAnswer.Text = $@"{tabHglbhrAnswer:E2}";
+                buttonTabHglbhrConvert.Text = "D";
+                toolTip1.SetToolTip(buttonTabHglbhrConvert, "Convert to Decimal");
+            }
         }
     }
 }

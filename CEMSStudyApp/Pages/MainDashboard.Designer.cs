@@ -533,6 +533,9 @@ namespace CEMSStudyApp.Pages
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPageHg = new System.Windows.Forms.TabPage();
+            this.buttonTabHglbhrConvert = new System.Windows.Forms.Button();
+            this.buttonTabHgHGREConvert = new System.Windows.Forms.Button();
+            this.buttonTabHgHGRHConvert = new System.Windows.Forms.Button();
             this.textBoxTabHglbhrHg = new System.Windows.Forms.TextBox();
             this.textBoxTabHglbhrFlow = new System.Windows.Forms.TextBox();
             this.label239 = new System.Windows.Forms.Label();
@@ -6731,6 +6734,9 @@ namespace CEMSStudyApp.Pages
             // 
             // tabPageHg
             // 
+            this.tabPageHg.Controls.Add(this.buttonTabHglbhrConvert);
+            this.tabPageHg.Controls.Add(this.buttonTabHgHGREConvert);
+            this.tabPageHg.Controls.Add(this.buttonTabHgHGRHConvert);
             this.tabPageHg.Controls.Add(this.textBoxTabHglbhrHg);
             this.tabPageHg.Controls.Add(this.textBoxTabHglbhrFlow);
             this.tabPageHg.Controls.Add(this.label239);
@@ -6781,6 +6787,54 @@ namespace CEMSStudyApp.Pages
             this.tabPageHg.TabIndex = 19;
             this.tabPageHg.Text = "Hg Rate";
             this.tabPageHg.UseVisualStyleBackColor = true;
+            // 
+            // buttonTabHglbhrConvert
+            // 
+            this.buttonTabHglbhrConvert.BackColor = System.Drawing.Color.Transparent;
+            this.buttonTabHglbhrConvert.FlatAppearance.BorderSize = 0;
+            this.buttonTabHglbhrConvert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabHglbhrConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabHglbhrConvert.ForeColor = System.Drawing.Color.DarkRed;
+            this.buttonTabHglbhrConvert.Location = new System.Drawing.Point(449, 349);
+            this.buttonTabHglbhrConvert.Name = "buttonTabHglbhrConvert";
+            this.buttonTabHglbhrConvert.Size = new System.Drawing.Size(14, 21);
+            this.buttonTabHglbhrConvert.TabIndex = 289;
+            this.buttonTabHglbhrConvert.Text = "D";
+            this.toolTip1.SetToolTip(this.buttonTabHglbhrConvert, "Convert to Decimal");
+            this.buttonTabHglbhrConvert.UseVisualStyleBackColor = false;
+            this.buttonTabHglbhrConvert.Click += new System.EventHandler(this.buttonTabHglbhrConvert_Click);
+            // 
+            // buttonTabHgHGREConvert
+            // 
+            this.buttonTabHgHGREConvert.BackColor = System.Drawing.Color.Transparent;
+            this.buttonTabHgHGREConvert.FlatAppearance.BorderSize = 0;
+            this.buttonTabHgHGREConvert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabHgHGREConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabHgHGREConvert.ForeColor = System.Drawing.Color.Maroon;
+            this.buttonTabHgHGREConvert.Location = new System.Drawing.Point(917, 178);
+            this.buttonTabHgHGREConvert.Name = "buttonTabHgHGREConvert";
+            this.buttonTabHgHGREConvert.Size = new System.Drawing.Size(14, 21);
+            this.buttonTabHgHGREConvert.TabIndex = 288;
+            this.buttonTabHgHGREConvert.Text = "D";
+            this.toolTip1.SetToolTip(this.buttonTabHgHGREConvert, "Convert to Decimal");
+            this.buttonTabHgHGREConvert.UseVisualStyleBackColor = false;
+            this.buttonTabHgHGREConvert.Click += new System.EventHandler(this.buttonTabHgHGREConvert_Click);
+            // 
+            // buttonTabHgHGRHConvert
+            // 
+            this.buttonTabHgHGRHConvert.BackColor = System.Drawing.Color.Transparent;
+            this.buttonTabHgHGRHConvert.FlatAppearance.BorderSize = 0;
+            this.buttonTabHgHGRHConvert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabHgHGRHConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabHgHGRHConvert.ForeColor = System.Drawing.Color.DarkRed;
+            this.buttonTabHgHGRHConvert.Location = new System.Drawing.Point(449, 177);
+            this.buttonTabHgHGRHConvert.Name = "buttonTabHgHGRHConvert";
+            this.buttonTabHgHGRHConvert.Size = new System.Drawing.Size(14, 21);
+            this.buttonTabHgHGRHConvert.TabIndex = 286;
+            this.buttonTabHgHGRHConvert.Text = "D";
+            this.toolTip1.SetToolTip(this.buttonTabHgHGRHConvert, "Convert to Decimal");
+            this.buttonTabHgHGRHConvert.UseVisualStyleBackColor = false;
+            this.buttonTabHgHGRHConvert.Click += new System.EventHandler(this.buttonTabHgHGRHConvert_Click);
             // 
             // textBoxTabHglbhrHg
             // 
@@ -8252,5 +8306,8 @@ namespace CEMSStudyApp.Pages
         private Label label5;
         private Label label237;
         private Label label236;
+        private Button buttonTabHglbhrConvert;
+        private Button buttonTabHgHGREConvert;
+        private Button buttonTabHgHGRHConvert;
     }
 }

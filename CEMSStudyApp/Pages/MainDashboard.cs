@@ -324,24 +324,30 @@ namespace CEMSStudyApp.Pages
                     tabFormulasMain.SelectTab(tabPageHg);
                     break;
                 case 13:
-                    tabFormulasMain.SelectTab(tabNOxlbshr);
+                    tabFormulasMain.SelectTab(tabPageLMEHI);
                     break;
                 case 14:
-                    tabFormulasMain.SelectTab(tabNOxlbsmmBtu);
+                    tabFormulasMain.SelectTab(tabPageLMEMass);
                     break;
                 case 15:
-                    tabFormulasMain.SelectTab(tabNOxppmvd);
+                    tabFormulasMain.SelectTab(tabNOxlbshr);
                     break;
                 case 16:
-                    tabFormulasMain.SelectTab(tabOilFlow);
+                    tabFormulasMain.SelectTab(tabNOxlbsmmBtu);
                     break;
                 case 17:
-                    tabFormulasMain.SelectTab(tabSO2Flow);
+                    tabFormulasMain.SelectTab(tabNOxppmvd);
                     break;
                 case 18:
-                    tabFormulasMain.SelectTab(tabSO2Gas);
+                    tabFormulasMain.SelectTab(tabOilFlow);
                     break;
                 case 19:
+                    tabFormulasMain.SelectTab(tabSO2Flow);
+                    break;
+                case 20:
+                    tabFormulasMain.SelectTab(tabSO2Gas);
+                    break;
+                case 21:
                     tabFormulasMain.SelectTab(tabSO2Oil);
                     break;
 
@@ -523,114 +529,146 @@ namespace CEMSStudyApp.Pages
 
         private void buttonTabOilFlowF1Calculate_Click(object sender, EventArgs e)
         {
+            //OIL FLOW IN GALS/MIN
             var oilFlow = CTD(textBoxTabOilFlowF1OilFlow.Text, textBoxTabOilFlowF1OilFlow);
             if (oilFlow == null) return;
+
+            //OIL DENSITY IN LBS/GAL
             var oilDensity = CTD(textBoxTabOilFlowF1Density.Text, textBoxTabOilFlowF1Density);
             if (oilDensity == null) return;
+
+            //MASS OIL FLOW LBS/HR
             var answer = oilFlow * oilDensity;
             DisplayAnswer(answer, textBoxTabOilFlowMassF1OilFlow);
         }
 
         private void buttonTabCO2GasF1Calculate_Click(object sender, EventArgs e)
         {
+            //CARBON CONTENT FOR GAS %
             var carbonContent = CTD(textBoxTabCO2GasF1CarbonContent.Text, textBoxTabCO2GasF1CarbonContent);
             if (carbonContent == null) return;
 
+            //GAS FLOW IN 100 SCFH
             var gasFlow = CTD(textBoxTabCO2GasF1GasFlow.Text, textBoxTabCO2GasF1GasFlow);
             if (gasFlow == null) return;
 
+            //CO2 TONS/HR
             var answer = ((carbonContent / 100 * gasFlow * 100 * 0.0452) * 44) / (2000 * 12);
             DisplayAnswer(answer, textBoxTabCO2F1Answer);
         }
 
         private void buttonTabCO2GasF2Calculate_Click(object sender, EventArgs e)
         {
+            //HEAT INPUT FOR GAS
             var htip = CTD(textBoxTabCO2GasF2HTIP.Text, textBoxTabCO2GasF2HTIP);
             if (htip == null) return;
+
+            //CO2 TONS/HR
             var answer = (htip * 1040) * (1.0 / 385) * (44.0 / 2000);
             DisplayAnswer(answer, textBoxTabCO2GasF2Answer);
         }
 
         private void buttonTabCO2GasF3Calculate_Click(object sender, EventArgs e)
         {
+            //CO2 CONCENTRATION %
             var co2 = CTD(textBoxTabCO2GasF3CO2Concentration.Text, textBoxTabCO2GasF3CO2Concentration);
             if (co2 == null) return;
 
+            //GAS FLOW
             var gasFlow = CTD(textBoxTabCO2GasF3GasFlow.Text, textBoxTabCO2GasF3GasFlow);
             if (gasFlow == null) return;
 
+            //COT TONS/HR
             var answer = (5.7 / 10000000) * co2 * gasFlow;
             DisplayAnswer(answer, textBoxTabCO2GasF3Answer);
         }
 
         private void buttonTabCO2OilF1Calculate_Click(object sender, EventArgs e)
         {
+            //CARBON CONTENT FOR OIL %
             var carbonContent = CTD(textBoxTabCO2OilF1CarbonContent.Text, textBoxTabCO2OilF1CarbonContent);
             if (carbonContent == null) return;
 
+            //MASS OF OIL LB/HR
             var massOil = CTD(textBoxTabCO2OilF1MassOil.Text, textBoxTabCO2OilF1MassOil);
             if (massOil == null) return;
 
+            //CO2 TONS/HR
             var answer = ((carbonContent / 100 * massOil) * 44) / (2000 * 12);
             DisplayAnswer(answer, textBoxTabCO2OilF1Answer);
         }
 
         private void buttonTabCO2OilF2Calculate_Click(object sender, EventArgs e)
         {
+            //HEAT INPUT FOR OIL
             var htip = CTD(textBoxTabCO2OilF2HTIP.Text, textBoxTabCO2OilF2HTIP);
             if (htip == null) return;
 
+            //CO2 TONS/HR
             var answer = htip * 1420 * (1.0 / 385) * (44.0 / 2000);
             DisplayAnswer(answer, textBoxTabCO2OilF2Answer);
         }
 
         private void buttonTabCO2OilF3Calculate_Click(object sender, EventArgs e)
         {
+            //CO2 CONCENTRATION %
             var co2 = CTD(textBoxTabCO2OilF3CO2Concentration.Text, textBoxTabCO2OilF3CO2Concentration);
             if (co2 == null) return;
 
+            //MASS OF OIL
             var massOfOil = CTD(textBoxTabCO2OilF3MassOfOil.Text, textBoxTabCO2OilF3MassOfOil);
             if (massOfOil == null) return;
 
+            //CO2 TONS/HR
             var answer = (5.7 / 10000000) * co2 * massOfOil;
             DisplayAnswer(answer, textBoxTabCO2OilF3Answer);
         }
 
         private void buttonTabCO2FlowF1CO2Calculate_Click(object sender, EventArgs e)
         {
+            //CO2 CONCENTRATION %
             var co2 = CTD(textBoxTabCO2FlowF1CO2Concentration.Text, textBoxTabCO2FlowF1CO2Concentration);
             if (co2 == null) return;
 
+            //VOLUMETRIC FLOW SCFH
             var flow = CTD(textBoxTabCO2FlowF1Flow.Text, textBoxTabCO2FlowF1Flow);
             if (flow == null) return;
 
+            //CO2 TONS/HR
             var answer = (5.7 / 10000000) * co2 * flow;
             DisplayAnswer(answer, textBoxTabCO2FlowF1Answer);
         }
 
         private void buttonTabHTIPGasF1Calculate_Click(object sender, EventArgs e)
         {
+            //GROSS CALORIFIC VALUE FOR GAS
             var gcv = CTD(textBoxTabHTIPGasF1GCV.Text, textBoxTabHTIPGasF1GCV);
             if (gcv == null) return;
 
+            //GAS FLOW 100/SCFH
             var gasFlow = CTD(textBoxTabHTIPGasF1GasFlow.Text, textBoxTabHTIPGasF1GasFlow);
             if (gasFlow == null) return;
 
+            //HTIP MM/BTU
             var answer = gcv * gasFlow / 1000000;
             DisplayAnswer(answer, textBoxTabHTIPGasF1Answer);
         }
 
         private void buttonTabHTIPGasF2Answer_Click(object sender, EventArgs e)
         {
+            //GAS FLOW 100/SCFH
             var gasFlow = CTD(textBoxTabHTIPGasF2GasFlow.Text, textBoxTabHTIPGasF2GasFlow);
             if (gasFlow == null) return;
 
+            //CO2 CONCENTRATION %
             var co2 = CTD(textBoxTabHTIPGasF2CO2Concentration.Text, textBoxTabHTIPGasF2CO2Concentration);
             if (co2 == null) return;
 
+            //FUEL FACTOR 1040 FOR GAS
             var fc = CTD(textBoxTabHTIPGasF2FuelFactor.Text, textBoxTabHTIPGasF2FuelFactor);
             if (fc == null) return;
 
+            //HTIP MM/BTU
             var answer = (gasFlow * co2) / (fc * 100);
             DisplayAnswer(answer, textBoxTabHTIPGasF2Answer);
 
@@ -638,174 +676,219 @@ namespace CEMSStudyApp.Pages
 
         private void buttonTabHTIPOilF1Calculate_Click(object sender, EventArgs e)
         {
+            //GROSS CALORIFIC VALUE FOR OIL
             var gcv = CTD(textBoxTabHTIPOilF1GCV.Text, textBoxTabHTIPOilF1GCV);
             if (gcv == null) return;
 
+            //MASS OF OIL LBS/HR
             var massOfOil = CTD(textBoxTabHTIPOilF1MassOfOil.Text, textBoxTabHTIPOilF1MassOfOil);
             if (massOfOil == null) return;
 
+            //HTIP MM/BTU
             var answer = gcv * massOfOil / 1000000;
             DisplayAnswer(answer, textBoxTabHTIPOilF1Answer);
         }
 
         private void buttonTabHTIPOilF2Calculate_Click(object sender, EventArgs e)
         {
+            //MASS OF OIL LBS/HR
             var massOfOil = CTD(textBoxTabHTIPOilF2MassOfOil.Text, textBoxTabHTIPOilF2MassOfOil);
             if (massOfOil == null) return;
 
+            //CO2 CONCENTRATION %
             var co2 = CTD(textBoxTabHTIPOilF2CO2Concentration.Text, textBoxTabHTIPOilF2CO2Concentration);
             if (co2 == null) return;
 
+            //FUEL FACTOR 1420 FOR OIL
             var fc = CTD(textBoxTabHTIPOilF2FuelFactor.Text, textBoxTabHTIPOilF2FuelFactor);
             if (fc == null) return;
 
+            //HTIP MM/BTU
             var answer = (massOfOil * co2) / (fc * 100);
             DisplayAnswer(answer, textBoxTabHTIPOilF2Answer);
         }
 
         private void buttonTabHTIPFlowF1Calculate_Click(object sender, EventArgs e)
         {
+            //VOLUMETRIC FLOW SCFH
             var flow = CTD(textBoxTabHTIPFlowF1Flow.Text, textBoxTabHTIPFlowF1Flow);
             if (flow == null) return;
 
+            //CO2 CONCENTRATION %
             var co2 = CTD(textBoxTabHTIPFlowF1CO2Concentration.Text, textBoxTabHTIPFlowF1CO2Concentration);
             if (co2 == null) return;
 
+            //FUEL FACTOR 1420 FOR OIL
             var fc = CTD(textBoxTabHTIPFlowF1FuelFactor.Text, textBoxTabHTIPFlowF1FuelFactor);
             if (fc == null) return;
 
+            //HTIP MM/BTU
             var answer = flow * (1 / fc) * (co2 / 100);
             DisplayAnswer(answer, textBoxTabHTIPFlowF1Answer);
         }
 
         private void buttonTabSO2GasF1Calculate_Click(object sender, EventArgs e)
         {
+            //HEAT INPUT GAS MM/BTU
             var htip = CTD(textBoxTabSO2GasF1HTIP.Text, textBoxTabSO2GasF1HTIP);
             if (htip == null) return;
 
+            //MASS EMISSIONS SO2 LBS/HR
             var answer = htip * 0.0006;
             DisplayAnswer(answer, textBoxTabSO2GasF1Answer);
         }
 
         private void buttonTabSO2GasF2Calculate_Click(object sender, EventArgs e)
         {
+            //SO2 CONCENTRATION PPM
             var so2 = CTD(textBoxTabSO2GasF2SO2Concentration.Text, textBoxTabSO2GasF2SO2Concentration);
             if (so2 == null) return;
 
+            //GAS FLOW
             var gasFlow = CTD(textBoxTabSO2GasF2GasFlow.Text, textBoxTabSO2GasF2GasFlow);
             if (gasFlow == null) return;
 
+            //MASS EMISSIONS SO2 LBS/HR
             var answer = 0.000000166 * so2 * gasFlow;
             DisplayAnswer(answer, textBoxTabSO2GasF2Answer);
         }
 
         private void buttonTabSO2OilF1Calculate_Click(object sender, EventArgs e)
         {
+            //MASS OIL IN LBS/HR
             var massOfOil = CTD(textBoxTabSO2OilF1MassOfOil.Text, textBoxTabSO2OilF1MassOfOil);
             if (massOfOil == null) return;
 
+            //SULFUR CONTENT OIL%
             var sulfur = CTD(textBoxTabSO2OilF1SulfurContent.Text, textBoxTabSO2OilF1SulfurContent);
             if (sulfur == null) return;
 
+            //MASS EMISSIONS SO2 LBS/HR
             var answer = 2 * massOfOil * sulfur / 100;
             DisplayAnswer(answer, textBoxTabSO2OilF1Answer);
         }
 
         private void buttonTabSO2OilF2Calculate_Click(object sender, EventArgs e)
         {
+            //MASS OIL IN LBS/HR
             var massOfOil = CTD(textBoxTabSO2OilF2MassOfOil.Text, textBoxTabSO2OilF2MassOfOil);
             if (massOfOil == null) return;
 
+            //SULFUR CONTENT OIL%
             var sulfur = CTD(textBoxTabSO2OilF2SulfurContent.Text, textBoxTabSO2OilF2SulfurContent);
             if (sulfur == null) return;
 
+            //MASS EMISSIONS SO2 LBS/HR
             var answer = 2 * massOfOil * sulfur / 100;
             DisplayAnswer(answer, textBoxTabSO2OilF2Answer);
         }
 
         private void buttonTabSO2OilF3Calculate_Click(object sender, EventArgs e)
         {
+            //SO2 CONCENTRATION PPM
             var so2 = CTD(textBoxTabSO2OilF3SO2Concentration.Text, textBoxTabSO2OilF3SO2Concentration);
             if (so2 == null) return;
 
+            //MASS OF OIL
             var massOfOil = CTD(textBoxTabSO2OilF3MassOfOil.Text, textBoxTabSO2OilF3MassOfOil);
             if (massOfOil == null) return;
 
+            //MASS EMISSIONS SO2 LBS/HR
             var answer = 0.000000166 * so2 * massOfOil;
             DisplayAnswer(answer, textBoxTabSO2OilF3Answer);
         }
 
         private void buttonTabSO2FlowF1Calculate_Click(object sender, EventArgs e)
         {
+            //SO2 CONCENTRATION %
             var so2 = CTD(textBoxTabSO2FlowF1SO2Concentration.Text, textBoxTabSO2FlowF1SO2Concentration);
             if (so2 == null) return;
 
+            //VOLUMETRIC FLOW SCFH
             var flow = CTD(textBoxTabSO2FlowF1Flow.Text, textBoxTabSO2FlowF1Flow);
             if (flow == null) return;
 
+            //MASS EMISSIONS SO2 LBS/HR
             var answer = 0.000000166 * so2 * flow;
             DisplayAnswer(answer, textBoxTabSO2FlowF1Answer);
         }
 
         private void buttonTabNOxlbsmmBtuF1Calculate_Click(object sender, EventArgs e)
         {
+            //NOX PPM
             var nox = CTD(textBoxTabNOxlbsmmBtuF1NOx.Text, textBoxTabNOxlbsmmBtuF1NOx);
             if (nox == null) return;
 
+            //CO2 %
             var co2 = CTD(textBoxTabNOxlbsmmBtuF1CO2.Text, textBoxTabNOxlbsmmBtuF1CO2);
             if (co2 == null) return;
 
+            //FUEL FACTOR FOR CO2
             var fc = CTD(textBoxTabNOxlbsmmBtuF1Fc.Text, textBoxTabNOxlbsmmBtuF1Fc);
             if (fc == null) return;
 
+            //NOX BIAS ADJUSTMENT FACTOR
             var baf = CTD(textBoxTabNOxlbsmmBtuF1BAF.Text, textBoxTabNOxlbsmmBtuF1BAF);
             if (baf == null) return;
 
+            //NOX LBS/MMBTU
             var answer = (0.0000001194 * nox * fc * (100 / co2)) * baf;
             textBoxTabNOxlbsmmBtuF1Answer.Text = $@"{answer:N3}";
         }
 
         private void buttonTabNOxlbsmmBtuF2Calculate_Click(object sender, EventArgs e)
         {
+            //NOX PPM
             var nox = CTD(textBoxTabNOxlbsmmBtuF2NOx.Text, textBoxTabNOxlbsmmBtuF2NOx);
             if (nox == null) return;
 
+            //O2 %
             var o2 = CTD(textBoxTabNOxlbsmmBtuF2O2.Text, textBoxTabNOxlbsmmBtuF2O2);
             if (o2 == null) return;
 
+            //FUEL FACTOR FOR O2
             var fc = CTD(textBoxTabNOxlbsmmBtuF2Fc.Text, textBoxTabNOxlbsmmBtuF2Fc);
             if (fc == null) return;
 
+            //NOX BIAS ADJUSTMENT FACTOR
             var baf = CTD(textBoxTabNOxlbsmmBtuF2BAF.Text, textBoxTabNOxlbsmmBtuF2BAF);
             if (baf == null) return;
 
+            //NOX LBS/MMBTU
             var answer = 0.0000001194 * nox * fc * (20.9 / (20.9 - o2)) * baf;
             textBoxTabNOxlbsmmBtuF2Answer.Text = $@"{answer:N3}";
         }
 
         private void buttonTabNOxlbshrF1Calculate_Click(object sender, EventArgs e)
         {
+            //NOX CONCENTRATION PPM WET
             var nox = CTD(textBoxTabNOxlbshrF1NOx.Text, textBoxTabNOxlbshrF1NOx);
             if (nox == null) return;
 
+            //VOLUMETRIC FLOW RATE SCFH
             var flow = CTD(textBoxTabNOxlbshrF1Fc.Text, textBoxTabNOxlbshrF1Fc);
             if (flow == null) return;
 
+            //UNIT/STACK OPERATING TIME
             var ot = CTD(textBoxTabNOxlbshrF1OT.Text, textBoxTabNOxlbshrF1OT);
             if (ot == null) return;
 
+            //NOX LBS/HR
             var answer = 0.0000001194 * nox * flow * ot;
             DisplayAnswer(answer, textBoxTabNOxlbshrF1Answer);
         }
 
         private void buttonTabNOxlbshrF2Answer_Click(object sender, EventArgs e)
         {
+            //NOX RATE LBS/MMBTU
             var nox = CTD(textBoxTabNOxlbshrF2NOx.Text, textBoxTabNOxlbshrF2NOx);
             if (nox == null) return;
 
+            //HEAT INPUT RATE MMBTU/HR
             var htip = CTD(textBoxTabNOxlbshrF2HTIP.Text, textBoxTabNOxlbshrF2HTIP);
             if (htip == null) return;
 
+            //UNIT/STACK OPERATING TIME
             var ot = CTD(textBoxTabNOxlbshrF2OT.Text, textBoxTabNOxlbshrF2OT);
             if (ot == null) return;
 
@@ -815,24 +898,30 @@ namespace CEMSStudyApp.Pages
 
         private void buttonTabNOxppmvdF1Calculate_Click(object sender, EventArgs e)
         {
+            //NOX PPM
             var nox = CTD(textBoxTabNOxppmvdF1NOx.Text, textBoxTabNOxppmvdF1NOx);
             if (nox == null) return;
 
+            //O2 %
             var o2 = CTD(textBoxTabNOxppmvdF1O2.Text, textBoxTabNOxppmvdF1O2);
             if (o2 == null) return;
 
+            //NOX PPMVD
             var answer = ((20.9 - 15) * nox) / (20.9 - o2);
             DisplayAnswer(answer, textBoxTabNOxppmvdF1Answer);
         }
 
         private void buttonTabNOxppmvdF2Calculate_Click(object sender, EventArgs e)
         {
+            //NOX PPM
             var nox = CTD(textBoxTabNOxppmvdF2NOx.Text, textBoxTabNOxppmvdF2NOx);
             if (nox == null) return;
 
+            //CO2 %
             var co2 = CTD(textBoxTabNOxppmvdF2CO2.Text, textBoxTabNOxppmvdF2CO2);
             if (co2 == null) return;
 
+            //SCO2 FO4 GAS OR OIL
             var xco2 = comboBoxTabNOxppmvdF2XCO2;
             if (xco2.SelectedIndex == 0)
             {
@@ -843,144 +932,180 @@ namespace CEMSStudyApp.Pages
 
             double.TryParse(xco2.SelectedItem.ToString(), out var xco2Number);
 
+            //NOX PPMVD
             var answer = ((nox * xco2Number) / co2);
             DisplayAnswer(answer, textBoxTabNOxppmvdF2Answer);
         }
 
         private void buttonTabFuelFactorF1Calculate_Click(object sender, EventArgs e)
         {
+            //HEAT INPUT OIL MMBTU
             var htipOil = CTD(textBoxTabFuelFactorF1HTIPOil.Text, textBoxTabFuelFactorF1HTIPOil);
             if (htipOil == null) return;
 
+            //HEAT INPUT GAS MMBTU
             var htipGas = CTD(textBoxTabFuelFactorF1HTIPGas.Text, textBoxTabFuelFactorF1HTIPGas);
             if (htipGas == null) return;
 
+            //APPORTIONED FUEL FACTOR
             var answer = (htipOil * 1420 + htipGas * 1040) / (htipOil + htipGas);
             DisplayAnswer(answer, textBoxTabFuelFactorF1Answer);
         }
 
         private void buttonTabCoalF1Calculate_Click(object sender, EventArgs e)
         {
+            //FUEL FLOW KSCFH
             var ff = CTD(textBoxTabCoalF1FuelFlow.Text, textBoxTabCoalF1FuelFlow);
             if (ff == null) return;
 
+            //CO2 CONCENTRATION %
             var co2 = CTD(textBoxTabCoalF1CO2Concentration.Text, textBoxTabCoalF1CO2Concentration);
             if (co2 == null) return;
 
+            //FUEL FACTOR
             var fc = CTD(textBoxTabCoalF1FuelFactor.Text, textBoxTabCoalF1FuelFactor);
             if (fc == null) return;
 
+            //HTIP MM/BTU
             var answer = (ff * 1000 * co2) / (fc * 100);
             DisplayAnswer(answer, textBoxTabCoalF1Answer);
         }
 
         private void buttonTabCoalF2Calculate_Click(object sender, EventArgs e)
         {
+            //SO2 CONCENTRATION PPM
             var so2 = CTD(textBoxTabCoalF2SO2Concentration.Text, textBoxTabCoalF2SO2Concentration);
             if (so2 == null) return;
 
+            //FUEL FLOW KSCFH
             var ff = CTD(textBoxTabCoalF2FuelFlow.Text, textBoxTabCoalF2FuelFlow);
             if (ff == null) return;
 
+            //MASS EMISSIONS SO2 LBS/HR
             var answer = 0.000000166 * so2 * ff * 1000;
             DisplayAnswer(answer, textBoxTabCoalF2Answer);
         }
 
         private void buttonTabCoalF3Calculate_Click(object sender, EventArgs e)
         {
+            //CO2 CONCENTRATION %
             var co2 = CTD(textBoxTabCoalF3CO2Concentration.Text, textBoxTabCoalF3CO2Concentration);
             if (co2 == null) return;
 
+            //FUEL FLOW KSCFH
             var ff = CTD(textBoxTabCoalF3FuelFlow.Text, textBoxTabCoalF3FuelFlow);
             if (ff == null) return;
 
+            //CO2 TONS/HR
             var answer = (5.7 / 10000000) * co2 * ff * 1000;
             DisplayAnswer(answer, textBoxTabCoalF3Answer);
         }
 
         private void buttonTabCoalF4Calculate_Click(object sender, EventArgs e)
         {
+            //NOX PPM
             var nox = CTD(textBoxTabCoalF4NOx.Text, textBoxTabCoalF4NOx);
             if (nox == null) return;
 
+            //CO2 %
             var co2 = CTD(textBoxTabCoalF4CO2.Text, textBoxTabCoalF4CO2);
             if (co2 == null) return;
 
+            //FUEFL FACTOR FOR CO2
             var fc = CTD(textBoxTabCoalF4Fc.Text, textBoxTabCoalF4Fc);
             if (fc == null) return;
 
+            //NOX BIAS ADJUSTMENT FACTOR
             var baf = CTD(textBoxTabCoalF4BAF.Text, textBoxTabCoalF4BAF);
             if (baf == null) return;
 
+            //NOX LBS/MMBTU
             var answer = 0.0000001194 * nox * fc * (100 / co2) * baf;
             textBoxTabCoalF4Answer.Text = $@"{answer:N3}";
         }
 
         private void buttonCOlbsmmBtuF1Calculate_Click(object sender, EventArgs e)
         {
+            //CO PPM
             var co = CTD(textBoxTabCOlbsmmBtuF1CO.Text, textBoxTabCOlbsmmBtuF1CO);
             if (co == null) return;
 
+            //CO2 %
             var co2 = CTD(textBoxTabCOlbsmmBtuF1CO2.Text, textBoxTabCOlbsmmBtuF1CO2);
             if (co2 == null) return;
 
+            //FUEL FACTOR FOR CO2
             var fc = CTD(textBoxTabCOlbsmmBtuF1FuelFactor.Text, textBoxTabCOlbsmmBtuF1FuelFactor);
             if (fc == null) return;
 
+            //CO LBS/MMBTU
             var answer = 0.00000007263 * co * fc * (100 / co2);
             textBoxTabCOlbsmmBtuF1Answer.Text = $@"{answer:N3}";
         }
 
         private void buttonCOlbsmmBtuF2Calculate_Click(object sender, EventArgs e)
         {
+            //CO PPM
             var co = CTD(textBoxTabCOlbsmmBtuF2CO.Text, textBoxTabCOlbsmmBtuF2CO);
             if (co == null) return;
 
+            //O2 %
             var o2 = CTD(textBoxTabCOlbsmmBtuF2O2.Text, textBoxTabCOlbsmmBtuF2O2);
             if (o2 == null) return;
 
+            //FUEL FACTOR FOR O2
             var fc = CTD(textBoxTabCOlbsmmBtuF2FuelFactor.Text, textBoxTabCOlbsmmBtuF2FuelFactor);
             if (fc == null) return;
 
+            //CO LBS/MMBTU
             var answer = 0.00000007263 * co * fc * (20.9 / (20.9 - o2));
             textBoxTabCOlbsmmBtuF2Answer.Text = $@"{answer:N3}";
         }
 
         private void buttonTabCOlbshrF1Calculate_Click(object sender, EventArgs e)
         {
+            //CO RATE LBS/MMBTU
             var co = CTD(textBoxTabCOlbshrF1CO.Text, textBoxTabCOlbshrF1CO);
             if (co == null) return;
 
+            //HEAT INPUT RATE MMBTU/HR
             var htip = CTD(textBoxTabCOlbshrF1HTIP.Text, textBoxTabCOlbshrF1HTIP);
             if (htip == null) return;
 
+            //CO LBS/HR
             var answer = co * htip;
             DisplayAnswer(answer, textBoxTabCOlbshrF1Answer);
         }
 
         private void buttonTabCOppmvdF1Calculate_Click(object sender, EventArgs e)
         {
+            //CO PPM
             var co = CTD(textBoxTabCOppmvdF1CO.Text, textBoxTabCOppmvdF1CO);
             if (co == null) return;
 
+            //O2 %
             var o2 = CTD(textBoxTabCOppmvdF1O2.Text, textBoxTabCOppmvdF1O2);
             if (o2 == null) return;
 
+            //CO PPMVD
             var answer = ((20.9 - 15) * co) / (20.9 - o2);
             DisplayAnswer(answer, textBoxTabCOppmvdF1Answer);
         }
 
         private void buttonTabCOppmvdF2Calculate_Click(object sender, EventArgs e)
         {
+            //CO PPM
             var co = CTD(textBoxTabCOppmvdF2CO.Text, textBoxTabCOppmvdF2CO);
             if (co == null) return;
 
+            //CO2 %
             var co2 = CTD(textBoxTabCOppmvdF2CO2.Text, textBoxTabCOppmvdF2CO2);
             if (co2 == null) return;
 
-            var baf = comboBoxTabCOppmvdF2XCO2;
+            //XCO2 FOR GAS OR OIL
+            var xco2 = comboBoxTabCOppmvdF2XCO2;
 
-            if (baf.SelectedIndex == 0)
+            if (xco2.SelectedIndex == 0)
             {
                 MessageBox.Show("Please Select XCO2", "CEMS Study", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 comboBoxTabCOppmvdF2XCO2.Focus();
@@ -989,6 +1114,7 @@ namespace CEMSStudyApp.Pages
 
             double.TryParse(comboBoxTabCOppmvdF2XCO2.SelectedItem.ToString(), out var bafNumber);
 
+            //CO LBS/MMBTU
             var answer = (co * bafNumber) / co2;
             DisplayAnswer(answer, textBoxTabCOppmvdF2Answer);
         }
@@ -1337,21 +1463,27 @@ namespace CEMSStudyApp.Pages
 
         private void buttonTab420Calculate_Click(object sender, EventArgs e)
         {
+            //ACTUAL COUNT
             var ac = CTD(textBoxTab420ActualCount.Text, textBoxTab420ActualCount);
             if (ac == null) return;
 
+            //LOW COUNT 4mA
             var low4ma = CTD(textBoxTab4204ma.Text, textBoxTab4204ma);
             if (low4ma == null) return;
 
+            //HIGH COUNT 20mA
             var high20ma = CTD(textBoxTab42020ma.Text, textBoxTab42020ma);
             if (high20ma == null) return;
 
+            //HIGH SCALE
             var highScale = CTD(textBoxTab420HighScale.Text, textBoxTab420HighScale);
             if (highScale == null) return;
 
+            //LOW SCALE
             var lowScale = CTD(textBoxTab420LowScale.Text, textBoxTab420LowScale);
             if (lowScale == null) return;
-           
+
+            //ANALOG READING
             var answer = (ac - low4ma) / (high20ma - low4ma) * (highScale - lowScale);
             DisplayAnswer(answer, textBoxTab420Answer);
         }
@@ -1378,48 +1510,59 @@ namespace CEMSStudyApp.Pages
 
         private void comboBoxSearch_Leave(object sender, EventArgs e)
         {
-            if(comboBoxSearch.SelectedIndex == 0) comboBoxSearch.ForeColor = Color.Gray;
+            if (comboBoxSearch.SelectedIndex == 0) comboBoxSearch.ForeColor = Color.Gray;
         }
 
         private void buttonTabHgHGRHAnswer_Click(object sender, EventArgs e)
         {
+            //HG IN UG/SCM
             var hg = CTD(textBoxTabHgHGRHHg.Text, textBoxTabHgHGRHHg);
             if (hg == null) return;
 
+            //FUEL FACTOR DEFAULT 1800 FOR COAL
             var fc = CTD(textBoxTabHgHGRHFc.Text, textBoxTabHgHGRHFc);
             if (fc == null) return;
 
+            //CO2 %
             var co2 = CTD(textBoxTabHgHGRHCO2.Text, textBoxTabHgHGRHCO2);
             if (co2 == null) return;
 
-            tabHgHGRHAnswer = (double) (6.243E-11 * hg * fc * (100 / co2) * 1000000);
+            //HG RATE LB/TBTU
+            tabHgHGRHAnswer = (double)(6.243E-11 * hg * fc * (100 / co2) * 1000000);
             textBoxTabHgHGRHAnswer.Text = $@"{tabHgHGRHAnswer:E2}";
         }
 
         private void buttonTabHgHGREAnswer_Click(object sender, EventArgs e)
         {
+            //UNBIASED STACK FLOW SCFH
             var flow = CTD(textBoxTabHgHGREFlow.Text, textBoxTabHgHGREFlow);
             if (flow == null) return;
 
+            //HG IN UG/SCM
             var hg = CTD(textBoxTabHgHGREHg.Text, textBoxTabHgHGREHg);
             if (hg == null) return;
 
+            //MATS LOAD
             var mw = CTD(textBoxTabHgHGREMW.Text, textBoxTabHgHGREMW);
             if (mw == null) return;
 
-           tabHgHGREAnswer = (double) (hg * flow * 6.243E-11 / (mw / 1000));
+            //HG RATE LB/GWH
+            tabHgHGREAnswer = (double)(hg * flow * 6.243E-11 / (mw / 1000));
             textBoxTabHgHGREAnswer.Text = $@"{tabHgHGREAnswer:E2}";
         }
 
         private void buttonTabHglbhrAnswer_Click(object sender, EventArgs e)
         {
+            //UNBIASED STACK FLOW SCFH
             var flow = CTD(textBoxTabHglbhrFlow.Text, textBoxTabHglbhrFlow);
-            if(flow == null)return;
+            if (flow == null) return;
 
+            //HG IN UG/SCM
             var hg = CTD(textBoxTabHglbhrHg.Text, textBoxTabHglbhrHg);
             if (hg == null) return;
 
-            tabHglbhrAnswer = (double) (hg * flow * 6.243E-11);
+            //HG RATE LB/HR
+            tabHglbhrAnswer = (double)(hg * flow * 6.243E-11);
             textBoxTabHglbhrAnswer.Text = $@"{tabHglbhrAnswer:E2}";
         }
 
@@ -1455,7 +1598,7 @@ namespace CEMSStudyApp.Pages
             {
                 textBoxTabHgHGRHAnswer.Text = $@"{tabHgHGRHAnswer}";
                 buttonTabHgHGRHConvert.Text = "E";
-                toolTip1.SetToolTip(buttonTabHgHGRHConvert,"Convert to Exponent");
+                toolTip1.SetToolTip(buttonTabHgHGRHConvert, "Convert to Exponent");
             }
             else
             {
@@ -1502,6 +1645,123 @@ namespace CEMSStudyApp.Pages
             var tabText = tabFormulasMain.SelectedTab.Text;
             var index = comboBoxSectionNumber.FindString(tabText);
             comboBoxSectionNumber.SelectedIndex = index == -1 ? 0 : index;
+        }
+
+        private void buttonTabLMEHIQuarterCalculate_Click(object sender, EventArgs e)
+        {
+            //LME FUEL FLOW
+            var ff = CTD(textBoxTabLMEHIQuarterFF.Text, textBoxTabLMEHIQuarterFF);
+            if (ff == null) return;
+            
+            //LME GROSS CALORIC VALUE
+            var gcv = CTD(textBoxTabLMEHIQuarterGCV.Text, textBoxTabLMEHIQuarterGCV);
+            if (gcv == null) return;
+
+            //QUARTERLY TOTAL HEAT INPUT MMBTU
+            var answer = ff * gcv / 1000000;
+            DisplayAnswer(answer, textBoxTabLMEHIQuarterAnswer);
+        }
+
+        private void buttonTabLMEHIQuarterClear_Click(object sender, EventArgs e)
+        {
+            textBoxTabLMEHIQuarterFF.Text = "";
+            textBoxTabLMEHIQuarterFF.Focus();
+            textBoxTabLMEHIQuarterGCV.Text = "";
+        }
+
+        //LME HEAT INPUT
+        private void buttonTabLMEHIHourCalculate_Click(object sender, EventArgs e)
+        {
+            //HOUR LOAD
+            var l = CTD(textBoxTabLMEHIHourL.Text, textBoxTabLMEHIHourL);
+            if (l == null) return;
+
+            //TOTAL LOAD FOR QUARTER
+            var ql = CTD(textBoxTabLMEHIHourQL.Text, textBoxTabLMEHIHourQL);
+            if (ql == null) return;
+
+            //TOTAL HEAT INPUT
+            var h = CTD(textBoxTabLMEHIHourH.Text, textBoxTabLMEHIHourH);
+            if (h == null) return;
+
+            //HOURLY HEAT INPUT MMBTU
+            var answer = (l / ql) * h;
+            DisplayAnswer(answer, textBoxTabLMEHIHourAnswer);
+        }
+
+        private void buttonTabLMEHIHourClear_Click(object sender, EventArgs e)
+        {
+            textBoxTabLMEHIHourL.Text = "";
+            textBoxTabLMEHIHourL.Focus();
+            textBoxTabLMEHIHourQL.Text = "";
+            textBoxTabLMEHIHourH.Text = "";
+            textBoxTabLMEHIHourAnswer.Text = "";
+        }
+
+        private void buttonTabLMEHourNoxCalculate_Click(object sender, EventArgs e)
+        {
+            //LME HOURLY HEAT INPUT
+            var h = CTD(textBoxTabLMEHourNoxH.Text, textBoxTabLMEHourNoxH);
+            if (h == null) return;
+
+            //LME NOX RATE CONSTANT
+            var nox = CTD(textBoxTabLMEHourNoxNox.Text, textBoxTabLMEHourNoxNox);
+            if (nox == null) return;
+
+            //HOURLY NOX MASS LB
+            var answer = h * nox;
+            DisplayAnswer(answer, textBoxTabLMEHourNoxAnswer);
+        }
+
+        private void buttonTabLMEHourNoxClear_Click(object sender, EventArgs e)
+        {
+            textBoxTabLMEHourNoxH.Text = "";
+            textBoxTabLMEHourNoxH.Focus();
+            textBoxTabLMEHourNoxNox.Text = "";
+        }
+
+        private void buttonTabLMEHourSo2Calculate_Click(object sender, EventArgs e)
+        {
+            //LME HOURLY HEAT INPUT
+            var h = CTD(textBoxTabLMEHourSo2H.Text, textBoxTabLMEHourSo2H);
+            if (h == null) return;
+
+            //SO2 RATE CONSTANT
+            var so2 = CTD(textBoxTabLMEHourSo2So2.Text, textBoxTabLMEHourSo2So2);
+            if (so2 == null) return;
+
+            //HOURLY SO2 MASS LB
+            var answer = h * so2;
+            DisplayAnswer(answer, textBoxTabLMEHourSo2Answer);
+        }
+
+        private void buttonTabLMEHourSo2Clear_Click(object sender, EventArgs e)
+        {
+            textBoxTabLMEHourSo2H.Text = "";
+            textBoxTabLMEHourSo2H.Focus();
+            textBoxTabLMEHourSo2So2.Text = "";
+        }
+
+        private void buttonTabLMEHourCo2Calculate_Click(object sender, EventArgs e)
+        {
+            //LME HOURLY HEAT INPUT
+            var h = CTD(textBoxTabLMEHourCo2H.Text, textBoxTabLMEHourCo2H);
+            if (h == null) return;
+
+            //CO2 RATE CONSTANT
+            var co2 = CTD(textBoxTabLMEHourCo2Co2.Text, textBoxTabLMEHourCo2Co2);
+            if (co2 == null) return;
+
+            //HOURLY CO2 MASS TONS
+            var answer = h * co2;
+            DisplayAnswer(answer, textBoxTabLMEHourCo2Answer);
+        }
+
+        private void buttonTabLMEHourCo2Clear_Click(object sender, EventArgs e)
+        {
+            textBoxTabLMEHourCo2H.Text = "";
+            textBoxTabLMEHourCo2H.Focus();
+            textBoxTabLMEHourCo2Co2.Text = "";
         }
     }
 }

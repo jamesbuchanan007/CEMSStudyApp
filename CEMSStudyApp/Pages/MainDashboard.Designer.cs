@@ -603,6 +603,73 @@ namespace CEMSStudyApp.Pages
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tabPageLMEHI = new System.Windows.Forms.TabPage();
+            this.buttonTabLMEHIHourClear = new System.Windows.Forms.Button();
+            this.buttonTabLMEHIQuarterClear = new System.Windows.Forms.Button();
+            this.label238 = new System.Windows.Forms.Label();
+            this.textBoxTabLMEHIHourH = new System.Windows.Forms.TextBox();
+            this.buttonTabLMEHIHourCalculate = new System.Windows.Forms.Button();
+            this.label243 = new System.Windows.Forms.Label();
+            this.textBoxTabLMEHIHourAnswer = new System.Windows.Forms.TextBox();
+            this.textBoxTabLMEHIHourQL = new System.Windows.Forms.TextBox();
+            this.textBoxTabLMEHIHourL = new System.Windows.Forms.TextBox();
+            this.label244 = new System.Windows.Forms.Label();
+            this.label247 = new System.Windows.Forms.Label();
+            this.label249 = new System.Windows.Forms.Label();
+            this.label250 = new System.Windows.Forms.Label();
+            this.label251 = new System.Windows.Forms.Label();
+            this.label254 = new System.Windows.Forms.Label();
+            this.label255 = new System.Windows.Forms.Label();
+            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.label256 = new System.Windows.Forms.Label();
+            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.buttonTabLMEHIQuarterCalculate = new System.Windows.Forms.Button();
+            this.label257 = new System.Windows.Forms.Label();
+            this.textBoxTabLMEHIQuarterAnswer = new System.Windows.Forms.TextBox();
+            this.textBoxTabLMEHIQuarterGCV = new System.Windows.Forms.TextBox();
+            this.textBoxTabLMEHIQuarterFF = new System.Windows.Forms.TextBox();
+            this.label258 = new System.Windows.Forms.Label();
+            this.label259 = new System.Windows.Forms.Label();
+            this.label260 = new System.Windows.Forms.Label();
+            this.tabPageLMEMass = new System.Windows.Forms.TabPage();
+            this.buttonTabLMEHourSo2Clear = new System.Windows.Forms.Button();
+            this.buttonTabLMEHourNoxClear = new System.Windows.Forms.Button();
+            this.buttonTabLMEHourSo2Calculate = new System.Windows.Forms.Button();
+            this.label252 = new System.Windows.Forms.Label();
+            this.textBoxTabLMEHourSo2Answer = new System.Windows.Forms.TextBox();
+            this.textBoxTabLMEHourSo2So2 = new System.Windows.Forms.TextBox();
+            this.textBoxTabLMEHourSo2H = new System.Windows.Forms.TextBox();
+            this.label253 = new System.Windows.Forms.Label();
+            this.label261 = new System.Windows.Forms.Label();
+            this.label263 = new System.Windows.Forms.Label();
+            this.label264 = new System.Windows.Forms.Label();
+            this.label265 = new System.Windows.Forms.Label();
+            this.label266 = new System.Windows.Forms.Label();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.label267 = new System.Windows.Forms.Label();
+            this.textBox36 = new System.Windows.Forms.TextBox();
+            this.buttonTabLMEHourNoxCalculate = new System.Windows.Forms.Button();
+            this.label268 = new System.Windows.Forms.Label();
+            this.textBoxTabLMEHourNoxAnswer = new System.Windows.Forms.TextBox();
+            this.textBoxTabLMEHourNoxNox = new System.Windows.Forms.TextBox();
+            this.textBoxTabLMEHourNoxH = new System.Windows.Forms.TextBox();
+            this.label269 = new System.Windows.Forms.Label();
+            this.label270 = new System.Windows.Forms.Label();
+            this.label271 = new System.Windows.Forms.Label();
+            this.buttonTabLMEHourCo2Clear = new System.Windows.Forms.Button();
+            this.label248 = new System.Windows.Forms.Label();
+            this.label262 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.buttonTabLMEHourCo2Calculate = new System.Windows.Forms.Button();
+            this.label272 = new System.Windows.Forms.Label();
+            this.textBoxTabLMEHourCo2Answer = new System.Windows.Forms.TextBox();
+            this.textBoxTabLMEHourCo2Co2 = new System.Windows.Forms.TextBox();
+            this.textBoxTabLMEHourCo2H = new System.Windows.Forms.TextBox();
+            this.label273 = new System.Windows.Forms.Label();
+            this.label274 = new System.Windows.Forms.Label();
+            this.label275 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelFormulas.SuspendLayout();
             this.tabFormulasMain.SuspendLayout();
@@ -628,6 +695,8 @@ namespace CEMSStudyApp.Pages
             this.tabPageHg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPageLMEHI.SuspendLayout();
+            this.tabPageLMEMass.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -784,6 +853,8 @@ namespace CEMSStudyApp.Pages
             this.tabFormulasMain.Controls.Add(this.tabCOppmvd);
             this.tabFormulasMain.Controls.Add(this.tabPage4_20ma);
             this.tabFormulasMain.Controls.Add(this.tabPageHg);
+            this.tabFormulasMain.Controls.Add(this.tabPageLMEHI);
+            this.tabFormulasMain.Controls.Add(this.tabPageLMEMass);
             this.tabFormulasMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabFormulasMain.Location = new System.Drawing.Point(0, -3);
             this.tabFormulasMain.Name = "tabFormulasMain";
@@ -1167,9 +1238,9 @@ namespace CEMSStudyApp.Pages
             // 
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(21, 288);
+            this.label25.Location = new System.Drawing.Point(21, 285);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(80, 16);
+            this.label25.Size = new System.Drawing.Size(97, 19);
             this.label25.TabIndex = 39;
             this.label25.Text = "GF - Gas Flow";
             // 
@@ -1529,11 +1600,11 @@ namespace CEMSStudyApp.Pages
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(231, 324);
+            this.label16.Location = new System.Drawing.Point(237, 323);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(111, 14);
+            this.label16.Size = new System.Drawing.Size(98, 17);
             this.label16.TabIndex = 76;
-            this.label16.Text = "CO2 Tons/Hr = ";
+            this.label16.Text = "CO2 tons/hr = ";
             // 
             // textBoxTabCO2OilF3Answer
             // 
@@ -1637,11 +1708,11 @@ namespace CEMSStudyApp.Pages
             // 
             this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(690, 122);
+            this.label29.Location = new System.Drawing.Point(703, 122);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(117, 18);
+            this.label29.Size = new System.Drawing.Size(98, 18);
             this.label29.TabIndex = 66;
-            this.label29.Text = "CO2 Tons / Hr = ";
+            this.label29.Text = "CO2 tons/hr = ";
             // 
             // textBoxTabCO2OilF2Answer
             // 
@@ -1726,11 +1797,11 @@ namespace CEMSStudyApp.Pages
             // 
             this.label33.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(224, 152);
+            this.label33.Location = new System.Drawing.Point(238, 152);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(117, 20);
+            this.label33.Size = new System.Drawing.Size(96, 20);
             this.label33.TabIndex = 58;
-            this.label33.Text = "CO2 Tons / Hr = ";
+            this.label33.Text = "CO2 tons/hr = ";
             // 
             // textBoxTabCO2OilF1Answer
             // 
@@ -1887,11 +1958,11 @@ namespace CEMSStudyApp.Pages
             // 
             this.label48.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(222, 152);
+            this.label48.Location = new System.Drawing.Point(236, 152);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(114, 20);
+            this.label48.Size = new System.Drawing.Size(95, 20);
             this.label48.TabIndex = 58;
-            this.label48.Text = "CO2 Tons / Hr = ";
+            this.label48.Text = "CO2 tons/hr = ";
             // 
             // textBoxTabCO2FlowF1Answer
             // 
@@ -2038,7 +2109,7 @@ namespace CEMSStudyApp.Pages
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(122, 18);
             this.label40.TabIndex = 82;
-            this.label40.Text = " HTIP mm/BTU = ";
+            this.label40.Text = " HTIP mm/Btu = ";
             // 
             // label39
             // 
@@ -2140,7 +2211,7 @@ namespace CEMSStudyApp.Pages
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(120, 18);
             this.label59.TabIndex = 66;
-            this.label59.Text = " HTIP mm/BTU = ";
+            this.label59.Text = " HTIP mm/Btu = ";
             // 
             // textBoxTabHTIPGasF2Answer
             // 
@@ -5565,7 +5636,7 @@ namespace CEMSStudyApp.Pages
             this.label151.Name = "label151";
             this.label151.Size = new System.Drawing.Size(189, 20);
             this.label151.TabIndex = 113;
-            this.label151.Text = "SO2 - SO2 Cconcentration (ppm)";
+            this.label151.Text = "SO2 - SO2 Concentration (ppm)";
             // 
             // textBox102
             // 
@@ -6735,6 +6806,7 @@ namespace CEMSStudyApp.Pages
             // 
             // tabPageHg
             // 
+            this.tabPageHg.BackColor = System.Drawing.Color.Ivory;
             this.tabPageHg.Controls.Add(this.buttonTabHglbhrConvert);
             this.tabPageHg.Controls.Add(this.buttonTabHgHGREConvert);
             this.tabPageHg.Controls.Add(this.buttonTabHgHGRHConvert);
@@ -6787,7 +6859,6 @@ namespace CEMSStudyApp.Pages
             this.tabPageHg.Size = new System.Drawing.Size(939, 514);
             this.tabPageHg.TabIndex = 19;
             this.tabPageHg.Text = "Hg Rate";
-            this.tabPageHg.UseVisualStyleBackColor = true;
             // 
             // buttonTabHglbhrConvert
             // 
@@ -6882,7 +6953,7 @@ namespace CEMSStudyApp.Pages
             this.label246.Name = "label246";
             this.label246.Size = new System.Drawing.Size(182, 15);
             this.label246.TabIndex = 283;
-            this.label246.Text = "F = Unbiased Stack Flow (scfh)";
+            this.label246.Text = "F - Unbiased Stack Flow (scfh)";
             // 
             // label241
             // 
@@ -6892,7 +6963,7 @@ namespace CEMSStudyApp.Pages
             this.label241.Name = "label241";
             this.label241.Size = new System.Drawing.Size(156, 15);
             this.label241.TabIndex = 278;
-            this.label241.Text = "Hg = Hg in ug/scm";
+            this.label241.Text = "Hg - Hg in ug/scm";
             // 
             // buttonTabHglbhrClear
             // 
@@ -6968,7 +7039,7 @@ namespace CEMSStudyApp.Pages
             this.label245.Name = "label245";
             this.label245.Size = new System.Drawing.Size(128, 20);
             this.label245.TabIndex = 268;
-            this.label245.Text = "E = Hg Rate in lb/hr";
+            this.label245.Text = "E - Hg Rate in lb/hr";
             // 
             // textBoxTabHgHGREMW
             // 
@@ -6996,7 +7067,7 @@ namespace CEMSStudyApp.Pages
             this.label237.Name = "label237";
             this.label237.Size = new System.Drawing.Size(182, 15);
             this.label237.TabIndex = 265;
-            this.label237.Text = "MW = MATS Load";
+            this.label237.Text = "MW - MATS Load";
             // 
             // label236
             // 
@@ -7006,7 +7077,7 @@ namespace CEMSStudyApp.Pages
             this.label236.Name = "label236";
             this.label236.Size = new System.Drawing.Size(209, 35);
             this.label236.TabIndex = 264;
-            this.label236.Text = "E = Hg Electrical Output Based Emissions Rate (lb/GWh)";
+            this.label236.Text = "E - Hg Electrical Output Based Emissions Rate (lb/GWh)";
             // 
             // textBoxTabHgHGRHCO2
             // 
@@ -7035,7 +7106,7 @@ namespace CEMSStudyApp.Pages
             this.label234.Name = "label234";
             this.label234.Size = new System.Drawing.Size(91, 19);
             this.label234.TabIndex = 261;
-            this.label234.Text = "CO2 = CO2%";
+            this.label234.Text = "CO2 - CO2%";
             // 
             // label233
             // 
@@ -7045,7 +7116,7 @@ namespace CEMSStudyApp.Pages
             this.label233.Name = "label233";
             this.label233.Size = new System.Drawing.Size(209, 19);
             this.label233.TabIndex = 260;
-            this.label233.Text = "Fc = Fc Factor (Default 1800 for Coal)";
+            this.label233.Text = "Fc - Fc Factor (Default 1800 for Coal)";
             // 
             // label232
             // 
@@ -7055,7 +7126,7 @@ namespace CEMSStudyApp.Pages
             this.label232.Name = "label232";
             this.label232.Size = new System.Drawing.Size(156, 15);
             this.label232.TabIndex = 259;
-            this.label232.Text = "Hg = Hg in ug/scm";
+            this.label232.Text = "Hg - Hg in ug/scm";
             // 
             // buttonTabHgHGREClear
             // 
@@ -7170,7 +7241,7 @@ namespace CEMSStudyApp.Pages
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(182, 15);
             this.label9.TabIndex = 244;
-            this.label9.Text = "F = Unbiased Stack Flow (scfh)";
+            this.label9.Text = "F - Unbiased Stack Flow (scfh)";
             // 
             // textBox24
             // 
@@ -7208,7 +7279,7 @@ namespace CEMSStudyApp.Pages
             this.label227.Name = "label227";
             this.label227.Size = new System.Drawing.Size(156, 15);
             this.label227.TabIndex = 241;
-            this.label227.Text = "Hg = Hg in ug/scm";
+            this.label227.Text = "Hg - Hg in ug/scm";
             // 
             // textBox26
             // 
@@ -7306,7 +7377,7 @@ namespace CEMSStudyApp.Pages
             this.label231.Name = "label231";
             this.label231.Size = new System.Drawing.Size(209, 35);
             this.label231.TabIndex = 235;
-            this.label231.Text = "E = Hg Heat Input Based Emissions Rate (lb/TBtu)";
+            this.label231.Text = "E - Hg Heat Input Based Emissions Rate (lb/TBtu)";
             // 
             // buttonPart75
             // 
@@ -7674,6 +7745,807 @@ namespace CEMSStudyApp.Pages
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // tabPageLMEHI
+            // 
+            this.tabPageLMEHI.BackColor = System.Drawing.Color.Ivory;
+            this.tabPageLMEHI.Controls.Add(this.buttonTabLMEHIHourClear);
+            this.tabPageLMEHI.Controls.Add(this.buttonTabLMEHIQuarterClear);
+            this.tabPageLMEHI.Controls.Add(this.label238);
+            this.tabPageLMEHI.Controls.Add(this.textBoxTabLMEHIHourH);
+            this.tabPageLMEHI.Controls.Add(this.buttonTabLMEHIHourCalculate);
+            this.tabPageLMEHI.Controls.Add(this.label243);
+            this.tabPageLMEHI.Controls.Add(this.textBoxTabLMEHIHourAnswer);
+            this.tabPageLMEHI.Controls.Add(this.textBoxTabLMEHIHourQL);
+            this.tabPageLMEHI.Controls.Add(this.textBoxTabLMEHIHourL);
+            this.tabPageLMEHI.Controls.Add(this.label244);
+            this.tabPageLMEHI.Controls.Add(this.label247);
+            this.tabPageLMEHI.Controls.Add(this.label249);
+            this.tabPageLMEHI.Controls.Add(this.label250);
+            this.tabPageLMEHI.Controls.Add(this.label251);
+            this.tabPageLMEHI.Controls.Add(this.label254);
+            this.tabPageLMEHI.Controls.Add(this.label255);
+            this.tabPageLMEHI.Controls.Add(this.textBox31);
+            this.tabPageLMEHI.Controls.Add(this.textBox32);
+            this.tabPageLMEHI.Controls.Add(this.label256);
+            this.tabPageLMEHI.Controls.Add(this.textBox33);
+            this.tabPageLMEHI.Controls.Add(this.buttonTabLMEHIQuarterCalculate);
+            this.tabPageLMEHI.Controls.Add(this.label257);
+            this.tabPageLMEHI.Controls.Add(this.textBoxTabLMEHIQuarterAnswer);
+            this.tabPageLMEHI.Controls.Add(this.textBoxTabLMEHIQuarterGCV);
+            this.tabPageLMEHI.Controls.Add(this.textBoxTabLMEHIQuarterFF);
+            this.tabPageLMEHI.Controls.Add(this.label258);
+            this.tabPageLMEHI.Controls.Add(this.label259);
+            this.tabPageLMEHI.Controls.Add(this.label260);
+            this.tabPageLMEHI.Location = new System.Drawing.Point(4, 24);
+            this.tabPageLMEHI.Name = "tabPageLMEHI";
+            this.tabPageLMEHI.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageLMEHI.Size = new System.Drawing.Size(939, 514);
+            this.tabPageLMEHI.TabIndex = 20;
+            this.tabPageLMEHI.Text = "LME - Heat Input";
+            // 
+            // buttonTabLMEHIHourClear
+            // 
+            this.buttonTabLMEHIHourClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabLMEHIHourClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTabLMEHIHourClear.BackColor = System.Drawing.Color.Firebrick;
+            this.buttonTabLMEHIHourClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabLMEHIHourClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabLMEHIHourClear.ForeColor = System.Drawing.Color.White;
+            this.buttonTabLMEHIHourClear.Location = new System.Drawing.Point(718, 205);
+            this.buttonTabLMEHIHourClear.Name = "buttonTabLMEHIHourClear";
+            this.buttonTabLMEHIHourClear.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabLMEHIHourClear.TabIndex = 253;
+            this.buttonTabLMEHIHourClear.Text = "Clear";
+            this.buttonTabLMEHIHourClear.UseVisualStyleBackColor = false;
+            this.buttonTabLMEHIHourClear.Click += new System.EventHandler(this.buttonTabLMEHIHourClear_Click);
+            // 
+            // buttonTabLMEHIQuarterClear
+            // 
+            this.buttonTabLMEHIQuarterClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabLMEHIQuarterClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTabLMEHIQuarterClear.BackColor = System.Drawing.Color.Firebrick;
+            this.buttonTabLMEHIQuarterClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabLMEHIQuarterClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabLMEHIQuarterClear.ForeColor = System.Drawing.Color.White;
+            this.buttonTabLMEHIQuarterClear.Location = new System.Drawing.Point(250, 194);
+            this.buttonTabLMEHIQuarterClear.Name = "buttonTabLMEHIQuarterClear";
+            this.buttonTabLMEHIQuarterClear.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabLMEHIQuarterClear.TabIndex = 248;
+            this.buttonTabLMEHIQuarterClear.Text = "Clear";
+            this.buttonTabLMEHIQuarterClear.UseVisualStyleBackColor = false;
+            this.buttonTabLMEHIQuarterClear.Click += new System.EventHandler(this.buttonTabLMEHIQuarterClear_Click);
+            // 
+            // label238
+            // 
+            this.label238.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label238.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label238.Location = new System.Drawing.Point(770, 153);
+            this.label238.Name = "label238";
+            this.label238.Size = new System.Drawing.Size(27, 18);
+            this.label238.TabIndex = 243;
+            this.label238.Text = "H = ";
+            // 
+            // textBoxTabLMEHIHourH
+            // 
+            this.textBoxTabLMEHIHourH.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabLMEHIHourH.Location = new System.Drawing.Point(811, 150);
+            this.textBoxTabLMEHIHourH.Name = "textBoxTabLMEHIHourH";
+            this.textBoxTabLMEHIHourH.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabLMEHIHourH.TabIndex = 251;
+            this.textBoxTabLMEHIHourH.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // buttonTabLMEHIHourCalculate
+            // 
+            this.buttonTabLMEHIHourCalculate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabLMEHIHourCalculate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTabLMEHIHourCalculate.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonTabLMEHIHourCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabLMEHIHourCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabLMEHIHourCalculate.ForeColor = System.Drawing.Color.White;
+            this.buttonTabLMEHIHourCalculate.Location = new System.Drawing.Point(836, 205);
+            this.buttonTabLMEHIHourCalculate.Name = "buttonTabLMEHIHourCalculate";
+            this.buttonTabLMEHIHourCalculate.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabLMEHIHourCalculate.TabIndex = 252;
+            this.buttonTabLMEHIHourCalculate.Text = "Calculate";
+            this.buttonTabLMEHIHourCalculate.UseVisualStyleBackColor = false;
+            this.buttonTabLMEHIHourCalculate.Click += new System.EventHandler(this.buttonTabLMEHIHourCalculate_Click);
+            // 
+            // label243
+            // 
+            this.label243.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label243.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label243.Location = new System.Drawing.Point(605, 179);
+            this.label243.Name = "label243";
+            this.label243.Size = new System.Drawing.Size(191, 20);
+            this.label243.TabIndex = 242;
+            this.label243.Text = "Hourly Heat Input (mmBtu) = ";
+            // 
+            // textBoxTabLMEHIHourAnswer
+            // 
+            this.textBoxTabLMEHIHourAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabLMEHIHourAnswer.Location = new System.Drawing.Point(811, 177);
+            this.textBoxTabLMEHIHourAnswer.Name = "textBoxTabLMEHIHourAnswer";
+            this.textBoxTabLMEHIHourAnswer.ReadOnly = true;
+            this.textBoxTabLMEHIHourAnswer.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabLMEHIHourAnswer.TabIndex = 241;
+            this.textBoxTabLMEHIHourAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabLMEHIHourQL
+            // 
+            this.textBoxTabLMEHIHourQL.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabLMEHIHourQL.Location = new System.Drawing.Point(811, 123);
+            this.textBoxTabLMEHIHourQL.Name = "textBoxTabLMEHIHourQL";
+            this.textBoxTabLMEHIHourQL.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabLMEHIHourQL.TabIndex = 250;
+            this.textBoxTabLMEHIHourQL.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabLMEHIHourL
+            // 
+            this.textBoxTabLMEHIHourL.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabLMEHIHourL.Location = new System.Drawing.Point(811, 95);
+            this.textBoxTabLMEHIHourL.Name = "textBoxTabLMEHIHourL";
+            this.textBoxTabLMEHIHourL.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabLMEHIHourL.TabIndex = 249;
+            this.textBoxTabLMEHIHourL.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label244
+            // 
+            this.label244.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label244.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label244.Location = new System.Drawing.Point(763, 125);
+            this.label244.Name = "label244";
+            this.label244.Size = new System.Drawing.Size(37, 18);
+            this.label244.TabIndex = 240;
+            this.label244.Text = "QL = ";
+            // 
+            // label247
+            // 
+            this.label247.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label247.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label247.Location = new System.Drawing.Point(772, 97);
+            this.label247.Name = "label247";
+            this.label247.Size = new System.Drawing.Size(29, 19);
+            this.label247.TabIndex = 239;
+            this.label247.Text = "L = ";
+            // 
+            // label249
+            // 
+            this.label249.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label249.Location = new System.Drawing.Point(492, 158);
+            this.label249.Name = "label249";
+            this.label249.Size = new System.Drawing.Size(127, 15);
+            this.label249.TabIndex = 237;
+            this.label249.Text = "H - Total Heat Input";
+            // 
+            // label250
+            // 
+            this.label250.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label250.Location = new System.Drawing.Point(492, 138);
+            this.label250.Name = "label250";
+            this.label250.Size = new System.Drawing.Size(156, 21);
+            this.label250.TabIndex = 236;
+            this.label250.Text = "QL - Total Load for Quarter";
+            // 
+            // label251
+            // 
+            this.label251.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label251.Location = new System.Drawing.Point(492, 117);
+            this.label251.Name = "label251";
+            this.label251.Size = new System.Drawing.Size(181, 15);
+            this.label251.TabIndex = 235;
+            this.label251.Text = "L - Hour Load";
+            // 
+            // label254
+            // 
+            this.label254.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label254.Location = new System.Drawing.Point(24, 138);
+            this.label254.Name = "label254";
+            this.label254.Size = new System.Drawing.Size(135, 15);
+            this.label254.TabIndex = 232;
+            this.label254.Text = "GCV - Gross Caloric Value";
+            // 
+            // label255
+            // 
+            this.label255.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label255.Location = new System.Drawing.Point(24, 117);
+            this.label255.Name = "label255";
+            this.label255.Size = new System.Drawing.Size(200, 15);
+            this.label255.TabIndex = 231;
+            this.label255.Text = "FF - Fuel Flow";
+            // 
+            // textBox31
+            // 
+            this.textBox31.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox31.BackColor = System.Drawing.Color.Blue;
+            this.textBox31.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox31.ForeColor = System.Drawing.Color.White;
+            this.textBox31.Location = new System.Drawing.Point(6, 7);
+            this.textBox31.Name = "textBox31";
+            this.textBox31.ReadOnly = true;
+            this.textBox31.Size = new System.Drawing.Size(927, 29);
+            this.textBox31.TabIndex = 230;
+            this.textBox31.Text = "LME - Quarterly and Hourly Heat Input";
+            this.textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox32
+            // 
+            this.textBox32.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox32.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textBox32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox32.ForeColor = System.Drawing.Color.White;
+            this.textBox32.Location = new System.Drawing.Point(492, 65);
+            this.textBox32.Name = "textBox32";
+            this.textBox32.ReadOnly = true;
+            this.textBox32.Size = new System.Drawing.Size(419, 22);
+            this.textBox32.TabIndex = 229;
+            this.textBox32.Text = "E = L / QL * H";
+            this.textBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label256
+            // 
+            this.label256.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label256.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label256.Location = new System.Drawing.Point(492, 97);
+            this.label256.Name = "label256";
+            this.label256.Size = new System.Drawing.Size(156, 15);
+            this.label256.TabIndex = 228;
+            this.label256.Text = "E - Hourly Heat Input";
+            // 
+            // textBox33
+            // 
+            this.textBox33.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox33.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textBox33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox33.ForeColor = System.Drawing.Color.White;
+            this.textBox33.Location = new System.Drawing.Point(24, 65);
+            this.textBox33.Name = "textBox33";
+            this.textBox33.ReadOnly = true;
+            this.textBox33.Size = new System.Drawing.Size(419, 22);
+            this.textBox33.TabIndex = 227;
+            this.textBox33.Text = "E = FF * GCV / 1000000.0";
+            this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // buttonTabLMEHIQuarterCalculate
+            // 
+            this.buttonTabLMEHIQuarterCalculate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabLMEHIQuarterCalculate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTabLMEHIQuarterCalculate.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonTabLMEHIQuarterCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabLMEHIQuarterCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabLMEHIQuarterCalculate.ForeColor = System.Drawing.Color.White;
+            this.buttonTabLMEHIQuarterCalculate.Location = new System.Drawing.Point(368, 194);
+            this.buttonTabLMEHIQuarterCalculate.Name = "buttonTabLMEHIQuarterCalculate";
+            this.buttonTabLMEHIQuarterCalculate.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabLMEHIQuarterCalculate.TabIndex = 247;
+            this.buttonTabLMEHIQuarterCalculate.Text = "Calculate";
+            this.buttonTabLMEHIQuarterCalculate.UseVisualStyleBackColor = false;
+            this.buttonTabLMEHIQuarterCalculate.Click += new System.EventHandler(this.buttonTabLMEHIQuarterCalculate_Click);
+            // 
+            // label257
+            // 
+            this.label257.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label257.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label257.Location = new System.Drawing.Point(195, 150);
+            this.label257.Name = "label257";
+            this.label257.Size = new System.Drawing.Size(142, 41);
+            this.label257.TabIndex = 226;
+            this.label257.Text = "Quarterly Total Heat Input (mmBtu) =";
+            // 
+            // textBoxTabLMEHIQuarterAnswer
+            // 
+            this.textBoxTabLMEHIQuarterAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabLMEHIQuarterAnswer.Location = new System.Drawing.Point(343, 161);
+            this.textBoxTabLMEHIQuarterAnswer.Name = "textBoxTabLMEHIQuarterAnswer";
+            this.textBoxTabLMEHIQuarterAnswer.ReadOnly = true;
+            this.textBoxTabLMEHIQuarterAnswer.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabLMEHIQuarterAnswer.TabIndex = 225;
+            this.textBoxTabLMEHIQuarterAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabLMEHIQuarterGCV
+            // 
+            this.textBoxTabLMEHIQuarterGCV.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabLMEHIQuarterGCV.Location = new System.Drawing.Point(343, 123);
+            this.textBoxTabLMEHIQuarterGCV.Name = "textBoxTabLMEHIQuarterGCV";
+            this.textBoxTabLMEHIQuarterGCV.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabLMEHIQuarterGCV.TabIndex = 245;
+            this.textBoxTabLMEHIQuarterGCV.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabLMEHIQuarterFF
+            // 
+            this.textBoxTabLMEHIQuarterFF.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabLMEHIQuarterFF.Location = new System.Drawing.Point(343, 95);
+            this.textBoxTabLMEHIQuarterFF.Name = "textBoxTabLMEHIQuarterFF";
+            this.textBoxTabLMEHIQuarterFF.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabLMEHIQuarterFF.TabIndex = 244;
+            this.textBoxTabLMEHIQuarterFF.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label258
+            // 
+            this.label258.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label258.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label258.Location = new System.Drawing.Point(293, 125);
+            this.label258.Name = "label258";
+            this.label258.Size = new System.Drawing.Size(46, 18);
+            this.label258.TabIndex = 224;
+            this.label258.Text = "GCV = ";
+            // 
+            // label259
+            // 
+            this.label259.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label259.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label259.Location = new System.Drawing.Point(302, 97);
+            this.label259.Name = "label259";
+            this.label259.Size = new System.Drawing.Size(32, 19);
+            this.label259.TabIndex = 223;
+            this.label259.Text = "FF =";
+            // 
+            // label260
+            // 
+            this.label260.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label260.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label260.Location = new System.Drawing.Point(24, 97);
+            this.label260.Name = "label260";
+            this.label260.Size = new System.Drawing.Size(173, 20);
+            this.label260.TabIndex = 222;
+            this.label260.Text = "E - Quarterly Total Heat Input";
+            // 
+            // tabPageLMEMass
+            // 
+            this.tabPageLMEMass.BackColor = System.Drawing.Color.Ivory;
+            this.tabPageLMEMass.Controls.Add(this.buttonTabLMEHourCo2Clear);
+            this.tabPageLMEMass.Controls.Add(this.label248);
+            this.tabPageLMEMass.Controls.Add(this.label262);
+            this.tabPageLMEMass.Controls.Add(this.textBox8);
+            this.tabPageLMEMass.Controls.Add(this.buttonTabLMEHourCo2Calculate);
+            this.tabPageLMEMass.Controls.Add(this.label272);
+            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourCo2Answer);
+            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourCo2Co2);
+            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourCo2H);
+            this.tabPageLMEMass.Controls.Add(this.label273);
+            this.tabPageLMEMass.Controls.Add(this.label274);
+            this.tabPageLMEMass.Controls.Add(this.label275);
+            this.tabPageLMEMass.Controls.Add(this.buttonTabLMEHourSo2Clear);
+            this.tabPageLMEMass.Controls.Add(this.buttonTabLMEHourNoxClear);
+            this.tabPageLMEMass.Controls.Add(this.buttonTabLMEHourSo2Calculate);
+            this.tabPageLMEMass.Controls.Add(this.label252);
+            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourSo2Answer);
+            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourSo2So2);
+            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourSo2H);
+            this.tabPageLMEMass.Controls.Add(this.label253);
+            this.tabPageLMEMass.Controls.Add(this.label261);
+            this.tabPageLMEMass.Controls.Add(this.label263);
+            this.tabPageLMEMass.Controls.Add(this.label264);
+            this.tabPageLMEMass.Controls.Add(this.label265);
+            this.tabPageLMEMass.Controls.Add(this.label266);
+            this.tabPageLMEMass.Controls.Add(this.textBox29);
+            this.tabPageLMEMass.Controls.Add(this.textBox34);
+            this.tabPageLMEMass.Controls.Add(this.label267);
+            this.tabPageLMEMass.Controls.Add(this.textBox36);
+            this.tabPageLMEMass.Controls.Add(this.buttonTabLMEHourNoxCalculate);
+            this.tabPageLMEMass.Controls.Add(this.label268);
+            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourNoxAnswer);
+            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourNoxNox);
+            this.tabPageLMEMass.Controls.Add(this.textBoxTabLMEHourNoxH);
+            this.tabPageLMEMass.Controls.Add(this.label269);
+            this.tabPageLMEMass.Controls.Add(this.label270);
+            this.tabPageLMEMass.Controls.Add(this.label271);
+            this.tabPageLMEMass.Location = new System.Drawing.Point(4, 24);
+            this.tabPageLMEMass.Name = "tabPageLMEMass";
+            this.tabPageLMEMass.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageLMEMass.Size = new System.Drawing.Size(939, 514);
+            this.tabPageLMEMass.TabIndex = 21;
+            this.tabPageLMEMass.Text = "LME - Mass";
+            // 
+            // buttonTabLMEHourSo2Clear
+            // 
+            this.buttonTabLMEHourSo2Clear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabLMEHourSo2Clear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTabLMEHourSo2Clear.BackColor = System.Drawing.Color.Firebrick;
+            this.buttonTabLMEHourSo2Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabLMEHourSo2Clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabLMEHourSo2Clear.ForeColor = System.Drawing.Color.White;
+            this.buttonTabLMEHourSo2Clear.Location = new System.Drawing.Point(718, 178);
+            this.buttonTabLMEHourSo2Clear.Name = "buttonTabLMEHourSo2Clear";
+            this.buttonTabLMEHourSo2Clear.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabLMEHourSo2Clear.TabIndex = 281;
+            this.buttonTabLMEHourSo2Clear.Text = "Clear";
+            this.buttonTabLMEHourSo2Clear.UseVisualStyleBackColor = false;
+            this.buttonTabLMEHourSo2Clear.Click += new System.EventHandler(this.buttonTabLMEHourSo2Clear_Click);
+            // 
+            // buttonTabLMEHourNoxClear
+            // 
+            this.buttonTabLMEHourNoxClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabLMEHourNoxClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTabLMEHourNoxClear.BackColor = System.Drawing.Color.Firebrick;
+            this.buttonTabLMEHourNoxClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabLMEHourNoxClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabLMEHourNoxClear.ForeColor = System.Drawing.Color.White;
+            this.buttonTabLMEHourNoxClear.Location = new System.Drawing.Point(250, 178);
+            this.buttonTabLMEHourNoxClear.Name = "buttonTabLMEHourNoxClear";
+            this.buttonTabLMEHourNoxClear.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabLMEHourNoxClear.TabIndex = 276;
+            this.buttonTabLMEHourNoxClear.Text = "Clear";
+            this.buttonTabLMEHourNoxClear.UseVisualStyleBackColor = false;
+            this.buttonTabLMEHourNoxClear.Click += new System.EventHandler(this.buttonTabLMEHourNoxClear_Click);
+            // 
+            // buttonTabLMEHourSo2Calculate
+            // 
+            this.buttonTabLMEHourSo2Calculate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabLMEHourSo2Calculate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTabLMEHourSo2Calculate.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonTabLMEHourSo2Calculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabLMEHourSo2Calculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabLMEHourSo2Calculate.ForeColor = System.Drawing.Color.White;
+            this.buttonTabLMEHourSo2Calculate.Location = new System.Drawing.Point(836, 178);
+            this.buttonTabLMEHourSo2Calculate.Name = "buttonTabLMEHourSo2Calculate";
+            this.buttonTabLMEHourSo2Calculate.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabLMEHourSo2Calculate.TabIndex = 280;
+            this.buttonTabLMEHourSo2Calculate.Text = "Calculate";
+            this.buttonTabLMEHourSo2Calculate.UseVisualStyleBackColor = false;
+            this.buttonTabLMEHourSo2Calculate.Click += new System.EventHandler(this.buttonTabLMEHourSo2Calculate_Click);
+            // 
+            // label252
+            // 
+            this.label252.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label252.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label252.Location = new System.Drawing.Point(641, 152);
+            this.label252.Name = "label252";
+            this.label252.Size = new System.Drawing.Size(155, 20);
+            this.label252.TabIndex = 271;
+            this.label252.Text = "Hourly SO2 Mass (lb) = ";
+            // 
+            // textBoxTabLMEHourSo2Answer
+            // 
+            this.textBoxTabLMEHourSo2Answer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabLMEHourSo2Answer.Location = new System.Drawing.Point(811, 150);
+            this.textBoxTabLMEHourSo2Answer.Name = "textBoxTabLMEHourSo2Answer";
+            this.textBoxTabLMEHourSo2Answer.ReadOnly = true;
+            this.textBoxTabLMEHourSo2Answer.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabLMEHourSo2Answer.TabIndex = 270;
+            this.textBoxTabLMEHourSo2Answer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabLMEHourSo2So2
+            // 
+            this.textBoxTabLMEHourSo2So2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabLMEHourSo2So2.Location = new System.Drawing.Point(811, 123);
+            this.textBoxTabLMEHourSo2So2.Name = "textBoxTabLMEHourSo2So2";
+            this.textBoxTabLMEHourSo2So2.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabLMEHourSo2So2.TabIndex = 278;
+            this.textBoxTabLMEHourSo2So2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabLMEHourSo2H
+            // 
+            this.textBoxTabLMEHourSo2H.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabLMEHourSo2H.Location = new System.Drawing.Point(811, 95);
+            this.textBoxTabLMEHourSo2H.Name = "textBoxTabLMEHourSo2H";
+            this.textBoxTabLMEHourSo2H.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabLMEHourSo2H.TabIndex = 277;
+            this.textBoxTabLMEHourSo2H.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label253
+            // 
+            this.label253.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label253.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label253.Location = new System.Drawing.Point(757, 125);
+            this.label253.Name = "label253";
+            this.label253.Size = new System.Drawing.Size(43, 18);
+            this.label253.TabIndex = 269;
+            this.label253.Text = "SO2 = ";
+            // 
+            // label261
+            // 
+            this.label261.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label261.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label261.Location = new System.Drawing.Point(772, 97);
+            this.label261.Name = "label261";
+            this.label261.Size = new System.Drawing.Size(29, 19);
+            this.label261.TabIndex = 268;
+            this.label261.Text = "H = ";
+            // 
+            // label263
+            // 
+            this.label263.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label263.Location = new System.Drawing.Point(492, 138);
+            this.label263.Name = "label263";
+            this.label263.Size = new System.Drawing.Size(156, 21);
+            this.label263.TabIndex = 266;
+            this.label263.Text = "SO2 - SO2 Rate Contsant";
+            // 
+            // label264
+            // 
+            this.label264.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label264.Location = new System.Drawing.Point(492, 117);
+            this.label264.Name = "label264";
+            this.label264.Size = new System.Drawing.Size(181, 15);
+            this.label264.TabIndex = 265;
+            this.label264.Text = "H - Hourly Heat Input";
+            // 
+            // label265
+            // 
+            this.label265.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label265.Location = new System.Drawing.Point(24, 137);
+            this.label265.Name = "label265";
+            this.label265.Size = new System.Drawing.Size(149, 21);
+            this.label265.TabIndex = 264;
+            this.label265.Text = "NOx - NOx Rate Constant";
+            // 
+            // label266
+            // 
+            this.label266.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label266.Location = new System.Drawing.Point(24, 117);
+            this.label266.Name = "label266";
+            this.label266.Size = new System.Drawing.Size(200, 15);
+            this.label266.TabIndex = 263;
+            this.label266.Text = "H - Hourly Heat Input";
+            // 
+            // textBox29
+            // 
+            this.textBox29.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox29.BackColor = System.Drawing.Color.Blue;
+            this.textBox29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox29.ForeColor = System.Drawing.Color.White;
+            this.textBox29.Location = new System.Drawing.Point(6, 7);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.ReadOnly = true;
+            this.textBox29.Size = new System.Drawing.Size(927, 29);
+            this.textBox29.TabIndex = 262;
+            this.textBox29.Text = "LME - Hourly Mass for NOx, SO2, and CO2";
+            this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox34
+            // 
+            this.textBox34.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox34.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textBox34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox34.ForeColor = System.Drawing.Color.White;
+            this.textBox34.Location = new System.Drawing.Point(492, 65);
+            this.textBox34.Name = "textBox34";
+            this.textBox34.ReadOnly = true;
+            this.textBox34.Size = new System.Drawing.Size(419, 22);
+            this.textBox34.TabIndex = 261;
+            this.textBox34.Text = "(Hourly SO2 Mass)  E = H * SO2";
+            this.textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label267
+            // 
+            this.label267.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label267.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label267.Location = new System.Drawing.Point(492, 97);
+            this.label267.Name = "label267";
+            this.label267.Size = new System.Drawing.Size(156, 15);
+            this.label267.TabIndex = 260;
+            this.label267.Text = "E - Hourly SO2 Mass (lb)";
+            // 
+            // textBox36
+            // 
+            this.textBox36.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox36.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textBox36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox36.ForeColor = System.Drawing.Color.White;
+            this.textBox36.Location = new System.Drawing.Point(24, 65);
+            this.textBox36.Name = "textBox36";
+            this.textBox36.ReadOnly = true;
+            this.textBox36.Size = new System.Drawing.Size(419, 22);
+            this.textBox36.TabIndex = 259;
+            this.textBox36.Text = "(Hourly NOx Mass)  E = H * NOx";
+            this.textBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // buttonTabLMEHourNoxCalculate
+            // 
+            this.buttonTabLMEHourNoxCalculate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabLMEHourNoxCalculate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTabLMEHourNoxCalculate.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonTabLMEHourNoxCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabLMEHourNoxCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabLMEHourNoxCalculate.ForeColor = System.Drawing.Color.White;
+            this.buttonTabLMEHourNoxCalculate.Location = new System.Drawing.Point(368, 178);
+            this.buttonTabLMEHourNoxCalculate.Name = "buttonTabLMEHourNoxCalculate";
+            this.buttonTabLMEHourNoxCalculate.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabLMEHourNoxCalculate.TabIndex = 275;
+            this.buttonTabLMEHourNoxCalculate.Text = "Calculate";
+            this.buttonTabLMEHourNoxCalculate.UseVisualStyleBackColor = false;
+            this.buttonTabLMEHourNoxCalculate.Click += new System.EventHandler(this.buttonTabLMEHourNoxCalculate_Click);
+            // 
+            // label268
+            // 
+            this.label268.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label268.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label268.Location = new System.Drawing.Point(172, 153);
+            this.label268.Name = "label268";
+            this.label268.Size = new System.Drawing.Size(156, 20);
+            this.label268.TabIndex = 258;
+            this.label268.Text = "Hourly NOx Mass (lb) =";
+            // 
+            // textBoxTabLMEHourNoxAnswer
+            // 
+            this.textBoxTabLMEHourNoxAnswer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabLMEHourNoxAnswer.Location = new System.Drawing.Point(343, 150);
+            this.textBoxTabLMEHourNoxAnswer.Name = "textBoxTabLMEHourNoxAnswer";
+            this.textBoxTabLMEHourNoxAnswer.ReadOnly = true;
+            this.textBoxTabLMEHourNoxAnswer.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabLMEHourNoxAnswer.TabIndex = 257;
+            this.textBoxTabLMEHourNoxAnswer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabLMEHourNoxNox
+            // 
+            this.textBoxTabLMEHourNoxNox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabLMEHourNoxNox.Location = new System.Drawing.Point(343, 123);
+            this.textBoxTabLMEHourNoxNox.Name = "textBoxTabLMEHourNoxNox";
+            this.textBoxTabLMEHourNoxNox.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabLMEHourNoxNox.TabIndex = 274;
+            this.textBoxTabLMEHourNoxNox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabLMEHourNoxH
+            // 
+            this.textBoxTabLMEHourNoxH.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabLMEHourNoxH.Location = new System.Drawing.Point(343, 95);
+            this.textBoxTabLMEHourNoxH.Name = "textBoxTabLMEHourNoxH";
+            this.textBoxTabLMEHourNoxH.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabLMEHourNoxH.TabIndex = 273;
+            this.textBoxTabLMEHourNoxH.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label269
+            // 
+            this.label269.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label269.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label269.Location = new System.Drawing.Point(286, 125);
+            this.label269.Name = "label269";
+            this.label269.Size = new System.Drawing.Size(46, 18);
+            this.label269.TabIndex = 256;
+            this.label269.Text = "NOx = ";
+            // 
+            // label270
+            // 
+            this.label270.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label270.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label270.Location = new System.Drawing.Point(302, 97);
+            this.label270.Name = "label270";
+            this.label270.Size = new System.Drawing.Size(32, 19);
+            this.label270.TabIndex = 255;
+            this.label270.Text = "H =";
+            // 
+            // label271
+            // 
+            this.label271.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label271.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label271.Location = new System.Drawing.Point(24, 97);
+            this.label271.Name = "label271";
+            this.label271.Size = new System.Drawing.Size(173, 20);
+            this.label271.TabIndex = 254;
+            this.label271.Text = "E - Hourly NOx Mass (lb)";
+            // 
+            // buttonTabLMEHourCo2Clear
+            // 
+            this.buttonTabLMEHourCo2Clear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabLMEHourCo2Clear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTabLMEHourCo2Clear.BackColor = System.Drawing.Color.Firebrick;
+            this.buttonTabLMEHourCo2Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabLMEHourCo2Clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabLMEHourCo2Clear.ForeColor = System.Drawing.Color.White;
+            this.buttonTabLMEHourCo2Clear.Location = new System.Drawing.Point(250, 359);
+            this.buttonTabLMEHourCo2Clear.Name = "buttonTabLMEHourCo2Clear";
+            this.buttonTabLMEHourCo2Clear.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabLMEHourCo2Clear.TabIndex = 293;
+            this.buttonTabLMEHourCo2Clear.Text = "Clear";
+            this.buttonTabLMEHourCo2Clear.UseVisualStyleBackColor = false;
+            this.buttonTabLMEHourCo2Clear.Click += new System.EventHandler(this.buttonTabLMEHourCo2Clear_Click);
+            // 
+            // label248
+            // 
+            this.label248.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label248.Location = new System.Drawing.Point(24, 318);
+            this.label248.Name = "label248";
+            this.label248.Size = new System.Drawing.Size(149, 21);
+            this.label248.TabIndex = 289;
+            this.label248.Text = "NOx - CO2 Rate Constant";
+            // 
+            // label262
+            // 
+            this.label262.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label262.Location = new System.Drawing.Point(24, 298);
+            this.label262.Name = "label262";
+            this.label262.Size = new System.Drawing.Size(200, 15);
+            this.label262.TabIndex = 288;
+            this.label262.Text = "H - Hourly Heat Input";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox8.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.ForeColor = System.Drawing.Color.White;
+            this.textBox8.Location = new System.Drawing.Point(24, 246);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(419, 22);
+            this.textBox8.TabIndex = 287;
+            this.textBox8.Text = "(Hourly CO2 Mass)  E = H * CO2";
+            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // buttonTabLMEHourCo2Calculate
+            // 
+            this.buttonTabLMEHourCo2Calculate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTabLMEHourCo2Calculate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTabLMEHourCo2Calculate.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonTabLMEHourCo2Calculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTabLMEHourCo2Calculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabLMEHourCo2Calculate.ForeColor = System.Drawing.Color.White;
+            this.buttonTabLMEHourCo2Calculate.Location = new System.Drawing.Point(368, 359);
+            this.buttonTabLMEHourCo2Calculate.Name = "buttonTabLMEHourCo2Calculate";
+            this.buttonTabLMEHourCo2Calculate.Size = new System.Drawing.Size(75, 30);
+            this.buttonTabLMEHourCo2Calculate.TabIndex = 292;
+            this.buttonTabLMEHourCo2Calculate.Text = "Calculate";
+            this.buttonTabLMEHourCo2Calculate.UseVisualStyleBackColor = false;
+            this.buttonTabLMEHourCo2Calculate.Click += new System.EventHandler(this.buttonTabLMEHourCo2Calculate_Click);
+            // 
+            // label272
+            // 
+            this.label272.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label272.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label272.Location = new System.Drawing.Point(158, 334);
+            this.label272.Name = "label272";
+            this.label272.Size = new System.Drawing.Size(170, 20);
+            this.label272.TabIndex = 286;
+            this.label272.Text = "Hourly CO2 Mass (tons) =";
+            // 
+            // textBoxTabLMEHourCo2Answer
+            // 
+            this.textBoxTabLMEHourCo2Answer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabLMEHourCo2Answer.Location = new System.Drawing.Point(343, 331);
+            this.textBoxTabLMEHourCo2Answer.Name = "textBoxTabLMEHourCo2Answer";
+            this.textBoxTabLMEHourCo2Answer.ReadOnly = true;
+            this.textBoxTabLMEHourCo2Answer.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabLMEHourCo2Answer.TabIndex = 285;
+            this.textBoxTabLMEHourCo2Answer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabLMEHourCo2Co2
+            // 
+            this.textBoxTabLMEHourCo2Co2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabLMEHourCo2Co2.Location = new System.Drawing.Point(343, 304);
+            this.textBoxTabLMEHourCo2Co2.Name = "textBoxTabLMEHourCo2Co2";
+            this.textBoxTabLMEHourCo2Co2.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabLMEHourCo2Co2.TabIndex = 291;
+            this.textBoxTabLMEHourCo2Co2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxTabLMEHourCo2H
+            // 
+            this.textBoxTabLMEHourCo2H.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTabLMEHourCo2H.Location = new System.Drawing.Point(343, 276);
+            this.textBoxTabLMEHourCo2H.Name = "textBoxTabLMEHourCo2H";
+            this.textBoxTabLMEHourCo2H.Size = new System.Drawing.Size(100, 21);
+            this.textBoxTabLMEHourCo2H.TabIndex = 290;
+            this.textBoxTabLMEHourCo2H.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label273
+            // 
+            this.label273.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label273.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label273.Location = new System.Drawing.Point(286, 306);
+            this.label273.Name = "label273";
+            this.label273.Size = new System.Drawing.Size(46, 18);
+            this.label273.TabIndex = 284;
+            this.label273.Text = "CO2 = ";
+            // 
+            // label274
+            // 
+            this.label274.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label274.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label274.Location = new System.Drawing.Point(302, 278);
+            this.label274.Name = "label274";
+            this.label274.Size = new System.Drawing.Size(32, 19);
+            this.label274.TabIndex = 283;
+            this.label274.Text = "H =";
+            // 
+            // label275
+            // 
+            this.label275.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label275.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label275.Location = new System.Drawing.Point(24, 278);
+            this.label275.Name = "label275";
+            this.label275.Size = new System.Drawing.Size(173, 20);
+            this.label275.TabIndex = 282;
+            this.label275.Text = "E - Hourly CO2 Mass (tons)";
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -7734,6 +8606,10 @@ namespace CEMSStudyApp.Pages
             this.tabPageHg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPageLMEHI.ResumeLayout(false);
+            this.tabPageLMEHI.PerformLayout();
+            this.tabPageLMEMass.ResumeLayout(false);
+            this.tabPageLMEMass.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -8310,5 +9186,72 @@ namespace CEMSStudyApp.Pages
         private Button buttonTabHglbhrConvert;
         private Button buttonTabHgHGREConvert;
         private Button buttonTabHgHGRHConvert;
+        private TabPage tabPageLMEHI;
+        private Button buttonTabLMEHIHourClear;
+        private Button buttonTabLMEHIQuarterClear;
+        private Label label238;
+        private TextBox textBoxTabLMEHIHourH;
+        private Button buttonTabLMEHIHourCalculate;
+        private Label label243;
+        private TextBox textBoxTabLMEHIHourAnswer;
+        private TextBox textBoxTabLMEHIHourQL;
+        private TextBox textBoxTabLMEHIHourL;
+        private Label label244;
+        private Label label247;
+        private Label label249;
+        private Label label250;
+        private Label label251;
+        private Label label254;
+        private Label label255;
+        private TextBox textBox31;
+        private TextBox textBox32;
+        private Label label256;
+        private TextBox textBox33;
+        private Button buttonTabLMEHIQuarterCalculate;
+        private Label label257;
+        private TextBox textBoxTabLMEHIQuarterAnswer;
+        private TextBox textBoxTabLMEHIQuarterGCV;
+        private TextBox textBoxTabLMEHIQuarterFF;
+        private Label label258;
+        private Label label259;
+        private Label label260;
+        private TabPage tabPageLMEMass;
+        private Button buttonTabLMEHourSo2Clear;
+        private Button buttonTabLMEHourNoxClear;
+        private Button buttonTabLMEHourSo2Calculate;
+        private Label label252;
+        private TextBox textBoxTabLMEHourSo2Answer;
+        private TextBox textBoxTabLMEHourSo2So2;
+        private TextBox textBoxTabLMEHourSo2H;
+        private Label label253;
+        private Label label261;
+        private Label label263;
+        private Label label264;
+        private Label label265;
+        private Label label266;
+        private TextBox textBox29;
+        private TextBox textBox34;
+        private Label label267;
+        private TextBox textBox36;
+        private Button buttonTabLMEHourNoxCalculate;
+        private Label label268;
+        private TextBox textBoxTabLMEHourNoxAnswer;
+        private TextBox textBoxTabLMEHourNoxNox;
+        private TextBox textBoxTabLMEHourNoxH;
+        private Label label269;
+        private Label label270;
+        private Label label271;
+        private Button buttonTabLMEHourCo2Clear;
+        private Label label248;
+        private Label label262;
+        private TextBox textBox8;
+        private Button buttonTabLMEHourCo2Calculate;
+        private Label label272;
+        private TextBox textBoxTabLMEHourCo2Answer;
+        private TextBox textBoxTabLMEHourCo2Co2;
+        private TextBox textBoxTabLMEHourCo2H;
+        private Label label273;
+        private Label label274;
+        private Label label275;
     }
 }

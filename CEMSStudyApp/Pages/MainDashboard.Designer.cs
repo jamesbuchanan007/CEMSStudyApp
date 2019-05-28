@@ -790,6 +790,7 @@ namespace CEMSStudyApp.Pages
             this.tabFormulasMain.SelectedIndex = 0;
             this.tabFormulasMain.Size = new System.Drawing.Size(947, 542);
             this.tabFormulasMain.TabIndex = 0;
+            this.tabFormulasMain.SelectedIndexChanged += new System.EventHandler(this.tabFormulasMain_SelectedIndexChanged);
             // 
             // tabOilFlow
             // 

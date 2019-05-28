@@ -177,16 +177,12 @@ namespace CEMSStudyApp.Pages
                         Definition = definition
                     });
 
-                    if (sectionHeading == "Formulas") return;
-
                     dropDown = dataSet.Tables[0].Rows[i][sectionNumber].ToString();
 
                     //LOAD DROPDOWN DICTIONARY
                     dropDownDictionary.Add(i, dropDown);
                 }
             }
-
-            if (sectionHeading == "Formulas") return;
 
             //LOAD DROP DOWN NAVIGATION
             comboBoxSectionNumber.DataSource = new BindingSource(dropDownDictionary, null);
@@ -235,7 +231,8 @@ namespace CEMSStudyApp.Pages
                         webBrowserPdf.Hide();
                         buttonToggle.Text = "Show";
                         EnableNavButtons(false);
-                        comboBoxSectionNumber.Hide();
+                        var tabIndex = comboBoxSectionNumber.SelectedIndex;
+                        ShowTab(tabIndex);
                         break;
                     default:
                         comboBoxSectionNumber.Show();
@@ -280,6 +277,74 @@ namespace CEMSStudyApp.Pages
 
                 //GET PDF
                 webBrowserPdf?.Navigate(new Uri(path));
+            }
+        }
+
+        private void ShowTab(int tabIndex)
+        {
+            switch (tabIndex)
+            {
+                case 0:
+                    tabFormulasMain.SelectTab(tabPage4_20ma);
+                    break;
+                case 1:
+                    tabFormulasMain.SelectTab(tabCOlbshr);
+                    break;
+                case 2:
+                    tabFormulasMain.SelectTab(tabColbsmmBtu);
+                    break;
+                case 3:
+                    tabFormulasMain.SelectTab(tabCOppmvd);
+                    break;
+                case 4:
+                    tabFormulasMain.SelectTab(tabCO2Flow);
+                    break;
+                case 5:
+                    tabFormulasMain.SelectTab(tabCO2Gas);
+                    break;
+                case 6:
+                    tabFormulasMain.SelectTab(tabCO2Oil);
+                    break;
+                case 7:
+                    tabFormulasMain.SelectTab(tabCoal);
+                    break;
+                case 8:
+                    tabFormulasMain.SelectTab(tabFuelFactor);
+                    break;
+                case 9:
+                    tabFormulasMain.SelectTab(tabHeatInputFlow);
+                    break;
+                case 10:
+                    tabFormulasMain.SelectTab(tabHeatInputGas);
+                    break;
+                case 11:
+                    tabFormulasMain.SelectTab(tabHeatInputOil);
+                    break;
+                case 12:
+                    tabFormulasMain.SelectTab(tabPageHg);
+                    break;
+                case 13:
+                    tabFormulasMain.SelectTab(tabNOxlbshr);
+                    break;
+                case 14:
+                    tabFormulasMain.SelectTab(tabNOxlbsmmBtu);
+                    break;
+                case 15:
+                    tabFormulasMain.SelectTab(tabNOxppmvd);
+                    break;
+                case 16:
+                    tabFormulasMain.SelectTab(tabOilFlow);
+                    break;
+                case 17:
+                    tabFormulasMain.SelectTab(tabSO2Flow);
+                    break;
+                case 18:
+                    tabFormulasMain.SelectTab(tabSO2Gas);
+                    break;
+                case 19:
+                    tabFormulasMain.SelectTab(tabSO2Oil);
+                    break;
+
             }
         }
 
@@ -378,9 +443,9 @@ namespace CEMSStudyApp.Pages
 
         private void buttonFormulas_Click(object sender, EventArgs e)
         {
-            var dataSet = LoadTable("Formulas");
+            var dataSet = LoadTable("Formulas_View");
             folderName = "";
-            LoadDashboardViewModel(dataSet, "Formulas_Name", "", "", "");
+            LoadDashboardViewModel(dataSet, "Formulas_Name", "Formulas_Description", "", "");
             LoadDashboard(0);
         }
 
@@ -1430,6 +1495,13 @@ namespace CEMSStudyApp.Pages
                 buttonTabHglbhrConvert.Text = "D";
                 toolTip1.SetToolTip(buttonTabHglbhrConvert, "Convert to Decimal");
             }
+        }
+
+        private void tabFormulasMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var tabText = tabFormulasMain.SelectedTab.Text;
+            var index = comboBoxSectionNumber.FindString(tabText);
+            comboBoxSectionNumber.SelectedIndex = index == -1 ? 0 : index;
         }
     }
 }

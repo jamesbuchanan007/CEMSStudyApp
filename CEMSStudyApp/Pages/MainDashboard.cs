@@ -20,6 +20,7 @@ namespace CEMSStudyApp.Pages
         public static double tabHgHGREAnswer { get; set; }
         public static double tabHglbhrAnswer { get; set; }
         public static int searchIndex { get; set; }
+        public static bool isFullManualFunction { get; set; }
 
         public MainDashboard()
         {
@@ -58,14 +59,11 @@ namespace CEMSStudyApp.Pages
             comboBoxTabCOppmvdF2XCO2.SelectedIndex = 0;
             comboBoxTabNOxppmvdF2XCO2.SelectedIndex = 0;
 
-            textBoxSearch.ForeColor = Color.Gray;
-            textBoxSearch.Text = "Search Item";
-
             comboBoxSearch.SelectedIndex = 0;
             comboBoxSearch.ForeColor = Color.Gray;
 
             buttonSearch.Enabled = true;
-            var searchIndex = -1;
+
 
         }
 
@@ -193,10 +191,13 @@ namespace CEMSStudyApp.Pages
             comboBoxSectionNumber.DataSource = new BindingSource(dropDownDictionary, null);
             comboBoxSectionNumber.ValueMember = "Key";
             comboBoxSectionNumber.DisplayMember = "Value";
+
+            if (isFullManualFunction) comboBoxSectionNumber.SelectedIndex = searchIndex;
         }
 
         private void LoadDashboard(int index)
         {
+            if (isFullManualFunction) index = searchIndex;
             pictureBoxMain.Hide();
 
             //LOAD MAIN HEADING
@@ -274,7 +275,6 @@ namespace CEMSStudyApp.Pages
                         buttonToggle.Text = "Hide";
                         break;
                 }
-
                 string exePath = Application.StartupPath + @"\" + folderName + @"\";
                 var fileName = dashboardDictionary[index].File_Location;
                 var path = exePath + fileName + ".pdf"; //PATH STRING
@@ -283,6 +283,7 @@ namespace CEMSStudyApp.Pages
                 //GET PDF
                 webBrowserPdf?.Navigate(new Uri(path));
             }
+
         }
 
         private void ShowTab(int tabIndex)
@@ -404,6 +405,8 @@ namespace CEMSStudyApp.Pages
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
+            isFullManualFunction = false;
+
             var index = comboBoxSectionNumber.SelectedIndex;
             if (index == -1) return;
 
@@ -420,6 +423,8 @@ namespace CEMSStudyApp.Pages
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
+            isFullManualFunction = false;
+
             var index = comboBoxSectionNumber.SelectedIndex;
             if (index == -1) return;
 
@@ -437,28 +442,16 @@ namespace CEMSStudyApp.Pages
 
         private void comboBoxSectionNumber_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index;
-
-            if (searchIndex == -1)
-            {
-                index = comboBoxSectionNumber.SelectedIndex;
-            }
-            else
-            {
-                index = searchIndex;
-                comboBoxSectionNumber.SelectedIndex = searchIndex;
-            }
 
             if (dashboardDictionary.Count == 0) return;
 
-            LoadDashboard(index);
+            LoadDashboard(comboBoxSectionNumber.SelectedIndex);
         }
 
         private void buttonAcronyms_Click(object sender, EventArgs e)
         {
             var dataSet = LoadTable("Acronyms_View");
             folderName = "";
-
             LoadDashboardViewModel(dataSet, "Acronyms_Name", "Acronyms_Name", "", "Acronyms_Description");
         }
 
@@ -1456,6 +1449,7 @@ namespace CEMSStudyApp.Pages
             {
                 var dataSet = LoadTable("Prism");
                 folderName = "Prism_Files";
+
                 LoadDashboardViewModel(dataSet, "Prism_SectionNumber", "Prism_SectionName", "File_Location", "");
             }
             else
@@ -1501,21 +1495,6 @@ namespace CEMSStudyApp.Pages
             //ANALOG READING
             var answer = (ac - low4ma) / (high20ma - low4ma) * (highScale - lowScale);
             DisplayAnswer(answer, textBoxTab420Answer);
-        }
-
-        private void textBoxSearch_Enter(object sender, EventArgs e)
-        {
-            textBoxSearch.ForeColor = Color.Black;
-            textBoxSearch.Text = "";
-        }
-
-        private void textBoxSearch_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(textBoxSearch.Text))
-            {
-                textBoxSearch.ForeColor = Color.Gray;
-                textBoxSearch.Text = "Search Item";
-            }
         }
 
         private void comboBoxSearch_Enter(object sender, EventArgs e)
@@ -1781,47 +1760,57 @@ namespace CEMSStudyApp.Pages
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            var searchText = textBoxSearch.Text;
             var searchRegIndex = comboBoxSearch.SelectedIndex;
-            if (searchText == "Search Item")
-            {
-                switch (searchRegIndex)
-                {
-                    case 1:
-                        searchIndex = 347;
-                        buttonPart75_Click(sender, e);
-                        break;
-                    case 2:
-                        searchIndex = 349;
-                        buttonPart75_Click(sender, e);
-                        break;
-                    case 3:
-                        searchIndex = 118;
-                        buttonPart75PlainEnglish_Click(sender, e);
-                        break;
-                    case 4:
-                        searchIndex = 348;
-                        buttonPart75_Click(sender, e);
-                        break;
-                    case 5:
-                        searchIndex = 114;
-                        button60AppBF_Click(sender, e);
-                        break;
-                    case 6:
-                        searchIndex = 115;
-                        button60AppBF_Click(sender, e);
-                        break;
-                    case 7:
-                        searchIndex = 37;
-                        buttonPart63SubUUUUU_Click(sender, e);
-                        break;
-                    case 8:
-                        searchIndex = 350;
-                        buttonPart75_Click(sender, e);
-                        break;
 
-                }
+            switch (searchRegIndex)
+            {
+                case 1:
+                    searchIndex = 347;
+                    isFullManualFunction = true;
+                    buttonPart75_Click(sender, e);
+                    break;
+                case 2:
+                    searchIndex = 349;
+                    isFullManualFunction = true;
+                    buttonPart75_Click(sender, e);
+                    break;
+                case 3:
+                    isFullManualFunction = true;
+                    searchIndex = 118;
+                    buttonPart75PlainEnglish_Click(sender, e);
+                    break;
+                case 4:
+                    isFullManualFunction = true;
+                    searchIndex = 348;
+                    buttonPart75_Click(sender, e);
+                    break;
+                case 5:
+                    isFullManualFunction = true;
+                    searchIndex = 114;
+                    button60AppBF_Click(sender, e);
+                    break;
+                case 6:
+                    isFullManualFunction = true;
+                    searchIndex = 115;
+                    button60AppBF_Click(sender, e);
+                    break;
+                case 7:
+                    isFullManualFunction = true;
+                    searchIndex = 37;
+                    buttonPart63SubUUUUU_Click(sender, e);
+                    break;
+                case 8:
+                    isFullManualFunction = true;
+                    searchIndex = 350;
+                    buttonPart75_Click(sender, e);
+                    break;
+                default:
+                    isFullManualFunction = false;
+                    searchIndex = -1;
+                    break;
+
             }
+            isFullManualFunction = false;
         }
     }
 }

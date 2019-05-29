@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\jamesb\Desktop\James\CEMS Study\1.1.0.2\</PublishUrl>
+    <PublishUrl>C:\Users\jamesb\Desktop\James\CEMS Study\1.1.0.4\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -26,7 +26,7 @@
     <UpdateUrl>//localhost/c%24/User/jamesb/Desktop/James/CEMS Study/</UpdateUrl>
     <ProductName>CEMS Study</ProductName>
     <PublisherName>James K. Buchanan</PublisherName>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <ExcludeDeploymentUrl>true</ExcludeDeploymentUrl>
@@ -895,6 +895,7 @@
     <Content Include="Prism_Files\Prism_Full_Manual.pdf" />
     <Content Include="Part75_Files\Part75_Field_Audit_Manual.pdf" />
     <Content Include="Part75_Files\Part75_Appendix_D.pdf" />
+    <Content Include="Part75_Files\Ecmps_Emissions_Reporting_Instructions.pdf" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

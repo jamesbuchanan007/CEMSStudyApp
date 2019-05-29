@@ -784,7 +784,7 @@ namespace CEMSStudyApp.Pages
             this.buttonRandom.TabIndex = 130;
             this.buttonRandom.Tag = "Click to toggle Answer";
             this.buttonRandom.Text = "Random";
-            this.toolTip1.SetToolTip(this.buttonRandom, "Show / Hide");
+            this.toolTip1.SetToolTip(this.buttonRandom, "Gets Random Section");
             this.buttonRandom.UseVisualStyleBackColor = false;
             this.buttonRandom.Visible = false;
             this.buttonRandom.Click += new System.EventHandler(this.buttonRandom_Click);
@@ -8165,7 +8165,7 @@ namespace CEMSStudyApp.Pages
             this.buttonPart75.Size = new System.Drawing.Size(110, 42);
             this.buttonPart75.TabIndex = 128;
             this.buttonPart75.Text = "Part 75";
-            this.toolTip1.SetToolTip(this.buttonPart75, "Part 75 Plain English Version");
+            this.toolTip1.SetToolTip(this.buttonPart75, "Part 75");
             this.buttonPart75.UseVisualStyleBackColor = false;
             this.buttonPart75.Click += new System.EventHandler(this.buttonPart75_Click);
             // 

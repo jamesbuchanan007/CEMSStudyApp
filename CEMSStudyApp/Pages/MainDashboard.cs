@@ -61,10 +61,6 @@ namespace CEMSStudyApp.Pages
 
             comboBoxSearch.SelectedIndex = 0;
             comboBoxSearch.ForeColor = Color.Gray;
-
-            buttonSearch.Enabled = true;
-
-
         }
 
         void SystemEvents_UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
@@ -1758,7 +1754,7 @@ namespace CEMSStudyApp.Pages
             textBoxTabLMEHourCo2Co2.Text = "";
         }
 
-        private void buttonSearch_Click(object sender, EventArgs e)
+        private void comboBoxSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
             var searchRegIndex = comboBoxSearch.SelectedIndex;
 

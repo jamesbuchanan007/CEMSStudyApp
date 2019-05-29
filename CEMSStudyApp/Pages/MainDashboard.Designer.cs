@@ -34,7 +34,6 @@ namespace CEMSStudyApp.Pages
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainDashboard));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.comboBoxSearch = new System.Windows.Forms.ComboBox();
             this.labelVersion = new System.Windows.Forms.Label();
             this.buttonRandom = new System.Windows.Forms.Button();
@@ -704,7 +703,6 @@ namespace CEMSStudyApp.Pages
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.buttonSearch);
             this.panel1.Controls.Add(this.comboBoxSearch);
             this.panel1.Controls.Add(this.labelVersion);
             this.panel1.Controls.Add(this.buttonRandom);
@@ -738,23 +736,6 @@ namespace CEMSStudyApp.Pages
             this.panel1.Size = new System.Drawing.Size(1193, 729);
             this.panel1.TabIndex = 0;
             // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonSearch.BackColor = System.Drawing.Color.Blue;
-            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSearch.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.Location = new System.Drawing.Point(774, 688);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(78, 23);
-            this.buttonSearch.TabIndex = 134;
-            this.buttonSearch.Tag = "";
-            this.buttonSearch.Text = "Get Manual";
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
             // comboBoxSearch
             // 
             this.comboBoxSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -769,12 +750,13 @@ namespace CEMSStudyApp.Pages
             "Part 60 Appendix B",
             "Part 60 Appendix F",
             "Part 63 Subpart UUUUU",
-            "ECMPS Reporting Instructions"});
-            this.comboBoxSearch.Location = new System.Drawing.Point(623, 690);
+            "ECMPS Emissions Reporting Instructions"});
+            this.comboBoxSearch.Location = new System.Drawing.Point(603, 690);
             this.comboBoxSearch.Name = "comboBoxSearch";
-            this.comboBoxSearch.Size = new System.Drawing.Size(145, 21);
+            this.comboBoxSearch.Size = new System.Drawing.Size(302, 21);
             this.comboBoxSearch.TabIndex = 132;
             this.toolTip1.SetToolTip(this.comboBoxSearch, "Select Full Regulation");
+            this.comboBoxSearch.SelectedIndexChanged += new System.EventHandler(this.comboBoxSearch_SelectedIndexChanged);
             this.comboBoxSearch.Enter += new System.EventHandler(this.comboBoxSearch_Enter);
             this.comboBoxSearch.Leave += new System.EventHandler(this.comboBoxSearch_Leave);
             // 
@@ -9127,7 +9109,6 @@ namespace CEMSStudyApp.Pages
         private Label label3;
         private Label label4;
         private ComboBox comboBoxSearch;
-        private Button buttonSearch;
         private TabPage tabPageHg;
         private Label label233;
         private Label label232;

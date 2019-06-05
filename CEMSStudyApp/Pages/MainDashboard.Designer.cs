@@ -750,7 +750,8 @@ namespace CEMSStudyApp.Pages
             "Part 60 Appendix B",
             "Part 60 Appendix F",
             "Part 63 Subpart UUUUU",
-            "ECMPS Emissions Reporting Instructions"});
+            "ECMPS Emissions Reporting Instructions",
+            "ECMPS QA Reporting Instructions"});
             this.comboBoxSearch.Location = new System.Drawing.Point(603, 690);
             this.comboBoxSearch.Name = "comboBoxSearch";
             this.comboBoxSearch.Size = new System.Drawing.Size(302, 21);
@@ -7387,7 +7388,7 @@ namespace CEMSStudyApp.Pages
             this.tabPageLME_HI.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageLME_HI.Size = new System.Drawing.Size(939, 514);
             this.tabPageLME_HI.TabIndex = 20;
-            this.tabPageLME_HI.Text = "LME - Heat Input";
+            this.tabPageLME_HI.Text = "LME Heat Input";
             // 
             // buttonTabLMEHIHourClear
             // 
@@ -7740,7 +7741,7 @@ namespace CEMSStudyApp.Pages
             this.tabPageLME_Mass.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageLME_Mass.Size = new System.Drawing.Size(939, 514);
             this.tabPageLME_Mass.TabIndex = 21;
-            this.tabPageLME_Mass.Text = "LME - Mass";
+            this.tabPageLME_Mass.Text = "LME Mass";
             // 
             // buttonTabLMEHourCo2Clear
             // 

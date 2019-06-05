@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\jamesb\Desktop\James\CEMS Study\1.1.0.5\</PublishUrl>
+    <PublishUrl>C:\Users\jamesb\Desktop\James\CEMS Study\1.1.0.6\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -26,7 +26,7 @@
     <UpdateUrl>//localhost/c%24/User/jamesb/Desktop/James/CEMS Study/</UpdateUrl>
     <ProductName>CEMS Study</ProductName>
     <PublisherName>James K. Buchanan</PublisherName>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <ExcludeDeploymentUrl>true</ExcludeDeploymentUrl>
@@ -55,7 +55,7 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icons8_factory_64_QmM_icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\icons8_factory_64_QmM_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>CEMSStudyApp.Program</StartupObject>
@@ -896,6 +896,7 @@
     <Content Include="Part75_Files\Part75_Field_Audit_Manual.pdf" />
     <Content Include="Part75_Files\Part75_Appendix_D.pdf" />
     <Content Include="Part75_Files\Ecmps_Emissions_Reporting_Instructions.pdf" />
+    <Content Include="Part75_Files\ECMPS_QA_Reporting_Instructions.pdf" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -273,7 +273,7 @@ namespace CEMSStudyApp.Pages
                 }
                 string exePath = Application.StartupPath + @"\" + folderName + @"\";
                 var fileName = dashboardDictionary[index].File_Location;
-                var path = exePath + fileName + ".pdf"; //PATH STRING
+                var path = exePath + fileName + ".pdf#toolbar=1&navpanes=0"; //PATH STRING
                 path = path.Replace(@"\", "/");
 
                 //GET PDF
@@ -1798,6 +1798,11 @@ namespace CEMSStudyApp.Pages
                 case 8:
                     isFullManualFunction = true;
                     searchIndex = 350;
+                    buttonPart75_Click(sender, e);
+                    break;
+                case 9:
+                    isFullManualFunction = true;
+                    searchIndex = 351;
                     buttonPart75_Click(sender, e);
                     break;
                 default:

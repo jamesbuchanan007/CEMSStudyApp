@@ -2919,11 +2919,11 @@ namespace CEMSStudyApp.Pages
             // 
             this.label46.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(732, 125);
+            this.label46.Location = new System.Drawing.Point(722, 125);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(75, 18);
+            this.label46.Size = new System.Drawing.Size(85, 18);
             this.label46.TabIndex = 82;
-            this.label46.Text = "Gas Flow = ";
+            this.label46.Text = "Stack Flow = ";
             // 
             // textBoxTabSO2GasF2GasFlow
             // 

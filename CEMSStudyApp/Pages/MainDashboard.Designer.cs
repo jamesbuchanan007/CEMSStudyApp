@@ -8901,6 +8901,7 @@ namespace CEMSStudyApp.Pages
             this.buttonTimeCopy.Text = "Copy";
             this.toolTip1.SetToolTip(this.buttonTimeCopy, "Copy To Clipboard");
             this.buttonTimeCopy.UseVisualStyleBackColor = false;
+            this.buttonTimeCopy.Click += new System.EventHandler(this.buttonTimeCopy_Click);
             // 
             // MainDashboard
             // 

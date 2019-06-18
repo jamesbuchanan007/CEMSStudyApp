@@ -1899,5 +1899,9 @@ namespace CEMSStudyApp.Pages
             textBoxHH1.Focus();
         }
 
+        private void buttonTimeCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(textBoxHourlyDecimal.ToString());
+        }
     }
 }

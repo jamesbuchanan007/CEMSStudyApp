@@ -8468,9 +8468,9 @@ namespace CEMSStudyApp.Pages
             this.label277.AutoSize = true;
             this.label277.Location = new System.Drawing.Point(458, 95);
             this.label277.Name = "label277";
-            this.label277.Size = new System.Drawing.Size(43, 15);
+            this.label277.Size = new System.Drawing.Size(58, 15);
             this.label277.TabIndex = 314;
-            this.label277.Text = "Date 2";
+            this.label277.Text = "Date End";
             // 
             // dateTimePicker2
             // 
@@ -8484,9 +8484,9 @@ namespace CEMSStudyApp.Pages
             this.label276.AutoSize = true;
             this.label276.Location = new System.Drawing.Point(239, 95);
             this.label276.Name = "label276";
-            this.label276.Size = new System.Drawing.Size(43, 15);
+            this.label276.Size = new System.Drawing.Size(61, 15);
             this.label276.TabIndex = 313;
-            this.label276.Text = "Date 1";
+            this.label276.Text = "Date Start";
             // 
             // dateTimePicker1
             // 

@@ -644,6 +644,38 @@ namespace CEMSStudyApp.Pages
             this.label269 = new System.Windows.Forms.Label();
             this.label270 = new System.Windows.Forms.Label();
             this.label271 = new System.Windows.Forms.Label();
+            this.tabTime = new System.Windows.Forms.TabPage();
+            this.textBoxHourlyDecimal = new System.Windows.Forms.TextBox();
+            this.label291 = new System.Windows.Forms.Label();
+            this.buttonTimeClear = new System.Windows.Forms.Button();
+            this.buttonTimeCalculate = new System.Windows.Forms.Button();
+            this.textBoxSeconds = new System.Windows.Forms.TextBox();
+            this.textBoxMinutes = new System.Windows.Forms.TextBox();
+            this.textBoxHours = new System.Windows.Forms.TextBox();
+            this.textBoxDays = new System.Windows.Forms.TextBox();
+            this.label290 = new System.Windows.Forms.Label();
+            this.label289 = new System.Windows.Forms.Label();
+            this.label288 = new System.Windows.Forms.Label();
+            this.label287 = new System.Windows.Forms.Label();
+            this.label284 = new System.Windows.Forms.Label();
+            this.label281 = new System.Windows.Forms.Label();
+            this.textBoxss2 = new System.Windows.Forms.TextBox();
+            this.label282 = new System.Windows.Forms.Label();
+            this.textBoxmm2 = new System.Windows.Forms.TextBox();
+            this.label283 = new System.Windows.Forms.Label();
+            this.textBoxHH2 = new System.Windows.Forms.TextBox();
+            this.label280 = new System.Windows.Forms.Label();
+            this.textBoxss1 = new System.Windows.Forms.TextBox();
+            this.label279 = new System.Windows.Forms.Label();
+            this.textBoxmm1 = new System.Windows.Forms.TextBox();
+            this.label278 = new System.Windows.Forms.Label();
+            this.textBoxHH1 = new System.Windows.Forms.TextBox();
+            this.label277 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label276 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox42 = new System.Windows.Forms.TextBox();
+            this.textBox44 = new System.Windows.Forms.TextBox();
             this.buttonPart75 = new System.Windows.Forms.Button();
             this.textBoxSectionHeading = new System.Windows.Forms.TextBox();
             this.buttonDefinitions = new System.Windows.Forms.Button();
@@ -668,6 +700,7 @@ namespace CEMSStudyApp.Pages
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.buttonTimeCopy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelFormulas.SuspendLayout();
             this.tabFormulasMain.SuspendLayout();
@@ -693,6 +726,7 @@ namespace CEMSStudyApp.Pages
             this.tabPageHg.SuspendLayout();
             this.tabPageLME_HI.SuspendLayout();
             this.tabPageLME_Mass.SuspendLayout();
+            this.tabTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -825,6 +859,7 @@ namespace CEMSStudyApp.Pages
             this.tabFormulasMain.Controls.Add(this.tabPageHg);
             this.tabFormulasMain.Controls.Add(this.tabPageLME_HI);
             this.tabFormulasMain.Controls.Add(this.tabPageLME_Mass);
+            this.tabFormulasMain.Controls.Add(this.tabTime);
             this.tabFormulasMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabFormulasMain.Location = new System.Drawing.Point(0, -3);
             this.tabFormulasMain.Name = "tabFormulasMain";
@@ -8153,6 +8188,340 @@ namespace CEMSStudyApp.Pages
             this.label271.TabIndex = 254;
             this.label271.Text = "E - Hourly NOx Mass (lb)";
             // 
+            // tabTime
+            // 
+            this.tabTime.Controls.Add(this.buttonTimeCopy);
+            this.tabTime.Controls.Add(this.textBoxHourlyDecimal);
+            this.tabTime.Controls.Add(this.label291);
+            this.tabTime.Controls.Add(this.buttonTimeClear);
+            this.tabTime.Controls.Add(this.buttonTimeCalculate);
+            this.tabTime.Controls.Add(this.textBoxSeconds);
+            this.tabTime.Controls.Add(this.textBoxMinutes);
+            this.tabTime.Controls.Add(this.textBoxHours);
+            this.tabTime.Controls.Add(this.textBoxDays);
+            this.tabTime.Controls.Add(this.label290);
+            this.tabTime.Controls.Add(this.label289);
+            this.tabTime.Controls.Add(this.label288);
+            this.tabTime.Controls.Add(this.label287);
+            this.tabTime.Controls.Add(this.label284);
+            this.tabTime.Controls.Add(this.label281);
+            this.tabTime.Controls.Add(this.textBoxss2);
+            this.tabTime.Controls.Add(this.label282);
+            this.tabTime.Controls.Add(this.textBoxmm2);
+            this.tabTime.Controls.Add(this.label283);
+            this.tabTime.Controls.Add(this.textBoxHH2);
+            this.tabTime.Controls.Add(this.label280);
+            this.tabTime.Controls.Add(this.textBoxss1);
+            this.tabTime.Controls.Add(this.label279);
+            this.tabTime.Controls.Add(this.textBoxmm1);
+            this.tabTime.Controls.Add(this.label278);
+            this.tabTime.Controls.Add(this.textBoxHH1);
+            this.tabTime.Controls.Add(this.label277);
+            this.tabTime.Controls.Add(this.dateTimePicker2);
+            this.tabTime.Controls.Add(this.label276);
+            this.tabTime.Controls.Add(this.dateTimePicker1);
+            this.tabTime.Controls.Add(this.textBox42);
+            this.tabTime.Controls.Add(this.textBox44);
+            this.tabTime.Location = new System.Drawing.Point(4, 24);
+            this.tabTime.Name = "tabTime";
+            this.tabTime.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTime.Size = new System.Drawing.Size(939, 514);
+            this.tabTime.TabIndex = 22;
+            this.tabTime.Text = "Time";
+            this.tabTime.UseVisualStyleBackColor = true;
+            // 
+            // textBoxHourlyDecimal
+            // 
+            this.textBoxHourlyDecimal.Location = new System.Drawing.Point(238, 312);
+            this.textBoxHourlyDecimal.Name = "textBoxHourlyDecimal";
+            this.textBoxHourlyDecimal.ReadOnly = true;
+            this.textBoxHourlyDecimal.Size = new System.Drawing.Size(91, 21);
+            this.textBoxHourlyDecimal.TabIndex = 335;
+            this.textBoxHourlyDecimal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label291
+            // 
+            this.label291.AutoSize = true;
+            this.label291.Location = new System.Drawing.Point(239, 294);
+            this.label291.Name = "label291";
+            this.label291.Size = new System.Drawing.Size(91, 15);
+            this.label291.TabIndex = 334;
+            this.label291.Text = "Hourly Decimal";
+            // 
+            // buttonTimeClear
+            // 
+            this.buttonTimeClear.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTimeClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTimeClear.BackColor = System.Drawing.Color.Firebrick;
+            this.buttonTimeClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTimeClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTimeClear.ForeColor = System.Drawing.Color.White;
+            this.buttonTimeClear.Location = new System.Drawing.Point(471, 308);
+            this.buttonTimeClear.Name = "buttonTimeClear";
+            this.buttonTimeClear.Size = new System.Drawing.Size(75, 30);
+            this.buttonTimeClear.TabIndex = 312;
+            this.buttonTimeClear.Text = "Clear";
+            this.buttonTimeClear.UseVisualStyleBackColor = false;
+            this.buttonTimeClear.Click += new System.EventHandler(this.buttonTimeClear_Click);
+            // 
+            // buttonTimeCalculate
+            // 
+            this.buttonTimeCalculate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonTimeCalculate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonTimeCalculate.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonTimeCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTimeCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTimeCalculate.ForeColor = System.Drawing.Color.White;
+            this.buttonTimeCalculate.Location = new System.Drawing.Point(589, 308);
+            this.buttonTimeCalculate.Name = "buttonTimeCalculate";
+            this.buttonTimeCalculate.Size = new System.Drawing.Size(75, 30);
+            this.buttonTimeCalculate.TabIndex = 311;
+            this.buttonTimeCalculate.Text = "Calculate";
+            this.buttonTimeCalculate.UseVisualStyleBackColor = false;
+            this.buttonTimeCalculate.Click += new System.EventHandler(this.buttonTimeCalculate_Click);
+            // 
+            // textBoxSeconds
+            // 
+            this.textBoxSeconds.Location = new System.Drawing.Point(455, 255);
+            this.textBoxSeconds.Name = "textBoxSeconds";
+            this.textBoxSeconds.ReadOnly = true;
+            this.textBoxSeconds.Size = new System.Drawing.Size(66, 21);
+            this.textBoxSeconds.TabIndex = 331;
+            this.textBoxSeconds.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxMinutes
+            // 
+            this.textBoxMinutes.Location = new System.Drawing.Point(383, 255);
+            this.textBoxMinutes.Name = "textBoxMinutes";
+            this.textBoxMinutes.ReadOnly = true;
+            this.textBoxMinutes.Size = new System.Drawing.Size(66, 21);
+            this.textBoxMinutes.TabIndex = 330;
+            this.textBoxMinutes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxHours
+            // 
+            this.textBoxHours.Location = new System.Drawing.Point(311, 255);
+            this.textBoxHours.Name = "textBoxHours";
+            this.textBoxHours.ReadOnly = true;
+            this.textBoxHours.Size = new System.Drawing.Size(66, 21);
+            this.textBoxHours.TabIndex = 329;
+            this.textBoxHours.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxDays
+            // 
+            this.textBoxDays.Location = new System.Drawing.Point(239, 255);
+            this.textBoxDays.Name = "textBoxDays";
+            this.textBoxDays.ReadOnly = true;
+            this.textBoxDays.Size = new System.Drawing.Size(66, 21);
+            this.textBoxDays.TabIndex = 328;
+            this.textBoxDays.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label290
+            // 
+            this.label290.AutoSize = true;
+            this.label290.Location = new System.Drawing.Point(462, 237);
+            this.label290.Name = "label290";
+            this.label290.Size = new System.Drawing.Size(55, 15);
+            this.label290.TabIndex = 325;
+            this.label290.Text = "Seconds";
+            // 
+            // label289
+            // 
+            this.label289.AutoSize = true;
+            this.label289.Location = new System.Drawing.Point(392, 237);
+            this.label289.Name = "label289";
+            this.label289.Size = new System.Drawing.Size(51, 15);
+            this.label289.TabIndex = 324;
+            this.label289.Text = "Minutes";
+            // 
+            // label288
+            // 
+            this.label288.AutoSize = true;
+            this.label288.Location = new System.Drawing.Point(324, 237);
+            this.label288.Name = "label288";
+            this.label288.Size = new System.Drawing.Size(40, 15);
+            this.label288.TabIndex = 323;
+            this.label288.Text = "Hours";
+            // 
+            // label287
+            // 
+            this.label287.AutoSize = true;
+            this.label287.Location = new System.Drawing.Point(255, 237);
+            this.label287.Name = "label287";
+            this.label287.Size = new System.Drawing.Size(34, 15);
+            this.label287.TabIndex = 322;
+            this.label287.Text = "Days";
+            // 
+            // label284
+            // 
+            this.label284.AutoSize = true;
+            this.label284.Location = new System.Drawing.Point(239, 217);
+            this.label284.Name = "label284";
+            this.label284.Size = new System.Drawing.Size(54, 15);
+            this.label284.TabIndex = 321;
+            this.label284.Text = "Duration";
+            // 
+            // label281
+            // 
+            this.label281.AutoSize = true;
+            this.label281.Location = new System.Drawing.Point(529, 141);
+            this.label281.Name = "label281";
+            this.label281.Size = new System.Drawing.Size(19, 15);
+            this.label281.TabIndex = 320;
+            this.label281.Text = "ss";
+            // 
+            // textBoxss2
+            // 
+            this.textBoxss2.Location = new System.Drawing.Point(526, 160);
+            this.textBoxss2.Name = "textBoxss2";
+            this.textBoxss2.Size = new System.Drawing.Size(28, 21);
+            this.textBoxss2.TabIndex = 310;
+            this.textBoxss2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label282
+            // 
+            this.label282.AutoSize = true;
+            this.label282.Location = new System.Drawing.Point(492, 141);
+            this.label282.Name = "label282";
+            this.label282.Size = new System.Drawing.Size(29, 15);
+            this.label282.TabIndex = 319;
+            this.label282.Text = "mm";
+            // 
+            // textBoxmm2
+            // 
+            this.textBoxmm2.Location = new System.Drawing.Point(492, 160);
+            this.textBoxmm2.Name = "textBoxmm2";
+            this.textBoxmm2.Size = new System.Drawing.Size(28, 21);
+            this.textBoxmm2.TabIndex = 309;
+            this.textBoxmm2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label283
+            // 
+            this.label283.AutoSize = true;
+            this.label283.Location = new System.Drawing.Point(460, 141);
+            this.label283.Name = "label283";
+            this.label283.Size = new System.Drawing.Size(25, 15);
+            this.label283.TabIndex = 318;
+            this.label283.Text = "HH";
+            // 
+            // textBoxHH2
+            // 
+            this.textBoxHH2.Location = new System.Drawing.Point(458, 160);
+            this.textBoxHH2.Name = "textBoxHH2";
+            this.textBoxHH2.Size = new System.Drawing.Size(28, 21);
+            this.textBoxHH2.TabIndex = 308;
+            this.textBoxHH2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label280
+            // 
+            this.label280.AutoSize = true;
+            this.label280.Location = new System.Drawing.Point(310, 141);
+            this.label280.Name = "label280";
+            this.label280.Size = new System.Drawing.Size(19, 15);
+            this.label280.TabIndex = 317;
+            this.label280.Text = "ss";
+            // 
+            // textBoxss1
+            // 
+            this.textBoxss1.Location = new System.Drawing.Point(307, 160);
+            this.textBoxss1.Name = "textBoxss1";
+            this.textBoxss1.Size = new System.Drawing.Size(28, 21);
+            this.textBoxss1.TabIndex = 306;
+            this.textBoxss1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label279
+            // 
+            this.label279.AutoSize = true;
+            this.label279.Location = new System.Drawing.Point(272, 141);
+            this.label279.Name = "label279";
+            this.label279.Size = new System.Drawing.Size(29, 15);
+            this.label279.TabIndex = 316;
+            this.label279.Text = "mm";
+            // 
+            // textBoxmm1
+            // 
+            this.textBoxmm1.Location = new System.Drawing.Point(273, 160);
+            this.textBoxmm1.Name = "textBoxmm1";
+            this.textBoxmm1.Size = new System.Drawing.Size(28, 21);
+            this.textBoxmm1.TabIndex = 305;
+            this.textBoxmm1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label278
+            // 
+            this.label278.AutoSize = true;
+            this.label278.Location = new System.Drawing.Point(242, 141);
+            this.label278.Name = "label278";
+            this.label278.Size = new System.Drawing.Size(25, 15);
+            this.label278.TabIndex = 315;
+            this.label278.Text = "HH";
+            // 
+            // textBoxHH1
+            // 
+            this.textBoxHH1.Location = new System.Drawing.Point(239, 160);
+            this.textBoxHH1.Name = "textBoxHH1";
+            this.textBoxHH1.Size = new System.Drawing.Size(28, 21);
+            this.textBoxHH1.TabIndex = 304;
+            this.textBoxHH1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label277
+            // 
+            this.label277.AutoSize = true;
+            this.label277.Location = new System.Drawing.Point(458, 95);
+            this.label277.Name = "label277";
+            this.label277.Size = new System.Drawing.Size(43, 15);
+            this.label277.TabIndex = 314;
+            this.label277.Text = "Date 2";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(458, 114);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 21);
+            this.dateTimePicker2.TabIndex = 307;
+            // 
+            // label276
+            // 
+            this.label276.AutoSize = true;
+            this.label276.Location = new System.Drawing.Point(239, 95);
+            this.label276.Name = "label276";
+            this.label276.Size = new System.Drawing.Size(43, 15);
+            this.label276.TabIndex = 313;
+            this.label276.Text = "Date 1";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(239, 114);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
+            this.dateTimePicker1.TabIndex = 303;
+            // 
+            // textBox42
+            // 
+            this.textBox42.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox42.BackColor = System.Drawing.Color.Blue;
+            this.textBox42.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox42.ForeColor = System.Drawing.Color.White;
+            this.textBox42.Location = new System.Drawing.Point(6, 7);
+            this.textBox42.Name = "textBox42";
+            this.textBox42.ReadOnly = true;
+            this.textBox42.Size = new System.Drawing.Size(927, 29);
+            this.textBox42.TabIndex = 302;
+            this.textBox42.Text = "Time Duration Calculator and Hourly Converter";
+            this.textBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox44
+            // 
+            this.textBox44.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox44.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.textBox44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox44.ForeColor = System.Drawing.Color.White;
+            this.textBox44.Location = new System.Drawing.Point(239, 55);
+            this.textBox44.Name = "textBox44";
+            this.textBox44.ReadOnly = true;
+            this.textBox44.Size = new System.Drawing.Size(419, 22);
+            this.textBox44.TabIndex = 299;
+            this.textBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // buttonPart75
             // 
             this.buttonPart75.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -8519,6 +8888,20 @@ namespace CEMSStudyApp.Pages
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // buttonTimeCopy
+            // 
+            this.buttonTimeCopy.BackColor = System.Drawing.Color.Green;
+            this.buttonTimeCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTimeCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTimeCopy.ForeColor = System.Drawing.Color.White;
+            this.buttonTimeCopy.Location = new System.Drawing.Point(238, 340);
+            this.buttonTimeCopy.Name = "buttonTimeCopy";
+            this.buttonTimeCopy.Size = new System.Drawing.Size(44, 23);
+            this.buttonTimeCopy.TabIndex = 336;
+            this.buttonTimeCopy.Text = "Copy";
+            this.toolTip1.SetToolTip(this.buttonTimeCopy, "Copy To Clipboard");
+            this.buttonTimeCopy.UseVisualStyleBackColor = false;
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -8581,6 +8964,8 @@ namespace CEMSStudyApp.Pages
             this.tabPageLME_HI.PerformLayout();
             this.tabPageLME_Mass.ResumeLayout(false);
             this.tabPageLME_Mass.PerformLayout();
+            this.tabTime.ResumeLayout(false);
+            this.tabTime.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -9224,5 +9609,38 @@ namespace CEMSStudyApp.Pages
         private Label label273;
         private Label label274;
         private Label label275;
+        private TabPage tabTime;
+        private Label label277;
+        private DateTimePicker dateTimePicker2;
+        private Label label276;
+        private DateTimePicker dateTimePicker1;
+        private TextBox textBox42;
+        private TextBox textBox44;
+        private TextBox textBoxHourlyDecimal;
+        private Label label291;
+        private Button buttonTimeClear;
+        private Button buttonTimeCalculate;
+        private TextBox textBoxSeconds;
+        private TextBox textBoxMinutes;
+        private TextBox textBoxHours;
+        private TextBox textBoxDays;
+        private Label label290;
+        private Label label289;
+        private Label label288;
+        private Label label287;
+        private Label label284;
+        private Label label281;
+        private TextBox textBoxss2;
+        private Label label282;
+        private TextBox textBoxmm2;
+        private Label label283;
+        private TextBox textBoxHH2;
+        private Label label280;
+        private TextBox textBoxss1;
+        private Label label279;
+        private TextBox textBoxmm1;
+        private Label label278;
+        private TextBox textBoxHH1;
+        private Button buttonTimeCopy;
     }
 }

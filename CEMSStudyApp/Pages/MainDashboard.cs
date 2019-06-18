@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Deployment.Application;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 using CEMSStudyApp.Models;
 using CEMSStudyApp.Properties;
@@ -351,6 +352,9 @@ namespace CEMSStudyApp.Pages
                     break;
                 case 21:
                     tabFormulasMain.SelectTab(tabSO2Oil);
+                    break;
+                case 22:
+                    tabFormulasMain.SelectTab(tabTime);
                     break;
 
             }
@@ -1813,5 +1817,87 @@ namespace CEMSStudyApp.Pages
             }
             isFullManualFunction = false;
         }
+
+        private void buttonTimeCalculate_Click(object sender, EventArgs e)
+        {
+            var dateYear1 = dateTimePicker1.Value.Year;
+            var dateMonth1 = dateTimePicker1.Value.Month;
+            var dateDay1 = dateTimePicker1.Value.Day;
+
+            var dateYear2 = dateTimePicker2.Value.Year;
+            var dateMonth2 = dateTimePicker2.Value.Month;
+            var dateDay2 = dateTimePicker2.Value.Day;
+
+            IsEmpty(textBoxHH1);
+            var isValidHour1 = int.TryParse(textBoxHH1.Text, out var hour1);
+            IsValid(isValidHour1, textBoxHH1);
+
+            IsEmpty(textBoxmm1);
+            var isValidMinute1 = int.TryParse(textBoxmm1.Text, out var minute1);
+            IsValid(isValidMinute1,textBoxmm1);
+
+            IsEmpty(textBoxss1);
+            var isValidSecond1 = int.TryParse(textBoxss1.Text, out var second1);
+            IsValid(isValidSecond1,textBoxss1);
+
+            IsEmpty(textBoxHH2);
+            var isValidHour2 = int.TryParse(textBoxHH2.Text, out var hour2);
+            IsValid(isValidHour2,textBoxHH2);
+
+            IsEmpty(textBoxmm2);
+            var isValidMinute2 = int.TryParse(textBoxmm2.Text, out var minute2);
+            IsValid(isValidMinute2,textBoxmm2);
+
+            IsEmpty(textBoxss2);
+            var isValidSecond2 = int.TryParse(textBoxss2.Text, out var second2);
+            IsValid(isValidSecond2,textBoxss2);
+
+            DateTime formatedDate1 = new DateTime(dateYear1,dateMonth1,dateDay1,hour1,minute1,second1);
+            DateTime formatedDate2 = new DateTime(dateYear2,dateMonth2,dateDay2,hour2,minute2,second2);
+
+            var difference = formatedDate2.Subtract(formatedDate1);
+            textBoxDays.Text = difference.Days.ToString();
+            textBoxHours.Text = difference.Hours.ToString();
+            textBoxMinutes.Text = difference.Minutes.ToString();
+            textBoxSeconds.Text = difference.Seconds.ToString();
+
+            textBoxHourlyDecimal.Text = $@"{difference.TotalHours:F2}";
+
+        }
+
+        private void IsEmpty(TextBox textBoxObject)
+        {
+            if (string.IsNullOrEmpty(textBoxObject.Text)) textBoxObject.Text = "0";
+        }
+
+        private void IsValid(bool isValidObject, TextBox textBox)
+        {
+            if (!isValidObject)
+            {
+                MessageBox.Show("Must Be A Number", "CEMS Study", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                textBox.Clear();
+                textBox.Focus();
+            }
+        }
+
+        private void buttonTimeClear_Click(object sender, EventArgs e)
+        {
+            dateTimePicker1.Value = DateTime.Today;
+            dateTimePicker2.Value = DateTime.Today;
+            textBoxHH1.Clear();
+            textBoxHH2.Clear();
+            textBoxmm1.Clear();
+            textBoxmm2.Clear();
+            textBoxss1.Clear();
+            textBoxss2.Clear();
+            textBoxDays.Clear();
+            textBoxHours.Clear();
+            textBoxMinutes.Clear();
+            textBoxSeconds.Clear();
+            textBoxHourlyDecimal.Clear();
+
+            textBoxHH1.Focus();
+        }
+
     }
 }

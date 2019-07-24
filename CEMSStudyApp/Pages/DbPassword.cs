@@ -55,6 +55,50 @@ namespace CEMSStudyApp.Pages
                     return;
                 }
 
+                //ADD ACRONYMS
+                var openAcronyms = MessageBox.Show("Add Acronyms?", "CEMS Study", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (openAcronyms == DialogResult.Yes)
+                {
+                    Hide();
+                    pw.Hide();
+                    var rpl = new AddAcronyms();
+                    rpl.Show();
+                    rpl.TopMost = true;
+                    return;
+                }
+
+
+                //ADD DEFINITIONS
+                var openDefinitions = MessageBox.Show("Add Definitions", "CEMS Study", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (openDefinitions == DialogResult.Yes)
+                {
+                    Hide();
+                    pw.Hide();
+                    var rpl = new AddDefinitions();
+                    rpl.Show();
+                    rpl.TopMost = true;
+                    return;
+                }
+
+
+                //ADD UNITS OF MEASURE
+                var openUoM = MessageBox.Show("Add Units of Measure?", "CEMS Study", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (openUoM == DialogResult.Yes)
+                {
+                    Hide();
+                    pw.Hide();
+                    var rpl = new AddUnitsofMeasure();
+                    rpl.Show();
+                    rpl.TopMost = true;
+                    return;
+                }
+
                 //DEFAULTS BACK TO PASSWORD SCREEN
                 Hide();
                 PasswordsLogin passwordsLoginl = new PasswordsLogin();

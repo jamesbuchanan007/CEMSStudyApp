@@ -26,7 +26,7 @@
     <UpdateUrl>//localhost/c%24/User/jamesb/Desktop/James/CEMS Study/</UpdateUrl>
     <ProductName>CEMS Study</ProductName>
     <PublisherName>James K. Buchanan</PublisherName>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>23</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -815,7 +815,7 @@
     <Content Include="Part60_Files\App_B_Complete.pdf" />
     <Content Include="Part60_Files\App_F_Complete.pdf" />
     <Content Include="Part63_Files\Part63_S_U_63_Complete.pdf" />
-    <Content Include="Part75_Files\Part75_Full_Manual.pdf" />
+    <Content Include="Part75_Files\Part75_Emissions_Monitoring_Policy.pdf" />
     <Content Include="Part75_PlainEnglish_Files\Part75_PE_Full_Manual.pdf" />
     <Content Include="Prism_Files\Prism_1.1.pdf" />
     <Content Include="Prism_Files\Prism_1.2.pdf" />
@@ -934,6 +934,7 @@
     <Content Include="Part75_Files\Part75_Appendix_D.pdf" />
     <Content Include="Part75_Files\Ecmps_Emissions_Reporting_Instructions.pdf" />
     <Content Include="Part75_Files\ECMPS_QA_Reporting_Instructions.pdf" />
+    <Content Include="Part75_Files\Part_75.pdf" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

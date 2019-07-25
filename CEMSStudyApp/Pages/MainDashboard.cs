@@ -210,6 +210,7 @@ namespace CEMSStudyApp.Pages
                 {
                     //ENABLE STUDYING OF ACRONYMS, FORMULAS, AND UNITS OF MEASURE PRIOR TO SEEING ANSWER
                     case "Acronyms":
+                    case "Chemical Compounds and Elements":
                     case "Units of Measure":
                     case "Part 60 - Appendix B":
                     case "Part 60 - Appendix F":
@@ -1765,46 +1766,51 @@ namespace CEMSStudyApp.Pages
             switch (searchRegIndex)
             {
                 case 1:
-                    searchIndex = 347;
+                    searchIndex = 352;
                     isFullManualFunction = true;
                     buttonPart75_Click(sender, e);
                     break;
                 case 2:
-                    searchIndex = 349;
+                    searchIndex = 347;
                     isFullManualFunction = true;
                     buttonPart75_Click(sender, e);
                     break;
                 case 3:
+                    searchIndex = 349;
+                    isFullManualFunction = true;
+                    buttonPart75_Click(sender, e);
+                    break;
+                case 4:
                     isFullManualFunction = true;
                     searchIndex = 118;
                     buttonPart75PlainEnglish_Click(sender, e);
                     break;
-                case 4:
+                case 5:
                     isFullManualFunction = true;
                     searchIndex = 348;
                     buttonPart75_Click(sender, e);
                     break;
-                case 5:
+                case 6:
                     isFullManualFunction = true;
                     searchIndex = 114;
                     button60AppBF_Click(sender, e);
                     break;
-                case 6:
+                case 7:
                     isFullManualFunction = true;
                     searchIndex = 115;
                     button60AppBF_Click(sender, e);
                     break;
-                case 7:
+                case 8:
                     isFullManualFunction = true;
                     searchIndex = 37;
                     buttonPart63SubUUUUU_Click(sender, e);
                     break;
-                case 8:
+                case 9:
                     isFullManualFunction = true;
                     searchIndex = 350;
                     buttonPart75_Click(sender, e);
                     break;
-                case 9:
+                case 10:
                     isFullManualFunction = true;
                     searchIndex = 351;
                     buttonPart75_Click(sender, e);
@@ -1834,26 +1840,26 @@ namespace CEMSStudyApp.Pages
 
             IsEmpty(textBoxmm1);
             var isValidMinute1 = int.TryParse(textBoxmm1.Text, out var minute1);
-            IsValid(isValidMinute1,textBoxmm1);
+            IsValid(isValidMinute1, textBoxmm1);
 
             IsEmpty(textBoxss1);
             var isValidSecond1 = int.TryParse(textBoxss1.Text, out var second1);
-            IsValid(isValidSecond1,textBoxss1);
+            IsValid(isValidSecond1, textBoxss1);
 
             IsEmpty(textBoxHH2);
             var isValidHour2 = int.TryParse(textBoxHH2.Text, out var hour2);
-            IsValid(isValidHour2,textBoxHH2);
+            IsValid(isValidHour2, textBoxHH2);
 
             IsEmpty(textBoxmm2);
             var isValidMinute2 = int.TryParse(textBoxmm2.Text, out var minute2);
-            IsValid(isValidMinute2,textBoxmm2);
+            IsValid(isValidMinute2, textBoxmm2);
 
             IsEmpty(textBoxss2);
             var isValidSecond2 = int.TryParse(textBoxss2.Text, out var second2);
-            IsValid(isValidSecond2,textBoxss2);
+            IsValid(isValidSecond2, textBoxss2);
 
-            DateTime formatedDate1 = new DateTime(dateYear1,dateMonth1,dateDay1,hour1,minute1,second1);
-            DateTime formatedDate2 = new DateTime(dateYear2,dateMonth2,dateDay2,hour2,minute2,second2);
+            DateTime formatedDate1 = new DateTime(dateYear1, dateMonth1, dateDay1, hour1, minute1, second1);
+            DateTime formatedDate2 = new DateTime(dateYear2, dateMonth2, dateDay2, hour2, minute2, second2);
 
             var difference = formatedDate2.Subtract(formatedDate1);
             textBoxDays.Text = difference.Days.ToString();
@@ -1902,6 +1908,13 @@ namespace CEMSStudyApp.Pages
         private void buttonTimeCopy_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(textBoxHourlyDecimal.Text);
+        }
+
+        private void buttonChemicalFormulas_Click(object sender, EventArgs e)
+        {
+            var dataSet = LoadTable("ChemicalFormulas_View");
+            folderName = "";
+            LoadDashboardViewModel(dataSet, "Name", "Name", "", "Description");
         }
     }
 }

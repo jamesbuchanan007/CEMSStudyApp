@@ -645,6 +645,7 @@ namespace CEMSStudyApp.Pages
             this.label270 = new System.Windows.Forms.Label();
             this.label271 = new System.Windows.Forms.Label();
             this.tabTime = new System.Windows.Forms.TabPage();
+            this.buttonTimeCopy = new System.Windows.Forms.Button();
             this.textBoxHourlyDecimal = new System.Windows.Forms.TextBox();
             this.label291 = new System.Windows.Forms.Label();
             this.buttonTimeClear = new System.Windows.Forms.Button();
@@ -690,7 +691,7 @@ namespace CEMSStudyApp.Pages
             this.buttonPart75PlainEnglish = new System.Windows.Forms.Button();
             this.buttonPart63SubUUUUU = new System.Windows.Forms.Button();
             this.button60AppBF = new System.Windows.Forms.Button();
-            this.buttonHowTos = new System.Windows.Forms.Button();
+            this.buttonChemicalFormulas = new System.Windows.Forms.Button();
             this.buttonFormulas = new System.Windows.Forms.Button();
             this.buttonAcronyms = new System.Windows.Forms.Button();
             this.webBrowserPdf = new System.Windows.Forms.WebBrowser();
@@ -700,7 +701,6 @@ namespace CEMSStudyApp.Pages
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.buttonTimeCopy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelFormulas.SuspendLayout();
             this.tabFormulasMain.SuspendLayout();
@@ -755,7 +755,7 @@ namespace CEMSStudyApp.Pages
             this.panel1.Controls.Add(this.buttonPart75PlainEnglish);
             this.panel1.Controls.Add(this.buttonPart63SubUUUUU);
             this.panel1.Controls.Add(this.button60AppBF);
-            this.panel1.Controls.Add(this.buttonHowTos);
+            this.panel1.Controls.Add(this.buttonChemicalFormulas);
             this.panel1.Controls.Add(this.buttonFormulas);
             this.panel1.Controls.Add(this.buttonAcronyms);
             this.panel1.Controls.Add(this.webBrowserPdf);
@@ -778,6 +778,7 @@ namespace CEMSStudyApp.Pages
             this.comboBoxSearch.Items.AddRange(new object[] {
             "Select Regulation",
             "Part 75",
+            "Part 75 Emissions Monitoring Policy",
             "Part 75 Appendix D",
             "Part 75 Plain English Guide",
             "Part 75 Field Audit Manual",
@@ -8230,6 +8231,21 @@ namespace CEMSStudyApp.Pages
             this.tabTime.Text = "Time";
             this.tabTime.UseVisualStyleBackColor = true;
             // 
+            // buttonTimeCopy
+            // 
+            this.buttonTimeCopy.BackColor = System.Drawing.Color.Green;
+            this.buttonTimeCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTimeCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTimeCopy.ForeColor = System.Drawing.Color.White;
+            this.buttonTimeCopy.Location = new System.Drawing.Point(238, 340);
+            this.buttonTimeCopy.Name = "buttonTimeCopy";
+            this.buttonTimeCopy.Size = new System.Drawing.Size(44, 23);
+            this.buttonTimeCopy.TabIndex = 336;
+            this.buttonTimeCopy.Text = "Copy";
+            this.toolTip1.SetToolTip(this.buttonTimeCopy, "Copy To Clipboard");
+            this.buttonTimeCopy.UseVisualStyleBackColor = false;
+            this.buttonTimeCopy.Click += new System.EventHandler(this.buttonTimeCopy_Click);
+            // 
             // textBoxHourlyDecimal
             // 
             this.textBoxHourlyDecimal.Location = new System.Drawing.Point(238, 312);
@@ -8740,22 +8756,22 @@ namespace CEMSStudyApp.Pages
             this.button60AppBF.UseVisualStyleBackColor = false;
             this.button60AppBF.Click += new System.EventHandler(this.button60AppBF_Click);
             // 
-            // buttonHowTos
+            // buttonChemicalFormulas
             // 
-            this.buttonHowTos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonHowTos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonHowTos.BackColor = System.Drawing.Color.Blue;
-            this.buttonHowTos.Enabled = false;
-            this.buttonHowTos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHowTos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHowTos.ForeColor = System.Drawing.Color.White;
-            this.buttonHowTos.Location = new System.Drawing.Point(43, 448);
-            this.buttonHowTos.Name = "buttonHowTos";
-            this.buttonHowTos.Size = new System.Drawing.Size(110, 42);
-            this.buttonHowTos.TabIndex = 4;
-            this.buttonHowTos.Text = "How To\'s";
-            this.toolTip1.SetToolTip(this.buttonHowTos, "\'How To\' Documentation");
-            this.buttonHowTos.UseVisualStyleBackColor = false;
+            this.buttonChemicalFormulas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonChemicalFormulas.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonChemicalFormulas.BackColor = System.Drawing.Color.Blue;
+            this.buttonChemicalFormulas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonChemicalFormulas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonChemicalFormulas.ForeColor = System.Drawing.Color.White;
+            this.buttonChemicalFormulas.Location = new System.Drawing.Point(43, 448);
+            this.buttonChemicalFormulas.Name = "buttonChemicalFormulas";
+            this.buttonChemicalFormulas.Size = new System.Drawing.Size(110, 42);
+            this.buttonChemicalFormulas.TabIndex = 4;
+            this.buttonChemicalFormulas.Text = "Compounds / Elements";
+            this.toolTip1.SetToolTip(this.buttonChemicalFormulas, "\'How To\' Documentation");
+            this.buttonChemicalFormulas.UseVisualStyleBackColor = false;
+            this.buttonChemicalFormulas.Click += new System.EventHandler(this.buttonChemicalFormulas_Click);
             // 
             // buttonFormulas
             // 
@@ -8769,7 +8785,7 @@ namespace CEMSStudyApp.Pages
             this.buttonFormulas.Name = "buttonFormulas";
             this.buttonFormulas.Size = new System.Drawing.Size(110, 42);
             this.buttonFormulas.TabIndex = 3;
-            this.buttonFormulas.Text = "Formulas";
+            this.buttonFormulas.Text = "Formulas / Equations";
             this.toolTip1.SetToolTip(this.buttonFormulas, "Formulas");
             this.buttonFormulas.UseVisualStyleBackColor = false;
             this.buttonFormulas.Click += new System.EventHandler(this.buttonFormulas_Click);
@@ -8888,21 +8904,6 @@ namespace CEMSStudyApp.Pages
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
-            // buttonTimeCopy
-            // 
-            this.buttonTimeCopy.BackColor = System.Drawing.Color.Green;
-            this.buttonTimeCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTimeCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTimeCopy.ForeColor = System.Drawing.Color.White;
-            this.buttonTimeCopy.Location = new System.Drawing.Point(238, 340);
-            this.buttonTimeCopy.Name = "buttonTimeCopy";
-            this.buttonTimeCopy.Size = new System.Drawing.Size(44, 23);
-            this.buttonTimeCopy.TabIndex = 336;
-            this.buttonTimeCopy.Text = "Copy";
-            this.toolTip1.SetToolTip(this.buttonTimeCopy, "Copy To Clipboard");
-            this.buttonTimeCopy.UseVisualStyleBackColor = false;
-            this.buttonTimeCopy.Click += new System.EventHandler(this.buttonTimeCopy_Click);
-            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -8988,7 +8989,7 @@ namespace CEMSStudyApp.Pages
         private Button buttonPart75PlainEnglish;
         private Button buttonPart63SubUUUUU;
         private Button button60AppBF;
-        private Button buttonHowTos;
+        private Button buttonChemicalFormulas;
         private Button buttonFormulas;
         private Button buttonAcronyms;
         private WebBrowser webBrowserPdf;

@@ -8768,7 +8768,7 @@ namespace CEMSStudyApp.Pages
             this.buttonChemicalFormulas.Name = "buttonChemicalFormulas";
             this.buttonChemicalFormulas.Size = new System.Drawing.Size(110, 42);
             this.buttonChemicalFormulas.TabIndex = 4;
-            this.buttonChemicalFormulas.Text = "Compounds / Elements";
+            this.buttonChemicalFormulas.Text = "Elements and Gas Types";
             this.toolTip1.SetToolTip(this.buttonChemicalFormulas, "\'How To\' Documentation");
             this.buttonChemicalFormulas.UseVisualStyleBackColor = false;
             this.buttonChemicalFormulas.Click += new System.EventHandler(this.buttonChemicalFormulas_Click);

@@ -764,7 +764,7 @@ namespace CEMSStudyApp.Pages
             this.panel1.Controls.Add(this.buttonToggle);
             this.panel1.Controls.Add(this.buttonNext);
             this.panel1.Controls.Add(this.buttonBack);
-            this.panel1.Location = new System.Drawing.Point(17, 13);
+            this.panel1.Location = new System.Drawing.Point(16, 13);
             this.panel1.MinimumSize = new System.Drawing.Size(1193, 729);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1193, 729);
@@ -8909,14 +8909,15 @@ namespace CEMSStudyApp.Pages
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
-            this.ClientSize = new System.Drawing.Size(1227, 760);
+            this.ClientSize = new System.Drawing.Size(1224, 760);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1240, 799);
+            this.MinimizeBox = false;
             this.Name = "MainDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

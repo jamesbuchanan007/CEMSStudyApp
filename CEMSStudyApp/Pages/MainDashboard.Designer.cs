@@ -8920,7 +8920,7 @@ namespace CEMSStudyApp.Pages
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1240, 799);
-            this.MinimizeBox = false;
+            this.MinimizeBox = true;
             this.Name = "MainDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CEMS Study App";

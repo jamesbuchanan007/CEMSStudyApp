@@ -1937,7 +1937,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonChemicalFormulas_Click(object sender, EventArgs e)
         {
-            var dataSet = LoadTable("ChemicalFormulas_View");
+            var dataSet = LoadTable("ChemicalCompounds_View");
             folderName = "";
             LoadDashboardViewModel(dataSet, "Name", "Name", "", "Description");
         }

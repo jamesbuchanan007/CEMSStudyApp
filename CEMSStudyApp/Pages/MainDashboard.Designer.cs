@@ -777,7 +777,7 @@ namespace CEMSStudyApp.Pages
             this.comboBoxSearch.FormattingEnabled = true;
             this.comboBoxSearch.Items.AddRange(new object[] {
             "Select Regulation",
-            "Part 75 Continuous Emission Monitorin",
+            "Part 75 Continuous Emission Monitoring",
             "Part 75 Emissions Monitoring Policy",
             "Part 75 Plain English Guide",
             "Part 75 Appendix D",
@@ -786,6 +786,7 @@ namespace CEMSStudyApp.Pages
             "Part 60 Appendix F",
             "Part 63 Subpart UUUUU",
             "ECMPS Emissions Reporting Instructions",
+            "ECMPS Monitoring Plan Reporting Instructions",
             "ECMPS QA Reporting Instructions",
             "ECMPS MATS Transition PDF Reporting Instructions",
             "ECMPS Reporting Guidance for the GHG-MRR",

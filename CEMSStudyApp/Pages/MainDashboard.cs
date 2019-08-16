@@ -1766,7 +1766,7 @@ namespace CEMSStudyApp.Pages
             switch (searchRegIndex)
             {
                 case 1:
-                    searchIndex = 353;
+                    searchIndex = 352;
                     isFullManualFunction = true;
                     buttonPart75_Click(sender, e);
                     break;
@@ -1776,14 +1776,14 @@ namespace CEMSStudyApp.Pages
                     buttonPart75_Click(sender, e);
                     break;
                 case 3:
-                    searchIndex = 349;
-                    isFullManualFunction = true;
-                    buttonPart75_Click(sender, e);
-                    break;
-                case 4:
                     isFullManualFunction = true;
                     searchIndex = 118;
                     buttonPart75PlainEnglish_Click(sender, e);
+                    break;
+                case 4:
+                    searchIndex = 349;
+                    isFullManualFunction = true;
+                    buttonPart75_Click(sender, e);
                     break;
                 case 5:
                     isFullManualFunction = true;
@@ -1812,7 +1812,32 @@ namespace CEMSStudyApp.Pages
                     break;
                 case 10:
                     isFullManualFunction = true;
+                    searchIndex = 354;
+                    buttonPart75_Click(sender, e);
+                    break;
+                case 11:
+                    isFullManualFunction = true;
                     searchIndex = 351;
+                    buttonPart75_Click(sender, e);
+                    break;
+                case 12:
+                    isFullManualFunction = true;
+                    searchIndex = 353;
+                    buttonPart75_Click(sender, e);
+                    break;
+                case 13:
+                    isFullManualFunction = true;
+                    searchIndex = 355;
+                    buttonPart75_Click(sender, e);
+                    break;
+                case 14:
+                    isFullManualFunction = true;
+                    searchIndex = 356;
+                    buttonPart75_Click(sender, e);
+                    break;
+                case 15:
+                    isFullManualFunction = true;
+                    searchIndex = 357;
                     buttonPart75_Click(sender, e);
                     break;
                 default:

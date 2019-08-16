@@ -26,8 +26,9 @@ namespace CEMSStudyApp.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\CEMS_Study_Ap" +
-            "p_db.mdf;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\jamesb.SPECTRUMSYSTE" +
+            "MS\\source\\repos\\CEMSStudyApp\\CEMSStudyApp\\CEMS_Study_App.mdf;Integrated Security" +
+            "=True")]
         public string LocalDb {
             get {
                 return ((string)(this["LocalDb"]));

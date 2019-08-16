@@ -777,16 +777,21 @@ namespace CEMSStudyApp.Pages
             this.comboBoxSearch.FormattingEnabled = true;
             this.comboBoxSearch.Items.AddRange(new object[] {
             "Select Regulation",
-            "Part 75",
+            "Part 75 Continuous Emission Monitorin",
             "Part 75 Emissions Monitoring Policy",
-            "Part 75 Appendix D",
             "Part 75 Plain English Guide",
-            "Part 75 Field Audit Manual",
+            "Part 75 Appendix D",
+            "Part 75 CEMS Field Audit Manual",
             "Part 60 Appendix B",
             "Part 60 Appendix F",
             "Part 63 Subpart UUUUU",
             "ECMPS Emissions Reporting Instructions",
-            "ECMPS QA Reporting Instructions"});
+            "ECMPS QA Reporting Instructions",
+            "ECMPS MATS Transition PDF Reporting Instructions",
+            "ECMPS Reporting Guidance for the GHG-MRR",
+            "ECMPS Reporting Requirements Related to the Amendments to the PGVP and Minimum Competency Requirements for Air Emissions Testing",
+            "ECMPS Guidance and Reporting Instructions on Temporary E-reporting for the MATS Rule",
+            });
             this.comboBoxSearch.Location = new System.Drawing.Point(603, 690);
             this.comboBoxSearch.Name = "comboBoxSearch";
             this.comboBoxSearch.Size = new System.Drawing.Size(302, 21);

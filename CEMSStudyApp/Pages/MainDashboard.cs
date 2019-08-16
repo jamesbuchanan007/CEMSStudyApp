@@ -106,7 +106,7 @@ namespace CEMSStudyApp.Pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Can not open connection !! ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Can not open connection !! " + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             return ds;
@@ -1766,7 +1766,7 @@ namespace CEMSStudyApp.Pages
             switch (searchRegIndex)
             {
                 case 1:
-                    searchIndex = 352;
+                    searchIndex = 353;
                     isFullManualFunction = true;
                     buttonPart75_Click(sender, e);
                     break;

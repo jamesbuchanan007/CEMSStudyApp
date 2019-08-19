@@ -155,6 +155,7 @@ namespace CEMSStudyApp.Pages
             // buttonUpdate
             // 
             this.buttonUpdate.BackColor = System.Drawing.Color.Blue;
+            this.buttonUpdate.Enabled = false;
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdate.ForeColor = System.Drawing.Color.White;
             this.buttonUpdate.Location = new System.Drawing.Point(100, 268);

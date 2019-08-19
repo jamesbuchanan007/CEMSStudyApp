@@ -487,7 +487,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonUnitsOfMeasure_Click(object sender, EventArgs e)
         {
-            var dataSet = LoadTable("UnitsOfMeasure_View");
+            var dataSet = LoadTable("UnitOfMeasure_View");
             folderName = "";
             LoadDashboardViewModel(dataSet, "UnitOfMeasure_Name", "UnitOfMeasure_Name", "", "UnitOfMeasure_Description");
         }
@@ -505,7 +505,7 @@ namespace CEMSStudyApp.Pages
 
         private void buttonPart75_Click(object sender, EventArgs e)
         {
-            var dataSet = LoadTable("Part75");
+            var dataSet = LoadTable("Part75_View");
             folderName = "Part75_Files";
             LoadDashboardViewModel(dataSet, "Part75_Section_Number", "Part_75_Question_Number", "File_Location", "");
         }

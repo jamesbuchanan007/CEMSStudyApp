@@ -14,7 +14,7 @@ namespace CEMSStudyApp.Pages
         {
             if (e.KeyChar == (char) Keys.Enter)
             {
-                var password = "prism";
+                var password = "spectrum";
                 
                 if (textBoxPassword.Text != password)
                 {

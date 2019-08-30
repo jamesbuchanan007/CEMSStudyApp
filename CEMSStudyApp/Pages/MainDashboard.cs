@@ -492,14 +492,14 @@ namespace CEMSStudyApp.Pages
 
         private void button60AppBF_Click(object sender, EventArgs e)
         {
-            var dataSet = LoadTable("Part60_Appendix");
+            var dataSet = LoadTable("Part60View");
             folderName = "Part60_Files";
             LoadDashboardViewModel(dataSet, "Part60_Appendix_Name", "Part60_Appendix_Number", "Part60_Appendix_FileLocation", "");
         }
 
         private void buttonPart75PlainEnglish_Click(object sender, EventArgs e)
         {
-            var dataSet = LoadTable("Part75New");
+            var dataSet = LoadTable("Part75PEView");
             folderName = "Part75_PlainEnglish_Files";
             LoadDashboardViewModel(dataSet, "Part75_PE_SectionNumber", "Part75_PE_SectionName", "Part75_PE_FileLocation", "");
         }
@@ -1803,7 +1803,7 @@ namespace CEMSStudyApp.Pages
                     break;
                 case 3:
                     isFullManualFunction = true;
-                    searchIndex = 118;
+                    searchIndex = 117;
                     buttonPart75PlainEnglish_Click(sender, e);
                     break;
                 case 4:

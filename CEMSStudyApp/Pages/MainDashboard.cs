@@ -127,30 +127,23 @@ namespace CEMSStudyApp.Pages
             dashboardDictionary = new Dictionary<int, DashboardViewModel>();
             dropDownDictionary = new Dictionary<int, string>();
 
-
-            if (sectionColumnName == "Definitions")
+            if (sectionColumnName == "Elements")
             {
                 for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
                 {
-                    var regulation = dataSet.Tables[0].Rows[i]["Part75_Regulation"].ToString();
-                    var section = dataSet.Tables[0].Rows[i]["Part75_Section"].ToString();
-                    sectionHeading = regulation + " - " + section;
-                    var secNumber = dataSet.Tables[0].Rows[i]["Part75_Section_Number"].ToString();
-                    var secName = dataSet.Tables[0].Rows[i]["Part75_Section_Sub_Name"].ToString();
-                    var subHeading = secNumber + " - " + secName;
-                    definition = dataSet.Tables[0].Rows[i]["Part75_Definition"].ToString();
+                    var name = dataSet.Tables[0].Rows[i]["Name"].ToString();
+                    var description = dataSet.Tables[0].Rows[i]["Description"].ToString();
 
                     //LOAD DASHBOARD DICTIONARY
                     dashboardDictionary.Add(i, new DashboardViewModel()
                     {
-                        Heading = sectionHeading,
-                        Section_Name = subHeading,
+                        Heading = "Elements and Gas Types",
+                        Section_Name = "",
                         File_Location = "",
-                        Definition = definition
+                        Definition = description
                     });
 
-                    var word = dataSet.Tables[0].Rows[i]["Part75_Word"].ToString();
-                    dropDown = word + " - " + subHeading;
+                    dropDown = name;
 
                     //LOAD DROPDOWN DICTIONARY
                     dropDownDictionary.Add(i, dropDown);
@@ -158,31 +151,64 @@ namespace CEMSStudyApp.Pages
             }
             else
             {
-                for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
+                if (sectionColumnName == "Definitions")
                 {
-
-                    sectionName = string.IsNullOrEmpty(sectionColumnName) ? "" : dataSet.Tables[0].Rows[i][sectionColumnName].ToString();
-                    file_Location = string.IsNullOrEmpty(file_LocationColumnName) ? "" : dataSet.Tables[0].Rows[i][file_LocationColumnName].ToString();
-                    definition = string.IsNullOrEmpty(definitionColumnName) ? "" : dataSet.Tables[0].Rows[i][definitionColumnName].ToString();
-                    sectionHeading = sectionColumnName == "Part75_Section_Number"
-                        ? dataSet.Tables[0].Rows[i]["Part75_Section_Heading"].ToString()
-                        : dataSet.Tables[0].Rows[i]["Section_Heading"].ToString();
-
-                    //LOAD DASHBOARD DICTIONARY
-                    dashboardDictionary.Add(i, new DashboardViewModel()
+                    for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
                     {
-                        Heading = sectionHeading,
-                        Section_Name = sectionName,
-                        File_Location = file_Location,
-                        Definition = definition
-                    });
+                        var regulation = dataSet.Tables[0].Rows[i]["Part75_Regulation"].ToString();
+                        var section = dataSet.Tables[0].Rows[i]["Part75_Section"].ToString();
+                        sectionHeading = regulation + " - " + section;
+                        var secNumber = dataSet.Tables[0].Rows[i]["Part75_Section_Number"].ToString();
+                        var secName = dataSet.Tables[0].Rows[i]["Part75_Section_Sub_Name"].ToString();
+                        var subHeading = secNumber + " - " + secName;
+                        definition = dataSet.Tables[0].Rows[i]["Part75_Definition"].ToString();
 
-                    dropDown = dataSet.Tables[0].Rows[i][sectionNumber].ToString();
+                        //LOAD DASHBOARD DICTIONARY
+                        dashboardDictionary.Add(i, new DashboardViewModel()
+                        {
+                            Heading = sectionHeading,
+                            Section_Name = subHeading,
+                            File_Location = "",
+                            Definition = definition
+                        });
 
-                    //LOAD DROPDOWN DICTIONARY
-                    dropDownDictionary.Add(i, dropDown);
+                        var word = dataSet.Tables[0].Rows[i]["Part75_Word"].ToString();
+                        dropDown = word + " - " + subHeading;
+
+                        //LOAD DROPDOWN DICTIONARY
+                        dropDownDictionary.Add(i, dropDown);
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
+                    {
+
+                        sectionName = string.IsNullOrEmpty(sectionColumnName) ? "" : dataSet.Tables[0].Rows[i][sectionColumnName].ToString();
+                        file_Location = string.IsNullOrEmpty(file_LocationColumnName) ? "" : dataSet.Tables[0].Rows[i][file_LocationColumnName].ToString();
+                        definition = string.IsNullOrEmpty(definitionColumnName) ? "" : dataSet.Tables[0].Rows[i][definitionColumnName].ToString();
+                        sectionHeading = sectionColumnName == "Part75_Section_Number"
+                            ? dataSet.Tables[0].Rows[i]["Part75_Section_Heading"].ToString()
+                            : dataSet.Tables[0].Rows[i]["Section_Heading"].ToString();
+
+                        //LOAD DASHBOARD DICTIONARY
+                        dashboardDictionary.Add(i, new DashboardViewModel()
+                        {
+                            Heading = sectionHeading,
+                            Section_Name = sectionName,
+                            File_Location = file_Location,
+                            Definition = definition
+                        });
+
+                        dropDown = dataSet.Tables[0].Rows[i][sectionNumber].ToString();
+
+                        //LOAD DROPDOWN DICTIONARY
+                        dropDownDictionary.Add(i, dropDown);
+                    }
                 }
             }
+
+
 
             //LOAD DROP DOWN NAVIGATION
             comboBoxSectionNumber.DataSource = new BindingSource(dropDownDictionary, null);
@@ -1939,7 +1965,7 @@ namespace CEMSStudyApp.Pages
         {
             var dataSet = LoadTable("ChemicalCompounds_View");
             folderName = "";
-            LoadDashboardViewModel(dataSet, "Name", "Name", "", "Description");
+            LoadDashboardViewModel(dataSet, "Elements", "Name", "", "Description");
         }
     }
 }
